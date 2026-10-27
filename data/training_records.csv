@@ -1,0 +1,301 @@
+Training_ID,Employee_ID,Employee_Name,Department,Training_Name,Training_Date,Expiry_Date,Status,Score_Percent,Trainer,Certificate_Issued
+TRN-0001,EMP-294,Unknown,Warehousing,NEBOSH IGC,29/07/2021,31/07/2022,COMPLETED,N/A,N/A,yes
+TRN-0002,EMP-184,Unknown,,Manual Handling,03 May 2023,2021-12-07,Failed,70.9,internal,no
+TRN-0003,EMP-127,Mohammed Farooq,N/A,First Aid,05-05-2021,27/03/2021,N/A,999,internal,no
+TRN-0004,EMP-290,salman khan,Operations,ppe awareness,2021-07-08,01 August 2021,COMPLETED,90.9,INTERNAL,
+TRN-0005,EMP-431,salman khan,logistics ,NEBOSH IGC,14-07-2022,2021-03-27,,999,external,Yes
+TRN-0006,EMP-317,Ahmed Al-Rashidi,Maintenance,,29 November 2022,09 May 2023,expired,0,External,
+TRN-0007,EMP-199,Mohammed Farooq,MAINTENANCE,N/A,24/09/2022,2023-05-10,Failed,61.2,,No
+TRN-0008,EMP-238,,Drilling,Manual Handling,14/10/2022,21-05-2022,expired,N/A,external,no
+TRN-0009,EMP-155,Mohammed Farooq,drilling,DEFENSIVE DRIVING,2023-04-19,29-01-2023,Failed,0,,
+TRN-0010,EMP-153,,DRILLING,ppe awareness,2023-01-30,07-02-2021,failed,-1,INTERNAL,No
+TRN-0011,EMP-139,salman khan,OPS,fire safety,24-10-2021,06 September 2022,Expired,69.5,INTERNAL,No
+TRN-0012,EMP-285,AHMED AL-RASHIDI,Maintenance,Fire Safety,26 August 2022,2021-10-02,N/A,,Internal,Pending
+TRN-0013,EMP-408,Tariq Hussain,MAINTENANCE,DEFENSIVE DRIVING,09 October 2021,25 March 2023,COMPLETED,-1,internal,No
+TRN-0014,EMP-498,Salman Khan,OPS,permit to work,31/03/2023,2021-11-17,expired,,External,Yes
+TRN-0015,EMP-271,,DRILLING,first aid,14 April 2023,27 December 2022,Expired,,,No
+TRN-0016,EMP-114,Ahmed Al-Rashidi,Maintenance,FIRE SAFETY,18 October 2021,30/05/2023,COMPLETED,0,,Pending
+TRN-0017,EMP-222,,Construction,Permit to Work,03/02/2022,12/03/2022,Expired,-1,,Pending
+TRN-0018,EMP-244,Mohammed Farooq,drilling,N/A,,15/02/2023,failed,999,external,yes
+TRN-0019,EMP-183,,Construction,permit to work,2021-12-30,06/02/2023,Completed,88.7,internal,
+TRN-0020,EMP-377,Unknown,Operations,N/A,11 January 2023,,N/A,N/A,,
+TRN-0021,EMP-154,AHMED AL-RASHIDI,Maintenance,defensive driving,12-06-2021,11 March 2022,completed,,,No
+TRN-0022,EMP-133,Ahmed Al-Rashidi,Maintenance,nebosh igc,2023-06-01,03 April 2023,Failed,N/A,external,
+TRN-0023,EMP-208,mohammed farooq,DRILLING,Manual Handling,25 December 2022,15 June 2023,Pending,0,,
+TRN-0024,EMP-405,mohammed farooq,OPS,ppe awareness,2021-06-28,31/10/2021,pending,N/A,,
+TRN-0025,EMP-105,Tariq Hussain,Maintenance,DEFENSIVE DRIVING,07-01-2023,29-10-2021,Pending,,,Yes
+TRN-0026,EMP-487,,drilling,fire safety,2023-05-30,22-09-2022,Pending,,external,
+TRN-0027,EMP-258,Mohammed Farooq,Drilling,nebosh igc,20-02-2023,2021-06-19,COMPLETED,N/A,INTERNAL,yes
+TRN-0028,EMP-196,Unknown,Maintenance,Permit to Work,11 March 2021,2022-12-03,pending,59.9,INTERNAL,
+TRN-0029,EMP-382,Tariq Hussain,Ops,permit to work,2022-04-29,02-01-2023,,,Internal,No
+TRN-0030,EMP-203,mohammed farooq,Drilling,first aid,04-06-2022,15 September 2021,,N/A,internal,Pending
+TRN-0031,EMP-426,salman khan,Ops,Defensive Driving,28-11-2021,2021-12-05,completed,99.0,External,
+TRN-0032,EMP-116,mohammed farooq,Maintenance,first aid,30 April 2023,,N/A,999,N/A,No
+TRN-0033,EMP-223,mohammed farooq,Construction,Permit to Work,2021-01-31,2022-03-03,Pending,N/A,N/A,yes
+TRN-0034,EMP-237,Unknown,Logistics,First Aid,13/11/2022,10/03/2021,Failed,0,N/A,No
+TRN-0035,EMP-143,Ahmed Al-Rashidi,Warehousing,ppe awareness,27 November 2022,2021-07-12,Expired,,,Yes
+TRN-0036,EMP-391,salman khan,OPS,N/A,2021-08-26,05 July 2022,Expired,999,Internal,Pending
+TRN-0037,EMP-389,salman khan,Maintenance,,28 June 2021,04 March 2021,,N/A,Internal,No
+TRN-0038,EMP-122,Ahmed Al-Rashidi,N/A,N/A,07/03/2022,10-03-2021,N/A,-1,,Pending
+TRN-0039,EMP-388,Salman Khan,Construction,permit to work,,20-08-2021,Completed,47.9,Internal,Pending
+TRN-0040,EMP-347,Salman Khan,logistics ,fire safety,07/02/2023,17-07-2021,,,N/A,
+TRN-0041,EMP-123,,drilling,nebosh igc,19/01/2022,08 June 2023,expired,999,Internal,No
+TRN-0042,EMP-124,AHMED AL-RASHIDI,MAINTENANCE,PPE Awareness,25/11/2021,10-11-2021,Pending,N/A,,Pending
+TRN-0043,EMP-261,,construction,fire safety,2022-01-22,17-02-2022,,N/A,,No
+TRN-0044,EMP-147,,Warehousing,PPE Awareness,2022-08-11,2022-10-19,Pending,-1,INTERNAL,
+TRN-0045,EMP-258,Tariq Hussain,Construction,fire safety,18 May 2022,06/06/2021,Failed,N/A,,
+TRN-0046,EMP-104,Tariq Hussain,logistics ,nebosh igc,2021-08-19,2021-10-14,N/A,-1,External,no
+TRN-0047,EMP-282,salman khan,Construction,nebosh igc,2022-03-21,2021-04-15,Completed,-1,External,No
+TRN-0048,EMP-484,salman khan,drilling,ppe awareness,25/01/2021,25 August 2022,failed,-1,External,yes
+TRN-0049,EMP-244,,logistics ,PPE Awareness,2023-04-10,02-03-2023,N/A,,External,Yes
+TRN-0050,EMP-303,Tariq Hussain,construction,Fire Safety,04 January 2022,25 January 2023,completed,,internal,no
+TRN-0051,EMP-356,,Ops,fire safety,05/06/2023,2021-01-03,Failed,,External,yes
+TRN-0052,EMP-199,salman khan,Warehousing,ppe awareness,30 November 2022,2021-04-04,expired,0,,no
+TRN-0053,EMP-261,AHMED AL-RASHIDI,N/A,PPE Awareness,01 August 2021,02/05/2022,completed,,external,
+TRN-0054,EMP-484,Mohammed Farooq,OPS,Permit to Work,2022-01-01,2021-02-23,pending,-1,External,no
+TRN-0055,EMP-300,,,Permit to Work,26 March 2022,27 March 2022,expired,N/A,N/A,no
+TRN-0056,EMP-471,Tariq Hussain,Operations,Permit to Work,14/06/2023,01-12-2021,expired,87.0,INTERNAL,no
+TRN-0057,EMP-282,salman khan,drilling,fire safety,11-05-2021,2021-05-01,,999,,yes
+TRN-0058,EMP-166,Mohammed Farooq,Warehousing,PPE Awareness,2022-05-26,22 January 2022,expired,,,No
+TRN-0059,EMP-459,,N/A,ppe awareness,,30-12-2021,completed,999,internal,Pending
+TRN-0060,EMP-445,Unknown,Operations,,22-04-2023,21/11/2021,Completed,,,yes
+TRN-0061,EMP-149,Mohammed Farooq,MAINTENANCE,first aid,15 September 2021,2023-05-13,Expired,,External,Yes
+TRN-0062,EMP-269,,Operations,First Aid,2021-03-11,11-10-2022,,0,internal,Yes
+TRN-0063,EMP-308,Tariq Hussain,OPS,first aid,2021-03-18,11 May 2023,expired,,,yes
+TRN-0064,EMP-479,Tariq Hussain,MAINTENANCE,DEFENSIVE DRIVING,18-09-2022,17-05-2022,Pending,999,,Pending
+TRN-0065,EMP-357,Salman Khan,Maintenance,Defensive Driving,28/02/2021,26 July 2022,Pending,,N/A,
+TRN-0066,EMP-151,Tariq Hussain,,Defensive Driving,,02/07/2021,pending,-1,Internal,Pending
+TRN-0067,EMP-357,Salman Khan,Maintenance,NEBOSH IGC,08-03-2022,26 May 2023,,N/A,N/A,yes
+TRN-0068,EMP-496,Unknown,Construction,fire safety,23/02/2023,21 December 2021,COMPLETED,,INTERNAL,No
+TRN-0069,EMP-176,AHMED AL-RASHIDI,Construction,First Aid,15-07-2022,2022-07-28,,-1,Internal,Pending
+TRN-0070,EMP-112,AHMED AL-RASHIDI,Drilling,N/A,11/11/2022,03/07/2021,N/A,999,N/A,
+TRN-0071,EMP-400,AHMED AL-RASHIDI,OPS,,16/03/2021,,Pending,65.6,Internal,
+TRN-0072,EMP-295,AHMED AL-RASHIDI,Logistics,Defensive Driving,14 March 2021,14-11-2021,Pending,0,Internal,Yes
+TRN-0073,EMP-344,Ahmed Al-Rashidi,Logistics,PPE Awareness,20/09/2022,13-01-2022,,0,external,Yes
+TRN-0074,EMP-400,Unknown,Drilling,First Aid,2022-05-06,,,,,no
+TRN-0075,EMP-119,Tariq Hussain,construction,defensive driving,,09 October 2021,Expired,59.2,N/A,No
+TRN-0076,EMP-248,AHMED AL-RASHIDI,MAINTENANCE,Fire Safety,2022-06-04,14-12-2022,COMPLETED,50.9,internal,No
+TRN-0077,EMP-182,,drilling,First Aid,18 March 2022,28/02/2021,Completed,N/A,INTERNAL,no
+TRN-0078,EMP-177,Unknown,drilling,First Aid,,28 April 2022,,0,external,No
+TRN-0079,EMP-449,,Logistics,defensive driving,26/02/2021,,pending,999,,No
+TRN-0080,EMP-337,AHMED AL-RASHIDI,DRILLING,Manual Handling,2023-04-11,2021-01-30,expired,,,no
+TRN-0081,EMP-140,,Warehousing,FIRE SAFETY,31 May 2023,2021-07-01,pending,-1,external,No
+TRN-0082,EMP-420,,Maintenance,NEBOSH IGC,26/01/2023,05/05/2023,completed,0,,Pending
+TRN-0083,EMP-147,Unknown,Warehousing,,23 February 2021,15/10/2022,,N/A,internal,no
+TRN-0084,EMP-467,Ahmed Al-Rashidi,MAINTENANCE,permit to work,2022-12-14,29-05-2023,Pending,999,external,no
+TRN-0085,EMP-218,Salman Khan,Construction,defensive driving,2022-03-14,18/07/2021,,,internal,
+TRN-0086,EMP-210,Tariq Hussain,Warehousing,NEBOSH IGC,01-05-2021,20-11-2022,completed,N/A,external,No
+TRN-0087,EMP-448,mohammed farooq,Drilling,First Aid,18 December 2021,23-06-2021,COMPLETED,N/A,INTERNAL,No
+TRN-0088,EMP-434,mohammed farooq,construction,ppe awareness,2021-09-01,12 November 2022,expired,999,internal,yes
+TRN-0089,EMP-172,,Drilling,Fire Safety,2021-01-11,15/11/2022,pending,,External,Yes
+TRN-0090,EMP-493,,Operations,First Aid,10/02/2023,2023-04-25,Completed,,Internal,No
+TRN-0091,EMP-467,Tariq Hussain,OPS,NEBOSH IGC,2021-01-16,2021-03-27,Pending,75.1,Internal,yes
+TRN-0092,EMP-182,AHMED AL-RASHIDI,,DEFENSIVE DRIVING,20/03/2021,2021-10-10,Pending,,internal,No
+TRN-0093,EMP-356,mohammed farooq,Warehousing,,,2022-02-24,Pending,999,,no
+TRN-0094,EMP-364,,Drilling,NEBOSH IGC,2021-12-25,13/05/2023,,999,External,Yes
+TRN-0095,EMP-473,AHMED AL-RASHIDI,N/A,,13 May 2021,29-07-2022,,N/A,,Pending
+TRN-0096,EMP-411,salman khan,Logistics,PPE Awareness,06/05/2021,23/04/2022,Expired,,,Pending
+TRN-0097,EMP-433,,construction,,2022-07-11,20/04/2022,Expired,82.3,external,
+TRN-0098,EMP-367,Tariq Hussain,DRILLING,fire safety,23-01-2023,2021-04-03,completed,999,external,Pending
+TRN-0099,EMP-493,Tariq Hussain,,nebosh igc,2023-05-30,10-07-2021,expired,0,external,No
+TRN-0100,EMP-274,Ahmed Al-Rashidi,MAINTENANCE,NEBOSH IGC,06-11-2021,2021-01-21,Completed,,INTERNAL,No
+TRN-0101,EMP-329,salman khan,Drilling,Defensive Driving,2021-10-27,11-08-2021,Failed,N/A,internal,no
+TRN-0102,EMP-167,mohammed farooq,N/A,PPE Awareness,01-10-2021,2023-06-18,N/A,,N/A,No
+TRN-0103,EMP-273,,logistics ,N/A,31/05/2022,2022-11-29,completed,999,INTERNAL,Pending
+TRN-0104,EMP-248,Salman Khan,N/A,N/A,25 February 2022,2023-01-26,Pending,,external,yes
+TRN-0105,EMP-284,Salman Khan,logistics ,First Aid,2021-07-28,24-01-2022,Expired,999,external,yes
+TRN-0106,EMP-419,Salman Khan,Drilling,FIRE SAFETY,2022-06-18,24-05-2021,completed,0,,Yes
+TRN-0107,EMP-320,Salman Khan,Maintenance,fire safety,2022-07-21,2023-05-06,Expired,N/A,Internal,Pending
+TRN-0108,EMP-120,Tariq Hussain,Operations,fire safety,,2021-07-24,completed,-1,internal,Yes
+TRN-0109,EMP-464,mohammed farooq,Drilling,Defensive Driving,29 August 2021,23 September 2021,Expired,-1,,
+TRN-0110,EMP-496,Ahmed Al-Rashidi,drilling,defensive driving,,17-05-2022,Pending,999,External,yes
+TRN-0111,EMP-449,Tariq Hussain,Logistics,Manual Handling,07/05/2023,24 December 2021,completed,,N/A,
+TRN-0112,EMP-298,Ahmed Al-Rashidi,drilling,,26 August 2022,,expired,N/A,Internal,Yes
+TRN-0113,EMP-222,Ahmed Al-Rashidi,,DEFENSIVE DRIVING,28/03/2021,05 May 2023,,0,,Pending
+TRN-0114,EMP-206,Ahmed Al-Rashidi,OPS,ppe awareness,17 September 2022,2022-08-06,Pending,999,external,
+TRN-0115,EMP-412,Mohammed Farooq,MAINTENANCE,,03 June 2023,21-03-2022,,N/A,N/A,no
+TRN-0116,EMP-410,salman khan,Ops,ppe awareness,2021-02-15,30-11-2022,Expired,,Internal,No
+TRN-0117,EMP-138,,construction,DEFENSIVE DRIVING,08 July 2021,18-12-2022,pending,N/A,,Pending
+TRN-0118,EMP-178,Unknown,construction,Manual Handling,,2023-03-03,,999,,no
+TRN-0119,EMP-390,salman khan,Maintenance,NEBOSH IGC,21-02-2023,,Completed,,N/A,yes
+TRN-0120,EMP-421,salman khan,OPS,DEFENSIVE DRIVING,16-09-2022,2021-04-29,,999,external,Yes
+TRN-0121,EMP-354,Mohammed Farooq,Maintenance,Defensive Driving,2021-09-26,24-04-2022,failed,,external,
+TRN-0122,EMP-149,Unknown,MAINTENANCE,defensive driving,16 December 2021,22/01/2022,completed,999,N/A,Pending
+TRN-0123,EMP-107,Tariq Hussain,drilling,N/A,13/03/2023,18-04-2021,,,External,
+TRN-0124,EMP-173,mohammed farooq,logistics ,,21 July 2022,2021-01-09,Expired,999,External,no
+TRN-0125,EMP-492,,OPS,fire safety,26-11-2022,09-12-2021,N/A,N/A,internal,No
+TRN-0126,EMP-258,Tariq Hussain,Maintenance,ppe awareness,02 July 2022,2021-04-13,Pending,,External,Yes
+TRN-0127,EMP-380,mohammed farooq,Logistics,N/A,07-01-2023,2021-11-10,,999,internal,Pending
+TRN-0128,EMP-500,Unknown,Warehousing,NEBOSH IGC,26 January 2022,10/07/2021,N/A,999,external,yes
+TRN-0129,EMP-144,Tariq Hussain,Drilling,FIRE SAFETY,2021-09-01,24 September 2022,,,External,yes
+TRN-0130,EMP-355,Ahmed Al-Rashidi,MAINTENANCE,permit to work,15-10-2021,13 December 2022,Expired,N/A,,Yes
+TRN-0131,EMP-148,Unknown,construction,PPE Awareness,13-09-2021,2022-04-30,Completed,56.1,,no
+TRN-0132,EMP-332,Tariq Hussain,Ops,FIRE SAFETY,09/02/2022,18-01-2022,pending,50.3,,yes
+TRN-0133,EMP-260,Mohammed Farooq,Logistics,DEFENSIVE DRIVING,06-01-2022,,failed,0,N/A,Yes
+TRN-0134,EMP-186,Tariq Hussain,Logistics,,13/03/2023,2023-06-18,,,external,Pending
+TRN-0135,EMP-251,Mohammed Farooq,,NEBOSH IGC,06-08-2022,04/06/2022,pending,0,external,no
+TRN-0136,EMP-182,Tariq Hussain,Operations,PPE Awareness,2023-05-18,04-03-2023,Expired,0,External,no
+TRN-0137,EMP-134,salman khan,N/A,permit to work,,15/02/2022,N/A,92.4,,
+TRN-0138,EMP-243,,drilling,DEFENSIVE DRIVING,07-02-2021,20-06-2021,COMPLETED,,,No
+TRN-0139,EMP-395,Mohammed Farooq,,first aid,2023-05-15,2022-12-16,Failed,,INTERNAL,Pending
+TRN-0140,EMP-286,Tariq Hussain,Maintenance,Fire Safety,17/08/2022,2022-08-05,expired,72.1,External,Pending
+TRN-0141,EMP-280,mohammed farooq,Warehousing,first aid,17-09-2022,08/12/2021,Expired,N/A,,no
+TRN-0142,EMP-145,AHMED AL-RASHIDI,drilling,Permit to Work,2022-03-28,2021-11-13,expired,0,Internal,yes
+TRN-0143,EMP-136,Mohammed Farooq,Drilling,fire safety,17-03-2023,15 April 2022,pending,N/A,Internal,No
+TRN-0144,EMP-191,,Construction,ppe awareness,2022-05-22,2021-01-01,N/A,0,N/A,
+TRN-0145,EMP-463,AHMED AL-RASHIDI,Drilling,Manual Handling,2021-06-28,26-06-2021,pending,-1,N/A,Yes
+TRN-0146,EMP-495,Unknown,,N/A,03/11/2022,2021-07-09,pending,0,N/A,Yes
+TRN-0147,EMP-335,Tariq Hussain,Drilling,First Aid,02/11/2022,24/03/2022,expired,59.5,External,Pending
+TRN-0148,EMP-232,Salman Khan,DRILLING,ppe awareness,03 June 2022,,Pending,77.6,,
+TRN-0149,EMP-342,,drilling,DEFENSIVE DRIVING,2021-02-12,13-06-2021,Failed,,,
+TRN-0150,EMP-231,Mohammed Farooq,Maintenance,defensive driving,02-01-2023,18 July 2022,pending,0,INTERNAL,yes
+TRN-0151,EMP-490,salman khan,,Permit to Work,17-01-2021,29 April 2022,N/A,50.6,External,No
+TRN-0152,EMP-326,mohammed farooq,Ops,permit to work,2021-02-15,2022-12-25,expired,,N/A,Pending
+TRN-0153,EMP-432,AHMED AL-RASHIDI,Ops,ppe awareness,21 March 2021,09 April 2021,expired,,INTERNAL,no
+TRN-0154,EMP-171,AHMED AL-RASHIDI,MAINTENANCE,Defensive Driving,2021-03-21,2023-02-21,pending,N/A,external,Pending
+TRN-0155,EMP-163,Ahmed Al-Rashidi,Construction,first aid,08-08-2022,01-12-2021,N/A,-1,External,no
+TRN-0156,EMP-391,Tariq Hussain,DRILLING,nebosh igc,29 November 2022,18 January 2023,Expired,0,N/A,no
+TRN-0157,EMP-349,Ahmed Al-Rashidi,drilling,N/A,13-03-2022,01/07/2022,completed,N/A,,Yes
+TRN-0158,EMP-120,Unknown,Construction,defensive driving,01-12-2021,17/11/2022,COMPLETED,,Internal,Pending
+TRN-0159,EMP-286,Mohammed Farooq,Ops,fire safety,22-02-2022,2022-09-16,Expired,,INTERNAL,Yes
+TRN-0160,EMP-246,Ahmed Al-Rashidi,N/A,permit to work,29/10/2021,13-01-2022,Completed,,,yes
+TRN-0161,EMP-305,Unknown,OPS,Manual Handling,15-02-2021,23/04/2023,Failed,,Internal,Pending
+TRN-0162,EMP-309,,Maintenance,DEFENSIVE DRIVING,29/08/2022,09 February 2023,expired,-1,internal,Pending
+TRN-0163,EMP-417,AHMED AL-RASHIDI,,Defensive Driving,05-08-2021,2022-10-24,Expired,,external,yes
+TRN-0164,EMP-448,Unknown,N/A,fire safety,11-03-2023,12/07/2021,Expired,-1,internal,yes
+TRN-0165,EMP-166,Tariq Hussain,logistics ,NEBOSH IGC,23/01/2022,22/03/2022,COMPLETED,-1,Internal,Pending
+TRN-0166,EMP-325,Ahmed Al-Rashidi,Drilling,,03 June 2021,2022-11-01,COMPLETED,,internal,
+TRN-0167,EMP-287,Mohammed Farooq,N/A,FIRE SAFETY,27/10/2022,19-10-2021,completed,,internal,yes
+TRN-0168,EMP-362,,Ops,Manual Handling,18 August 2021,,failed,,internal,no
+TRN-0169,EMP-419,salman khan,,FIRE SAFETY,05/05/2021,2022-03-08,N/A,N/A,,Pending
+TRN-0170,EMP-260,Mohammed Farooq,Drilling,N/A,07 November 2022,30/11/2022,pending,0,Internal,yes
+TRN-0171,EMP-291,mohammed farooq,construction,Defensive Driving,19-07-2021,26-03-2021,completed,,Internal,yes
+TRN-0172,EMP-142,mohammed farooq,N/A,First Aid,2021-12-03,14 April 2021,Expired,,external,Yes
+TRN-0173,EMP-449,Salman Khan,OPS,Defensive Driving,2022-01-06,2021-01-13,Failed,999,INTERNAL,Yes
+TRN-0174,EMP-311,mohammed farooq,Drilling,,06/02/2023,12 August 2022,N/A,,,Yes
+TRN-0175,EMP-359,,drilling,Defensive Driving,01 April 2022,12 January 2021,N/A,,N/A,Pending
+TRN-0176,EMP-330,mohammed farooq,Drilling,Fire Safety,27/12/2021,18 November 2022,expired,N/A,internal,no
+TRN-0177,EMP-234,Tariq Hussain,construction,Defensive Driving,01 November 2022,25-02-2021,COMPLETED,98.2,N/A,No
+TRN-0178,EMP-449,Salman Khan,drilling,NEBOSH IGC,05 April 2022,30/01/2023,Pending,,internal,
+TRN-0179,EMP-121,Ahmed Al-Rashidi,construction,Manual Handling,2023-04-28,02 April 2023,completed,,internal,no
+TRN-0180,EMP-417,Salman Khan,Maintenance,nebosh igc,08 September 2021,11 March 2023,Pending,40.7,internal,No
+TRN-0181,EMP-429,AHMED AL-RASHIDI,Ops,first aid,2022-11-13,15-05-2023,Pending,62.7,internal,
+TRN-0182,EMP-129,Mohammed Farooq,Warehousing,Defensive Driving,26-03-2023,03 July 2021,pending,46.6,,no
+TRN-0183,EMP-479,Ahmed Al-Rashidi,OPS,fire safety,01/05/2021,28/01/2022,expired,N/A,External,Pending
+TRN-0184,EMP-225,Unknown,OPS,nebosh igc,2022-06-02,12-12-2021,pending,,internal,yes
+TRN-0185,EMP-458,AHMED AL-RASHIDI,MAINTENANCE,,2022-10-10,13 April 2023,Failed,54.9,Internal,Yes
+TRN-0186,EMP-387,AHMED AL-RASHIDI,construction,Defensive Driving,,,expired,N/A,,Pending
+TRN-0187,EMP-104,,Ops,NEBOSH IGC,04 May 2021,08 June 2023,Expired,,external,no
+TRN-0188,EMP-179,Unknown,DRILLING,permit to work,22 July 2022,21-02-2021,completed,,INTERNAL,
+TRN-0189,EMP-153,AHMED AL-RASHIDI,N/A,DEFENSIVE DRIVING,10/05/2021,12-12-2021,N/A,N/A,N/A,
+TRN-0190,EMP-248,AHMED AL-RASHIDI,DRILLING,NEBOSH IGC,2021-01-25,25-01-2021,pending,,,
+TRN-0191,EMP-292,Mohammed Farooq,Warehousing,nebosh igc,16 May 2021,,,,INTERNAL,no
+TRN-0192,EMP-181,Salman Khan,Logistics,ppe awareness,2021-12-29,29-11-2021,Pending,,,
+TRN-0193,EMP-391,Salman Khan,drilling,FIRE SAFETY,2022-07-25,03/09/2022,,-1,Internal,
+TRN-0194,EMP-304,Mohammed Farooq,DRILLING,DEFENSIVE DRIVING,02-05-2021,07 February 2021,N/A,0,Internal,Pending
+TRN-0195,EMP-137,AHMED AL-RASHIDI,Maintenance,Defensive Driving,11/12/2021,28/03/2021,COMPLETED,,,no
+TRN-0196,EMP-214,AHMED AL-RASHIDI,,N/A,16/02/2021,29 May 2021,Failed,999,Internal,Yes
+TRN-0197,EMP-298,,DRILLING,FIRE SAFETY,30 December 2021,09-10-2021,COMPLETED,N/A,,
+TRN-0198,EMP-336,salman khan,OPS,Fire Safety,08 October 2022,2022-12-07,Pending,72.6,Internal,Yes
+TRN-0199,EMP-442,mohammed farooq,Warehousing,ppe awareness,23-03-2022,,failed,89.5,internal,
+TRN-0200,EMP-147,Tariq Hussain,N/A,FIRE SAFETY,2022-12-18,,COMPLETED,72.7,N/A,Pending
+TRN-0201,EMP-278,AHMED AL-RASHIDI,,first aid,12/01/2023,16/09/2022,COMPLETED,,Internal,Yes
+TRN-0202,EMP-338,,N/A,permit to work,08-01-2021,13/01/2023,,64.9,N/A,
+TRN-0203,EMP-339,Ahmed Al-Rashidi,MAINTENANCE,Fire Safety,10 April 2022,15-10-2022,N/A,94.7,internal,Yes
+TRN-0204,EMP-428,Tariq Hussain,Operations,Defensive Driving,30-06-2021,2021-01-23,COMPLETED,-1,internal,Yes
+TRN-0205,EMP-373,AHMED AL-RASHIDI,Logistics,PPE Awareness,2021-04-10,21/09/2021,Failed,N/A,External,No
+TRN-0206,EMP-338,,Operations,nebosh igc,16/12/2021,20/03/2022,expired,N/A,Internal,yes
+TRN-0207,EMP-155,AHMED AL-RASHIDI,drilling,,22 June 2022,08-08-2022,Expired,N/A,,
+TRN-0208,EMP-143,mohammed farooq,logistics ,DEFENSIVE DRIVING,29-01-2022,2022-09-23,N/A,89.4,external,Pending
+TRN-0209,EMP-192,Tariq Hussain,logistics ,PPE Awareness,27/05/2021,20-02-2021,,69.5,External,Pending
+TRN-0210,EMP-474,Tariq Hussain,Construction,Permit to Work,2023-01-23,09 August 2021,failed,0,N/A,
+TRN-0211,EMP-155,salman khan,Warehousing,permit to work,12-10-2021,2022-12-07,,999,External,no
+TRN-0212,EMP-303,,Logistics,Permit to Work,2021-10-19,19/11/2022,pending,0,External,no
+TRN-0213,EMP-493,Mohammed Farooq,Operations,fire safety,08 October 2021,05-07-2021,Pending,95.4,,Pending
+TRN-0214,EMP-321,Mohammed Farooq,Logistics,ppe awareness,23-06-2021,,pending,999,,Pending
+TRN-0215,EMP-202,Salman Khan,construction,Defensive Driving,23/09/2021,2022-03-01,Expired,-1,N/A,Yes
+TRN-0216,EMP-305,Ahmed Al-Rashidi,Maintenance,Defensive Driving,14-11-2022,19-04-2022,pending,999,,yes
+TRN-0217,EMP-268,Mohammed Farooq,OPS,First Aid,,19/08/2021,Failed,-1,internal,Pending
+TRN-0218,EMP-133,Unknown,Ops,permit to work,,15/08/2021,COMPLETED,N/A,Internal,no
+TRN-0219,EMP-262,Unknown,Logistics,defensive driving,03/05/2023,16 January 2023,pending,999,INTERNAL,no
+TRN-0220,EMP-275,Ahmed Al-Rashidi,Construction,FIRE SAFETY,16 October 2021,13-10-2022,Failed,0,,
+TRN-0221,EMP-409,AHMED AL-RASHIDI,drilling,first aid,2022-06-18,03/05/2022,,0,,
+TRN-0222,EMP-348,salman khan,construction,ppe awareness,30/10/2021,24-11-2021,Failed,N/A,INTERNAL,Yes
+TRN-0223,EMP-208,salman khan,OPS,FIRE SAFETY,16/05/2023,05 June 2021,,0,internal,no
+TRN-0224,EMP-459,,construction,permit to work,19 March 2022,2022-05-26,Failed,N/A,,Pending
+TRN-0225,EMP-479,Unknown,Ops,first aid,2023-06-05,24 June 2021,Expired,,,Pending
+TRN-0226,EMP-343,Unknown,drilling,Defensive Driving,20/01/2023,03/02/2021,pending,,External,no
+TRN-0227,EMP-158,,Maintenance,Defensive Driving,03/04/2023,29-07-2022,failed,,,Pending
+TRN-0228,EMP-242,Ahmed Al-Rashidi,logistics ,Fire Safety,16/08/2021,05-02-2023,,-1,,Yes
+TRN-0229,EMP-332,Mohammed Farooq,,Defensive Driving,04-06-2022,08-02-2023,failed,,external,No
+TRN-0230,EMP-119,,,Manual Handling,08/10/2022,24/04/2022,failed,-1,internal,
+TRN-0231,EMP-379,Salman Khan,Construction,First Aid,19/11/2021,2022-08-22,Completed,88.9,external,No
+TRN-0232,EMP-179,AHMED AL-RASHIDI,Operations,Permit to Work,24-12-2022,02 August 2022,failed,N/A,internal,Yes
+TRN-0233,EMP-340,mohammed farooq,Operations,permit to work,26/07/2022,23/02/2023,Completed,56.7,internal,Pending
+TRN-0234,EMP-174,Unknown,Ops,fire safety,05/10/2022,18 October 2021,failed,,external,yes
+TRN-0235,EMP-427,Ahmed Al-Rashidi,,FIRE SAFETY,24 August 2022,2022-01-20,Failed,-1,External,Yes
+TRN-0236,EMP-209,,Construction,N/A,2021-08-14,21/05/2023,N/A,-1,External,yes
+TRN-0237,EMP-263,Ahmed Al-Rashidi,Ops,Manual Handling,05 June 2021,2021-08-12,COMPLETED,N/A,N/A,no
+TRN-0238,EMP-390,,drilling,defensive driving,22 January 2023,08-08-2022,Expired,999,INTERNAL,Yes
+TRN-0239,EMP-116,,drilling,N/A,23/07/2021,12 June 2021,pending,0,External,Pending
+TRN-0240,EMP-407,Mohammed Farooq,Logistics,DEFENSIVE DRIVING,,2021-12-27,Completed,N/A,external,no
+TRN-0241,EMP-496,mohammed farooq,Drilling,Manual Handling,10 March 2021,06-09-2022,,-1,external,yes
+TRN-0242,EMP-294,salman khan,Construction,DEFENSIVE DRIVING,,07/01/2022,Pending,-1,INTERNAL,yes
+TRN-0243,EMP-131,AHMED AL-RASHIDI,Drilling,permit to work,06-12-2022,05-12-2022,Pending,-1,internal,Pending
+TRN-0244,EMP-285,mohammed farooq,Operations,Manual Handling,2022-10-09,30 June 2022,N/A,,INTERNAL,yes
+TRN-0245,EMP-320,Ahmed Al-Rashidi,Construction,permit to work,2022-05-11,18 February 2022,,53.8,,yes
+TRN-0246,EMP-342,salman khan,Logistics,permit to work,2023-05-11,21 October 2021,pending,-1,,No
+TRN-0247,EMP-209,Mohammed Farooq,,Manual Handling,16 November 2022,2023-06-14,pending,,INTERNAL,yes
+TRN-0248,EMP-127,mohammed farooq,MAINTENANCE,NEBOSH IGC,08 October 2022,04-01-2021,Failed,N/A,internal,no
+TRN-0249,EMP-208,AHMED AL-RASHIDI,Construction,NEBOSH IGC,11 July 2022,2022-11-03,Completed,53.2,,Yes
+TRN-0250,EMP-111,Mohammed Farooq,Logistics,permit to work,13/08/2021,11 April 2021,Failed,54.1,N/A,yes
+TRN-0251,EMP-488,Salman Khan,drilling,Fire Safety,13-02-2023,05 March 2022,failed,,,no
+TRN-0252,EMP-450,Salman Khan,Maintenance,FIRE SAFETY,03-04-2022,14/10/2022,failed,999,internal,Pending
+TRN-0253,EMP-316,,Construction,Defensive Driving,12/03/2022,22/05/2021,Failed,,Internal,Pending
+TRN-0254,EMP-238,mohammed farooq,,PPE Awareness,23/11/2021,20 January 2023,expired,95.3,N/A,yes
+TRN-0255,EMP-229,AHMED AL-RASHIDI,Warehousing,N/A,2022-02-12,2021-11-29,expired,0,Internal,No
+TRN-0256,EMP-425,salman khan,OPS,DEFENSIVE DRIVING,11 May 2022,03 October 2022,,,external,No
+TRN-0257,EMP-190,,logistics ,FIRE SAFETY,,15/01/2022,Pending,,internal,
+TRN-0258,EMP-142,Salman Khan,logistics ,Defensive Driving,2021-10-02,20 March 2023,Pending,,Internal,
+TRN-0259,EMP-172,,,nebosh igc,13 March 2023,2023-06-04,,999,internal,Pending
+TRN-0260,EMP-135,,Maintenance,Permit to Work,02-03-2023,15 June 2021,expired,-1,Internal,yes
+TRN-0261,EMP-240,Tariq Hussain,OPS,FIRE SAFETY,22 November 2021,2023-06-15,Expired,,external,Pending
+TRN-0262,EMP-307,,construction,Permit to Work,29 March 2022,2022-12-31,pending,N/A,internal,no
+TRN-0263,EMP-141,Tariq Hussain,Ops,NEBOSH IGC,25-02-2021,28/10/2021,completed,N/A,N/A,yes
+TRN-0264,EMP-252,mohammed farooq,Logistics,Manual Handling,13-08-2021,31 July 2021,completed,-1,,No
+TRN-0265,EMP-464,Salman Khan,Operations,N/A,16-02-2021,02 December 2022,Pending,N/A,Internal,no
+TRN-0266,EMP-331,Mohammed Farooq,DRILLING,Manual Handling,2021-08-15,2023-03-27,COMPLETED,0,,Yes
+TRN-0267,EMP-314,mohammed farooq,,nebosh igc,10/03/2023,28/05/2022,Failed,43.2,,yes
+TRN-0268,EMP-368,Salman Khan,logistics ,Fire Safety,21-09-2022,08-05-2023,,79.8,,yes
+TRN-0269,EMP-209,Tariq Hussain,drilling,nebosh igc,07/07/2022,2021-06-13,Expired,999,external,
+TRN-0270,EMP-442,AHMED AL-RASHIDI,N/A,ppe awareness,22 January 2021,13/03/2021,,92.2,N/A,
+TRN-0271,EMP-232,Unknown,DRILLING,fire safety,23-12-2022,30 November 2022,,,,Pending
+TRN-0272,EMP-194,Unknown,Construction,defensive driving,25/02/2023,27 April 2022,Expired,44.7,external,No
+TRN-0273,EMP-127,Salman Khan,N/A,fire safety,2022-06-16,04-03-2022,Completed,,,yes
+TRN-0274,EMP-147,Mohammed Farooq,Maintenance,Defensive Driving,2021-07-23,05/07/2022,N/A,,INTERNAL,yes
+TRN-0275,EMP-319,mohammed farooq,MAINTENANCE,,2022-02-10,14/09/2022,failed,-1,,Yes
+TRN-0276,EMP-275,,Logistics,defensive driving,15-06-2021,28/04/2023,,N/A,External,Pending
+TRN-0277,EMP-485,Tariq Hussain,,nebosh igc,2021-08-09,12/02/2022,,0,INTERNAL,Yes
+TRN-0278,EMP-252,,Warehousing,fire safety,06/02/2021,04 January 2023,Expired,N/A,,Pending
+TRN-0279,EMP-184,Tariq Hussain,logistics ,N/A,24/06/2022,08/05/2021,Pending,,,no
+TRN-0280,EMP-201,Unknown,Construction,nebosh igc,,26/09/2021,pending,78.7,internal,yes
+TRN-0281,EMP-278,Salman Khan,OPS,first aid,,11 January 2022,,,INTERNAL,
+TRN-0282,EMP-314,salman khan,MAINTENANCE,N/A,,2021-05-26,,N/A,,no
+TRN-0283,EMP-346,Unknown,Construction,FIRE SAFETY,07/02/2023,04-08-2021,failed,,,Pending
+TRN-0284,EMP-343,AHMED AL-RASHIDI,drilling,,22 January 2022,20/10/2022,Completed,,,No
+TRN-0285,EMP-374,Unknown,construction,FIRE SAFETY,29-01-2023,28 December 2022,completed,,External,no
+TRN-0286,EMP-452,Tariq Hussain,MAINTENANCE,PPE Awareness,20/03/2021,15-02-2023,Completed,-1,,No
+TRN-0287,EMP-182,Tariq Hussain,DRILLING,FIRE SAFETY,,07 December 2022,N/A,,INTERNAL,yes
+TRN-0288,EMP-456,mohammed farooq,Operations,Defensive Driving,2023-01-31,07-04-2022,Failed,999,External,Pending
+TRN-0289,EMP-323,Unknown,construction,Defensive Driving,26 August 2022,01/09/2022,pending,N/A,,no
+TRN-0290,EMP-281,salman khan,,NEBOSH IGC,13-09-2022,,expired,,N/A,yes
+TRN-0291,EMP-454,salman khan,Warehousing,,12/03/2022,15-01-2022,Failed,56.3,Internal,yes
+TRN-0292,EMP-392,AHMED AL-RASHIDI,Operations,first aid,2022-04-15,2021-11-11,Expired,,internal,no
+TRN-0293,EMP-299,,drilling,fire safety,03 November 2022,09 November 2021,pending,-1,External,yes
+TRN-0294,EMP-105,Mohammed Farooq,DRILLING,Fire Safety,16/03/2022,21-11-2022,completed,,external,No
+TRN-0295,EMP-387,Ahmed Al-Rashidi,Logistics,NEBOSH IGC,21-02-2022,2023-04-05,Expired,,,No
+TRN-0296,EMP-500,,N/A,FIRE SAFETY,2022-12-21,27 October 2021,COMPLETED,999,External,yes
+TRN-0297,EMP-405,Salman Khan,drilling,fire safety,24 May 2022,22/08/2021,,76.3,External,Yes
+TRN-0298,EMP-201,Unknown,Ops,N/A,21/02/2023,21-08-2022,completed,-1,INTERNAL,Yes
+TRN-0299,EMP-139,Tariq Hussain,drilling,fire safety,15/08/2022,13-01-2021,Failed,N/A,internal,No
+TRN-0300,EMP-470,Salman Khan,Construction,PPE Awareness,26 August 2021,05 June 2022,,,,
