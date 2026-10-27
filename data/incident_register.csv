@@ -1,0 +1,501 @@
+Incident_ID,Date,Department,Incident_Type,Shift,Root_Cause,Severity,Days_Lost,Employee_Age,Reported_Formally,Corrective_Action,Investigation_Done
+INC-0001,,OPS,NEAR MISS,Morning,PPE Non-Compliance,Medium,-1.0,50,Y,,no
+INC-0002,10-09-2022,Construction,Environmental,NIGHT,,Low,30.0,30,yes,Warning Issued,yes
+INC-0003,"November 24, 2023",Operations,Environmental,NIGHT,Human Error,Med,21.0,,Yes,,no
+INC-0004,31/01/2022,Operations,NEAR MISS,MORNING,Fatigue,Med,0.0,30,NO,,N/A
+INC-0005,"January 28, 2022",Maintenance,near miss,Night,,,14.0,22,no,Warning Issued,No
+INC-0006,13-07-2023,DRILLING,Property Damage,Afternoon,Fatigue,,7.0,28,no,Equipment Check,N/A
+INC-0007,01-07-2022,Operations,property damage,MORNING,N/A,MEDIUM,2.0,,Y,Equipment Check,N/A
+INC-0008,06-09-2022,Warehousing,Near Miss,afternoon,Equipment Failure,Critical,21.0,35,YES,TBD,N/A
+INC-0009,05-04-2022,Drilling,property damage,afternoon,lack of training,Critical,,30,NO,Toolbox Talk,Yes
+INC-0010,2023/09/11,Warehousing,Environmental,night shift,,Med,,unknown,yes,Equipment Check,yes
+INC-0011,04/07/2023,Operations,NEAR MISS,MORNING,,N/a,14.0,0,NO,,no
+INC-0012,2023/07/20,Operations,Lost Time Injury,Morning,Equipment Failure,LOW,14.0,40,N,TBD,N/A
+INC-0013,"January 06, 2023",Operations,LTI,N/A,fatigue,Low,1.0,0,N,Equipment Check,no
+INC-0014,11-09-2023,MAINTENANCE,Unsafe Act,N/A,Poor Housekeeping,low,30.0,0,N,N/A,Yes
+INC-0015,27/08/2022,OPS,First Aid,N/A,fatigue,HIGH,0.0,999,NO,TBD,
+INC-0016,01-09-2023,Maintenance,Environmental,Afternoon,Unknown,low,14.0,40,YES,,No
+INC-0017,01/10/2022,OPS,Unsafe Act,afternoon,ppe non compliance,N/a,7.0,30,N,,Yes
+INC-0018,09-08-2022,MAINTENANCE,NEAR MISS,night shift,fatigue,N/a,0.0,35,,Toolbox Talk,
+INC-0019,"October 18, 2023",drilling,,NIGHT,lack of training,N/a,10.0,28,No,,No
+INC-0020,02-27-2022,Drilling,lti,,Poor Housekeeping,High,21.0,999,yes,Training,N/A
+INC-0021,2023/02/15,drilling,property damage,night shift,Lack of Training,LOW,30.0,,,Equipment Check,no
+INC-0022,2023/08/04,construction,Environmental,Morning,N/A,MEDIUM,14.0,30,No,Toolbox Talk,
+INC-0023,21-10-2023,Construction,Lost Time Injury,morning,HUMAN ERROR,CRITICAL,,45,YES,Warning Issued,Yes
+INC-0024,"July 29, 2023",logistics ,,afternoon,N/A,Medium,-1.0,35,yes,,yes
+INC-0025,21-08-2023,Ops,First Aid,NIGHT,fatigue,Medium,5.0,35,,TBD,N/A
+INC-0026,"May 22, 2022",logistics ,near miss,MORNING,Poor Housekeeping,LOW,0.0,22,no,Training,Yes
+INC-0027,04-23-2022,logistics ,,NIGHT,HUMAN ERROR,High,-1.0,,YES,TBD,Yes
+INC-0028,"March 09, 2023",Warehousing,near miss,Afternoon,Lack of Training,Medium,21.0,0,No,N/A,yes
+INC-0029,"April 25, 2023",Ops,NEAR MISS,,human error,HIGH,1.0,unknown,No,,N/A
+INC-0030,12/01/2022,Warehousing,unsafe act,Afternoon,ppe non compliance,,0.0,28,Yes,N/A,
+INC-0031,2022/10/01,Construction,near miss,,HUMAN ERROR,Medium,14.0,999,,N/A,N/A
+INC-0032,10/04/2023,Logistics,property damage,Morning,,N/a,30.0,999,Yes,,N/A
+INC-0033,"September 27, 2022",Maintenance,Unsafe Act,NIGHT,Lack of Training,Med,0.0,45,,N/A,
+INC-0034,2022/04/19,MAINTENANCE,lti,Night,,LOW,1.0,,,Toolbox Talk,Yes
+INC-0035,07-23-2022,Logistics,LTI,night shift,Unknown,,0.0,50,Y,,Yes
+INC-0036,28/06/2023,OPS,lti,,Poor Housekeeping,High,7.0,22,,Training,
+INC-0037,2022/04/25,Operations,LTI,night shift,Unknown,Low,3.0,40,no,N/A,N/A
+INC-0038,11-11-2022,Warehousing,unsafe act,Night,HUMAN ERROR,,5.0,999,Yes,Warning Issued,yes
+INC-0039,22/03/2022,Ops,NEAR MISS,N/A,fatigue,,0.0,999,,Equipment Check,No
+INC-0040,06-30-2023,logistics ,First Aid,,lack of training,CRITICAL,5.0,45,YES,,yes
+INC-0041,07-17-2023,DRILLING,first aid,Night,fatigue,LOW,30.0,,,N/A,no
+INC-0042,03-10-2023,Maintenance,Environmental,NIGHT,human error,,1.0,40,,N/A,N/A
+INC-0043,12-08-2023,Drilling,near miss,afternoon,Equipment Failure,HIGH,5.0,unknown,N,TBD,Yes
+INC-0044,2023/11/19,Logistics,First Aid,MORNING,lack of training,HIGH,10.0,45,yes,TBD,
+INC-0045,05-04-2022,drilling,Property Damage,Morning,Equipment Failure,,,45,NO,Training,yes
+INC-0046,"August 26, 2023",construction,property damage,Night,,CRITICAL,14.0,28,Y,,no
+INC-0047,14/03/2022,MAINTENANCE,property damage,N/A,N/A,Critical,999.0,35,no,,no
+INC-0048,05/12/2022,N/A,Unsafe Act,Afternoon,Lack of Training,low,7.0,45,,TBD,Yes
+INC-0049,05-13-2023,drilling,property damage,Morning,PPE Non-Compliance,HIGH,-1.0,28,YES,Equipment Check,No
+INC-0050,"August 08, 2023",drilling,first aid,afternoon,Unknown,Low,-1.0,,yes,Equipment Check,No
+INC-0051,02-21-2023,,unsafe act,Morning,lack of training,Critical,30.0,50,N,N/A,no
+INC-0052,29-12-2022,Ops,Unsafe Act,night shift,lack of training,N/a,30.0,30,,,yes
+INC-0053,25/02/2022,DRILLING,Near Miss,,Lack of Training,Low,0.0,30,,,no
+INC-0054,04-22-2022,Maintenance,,Night,Fatigue,Critical,30.0,35,No,Training,N/A
+INC-0055,24-05-2022,construction,,N/A,Lack of Training,High,0.0,unknown,Y,Training,Yes
+INC-0056,19-03-2022,Maintenance,Environmental,Afternoon,ppe non compliance,CRITICAL,10.0,28,NO,Equipment Check,Yes
+INC-0057,11/04/2022,Logistics,,MORNING,N/A,HIGH,1.0,50,,N/A,No
+INC-0058,16/01/2022,OPS,first aid,morning,human error,Critical,10.0,22,Yes,Warning Issued,no
+INC-0059,20-06-2022,Construction,First Aid,Afternoon,ppe non compliance,,3.0,,no,N/A,
+INC-0060,99/99/9999,logistics ,Property Damage,Afternoon,Human Error,low,21.0,45,,N/A,
+INC-0061,2023/02/04,Logistics,property damage,afternoon,N/A,N/a,7.0,45,yes,,yes
+INC-0062,20-10-2022,Maintenance,Property Damage,,fatigue,CRITICAL,10.0,,,,yes
+INC-0063,24-07-2023,Logistics,First Aid,Morning,Fatigue,low,5.0,,yes,,N/A
+INC-0064,"March 01, 2022",drilling,Unsafe Act,Afternoon,Fatigue,N/a,3.0,28,N,,No
+INC-0065,18/11/2022,Logistics,lti,N/A,Fatigue,low,0.0,45,yes,TBD,Yes
+INC-0066,06-28-2023,Ops,first aid,NIGHT,human error,LOW,7.0,30,yes,N/A,
+INC-0067,10/07/2022,Ops,Environmental,Night,ppe non compliance,High,999.0,35,,TBD,N/A
+INC-0068,29-08-2022,Logistics,Near Miss,MORNING,Equipment Failure,,10.0,30,,,
+INC-0069,"September 10, 2022",Maintenance,unsafe act,MORNING,Poor Housekeeping,CRITICAL,3.0,40,yes,Equipment Check,
+INC-0070,"March 06, 2023",drilling,,Afternoon,human error,CRITICAL,10.0,999,N,Equipment Check,N/A
+INC-0071,09-25-2022,construction,unsafe act,N/A,N/A,Med,3.0,25,NO,Toolbox Talk,
+INC-0072,29-09-2022,Drilling,First Aid,Night,fatigue,Critical,21.0,50,Yes,Equipment Check,No
+INC-0073,2023/04/14,OPS,Lost Time Injury,Night,PPE Non-Compliance,High,,40,no,Warning Issued,no
+INC-0074,10-01-2022,Ops,lti,N/A,Poor Housekeeping,High,-1.0,25,N,,
+INC-0075,13/04/2022,drilling,near miss,Morning,Lack of Training,CRITICAL,30.0,,no,Training,Yes
+INC-0076,2022/05/16,Drilling,First Aid,Night,PPE Non-Compliance,N/a,21.0,unknown,No,Warning Issued,N/A
+INC-0077,2023/01/14,,Lost Time Injury,N/A,Human Error,,21.0,30,YES,Equipment Check,
+INC-0078,2023/12/22,Maintenance,Environmental,N/A,N/A,Medium,,22,NO,,yes
+INC-0079,,Operations,property damage,MORNING,N/A,MEDIUM,30.0,35,no,Training,Yes
+INC-0080,2023/07/22,drilling,near miss,N/A,HUMAN ERROR,High,2.0,45,Yes,Training,no
+INC-0081,2022/05/18,Operations,Property Damage,Afternoon,HUMAN ERROR,Med,14.0,999,no,Training,
+INC-0082,07-21-2023,OPS,,night shift,Equipment Failure,MEDIUM,7.0,0,,TBD,No
+INC-0083,12-18-2022,DRILLING,Near Miss,,lack of training,HIGH,1.0,0,NO,Toolbox Talk,No
+INC-0084,02-06-2023,N/A,LTI,afternoon,PPE Non-Compliance,,1.0,22,Y,Toolbox Talk,
+INC-0085,22/02/2022,Ops,,MORNING,Fatigue,low,2.0,25,N,,yes
+INC-0086,15/02/2022,Construction,LTI,night shift,ppe non compliance,low,10.0,30,N,Training,N/A
+INC-0087,09-26-2022,logistics ,NEAR MISS,Morning,HUMAN ERROR,High,2.0,0,Yes,Training,No
+INC-0088,,DRILLING,lti,morning,lack of training,CRITICAL,1.0,unknown,Yes,,Yes
+INC-0089,03-19-2022,logistics ,,Morning,N/A,N/a,2.0,999,NO,Equipment Check,N/A
+INC-0090,"August 20, 2023",DRILLING,,Afternoon,,N/a,,,No,Training,yes
+INC-0091,2022/11/12,Maintenance,property damage,N/A,HUMAN ERROR,Critical,2.0,30,,,no
+INC-0092,2022/02/10,logistics ,lti,Afternoon,Unknown,MEDIUM,30.0,50,YES,,N/A
+INC-0093,2022/04/16,MAINTENANCE,LTI,Morning,human error,N/a,1.0,30,YES,Warning Issued,no
+INC-0094,"February 21, 2023",Logistics,Property Damage,,ppe non compliance,Critical,30.0,40,,Warning Issued,N/A
+INC-0095,08-31-2022,Construction,Environmental,night shift,lack of training,Med,30.0,35,,,N/A
+INC-0096,27/02/2023,OPS,NEAR MISS,Morning,fatigue,N/a,7.0,22,,TBD,No
+INC-0097,02-26-2023,MAINTENANCE,unsafe act,Night,HUMAN ERROR,N/a,3.0,30,yes,Equipment Check,yes
+INC-0098,21-04-2022,Operations,Lost Time Injury,N/A,lack of training,Critical,7.0,30,Y,Equipment Check,No
+INC-0099,08-16-2022,DRILLING,unsafe act,Afternoon,fatigue,,3.0,unknown,Y,Equipment Check,no
+INC-0100,11-09-2022,DRILLING,near miss,MORNING,Human Error,Medium,10.0,25,NO,Toolbox Talk,No
+INC-0101,2023/02/13,Operations,Near Miss,Night,Human Error,Medium,999.0,unknown,,Toolbox Talk,yes
+INC-0102,2022/10/13,Operations,property damage,MORNING,ppe non compliance,Medium,999.0,50,No,N/A,
+INC-0103,2023/07/04,MAINTENANCE,near miss,Night,Lack of Training,CRITICAL,,30,,N/A,no
+INC-0104,09-25-2022,MAINTENANCE,Near Miss,Morning,Equipment Failure,N/a,30.0,unknown,YES,TBD,
+INC-0105,09/02/2022,Drilling,first aid,Morning,Unknown,MEDIUM,2.0,0,Y,TBD,yes
+INC-0106,18-11-2022,Ops,First Aid,MORNING,Unknown,,2.0,unknown,no,,no
+INC-0107,"January 30, 2023",Warehousing,Near Miss,N/A,HUMAN ERROR,Med,0.0,30,,TBD,No
+INC-0108,23/03/2023,N/A,,MORNING,Fatigue,,14.0,45,Y,Equipment Check,No
+INC-0109,12-05-2023,Construction,Near Miss,morning,Unknown,low,21.0,30,NO,Equipment Check,N/A
+INC-0110,2023/11/12,Logistics,unsafe act,,HUMAN ERROR,N/a,10.0,,NO,TBD,No
+INC-0111,2022/05/08,Warehousing,lti,Night,ppe non compliance,,5.0,40,N,,no
+INC-0112,01-12-2022,MAINTENANCE,Property Damage,morning,Unknown,low,999.0,35,N,,no
+INC-0113,16-07-2022,MAINTENANCE,first aid,Night,Unknown,Critical,5.0,45,,N/A,N/A
+INC-0114,"June 28, 2022",Drilling,Environmental,NIGHT,Unknown,Critical,-1.0,50,Yes,TBD,No
+INC-0115,2022/01/01,Ops,Unsafe Act,N/A,human error,N/a,3.0,,,Warning Issued,No
+INC-0116,"August 17, 2023",Construction,Property Damage,morning,HUMAN ERROR,,,999,yes,Training,
+INC-0117,03-29-2023,Construction,unsafe act,Night,Fatigue,Med,,40,N,TBD,N/A
+INC-0118,23/06/2022,construction,lti,afternoon,PPE Non-Compliance,N/a,0.0,35,yes,,N/A
+INC-0119,2023/09/27,OPS,lti,Night,fatigue,LOW,2.0,35,no,N/A,no
+INC-0120,2022/08/29,Ops,Unsafe Act,MORNING,PPE Non-Compliance,,0.0,40,No,,No
+INC-0121,26/01/2022,OPS,lti,MORNING,PPE Non-Compliance,Med,2.0,,,,yes
+INC-0122,16-03-2022,OPS,near miss,NIGHT,PPE Non-Compliance,Critical,30.0,50,YES,Equipment Check,No
+INC-0123,19-07-2022,drilling,Environmental,night shift,ppe non compliance,HIGH,0.0,50,no,,N/A
+INC-0124,03/11/2023,Warehousing,Property Damage,Night,PPE Non-Compliance,CRITICAL,3.0,25,yes,Toolbox Talk,no
+INC-0125,20-04-2022,drilling,Property Damage,MORNING,Human Error,CRITICAL,999.0,unknown,yes,Toolbox Talk,No
+INC-0126,"December 14, 2023",OPS,property damage,,Human Error,,7.0,50,yes,Equipment Check,
+INC-0127,05-05-2022,,NEAR MISS,N/A,Poor Housekeeping,N/a,21.0,40,NO,N/A,Yes
+INC-0128,"June 28, 2023",logistics ,first aid,Night,Equipment Failure,High,2.0,30,,,no
+INC-0129,"March 30, 2023",DRILLING,near miss,Afternoon,,,30.0,40,No,TBD,no
+INC-0130,"March 13, 2023",Maintenance,first aid,N/A,lack of training,N/a,7.0,40,no,Toolbox Talk,N/A
+INC-0131,02-05-2023,Maintenance,near miss,MORNING,Human Error,Critical,1.0,45,Y,TBD,Yes
+INC-0132,2023/10/15,Construction,Property Damage,NIGHT,lack of training,MEDIUM,1.0,22,NO,TBD,No
+INC-0133,10-04-2023,Logistics,,afternoon,Unknown,High,-1.0,0,No,,
+INC-0134,10-20-2022,drilling,First Aid,afternoon,N/A,,10.0,30,N,Toolbox Talk,No
+INC-0135,08/07/2023,construction,unsafe act,MORNING,Poor Housekeeping,Low,2.0,unknown,N,,N/A
+INC-0136,12-12-2023,Operations,NEAR MISS,MORNING,Equipment Failure,Critical,999.0,28,N,,Yes
+INC-0137,2023/02/22,,Property Damage,Morning,Human Error,LOW,10.0,22,no,Warning Issued,
+INC-0138,31-07-2022,Logistics,LTI,N/A,fatigue,Low,30.0,35,,Toolbox Talk,yes
+INC-0139,14/12/2023,logistics ,lti,NIGHT,Human Error,High,2.0,,yes,N/A,yes
+INC-0140,,Operations,property damage,N/A,fatigue,low,0.0,0,Y,Warning Issued,
+INC-0141,2022/12/27,Maintenance,Environmental,Morning,,Low,0.0,0,Yes,,yes
+INC-0142,"March 06, 2023",Warehousing,unsafe act,MORNING,Equipment Failure,,14.0,unknown,no,,N/A
+INC-0143,09-10-2023,MAINTENANCE,,N/A,Equipment Failure,Low,30.0,45,Yes,,N/A
+INC-0144,13/05/2023,Warehousing,Environmental,Night,,Medium,14.0,35,yes,Warning Issued,N/A
+INC-0145,02-19-2023,MAINTENANCE,Environmental,N/A,lack of training,MEDIUM,1.0,28,,Equipment Check,
+INC-0146,,Warehousing,Environmental,Afternoon,Lack of Training,,1.0,30,,,No
+INC-0147,99/99/9999,drilling,near miss,N/A,HUMAN ERROR,,0.0,40,yes,,No
+INC-0148,21-10-2023,Maintenance,first aid,morning,human error,low,21.0,30,yes,Warning Issued,Yes
+INC-0149,2022/02/21,Maintenance,Unsafe Act,night shift,PPE Non-Compliance,MEDIUM,999.0,45,,,No
+INC-0150,2022/12/01,,lti,MORNING,Poor Housekeeping,,10.0,0,Yes,Training,No
+INC-0151,2023/03/08,Logistics,Unsafe Act,Night,Fatigue,MEDIUM,1.0,30,,,Yes
+INC-0152,07/07/2023,Warehousing,,morning,Lack of Training,low,21.0,50,yes,Warning Issued,no
+INC-0153,28/10/2023,DRILLING,First Aid,Afternoon,HUMAN ERROR,Low,1.0,,Yes,,no
+INC-0154,99/99/9999,,Near Miss,Night,human error,N/a,0.0,999,yes,,
+INC-0155,06-06-2022,Operations,First Aid,Night,N/A,,0.0,999,YES,,no
+INC-0156,08-01-2023,Ops,near miss,MORNING,Human Error,MEDIUM,5.0,40,yes,,no
+INC-0157,01-13-2023,OPS,,morning,Lack of Training,Medium,3.0,35,,Warning Issued,no
+INC-0158,04-28-2022,construction,lti,Night,Lack of Training,,30.0,50,Y,Training,No
+INC-0159,2022/01/27,N/A,near miss,night shift,ppe non compliance,Critical,7.0,unknown,,Equipment Check,no
+INC-0160,20-01-2023,Warehousing,Lost Time Injury,Morning,,Low,0.0,999,,Equipment Check,No
+INC-0161,08-30-2023,Warehousing,property damage,afternoon,Poor Housekeeping,Med,21.0,unknown,Yes,,No
+INC-0162,"December 02, 2023",drilling,property damage,Afternoon,Fatigue,HIGH,,50,YES,Training,N/A
+INC-0163,03/08/2023,Operations,Near Miss,Afternoon,Poor Housekeeping,LOW,0.0,50,No,TBD,Yes
+INC-0164,15/01/2023,DRILLING,first aid,morning,lack of training,CRITICAL,0.0,28,no,TBD,
+INC-0165,07-03-2023,Maintenance,Environmental,Night,PPE Non-Compliance,,10.0,unknown,N,,Yes
+INC-0166,13-10-2023,drilling,Unsafe Act,afternoon,fatigue,N/a,999.0,40,,TBD,N/A
+INC-0167,2023/06/19,Construction,Environmental,morning,HUMAN ERROR,Critical,0.0,28,N,Warning Issued,yes
+INC-0168,11-05-2023,construction,Unsafe Act,Morning,lack of training,Medium,5.0,28,N,N/A,No
+INC-0169,2022/10/02,drilling,NEAR MISS,Morning,ppe non compliance,N/a,21.0,unknown,yes,Toolbox Talk,no
+INC-0170,2022/03/30,DRILLING,near miss,NIGHT,lack of training,,999.0,,no,Equipment Check,no
+INC-0171,"April 21, 2023",Maintenance,Near Miss,night shift,Unknown,Critical,999.0,50,Y,Toolbox Talk,yes
+INC-0172,30-01-2022,Ops,Unsafe Act,NIGHT,Equipment Failure,High,999.0,28,,Toolbox Talk,N/A
+INC-0173,2022/08/06,DRILLING,NEAR MISS,MORNING,HUMAN ERROR,Medium,7.0,,yes,Equipment Check,N/A
+INC-0174,2023/09/03,logistics ,Unsafe Act,NIGHT,Unknown,Critical,7.0,999,,Training,
+INC-0175,15/07/2022,MAINTENANCE,Near Miss,night shift,PPE Non-Compliance,,21.0,22,yes,,No
+INC-0176,07-23-2023,MAINTENANCE,NEAR MISS,NIGHT,Human Error,,1.0,,,,yes
+INC-0177,18-05-2023,Warehousing,Lost Time Injury,Night,Equipment Failure,,,22,,Equipment Check,yes
+INC-0178,15-08-2022,DRILLING,LTI,,Equipment Failure,N/a,2.0,25,YES,TBD,yes
+INC-0179,2023/08/19,Warehousing,Property Damage,NIGHT,,MEDIUM,3.0,999,yes,Toolbox Talk,No
+INC-0180,"March 12, 2023",MAINTENANCE,Property Damage,morning,HUMAN ERROR,N/a,2.0,22,NO,Warning Issued,No
+INC-0181,2022/10/05,MAINTENANCE,unsafe act,night shift,Equipment Failure,,21.0,22,N,Training,No
+INC-0182,2022/07/17,DRILLING,,N/A,,Low,0.0,45,,Equipment Check,No
+INC-0183,12-08-2023,Logistics,Unsafe Act,Afternoon,Human Error,High,999.0,28,,Toolbox Talk,Yes
+INC-0184,"October 11, 2022",Operations,first aid,MORNING,Fatigue,High,,999,No,TBD,yes
+INC-0185,17/10/2022,logistics ,NEAR MISS,night shift,Poor Housekeeping,High,0.0,30,no,Warning Issued,Yes
+INC-0186,01-05-2023,Ops,LTI,morning,HUMAN ERROR,,21.0,25,Y,N/A,
+INC-0187,,N/A,NEAR MISS,Morning,human error,,14.0,unknown,Y,,yes
+INC-0188,"February 25, 2022",Operations,Unsafe Act,afternoon,lack of training,Med,1.0,28,yes,,No
+INC-0189,99/99/9999,N/A,unsafe act,Morning,,Critical,10.0,22,No,TBD,N/A
+INC-0190,19-10-2022,DRILLING,,Night,fatigue,Low,30.0,30,Yes,N/A,N/A
+INC-0191,2022/02/22,logistics ,first aid,afternoon,Unknown,Low,30.0,,no,TBD,No
+INC-0192,08-03-2022,DRILLING,Unsafe Act,morning,Human Error,N/a,-1.0,50,,Toolbox Talk,No
+INC-0193,04/12/2023,Logistics,,morning,PPE Non-Compliance,MEDIUM,999.0,40,,N/A,Yes
+INC-0194,08/11/2022,construction,near miss,Night,fatigue,Medium,0.0,22,Y,Training,No
+INC-0195,"March 03, 2023",DRILLING,unsafe act,MORNING,Lack of Training,CRITICAL,999.0,0,yes,Equipment Check,yes
+INC-0196,20-06-2023,DRILLING,,NIGHT,Unknown,,999.0,999,,Toolbox Talk,no
+INC-0197,26-08-2023,Maintenance,Near Miss,MORNING,Poor Housekeeping,HIGH,0.0,999,No,,yes
+INC-0198,17/09/2023,,LTI,morning,Fatigue,Medium,5.0,0,yes,,N/A
+INC-0199,2022/08/05,Logistics,unsafe act,,Human Error,,999.0,50,N,Training,
+INC-0200,99/99/9999,Warehousing,lti,morning,Fatigue,N/a,-1.0,999,,TBD,yes
+INC-0201,"April 07, 2023",Drilling,first aid,Night,Human Error,N/a,0.0,50,,Equipment Check,No
+INC-0202,2022/10/23,,Property Damage,N/A,fatigue,,999.0,22,Yes,Warning Issued,yes
+INC-0203,12-05-2023,Maintenance,near miss,N/A,human error,Med,999.0,22,,,yes
+INC-0204,"October 03, 2023",Drilling,first aid,night shift,fatigue,,0.0,,,,Yes
+INC-0205,12/03/2023,Logistics,Unsafe Act,Morning,N/A,CRITICAL,-1.0,,No,Toolbox Talk,no
+INC-0206,09-30-2022,DRILLING,property damage,NIGHT,Human Error,Critical,5.0,45,No,Training,N/A
+INC-0207,"November 11, 2022",Construction,Environmental,MORNING,Human Error,N/a,,22,N,Warning Issued,yes
+INC-0208,23-10-2022,,near miss,N/A,,CRITICAL,7.0,22,yes,,N/A
+INC-0209,18-12-2023,MAINTENANCE,Lost Time Injury,NIGHT,human error,Medium,0.0,,,TBD,
+INC-0210,21-05-2023,logistics ,Lost Time Injury,MORNING,PPE Non-Compliance,,999.0,unknown,,Warning Issued,yes
+INC-0211,99/99/9999,logistics ,Property Damage,Morning,ppe non compliance,N/a,30.0,35,Yes,Toolbox Talk,no
+INC-0212,99/99/9999,Operations,LTI,morning,PPE Non-Compliance,Medium,-1.0,,Y,Warning Issued,N/A
+INC-0213,2023/11/20,Logistics,Near Miss,Night,human error,MEDIUM,999.0,35,,TBD,no
+INC-0214,29-06-2022,MAINTENANCE,Lost Time Injury,Afternoon,Poor Housekeeping,HIGH,2.0,22,Y,Training,no
+INC-0215,10-12-2022,Operations,,Afternoon,Lack of Training,low,999.0,,NO,Warning Issued,no
+INC-0216,19/05/2023,Logistics,property damage,NIGHT,ppe non compliance,,0.0,unknown,Yes,TBD,no
+INC-0217,25/11/2022,MAINTENANCE,NEAR MISS,,,LOW,0.0,999,,,N/A
+INC-0218,12-12-2023,Ops,LTI,,HUMAN ERROR,low,2.0,45,Y,,N/A
+INC-0219,18/07/2023,,NEAR MISS,afternoon,Equipment Failure,low,14.0,28,no,N/A,Yes
+INC-0220,28/11/2022,Logistics,first aid,afternoon,,N/a,14.0,25,N,Equipment Check,no
+INC-0221,11/06/2023,Logistics,unsafe act,afternoon,fatigue,Critical,0.0,25,Y,Toolbox Talk,Yes
+INC-0222,28/02/2023,DRILLING,near miss,Afternoon,fatigue,LOW,999.0,,NO,Training,yes
+INC-0223,26-05-2023,drilling,,morning,Human Error,High,3.0,28,,,yes
+INC-0224,07-17-2023,Warehousing,property damage,Morning,Lack of Training,Low,2.0,30,,TBD,Yes
+INC-0225,17-12-2023,Drilling,Environmental,NIGHT,PPE Non-Compliance,High,7.0,30,No,,No
+INC-0226,09-16-2023,OPS,Unsafe Act,N/A,fatigue,MEDIUM,21.0,0,Y,Warning Issued,no
+INC-0227,"January 15, 2022",OPS,near miss,,human error,Critical,10.0,,yes,N/A,no
+INC-0228,27-04-2022,Construction,First Aid,night shift,fatigue,MEDIUM,10.0,35,YES,Toolbox Talk,yes
+INC-0229,07-06-2022,construction,Unsafe Act,MORNING,Poor Housekeeping,low,7.0,40,N,Warning Issued,N/A
+INC-0230,2023/12/24,Drilling,Property Damage,Morning,Lack of Training,low,999.0,35,no,Training,Yes
+INC-0231,04-29-2023,construction,Near Miss,Night,Fatigue,CRITICAL,0.0,45,No,Warning Issued,no
+INC-0232,"July 15, 2022",Construction,Near Miss,Morning,Fatigue,MEDIUM,-1.0,25,YES,,yes
+INC-0233,2022/03/13,logistics ,,NIGHT,,Low,10.0,40,,N/A,no
+INC-0234,99/99/9999,construction,,morning,HUMAN ERROR,Med,7.0,45,,Toolbox Talk,N/A
+INC-0235,"November 02, 2022",DRILLING,Near Miss,afternoon,PPE Non-Compliance,HIGH,2.0,50,Y,Equipment Check,Yes
+INC-0236,02-06-2022,OPS,First Aid,N/A,N/A,N/a,1.0,0,YES,,No
+INC-0237,"July 20, 2023",Logistics,Near Miss,night shift,human error,low,,30,no,Training,
+INC-0238,07-13-2022,Warehousing,Lost Time Injury,Afternoon,Poor Housekeeping,Low,0.0,unknown,Yes,,yes
+INC-0239,25/02/2023,Ops,LTI,morning,,low,3.0,30,Yes,Warning Issued,yes
+INC-0240,26-01-2023,OPS,lti,Morning,Fatigue,Med,0.0,35,,Toolbox Talk,
+INC-0241,10-30-2023,OPS,,Afternoon,human error,CRITICAL,30.0,999,,Toolbox Talk,
+INC-0242,"May 30, 2023",Logistics,NEAR MISS,MORNING,Lack of Training,Low,7.0,25,No,TBD,yes
+INC-0243,27/03/2023,logistics ,NEAR MISS,afternoon,human error,,21.0,999,,Equipment Check,No
+INC-0244,28-05-2022,logistics ,,morning,Unknown,,2.0,999,Yes,N/A,yes
+INC-0245,18-03-2022,drilling,,night shift,human error,CRITICAL,30.0,22,Y,Training,
+INC-0246,01-10-2023,Warehousing,Near Miss,morning,ppe non compliance,,0.0,25,no,Warning Issued,no
+INC-0247,"November 22, 2023",drilling,Property Damage,afternoon,Equipment Failure,MEDIUM,0.0,45,NO,Equipment Check,Yes
+INC-0248,,construction,unsafe act,NIGHT,Fatigue,HIGH,30.0,45,Y,TBD,N/A
+INC-0249,03-12-2022,OPS,,night shift,Equipment Failure,,3.0,45,NO,Training,no
+INC-0250,21/08/2022,logistics ,Unsafe Act,night shift,Unknown,CRITICAL,,,No,N/A,No
+INC-0251,11/10/2023,,Unsafe Act,afternoon,Lack of Training,Critical,2.0,50,yes,Toolbox Talk,yes
+INC-0252,30/01/2022,Maintenance,Environmental,morning,N/A,Med,14.0,22,Y,Toolbox Talk,N/A
+INC-0253,2023/01/03,logistics ,lti,,Poor Housekeeping,LOW,21.0,999,,N/A,yes
+INC-0254,"February 26, 2023",,First Aid,NIGHT,Equipment Failure,,,22,YES,Equipment Check,Yes
+INC-0255,29/06/2022,OPS,LTI,MORNING,lack of training,N/a,1.0,unknown,YES,Training,N/A
+INC-0256,12-01-2023,Drilling,First Aid,Night,,Med,0.0,28,,Equipment Check,no
+INC-0257,26-08-2022,OPS,lti,NIGHT,PPE Non-Compliance,Critical,14.0,25,Y,TBD,Yes
+INC-0258,14/11/2023,Ops,,Night,Lack of Training,Medium,-1.0,50,,Warning Issued,No
+INC-0259,"October 22, 2022",Logistics,Unsafe Act,MORNING,HUMAN ERROR,low,21.0,45,NO,N/A,no
+INC-0260,"December 20, 2022",logistics ,LTI,night shift,Human Error,Critical,999.0,999,,N/A,N/A
+INC-0261,2023/12/08,Construction,first aid,Morning,Poor Housekeeping,LOW,5.0,40,YES,TBD,no
+INC-0262,29-01-2023,MAINTENANCE,,afternoon,ppe non compliance,,-1.0,0,Y,Warning Issued,No
+INC-0263,"January 03, 2023",drilling,near miss,night shift,Equipment Failure,Critical,5.0,25,no,Toolbox Talk,yes
+INC-0264,23-01-2022,Ops,property damage,night shift,,low,10.0,,Y,,yes
+INC-0265,04/12/2023,,LTI,afternoon,ppe non compliance,High,3.0,22,,N/A,
+INC-0266,10-21-2022,Operations,near miss,Afternoon,lack of training,Critical,0.0,30,,Equipment Check,yes
+INC-0267,10-14-2023,OPS,Property Damage,afternoon,Equipment Failure,Critical,5.0,30,N,,Yes
+INC-0268,11-07-2023,Construction,Environmental,N/A,Human Error,High,21.0,unknown,yes,Toolbox Talk,No
+INC-0269,24/10/2023,construction,,Morning,Human Error,LOW,0.0,0,NO,TBD,yes
+INC-0270,2023/08/17,,Near Miss,MORNING,fatigue,Med,0.0,50,,TBD,no
+INC-0271,2022/10/30,Drilling,NEAR MISS,morning,human error,Medium,0.0,35,,,N/A
+INC-0272,"May 16, 2022",Logistics,First Aid,morning,human error,Medium,7.0,22,N,TBD,No
+INC-0273,2023/05/29,construction,unsafe act,Night,N/A,,3.0,25,YES,Warning Issued,yes
+INC-0274,2023/05/09,Maintenance,Property Damage,,Fatigue,Med,999.0,999,YES,Equipment Check,Yes
+INC-0275,28-04-2022,,Near Miss,NIGHT,fatigue,Med,1.0,35,,N/A,
+INC-0276,20-08-2022,,lti,N/A,ppe non compliance,Med,0.0,,NO,N/A,
+INC-0277,99/99/9999,drilling,near miss,Afternoon,HUMAN ERROR,MEDIUM,2.0,0,Y,TBD,N/A
+INC-0278,04/07/2023,Logistics,,,human error,Medium,5.0,999,yes,,N/A
+INC-0279,2023/11/20,,Lost Time Injury,Morning,Unknown,,1.0,22,No,Equipment Check,N/A
+INC-0280,16/01/2023,drilling,,NIGHT,Poor Housekeeping,CRITICAL,7.0,28,no,Training,No
+INC-0281,"September 27, 2023",OPS,first aid,,human error,Critical,,40,N,Equipment Check,N/A
+INC-0282,26/10/2023,OPS,unsafe act,NIGHT,,HIGH,2.0,22,yes,TBD,N/A
+INC-0283,2023/12/19,Construction,,,,Critical,3.0,30,No,,Yes
+INC-0284,16/02/2022,Construction,first aid,night shift,human error,,2.0,0,no,,Yes
+INC-0285,04-10-2022,OPS,LTI,N/A,Lack of Training,,14.0,28,,N/A,Yes
+INC-0286,2023/04/10,Ops,near miss,Afternoon,fatigue,Low,30.0,unknown,Y,TBD,N/A
+INC-0287,08-07-2023,Warehousing,Property Damage,night shift,Equipment Failure,LOW,14.0,45,NO,Toolbox Talk,yes
+INC-0288,01/03/2023,Ops,Lost Time Injury,afternoon,ppe non compliance,,0.0,25,,,N/A
+INC-0289,14/10/2022,Maintenance,Near Miss,morning,Lack of Training,Med,2.0,35,,Equipment Check,
+INC-0290,04-01-2023,,LTI,NIGHT,Lack of Training,HIGH,21.0,28,Yes,Toolbox Talk,Yes
+INC-0291,2023/12/04,Ops,First Aid,Morning,ppe non compliance,Medium,3.0,0,yes,N/A,no
+INC-0292,03/01/2023,Warehousing,first aid,,Human Error,,30.0,30,Y,Warning Issued,N/A
+INC-0293,06-05-2022,Operations,property damage,N/A,human error,CRITICAL,1.0,0,Yes,N/A,yes
+INC-0294,"October 17, 2023",MAINTENANCE,unsafe act,,N/A,CRITICAL,0.0,45,No,Training,N/A
+INC-0295,12-08-2022,DRILLING,first aid,N/A,HUMAN ERROR,Medium,21.0,999,yes,,no
+INC-0296,30/07/2022,Warehousing,Unsafe Act,N/A,N/A,Low,0.0,,N,Warning Issued,no
+INC-0297,08-24-2023,DRILLING,property damage,MORNING,Human Error,,7.0,40,,TBD,No
+INC-0298,,OPS,First Aid,morning,N/A,Med,2.0,45,Y,Equipment Check,yes
+INC-0299,05-29-2022,Construction,Lost Time Injury,night shift,Lack of Training,High,0.0,unknown,No,,no
+INC-0300,23/04/2022,,LTI,MORNING,lack of training,,5.0,28,No,N/A,yes
+INC-0301,"September 01, 2022",Construction,property damage,MORNING,Unknown,LOW,21.0,unknown,YES,,Yes
+INC-0302,02-23-2022,OPS,Lost Time Injury,Afternoon,fatigue,High,10.0,unknown,no,N/A,No
+INC-0303,07-03-2022,Drilling,unsafe act,Afternoon,lack of training,MEDIUM,999.0,25,NO,Training,
+INC-0304,31/08/2023,Warehousing,unsafe act,MORNING,PPE Non-Compliance,Critical,999.0,,No,Training,no
+INC-0305,22/09/2023,Maintenance,First Aid,Morning,,N/a,999.0,unknown,,Training,N/A
+INC-0306,"November 06, 2023",logistics ,Unsafe Act,NIGHT,human error,MEDIUM,30.0,40,Yes,Toolbox Talk,No
+INC-0307,01/02/2022,construction,,morning,human error,Low,,22,Y,Equipment Check,No
+INC-0308,13/03/2023,Warehousing,Property Damage,NIGHT,N/A,Critical,2.0,25,Y,Equipment Check,No
+INC-0309,17/03/2022,logistics ,unsafe act,Afternoon,Unknown,,30.0,45,,Toolbox Talk,No
+INC-0310,2022/05/10,DRILLING,unsafe act,MORNING,Human Error,Med,0.0,30,,Warning Issued,N/A
+INC-0311,2023/12/31,Maintenance,First Aid,N/A,Human Error,Critical,21.0,25,YES,Training,Yes
+INC-0312,29-10-2022,Ops,NEAR MISS,afternoon,N/A,,999.0,40,,TBD,yes
+INC-0313,20/12/2023,construction,Near Miss,Night,HUMAN ERROR,Critical,2.0,0,Yes,Warning Issued,
+INC-0314,07-19-2023,construction,,morning,fatigue,HIGH,3.0,0,yes,Training,
+INC-0315,2023/02/28,Warehousing,lti,morning,fatigue,HIGH,14.0,0,N,Toolbox Talk,N/A
+INC-0316,2022/04/08,construction,Near Miss,NIGHT,HUMAN ERROR,Low,1.0,45,N,,yes
+INC-0317,01-19-2023,,First Aid,,lack of training,MEDIUM,1.0,40,Yes,TBD,
+INC-0318,04/04/2022,logistics ,Property Damage,NIGHT,lack of training,,0.0,22,no,,N/A
+INC-0319,01-17-2023,N/A,LTI,,ppe non compliance,Medium,7.0,999,,Toolbox Talk,No
+INC-0320,"July 30, 2023",Operations,Environmental,Night,Fatigue,Med,0.0,35,YES,N/A,Yes
+INC-0321,29-12-2022,,,afternoon,Lack of Training,Critical,7.0,50,no,Warning Issued,No
+INC-0322,"October 22, 2022",drilling,Unsafe Act,,,LOW,30.0,50,Yes,Training,No
+INC-0323,06-04-2023,DRILLING,,night shift,human error,LOW,14.0,30,,Toolbox Talk,Yes
+INC-0324,2022/04/21,OPS,Near Miss,Morning,lack of training,low,3.0,40,,Warning Issued,no
+INC-0325,"October 13, 2022",OPS,LTI,N/A,N/A,,5.0,,,TBD,
+INC-0326,"July 29, 2023",MAINTENANCE,Near Miss,N/A,lack of training,Critical,30.0,45,no,Training,Yes
+INC-0327,"January 27, 2022",N/A,unsafe act,,HUMAN ERROR,Critical,10.0,45,,TBD,yes
+INC-0328,01/10/2022,Drilling,Environmental,NIGHT,human error,Low,999.0,28,yes,Toolbox Talk,yes
+INC-0329,2022/11/13,construction,lti,morning,PPE Non-Compliance,,7.0,999,Yes,N/A,yes
+INC-0330,"May 27, 2022",,,NIGHT,PPE Non-Compliance,LOW,,0,NO,,no
+INC-0331,11/10/2023,Operations,Unsafe Act,MORNING,ppe non compliance,Medium,10.0,999,no,N/A,Yes
+INC-0332,21-01-2023,DRILLING,Unsafe Act,MORNING,Lack of Training,,,45,Yes,Toolbox Talk,no
+INC-0333,2022/11/16,Ops,first aid,N/A,N/A,,21.0,25,yes,,yes
+INC-0334,28/03/2022,,near miss,N/A,PPE Non-Compliance,,-1.0,0,No,Toolbox Talk,No
+INC-0335,20/02/2022,DRILLING,First Aid,N/A,,Medium,1.0,35,YES,Training,No
+INC-0336,"May 13, 2023",Construction,Property Damage,morning,N/A,,,30,Y,,no
+INC-0337,09/06/2023,DRILLING,First Aid,morning,ppe non compliance,High,1.0,unknown,NO,Training,N/A
+INC-0338,"November 26, 2023",Ops,lti,N/A,Unknown,LOW,21.0,25,Y,Warning Issued,yes
+INC-0339,02-16-2022,Maintenance,Lost Time Injury,morning,PPE Non-Compliance,Medium,,25,Y,Training,yes
+INC-0340,01-08-2022,,Near Miss,afternoon,fatigue,Critical,14.0,35,,Training,yes
+INC-0341,2022/05/21,Construction,NEAR MISS,,Unknown,N/a,-1.0,28,no,Warning Issued,yes
+INC-0342,25-05-2023,OPS,Unsafe Act,Night,HUMAN ERROR,N/a,,45,,,Yes
+INC-0343,12-22-2023,,first aid,NIGHT,human error,,0.0,unknown,Yes,Warning Issued,no
+INC-0344,29/12/2022,Operations,near miss,afternoon,HUMAN ERROR,High,10.0,999,No,Warning Issued,no
+INC-0345,23/03/2023,MAINTENANCE,Near Miss,NIGHT,,,7.0,28,No,Warning Issued,Yes
+INC-0346,"November 17, 2022",Logistics,,night shift,,LOW,10.0,unknown,,Equipment Check,No
+INC-0347,18-10-2023,DRILLING,First Aid,N/A,Human Error,N/a,30.0,45,YES,,no
+INC-0348,11-29-2022,Warehousing,,N/A,N/A,,3.0,40,,Training,
+INC-0349,2023/12/08,Operations,,night shift,HUMAN ERROR,low,0.0,40,,N/A,no
+INC-0350,07-09-2022,construction,Property Damage,Morning,human error,Low,999.0,25,NO,TBD,N/A
+INC-0351,2023/02/10,Operations,lti,MORNING,PPE Non-Compliance,HIGH,14.0,25,NO,,no
+INC-0352,22/06/2022,MAINTENANCE,Unsafe Act,afternoon,Fatigue,N/a,0.0,22,YES,Training,No
+INC-0353,06-07-2023,MAINTENANCE,,NIGHT,ppe non compliance,Med,0.0,35,no,Equipment Check,Yes
+INC-0354,10-23-2023,Logistics,LTI,MORNING,Unknown,Low,-1.0,50,,Equipment Check,No
+INC-0355,07-22-2022,drilling,Lost Time Injury,N/A,Fatigue,LOW,10.0,40,no,,No
+INC-0356,03/11/2023,Operations,Unsafe Act,N/A,fatigue,LOW,999.0,35,N,N/A,Yes
+INC-0357,21-05-2023,OPS,near miss,NIGHT,ppe non compliance,Low,10.0,25,Y,Equipment Check,N/A
+INC-0358,"April 05, 2023",N/A,property damage,Morning,HUMAN ERROR,low,1.0,28,,TBD,
+INC-0359,2022/11/27,OPS,near miss,NIGHT,Fatigue,,14.0,25,Yes,N/A,Yes
+INC-0360,2023/03/29,drilling,Property Damage,Night,PPE Non-Compliance,MEDIUM,10.0,28,YES,N/A,No
+INC-0361,"December 27, 2022",MAINTENANCE,NEAR MISS,Afternoon,Unknown,Critical,0.0,45,yes,N/A,Yes
+INC-0362,08/02/2022,logistics ,Environmental,Morning,lack of training,LOW,0.0,50,Y,N/A,N/A
+INC-0363,23/10/2023,Ops,,night shift,Fatigue,CRITICAL,3.0,,,,no
+INC-0364,"April 19, 2023",construction,lti,afternoon,Human Error,Medium,-1.0,,No,,no
+INC-0365,12-02-2022,Ops,near miss,Night,N/A,MEDIUM,10.0,,,N/A,
+INC-0366,2022/07/12,N/A,property damage,Morning,fatigue,High,7.0,45,No,Warning Issued,
+INC-0367,05-03-2022,N/A,property damage,Night,N/A,High,0.0,25,,Warning Issued,Yes
+INC-0368,18/12/2022,Maintenance,Near Miss,afternoon,,HIGH,21.0,22,YES,,Yes
+INC-0369,11-09-2022,Logistics,lti,afternoon,HUMAN ERROR,,1.0,25,NO,,Yes
+INC-0370,09-17-2023,Logistics,Environmental,afternoon,ppe non compliance,High,30.0,40,No,N/A,yes
+INC-0371,01-02-2023,Maintenance,NEAR MISS,night shift,ppe non compliance,High,14.0,,,TBD,No
+INC-0372,2022/02/23,Warehousing,First Aid,morning,human error,Med,7.0,25,YES,TBD,No
+INC-0373,26-11-2023,Drilling,first aid,Afternoon,PPE Non-Compliance,Low,0.0,0,,,N/A
+INC-0374,"November 04, 2023",,first aid,MORNING,ppe non compliance,High,999.0,0,,Toolbox Talk,
+INC-0375,08-20-2023,OPS,,afternoon,Human Error,,10.0,40,YES,Toolbox Talk,no
+INC-0376,03-11-2023,,LTI,night shift,human error,LOW,7.0,45,N,,N/A
+INC-0377,2022/03/28,Ops,,Night,Lack of Training,Critical,,22,Y,Toolbox Talk,N/A
+INC-0378,12-03-2022,drilling,unsafe act,afternoon,fatigue,Low,0.0,35,,Equipment Check,N/A
+INC-0379,"December 03, 2023",Ops,lti,NIGHT,lack of training,,7.0,45,N,,no
+INC-0380,,Logistics,Unsafe Act,N/A,Human Error,N/a,0.0,45,no,Toolbox Talk,no
+INC-0381,11-13-2022,Operations,,morning,,CRITICAL,10.0,25,NO,,no
+INC-0382,05-13-2023,Operations,Unsafe Act,Afternoon,N/A,LOW,5.0,unknown,N,Warning Issued,No
+INC-0383,2022/03/21,Ops,LTI,night shift,fatigue,,7.0,,N,Warning Issued,yes
+INC-0384,,Maintenance,LTI,Afternoon,Poor Housekeeping,N/a,14.0,30,,N/A,N/A
+INC-0385,"December 11, 2022",,Lost Time Injury,NIGHT,Unknown,CRITICAL,0.0,0,Yes,Toolbox Talk,no
+INC-0386,06-16-2022,drilling,first aid,night shift,,Low,10.0,,N,,
+INC-0387,,OPS,First Aid,,Fatigue,N/a,7.0,28,No,Equipment Check,Yes
+INC-0388,01-09-2023,logistics ,near miss,Night,,LOW,21.0,999,YES,Training,Yes
+INC-0389,04-05-2023,MAINTENANCE,First Aid,Morning,Fatigue,Med,,45,No,Toolbox Talk,
+INC-0390,04-26-2023,Construction,NEAR MISS,,Equipment Failure,Critical,2.0,28,Y,TBD,
+INC-0391,28-03-2023,MAINTENANCE,unsafe act,MORNING,fatigue,LOW,30.0,28,no,N/A,
+INC-0392,"May 30, 2023",,unsafe act,morning,N/A,MEDIUM,0.0,35,no,Equipment Check,yes
+INC-0393,"July 24, 2022",Construction,property damage,afternoon,lack of training,,5.0,35,NO,Equipment Check,Yes
+INC-0394,19-10-2023,Logistics,near miss,,Poor Housekeeping,,2.0,35,Y,,yes
+INC-0395,"April 16, 2022",construction,NEAR MISS,NIGHT,Poor Housekeeping,MEDIUM,-1.0,50,NO,N/A,no
+INC-0396,2022/06/14,Maintenance,near miss,MORNING,,CRITICAL,0.0,28,,Warning Issued,Yes
+INC-0397,24/03/2023,,NEAR MISS,,,LOW,30.0,25,,Warning Issued,
+INC-0398,2023/04/07,construction,Lost Time Injury,N/A,Fatigue,MEDIUM,1.0,28,Yes,,yes
+INC-0399,"February 10, 2023",Maintenance,Lost Time Injury,Morning,human error,,14.0,45,YES,,No
+INC-0400,2022/03/25,logistics ,LTI,MORNING,PPE Non-Compliance,HIGH,0.0,35,no,Training,Yes
+INC-0401,2022/04/12,Warehousing,lti,Afternoon,fatigue,High,0.0,45,YES,,N/A
+INC-0402,21-10-2022,DRILLING,near miss,Afternoon,,High,5.0,35,No,Warning Issued,
+INC-0403,99/99/9999,Warehousing,Property Damage,Morning,Equipment Failure,,3.0,50,Y,Training,
+INC-0404,23/03/2022,,LTI,Afternoon,ppe non compliance,Low,30.0,25,NO,N/A,no
+INC-0405,"July 16, 2023",Logistics,unsafe act,Morning,lack of training,HIGH,0.0,40,No,TBD,yes
+INC-0406,10-23-2022,OPS,First Aid,night shift,fatigue,low,10.0,35,,Equipment Check,no
+INC-0407,"March 06, 2023",Maintenance,Lost Time Injury,Morning,fatigue,Critical,0.0,30,yes,TBD,No
+INC-0408,"May 27, 2023",N/A,first aid,Night,fatigue,Medium,999.0,unknown,N,Training,N/A
+INC-0409,08-12-2023,Operations,Lost Time Injury,Afternoon,PPE Non-Compliance,low,999.0,999,NO,,No
+INC-0410,"January 02, 2022",OPS,first aid,afternoon,HUMAN ERROR,N/a,0.0,50,NO,Toolbox Talk,no
+INC-0411,11/07/2022,Drilling,,Night,N/A,High,999.0,0,no,,Yes
+INC-0412,"June 23, 2023",Drilling,near miss,night shift,N/A,,7.0,0,,Training,Yes
+INC-0413,22/07/2023,drilling,near miss,,Poor Housekeeping,,0.0,30,YES,Toolbox Talk,no
+INC-0414,13-10-2023,Operations,NEAR MISS,NIGHT,Fatigue,Critical,2.0,50,yes,N/A,N/A
+INC-0415,2022/01/17,OPS,unsafe act,morning,Human Error,MEDIUM,5.0,25,no,N/A,N/A
+INC-0416,04/11/2023,,Environmental,Morning,Human Error,,0.0,28,N,,no
+INC-0417,,Logistics,first aid,Afternoon,fatigue,low,,35,no,,Yes
+INC-0418,2023/07/14,Drilling,,Night,HUMAN ERROR,MEDIUM,0.0,22,no,Training,yes
+INC-0419,03-12-2023,drilling,Unsafe Act,night shift,Poor Housekeeping,,,45,no,Warning Issued,N/A
+INC-0420,07-06-2022,N/A,Unsafe Act,N/A,N/A,,21.0,40,YES,Toolbox Talk,N/A
+INC-0421,14/04/2023,,property damage,night shift,ppe non compliance,N/a,30.0,0,no,,no
+INC-0422,24/07/2022,DRILLING,Near Miss,MORNING,N/A,,21.0,45,no,Toolbox Talk,N/A
+INC-0423,"February 12, 2023",Logistics,First Aid,night shift,ppe non compliance,Med,5.0,40,no,,
+INC-0424,10-25-2023,Logistics,,N/A,N/A,Low,3.0,50,no,Toolbox Talk,yes
+INC-0425,2022/02/18,Drilling,,,HUMAN ERROR,Critical,999.0,40,,N/A,no
+INC-0426,24-03-2023,MAINTENANCE,LTI,Night,human error,Critical,5.0,45,NO,Equipment Check,
+INC-0427,2023/01/31,Construction,NEAR MISS,Night,Unknown,low,7.0,999,yes,N/A,
+INC-0428,2023/05/25,Ops,near miss,MORNING,ppe non compliance,LOW,-1.0,0,No,Warning Issued,no
+INC-0429,26-03-2022,N/A,Unsafe Act,afternoon,lack of training,Low,999.0,28,No,Equipment Check,no
+INC-0430,"July 04, 2022",DRILLING,First Aid,morning,Equipment Failure,Low,999.0,35,No,Toolbox Talk,no
+INC-0431,2022/12/02,N/A,LTI,afternoon,lack of training,CRITICAL,5.0,40,N,,
+INC-0432,03-13-2023,Operations,lti,Morning,Lack of Training,CRITICAL,5.0,0,,TBD,No
+INC-0433,2022/02/13,construction,Property Damage,NIGHT,Human Error,High,0.0,unknown,Yes,Training,no
+INC-0434,17/10/2023,DRILLING,Near Miss,Morning,Poor Housekeeping,Critical,21.0,30,,Warning Issued,no
+INC-0435,"January 08, 2023",,Environmental,MORNING,Equipment Failure,Critical,21.0,50,Yes,,yes
+INC-0436,02-01-2022,N/A,first aid,N/A,Poor Housekeeping,LOW,-1.0,40,N,,no
+INC-0437,25/03/2023,N/A,first aid,Afternoon,fatigue,MEDIUM,10.0,28,NO,,N/A
+INC-0438,2023/10/23,construction,,Afternoon,PPE Non-Compliance,Medium,0.0,45,,Equipment Check,N/A
+INC-0439,"February 03, 2022",drilling,NEAR MISS,Afternoon,PPE Non-Compliance,N/a,21.0,40,NO,Equipment Check,yes
+INC-0440,2023/01/15,Operations,Near Miss,Afternoon,N/A,N/a,-1.0,35,N,N/A,yes
+INC-0441,"May 21, 2022",Maintenance,lti,afternoon,Equipment Failure,N/a,3.0,unknown,,Training,No
+INC-0442,99/99/9999,construction,,NIGHT,human error,Med,0.0,unknown,YES,TBD,no
+INC-0443,10-07-2022,drilling,Lost Time Injury,,ppe non compliance,Medium,0.0,999,N,Toolbox Talk,No
+INC-0444,2022/05/01,Maintenance,Property Damage,Morning,ppe non compliance,High,10.0,50,yes,,N/A
+INC-0445,"August 08, 2022",Operations,Unsafe Act,Morning,Unknown,,5.0,0,,,
+INC-0446,05-18-2023,N/A,Property Damage,night shift,Fatigue,Critical,10.0,30,YES,Training,No
+INC-0447,04-08-2023,Operations,First Aid,MORNING,ppe non compliance,low,0.0,40,Y,,Yes
+INC-0448,2022/03/31,DRILLING,near miss,MORNING,human error,low,30.0,45,no,,Yes
+INC-0449,"July 18, 2023",Drilling,Lost Time Injury,N/A,N/A,low,1.0,35,,Equipment Check,Yes
+INC-0450,06-11-2022,MAINTENANCE,near miss,Morning,ppe non compliance,Medium,-1.0,45,yes,Equipment Check,yes
+INC-0451,05-05-2022,Operations,unsafe act,Afternoon,ppe non compliance,CRITICAL,0.0,40,Yes,TBD,N/A
+INC-0452,21/05/2023,construction,unsafe act,afternoon,lack of training,MEDIUM,,25,,Warning Issued,Yes
+INC-0453,"April 24, 2023",Ops,NEAR MISS,N/A,human error,Medium,0.0,0,Y,TBD,N/A
+INC-0454,2022/03/09,Ops,near miss,afternoon,ppe non compliance,LOW,2.0,30,N,,No
+INC-0455,"May 06, 2023",OPS,Near Miss,afternoon,,low,7.0,0,,Warning Issued,no
+INC-0456,12/08/2023,Construction,Near Miss,NIGHT,fatigue,,21.0,,Yes,Warning Issued,yes
+INC-0457,17-03-2022,MAINTENANCE,,NIGHT,Human Error,,30.0,28,,Warning Issued,yes
+INC-0458,"May 12, 2022",Operations,unsafe act,Night,human error,CRITICAL,10.0,999,NO,Training,Yes
+INC-0459,13-05-2022,drilling,First Aid,night shift,PPE Non-Compliance,Low,5.0,,Y,,
+INC-0460,"May 08, 2022",Ops,NEAR MISS,afternoon,PPE Non-Compliance,,10.0,22,yes,,
+INC-0461,11-27-2022,drilling,First Aid,Afternoon,Human Error,Critical,5.0,unknown,N,N/A,no
+INC-0462,18/10/2022,Drilling,,night shift,Poor Housekeeping,HIGH,-1.0,50,No,Training,N/A
+INC-0463,2023/07/19,Construction,lti,afternoon,Poor Housekeeping,,1.0,unknown,,Training,No
+INC-0464,01/07/2023,Logistics,LTI,,Human Error,Critical,1.0,30,N,,Yes
+INC-0465,08-18-2023,drilling,Environmental,N/A,N/A,LOW,7.0,50,NO,,N/A
+INC-0466,2023/09/12,DRILLING,Environmental,NIGHT,human error,MEDIUM,3.0,35,Yes,N/A,No
+INC-0467,,Warehousing,Environmental,N/A,Unknown,,0.0,unknown,Yes,N/A,N/A
+INC-0468,"October 19, 2023",Construction,near miss,morning,Fatigue,LOW,2.0,25,no,Warning Issued,
+INC-0469,09-08-2023,logistics ,property damage,Morning,Fatigue,MEDIUM,1.0,45,Y,N/A,
+INC-0470,"October 05, 2023",Operations,property damage,,fatigue,LOW,999.0,999,,N/A,Yes
+INC-0471,05-10-2023,Logistics,first aid,Night,Lack of Training,Medium,999.0,50,No,Toolbox Talk,
+INC-0472,01-11-2022,Drilling,,,Poor Housekeeping,N/a,30.0,28,NO,,
+INC-0473,27-03-2023,Drilling,,N/A,Poor Housekeeping,CRITICAL,,999,NO,Equipment Check,no
+INC-0474,09-14-2023,Ops,near miss,N/A,Equipment Failure,HIGH,0.0,35,,N/A,no
+INC-0475,20-12-2022,Maintenance,Near Miss,afternoon,fatigue,Med,0.0,30,YES,TBD,
+INC-0476,30/07/2023,,near miss,afternoon,fatigue,Med,,35,yes,Equipment Check,Yes
+INC-0477,01-10-2022,drilling,First Aid,morning,ppe non compliance,low,21.0,999,,TBD,Yes
+INC-0478,25-10-2022,,,night shift,lack of training,,5.0,28,YES,Toolbox Talk,N/A
+INC-0479,2022/06/13,MAINTENANCE,Environmental,morning,lack of training,,14.0,unknown,no,Warning Issued,
+INC-0480,07-14-2022,Ops,Lost Time Injury,Night,N/A,Medium,,45,YES,Warning Issued,
+INC-0481,2023/05/26,DRILLING,unsafe act,afternoon,Human Error,LOW,999.0,45,N,N/A,yes
+INC-0482,"February 07, 2023",Logistics,NEAR MISS,Night,N/A,MEDIUM,999.0,25,,Equipment Check,N/A
+INC-0483,,drilling,near miss,afternoon,Equipment Failure,CRITICAL,999.0,50,NO,Training,no
+INC-0484,16-10-2022,Construction,,afternoon,N/A,LOW,0.0,0,NO,Training,no
+INC-0485,99/99/9999,MAINTENANCE,,afternoon,ppe non compliance,Medium,1.0,50,yes,Toolbox Talk,Yes
+INC-0486,21-04-2022,drilling,,Afternoon,lack of training,Med,1.0,0,N,Warning Issued,No
+INC-0487,10-01-2023,Ops,unsafe act,MORNING,Poor Housekeeping,HIGH,0.0,45,Y,Equipment Check,No
+INC-0488,"August 07, 2023",OPS,LTI,,Unknown,HIGH,0.0,,no,,
+INC-0489,17-03-2022,drilling,near miss,Afternoon,Fatigue,Med,14.0,,Y,Toolbox Talk,
+INC-0490,"October 14, 2022",drilling,Near Miss,Morning,Fatigue,CRITICAL,0.0,unknown,NO,N/A,N/A
+INC-0491,10-04-2022,Maintenance,Lost Time Injury,N/A,ppe non compliance,,7.0,45,NO,Training,yes
+INC-0492,2023/07/26,Maintenance,Near Miss,NIGHT,,MEDIUM,14.0,,Y,,yes
+INC-0493,06-06-2023,N/A,NEAR MISS,Night,fatigue,N/a,21.0,22,YES,TBD,Yes
+INC-0494,2022/05/21,construction,,MORNING,lack of training,CRITICAL,30.0,40,N,TBD,N/A
+INC-0495,"June 02, 2022",DRILLING,property damage,Morning,,low,-1.0,unknown,yes,Toolbox Talk,No
+INC-0496,2023/09/20,MAINTENANCE,lti,night shift,ppe non compliance,CRITICAL,0.0,,,N/A,yes
+INC-0497,"November 03, 2022",OPS,,afternoon,human error,CRITICAL,1.0,0,yes,Warning Issued,No
+INC-0498,30-06-2023,,Unsafe Act,afternoon,human error,Med,30.0,999,,Warning Issued,N/A
+INC-0499,2022/01/18,OPS,lti,NIGHT,Unknown,,0.0,25,no,Warning Issued,yes
+INC-0500,"March 03, 2023",,Lost Time Injury,NIGHT,fatigue,Med,5.0,25,No,,no
