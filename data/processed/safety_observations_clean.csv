@@ -1,0 +1,401 @@
+Observation_ID,Date,Observer_ID,Department,Location,Observation_Type,Risk_Level,PPE_Worn,Action_Taken,Closed_Out,Days_to_Close
+OBS-0001,2022-07-04,EMP-443,Drilling,Warehouse,Good Practice,Critical,No,Verbal Warning,,3.0
+OBS-0002,2023-07-20,EMP-573,,,Unsafe Act,,,Pending,Yes,
+OBS-0003,2022-08-20,EMP-902,,Warehouse,Near Miss,Medium,No,Retraining,Pending,30.0
+OBS-0004,2022-01-08,EMP-933,Drilling,Warehouse,,Medium,Yes,Equipment Removed,Pending,7.0
+OBS-0005,2022-08-31,EMP-523,Maintenance,Warehouse,Near Miss,,,,No,
+OBS-0006,,,Warehousing,Warehouse,Good Practice,,,Verbal Warning,No,3.0
+OBS-0007,2022-02-08,EMP-157,Construction,Office,Unsafe Act,Critical,,Retraining,Pending,1.0
+OBS-0008,2022-04-26,EMP-955,,,Unsafe Condition,Critical,,Written Warning,,
+OBS-0009,2022-03-23,,Drilling,,,,No,Pending,Yes,30.0
+OBS-0010,2023-06-24,EMP-406,,Warehouse,Near Miss,Critical,No,Stopped Work,,14.0
+OBS-0011,2022-03-22,EMP-678,Maintenance,Yard,Good Practice,Medium,Yes,,No,30.0
+OBS-0012,2023-10-08,EMP-842,,Warehouse,Unsafe Act,High,,Stopped Work,No,
+OBS-0013,2023-07-07,EMP-794,Maintenance,Warehouse,Good Practice,Low,Partial,Verbal Warning,No,
+OBS-0014,2022-12-18,EMP-423,Operations,Site A,,,No,,,14.0
+OBS-0015,2023-06-09,EMP-668,Operations,Warehouse,,,No,,No,30.0
+OBS-0016,2022-12-06,EMP-648,,,Near Miss,,No,,Yes,30.0
+OBS-0017,2022-10-29,EMP-119,Drilling,Yard,Good Practice,High,No,,Pending,2.0
+OBS-0018,2023-12-13,EMP-313,Maintenance,,,High,Yes,,Yes,
+OBS-0019,2023-01-08,EMP-691,,Site A,Near Miss,Medium,No,Equipment Removed,,7.0
+OBS-0020,2023-04-30,EMP-801,Operations,Yard,Unsafe Act,High,No,Retraining,,7.0
+OBS-0021,2023-04-11,EMP-439,,,Unsafe Act,High,Yes,,Pending,5.0
+OBS-0022,2023-10-02,EMP-918,Drilling,Office,Unsafe Condition,,Partial,Equipment Removed,No,
+OBS-0023,2022-03-26,EMP-914,Construction,Office,,Low,Yes,Written Warning,,30.0
+OBS-0024,2022-12-10,EMP-462,Drilling,,Unsafe Condition,,No,Equipment Removed,Yes,2.0
+OBS-0025,2022-10-15,EMP-167,Warehousing,Yard,Good Practice,Critical,,Stopped Work,Pending,3.0
+OBS-0026,2022-01-15,EMP-252,Operations,Site A,Near Miss,Medium,,Stopped Work,No,14.0
+OBS-0027,2023-08-29,EMP-387,Logistics,Site B,Good Practice,,,Retraining,,0.0
+OBS-0028,2023-01-14,EMP-960,,Site A,Unsafe Condition,Low,Yes,Verbal Warning,Pending,1.0
+OBS-0029,2023-12-19,EMP-131,Drilling,Site A,Good Practice,Medium,No,,,7.0
+OBS-0030,2023-06-25,EMP-447,Logistics,Site B,Unsafe Condition,Low,Yes,Verbal Warning,Yes,
+OBS-0031,2022-03-28,EMP-484,Operations,Site A,,,Yes,Retraining,Yes,
+OBS-0032,2022-06-07,EMP-741,,Site A,,,Yes,,Pending,3.0
+OBS-0033,2023-02-27,EMP-647,Warehousing,Yard,Near Miss,Medium,Yes,,,0.0
+OBS-0034,2023-03-27,EMP-962,Operations,Warehouse,,,Yes,,,3.0
+OBS-0035,2022-12-20,EMP-269,,Site A,,,,,,
+OBS-0036,2022-04-29,EMP-684,Logistics,,,Low,Partial,,Yes,
+OBS-0037,2023-02-13,,Construction,Yard,Good Practice,,No,Verbal Warning,,7.0
+OBS-0038,2023-06-30,EMP-498,Logistics,Warehouse,Unsafe Act,,Yes,Verbal Warning,No,3.0
+OBS-0039,2023-12-24,EMP-291,,Site A,Unsafe Condition,Low,Partial,Pending,Yes,5.0
+OBS-0040,,EMP-709,Drilling,Yard,,Medium,Yes,,Pending,5.0
+OBS-0041,2023-04-05,EMP-219,Construction,Site A,,,Yes,Written Warning,No,5.0
+OBS-0042,2023-06-27,EMP-985,Warehousing,Yard,Near Miss,,,,Pending,
+OBS-0043,2023-06-29,EMP-901,Drilling,Warehouse,Near Miss,,Yes,,No,1.0
+OBS-0044,2023-03-19,,Operations,,,Low,No,Verbal Warning,Pending,14.0
+OBS-0045,2022-10-01,EMP-415,Operations,Yard,,,Yes,,Yes,0.0
+OBS-0046,2023-08-22,EMP-822,Maintenance,Yard,,,No,Retraining,Yes,2.0
+OBS-0047,2023-11-23,EMP-978,Maintenance,Yard,Near Miss,Medium,Yes,Verbal Warning,No,
+OBS-0048,2023-08-26,EMP-422,,Yard,Good Practice,Critical,Partial,Verbal Warning,,3.0
+OBS-0049,2023-11-25,EMP-826,Warehousing,Site A,Unsafe Act,,Yes,Stopped Work,No,30.0
+OBS-0050,2022-01-11,EMP-132,Operations,,,Low,Yes,Pending,Yes,30.0
+OBS-0051,2022-01-13,EMP-378,Maintenance,,Unsafe Condition,Low,No,Verbal Warning,Yes,
+OBS-0052,2022-04-17,EMP-523,Operations,,Unsafe Condition,,Partial,Verbal Warning,Yes,3.0
+OBS-0053,2022-10-18,EMP-188,Operations,Site A,,,Partial,Retraining,,1.0
+OBS-0054,2022-01-25,EMP-608,Operations,Site A,,Medium,Yes,Verbal Warning,Pending,2.0
+OBS-0055,2023-01-09,EMP-998,Construction,Warehouse,Unsafe Act,Low,,Pending,No,14.0
+OBS-0056,2023-10-16,EMP-343,,Site A,,Medium,No,,,
+OBS-0057,2022-05-03,EMP-480,Maintenance,Site B,Good Practice,Medium,No,Equipment Removed,No,3.0
+OBS-0058,2022-05-14,EMP-562,Construction,,Unsafe Act,Medium,No,Verbal Warning,Pending,1.0
+OBS-0059,2023-10-26,EMP-949,Drilling,Warehouse,Unsafe Act,,No,Verbal Warning,Yes,2.0
+OBS-0060,2023-12-14,EMP-409,Drilling,Site A,Unsafe Condition,Critical,No,,Pending,
+OBS-0061,2023-04-24,EMP-321,Drilling,,Unsafe Act,Low,No,Stopped Work,No,
+OBS-0062,2022-10-11,EMP-637,Construction,Site A,,,No,,No,14.0
+OBS-0063,2023-11-15,EMP-409,Construction,,Good Practice,,,Retraining,No,0.0
+OBS-0064,2022-03-17,EMP-279,Logistics,Yard,Unsafe Act,High,,Verbal Warning,Yes,30.0
+OBS-0065,2023-01-27,,Maintenance,,Near Miss,High,No,,No,3.0
+OBS-0066,2022-03-03,EMP-483,Construction,Warehouse,Good Practice,,No,Retraining,Pending,
+OBS-0067,2022-09-29,EMP-903,,Office,Unsafe Condition,Low,Yes,Verbal Warning,No,30.0
+OBS-0068,2023-05-19,EMP-138,Warehousing,Office,Unsafe Condition,Critical,,Written Warning,No,5.0
+OBS-0069,2022-07-02,,Drilling,Office,Unsafe Condition,Low,No,,No,1.0
+OBS-0070,2023-07-08,,Logistics,Site B,Good Practice,High,Yes,Stopped Work,No,2.0
+OBS-0071,2023-10-21,,Logistics,Office,Unsafe Act,High,No,,,5.0
+OBS-0072,,,Maintenance,Site A,Unsafe Act,Medium,,Pending,Yes,30.0
+OBS-0073,2022-03-14,EMP-618,Operations,Yard,Near Miss,High,Yes,Written Warning,No,
+OBS-0074,2022-01-20,,Drilling,,Unsafe Condition,Low,,,,7.0
+OBS-0075,2023-10-18,EMP-918,Maintenance,Office,Near Miss,,No,,,0.0
+OBS-0076,2023-11-12,EMP-594,Logistics,Site A,,High,Yes,Stopped Work,No,3.0
+OBS-0077,2023-12-18,EMP-612,Maintenance,Warehouse,Unsafe Act,High,No,,No,
+OBS-0078,2023-08-12,EMP-257,Logistics,Site A,Unsafe Act,Medium,No,Pending,No,30.0
+OBS-0079,2023-05-18,,Operations,Site B,Good Practice,Low,,,Yes,
+OBS-0080,,EMP-448,Construction,,Unsafe Act,Low,No,,Pending,
+OBS-0081,2023-12-07,EMP-595,Construction,Yard,Unsafe Act,Low,No,,No,2.0
+OBS-0082,2023-03-07,EMP-850,,Office,Near Miss,,,,,
+OBS-0083,2022-11-07,EMP-994,Operations,Site A,Near Miss,Medium,No,Verbal Warning,,
+OBS-0084,2023-10-25,EMP-636,,Warehouse,Unsafe Act,Medium,,Equipment Removed,No,30.0
+OBS-0085,2022-12-15,EMP-417,Drilling,Site A,,Medium,No,,Yes,7.0
+OBS-0086,2022-10-24,EMP-894,Maintenance,Warehouse,Unsafe Condition,Medium,,Retraining,,
+OBS-0087,2022-02-10,EMP-435,Logistics,Office,Unsafe Act,Medium,Yes,,No,
+OBS-0088,2022-11-03,EMP-246,Operations,Office,Good Practice,Low,Yes,Stopped Work,No,
+OBS-0089,2023-08-10,EMP-887,Maintenance,Site A,Unsafe Condition,Medium,No,Pending,Pending,14.0
+OBS-0090,2023-10-10,EMP-992,,Warehouse,Good Practice,Medium,Yes,Stopped Work,,1.0
+OBS-0091,2022-05-24,EMP-200,Construction,Warehouse,Unsafe Condition,High,No,Stopped Work,Yes,2.0
+OBS-0092,2023-08-31,EMP-941,Drilling,Office,Near Miss,,No,Equipment Removed,,2.0
+OBS-0093,2022-06-03,EMP-628,Operations,Site A,Near Miss,Medium,Yes,Written Warning,Pending,2.0
+OBS-0094,,EMP-792,,,Unsafe Act,Low,Partial,Written Warning,No,2.0
+OBS-0095,2022-02-27,EMP-235,Warehousing,Warehouse,Good Practice,,No,Retraining,Yes,
+OBS-0096,2022-02-13,EMP-310,Drilling,Site A,Unsafe Condition,High,Yes,Written Warning,Yes,
+OBS-0097,2023-11-01,,,Site A,Unsafe Act,Medium,Yes,Written Warning,Yes,
+OBS-0098,2023-04-07,EMP-137,Operations,Site A,,Low,,Verbal Warning,No,
+OBS-0099,,EMP-570,Operations,Yard,Good Practice,Low,No,Stopped Work,Yes,5.0
+OBS-0100,2022-05-25,EMP-496,Operations,,,Medium,No,Equipment Removed,Yes,1.0
+OBS-0101,2023-04-28,EMP-830,Drilling,,,High,Yes,Stopped Work,Yes,0.0
+OBS-0102,,EMP-985,Operations,Office,Unsafe Act,Low,Yes,Stopped Work,Yes,0.0
+OBS-0103,2023-10-10,EMP-634,,Yard,,High,No,Retraining,Yes,0.0
+OBS-0104,2022-04-10,EMP-218,Operations,Yard,Unsafe Act,Medium,No,Written Warning,,
+OBS-0105,2023-08-29,EMP-104,Operations,Office,Good Practice,High,Yes,,No,7.0
+OBS-0106,2022-04-19,EMP-418,Construction,Warehouse,Good Practice,High,Yes,,No,2.0
+OBS-0107,2023-09-23,EMP-145,Construction,Office,Unsafe Act,Medium,No,Verbal Warning,No,0.0
+OBS-0108,2022-07-27,EMP-803,Logistics,Office,Unsafe Act,High,Yes,Written Warning,Pending,3.0
+OBS-0109,2023-11-26,EMP-968,Maintenance,Site A,,Low,Yes,Verbal Warning,,30.0
+OBS-0110,2023-02-12,EMP-708,Construction,Warehouse,,Low,No,,Yes,
+OBS-0111,2022-08-07,EMP-992,Operations,Site A,Unsafe Act,Medium,Partial,Verbal Warning,Yes,
+OBS-0112,2022-12-10,EMP-189,Operations,Office,Good Practice,Medium,No,,Yes,30.0
+OBS-0113,2022-05-25,EMP-441,Maintenance,Office,Unsafe Act,,Yes,Verbal Warning,Yes,7.0
+OBS-0114,2023-01-14,EMP-578,,Yard,Good Practice,,No,Stopped Work,,0.0
+OBS-0115,2023-08-19,EMP-147,Operations,Warehouse,Unsafe Act,Medium,Yes,Equipment Removed,Yes,3.0
+OBS-0116,2023-10-10,EMP-205,Operations,,Unsafe Act,Critical,Yes,Pending,Pending,2.0
+OBS-0117,2022-01-17,EMP-633,Drilling,,,,Yes,Verbal Warning,,14.0
+OBS-0118,2022-08-01,EMP-884,Logistics,,Unsafe Act,,No,Retraining,,2.0
+OBS-0119,2023-12-25,EMP-774,,Office,Unsafe Condition,High,Yes,Retraining,Yes,
+OBS-0120,2023-03-05,EMP-863,Construction,Site A,Near Miss,Low,Yes,Pending,Yes,3.0
+OBS-0121,2023-10-18,EMP-419,,Site B,Unsafe Act,Medium,,,No,30.0
+OBS-0122,2023-02-26,EMP-123,Logistics,,,Low,No,Written Warning,,1.0
+OBS-0123,2023-09-18,EMP-691,Maintenance,Site A,Unsafe Condition,High,No,Pending,,30.0
+OBS-0124,2023-05-27,EMP-876,Drilling,,,Critical,No,Written Warning,Yes,
+OBS-0125,2022-05-11,EMP-419,,Office,Good Practice,,Yes,Pending,No,
+OBS-0126,2023-07-26,EMP-754,Maintenance,Warehouse,Good Practice,High,,Equipment Removed,,
+OBS-0127,2023-06-27,EMP-314,,Warehouse,Good Practice,Low,No,Equipment Removed,,
+OBS-0128,2023-07-07,EMP-428,,,,Critical,No,Verbal Warning,,2.0
+OBS-0129,2023-04-10,EMP-305,Construction,Site A,Unsafe Act,Low,No,Written Warning,Yes,
+OBS-0130,2022-07-18,EMP-297,Construction,,Unsafe Act,High,Yes,Written Warning,No,0.0
+OBS-0131,2023-12-03,EMP-393,Drilling,Site A,,,Partial,Verbal Warning,No,
+OBS-0132,2022-06-13,EMP-383,,Yard,Near Miss,Medium,,Retraining,,
+OBS-0133,2023-08-01,EMP-645,,Office,Near Miss,Low,No,Retraining,Yes,2.0
+OBS-0134,2022-09-15,EMP-426,Operations,Warehouse,Unsafe Act,Medium,No,Verbal Warning,,5.0
+OBS-0135,2023-04-10,EMP-891,Construction,Site A,Unsafe Act,,Yes,Stopped Work,No,
+OBS-0136,2022-02-23,EMP-551,Construction,Warehouse,Unsafe Condition,,Yes,Equipment Removed,Yes,2.0
+OBS-0137,2022-01-30,EMP-787,Construction,Warehouse,Good Practice,,No,,Yes,3.0
+OBS-0138,2022-03-14,EMP-220,,Site A,Near Miss,Low,No,Retraining,Pending,0.0
+OBS-0139,2023-08-30,EMP-379,,Site B,Unsafe Act,Medium,Partial,Stopped Work,Yes,3.0
+OBS-0140,2023-11-25,EMP-252,Drilling,,Unsafe Condition,,,Equipment Removed,Yes,1.0
+OBS-0141,2022-04-23,EMP-261,,,Good Practice,,No,Written Warning,,
+OBS-0142,2022-08-31,EMP-380,Logistics,Warehouse,Near Miss,Medium,No,,No,
+OBS-0143,2023-01-20,EMP-217,Operations,Site A,Unsafe Condition,Medium,,Written Warning,Yes,14.0
+OBS-0144,2023-08-23,EMP-115,Maintenance,Site A,Good Practice,,No,Verbal Warning,Pending,2.0
+OBS-0145,2023-03-23,EMP-737,,,Unsafe Act,High,Yes,,No,1.0
+OBS-0146,2023-09-17,EMP-673,Operations,Site B,Unsafe Act,Critical,No,Retraining,No,3.0
+OBS-0147,2023-01-18,EMP-626,Operations,Site A,Unsafe Condition,Low,Partial,,,0.0
+OBS-0148,2022-07-18,,Operations,Warehouse,Near Miss,,Yes,Pending,Yes,5.0
+OBS-0149,2022-07-27,EMP-311,Maintenance,,,,Yes,Retraining,Yes,
+OBS-0150,2023-12-10,EMP-655,Operations,Warehouse,Near Miss,Medium,No,Stopped Work,,3.0
+OBS-0151,2022-04-24,EMP-458,Drilling,Warehouse,Near Miss,Medium,No,Verbal Warning,Yes,2.0
+OBS-0152,2022-06-25,EMP-662,Construction,Office,,High,Yes,Written Warning,,
+OBS-0153,2022-10-30,EMP-426,,,,,Yes,Equipment Removed,Yes,7.0
+OBS-0154,2023-10-16,EMP-377,Drilling,Office,Unsafe Condition,Medium,Yes,Retraining,Yes,1.0
+OBS-0155,2023-07-21,EMP-244,,Site A,Unsafe Act,Medium,Partial,Pending,No,2.0
+OBS-0156,2023-06-19,EMP-821,Operations,Site A,Good Practice,,,,,2.0
+OBS-0157,2022-08-10,EMP-923,Logistics,Warehouse,Near Miss,High,No,Verbal Warning,Pending,
+OBS-0158,2022-10-13,EMP-390,Logistics,Yard,Unsafe Condition,,No,,No,7.0
+OBS-0159,2022-10-09,EMP-687,Operations,,Unsafe Act,Critical,,Pending,Pending,14.0
+OBS-0160,2023-08-17,EMP-350,Maintenance,Warehouse,Near Miss,Low,No,Pending,,
+OBS-0161,2023-08-29,EMP-275,,,Near Miss,Low,Yes,Verbal Warning,No,3.0
+OBS-0162,2022-01-06,EMP-172,,,Near Miss,Critical,Partial,Retraining,Yes,30.0
+OBS-0163,2022-02-11,EMP-418,Maintenance,Warehouse,Good Practice,,,Verbal Warning,,
+OBS-0164,2023-06-01,EMP-727,Operations,Office,Good Practice,Medium,Partial,Pending,Yes,1.0
+OBS-0165,2023-02-08,EMP-446,Maintenance,Office,,,No,Retraining,,5.0
+OBS-0166,2023-12-15,EMP-653,,Site A,Near Miss,Medium,,,,7.0
+OBS-0167,2022-09-04,EMP-554,,Warehouse,Unsafe Act,Low,Partial,,Yes,1.0
+OBS-0168,2022-01-13,EMP-151,,Office,Good Practice,Low,,Equipment Removed,Pending,
+OBS-0169,2022-05-16,EMP-233,Drilling,Site A,Unsafe Act,Critical,Yes,,,7.0
+OBS-0170,,EMP-129,,,Unsafe Act,Medium,No,,,
+OBS-0171,2023-11-17,EMP-582,Drilling,Warehouse,,,No,Verbal Warning,No,
+OBS-0172,2023-04-16,EMP-791,Operations,Yard,Good Practice,Medium,Partial,Retraining,Yes,
+OBS-0173,2023-04-20,EMP-151,Construction,Site B,Unsafe Act,,,Verbal Warning,No,3.0
+OBS-0174,2023-02-20,EMP-208,Logistics,Yard,Unsafe Act,High,,,,0.0
+OBS-0175,2023-01-15,EMP-492,Drilling,Yard,Near Miss,High,,,Pending,
+OBS-0176,2022-01-02,EMP-155,Maintenance,Warehouse,Near Miss,,Yes,Retraining,Pending,14.0
+OBS-0177,2023-09-12,EMP-188,Maintenance,Yard,Near Miss,Medium,,,,
+OBS-0178,2022-10-31,EMP-536,Warehousing,Warehouse,Unsafe Act,,Yes,,No,14.0
+OBS-0179,2023-12-16,EMP-501,Operations,Office,Near Miss,,No,Verbal Warning,,0.0
+OBS-0180,2022-03-24,EMP-283,,Office,Unsafe Act,Medium,No,Retraining,No,
+OBS-0181,2022-02-26,EMP-821,Logistics,Warehouse,Near Miss,Low,No,Stopped Work,Pending,
+OBS-0182,2022-04-24,EMP-710,Operations,Site A,Unsafe Act,Medium,,Pending,No,5.0
+OBS-0183,2023-09-26,EMP-706,Maintenance,,,,No,Pending,Yes,2.0
+OBS-0184,2022-06-29,EMP-744,Logistics,Warehouse,,,,,Pending,
+OBS-0185,2022-07-29,,Operations,,Unsafe Act,Low,No,Equipment Removed,,1.0
+OBS-0186,2022-09-02,EMP-806,Drilling,Warehouse,,Medium,Yes,Pending,Yes,5.0
+OBS-0187,2023-08-18,EMP-816,Operations,Office,Unsafe Act,Low,,,Yes,1.0
+OBS-0188,2022-08-19,EMP-556,Drilling,Site A,,High,,,Pending,5.0
+OBS-0189,2022-10-01,EMP-731,Operations,Warehouse,,Low,Yes,Written Warning,Yes,3.0
+OBS-0190,2022-06-03,EMP-464,Operations,Office,,Medium,No,Pending,,7.0
+OBS-0191,2023-05-13,EMP-419,Drilling,Warehouse,Good Practice,,Yes,Pending,Yes,5.0
+OBS-0192,2023-06-29,EMP-440,Operations,Site A,Unsafe Condition,Medium,Partial,,,3.0
+OBS-0193,2023-01-12,EMP-937,Logistics,Site A,Near Miss,High,No,Stopped Work,Pending,0.0
+OBS-0194,2023-04-14,EMP-302,Operations,Yard,Near Miss,Medium,Yes,Written Warning,Yes,
+OBS-0195,2022-03-07,EMP-830,Operations,Warehouse,,,No,Stopped Work,Pending,5.0
+OBS-0196,2022-03-20,EMP-876,Drilling,Yard,,,Yes,Pending,No,0.0
+OBS-0197,2022-04-25,,Drilling,Office,Good Practice,High,,Verbal Warning,No,14.0
+OBS-0198,2022-07-29,EMP-928,Maintenance,Site B,Unsafe Condition,,Partial,Retraining,,7.0
+OBS-0199,2023-11-30,EMP-646,Construction,Office,,High,No,Written Warning,No,3.0
+OBS-0200,2023-03-07,EMP-180,Operations,Office,,,No,,No,0.0
+OBS-0201,2022-01-22,EMP-873,Construction,,Near Miss,Medium,Yes,Equipment Removed,Pending,30.0
+OBS-0202,2022-01-23,EMP-882,Maintenance,Site A,Near Miss,Critical,,Written Warning,,2.0
+OBS-0203,2023-06-17,EMP-576,Warehousing,Yard,Unsafe Act,Medium,Partial,Pending,,
+OBS-0204,2022-12-18,EMP-681,Drilling,Yard,Unsafe Condition,Medium,No,Verbal Warning,Yes,7.0
+OBS-0205,2023-11-13,EMP-234,Drilling,Office,Good Practice,,,Stopped Work,Yes,7.0
+OBS-0206,2023-04-08,EMP-195,Drilling,Office,,High,,Verbal Warning,No,30.0
+OBS-0207,2022-10-11,EMP-932,Construction,Yard,Unsafe Act,High,,Retraining,No,
+OBS-0208,2022-08-21,EMP-921,Logistics,Site A,,Medium,,,Pending,3.0
+OBS-0209,2022-10-23,EMP-815,Operations,Warehouse,Near Miss,Critical,,Retraining,,30.0
+OBS-0210,2022-10-19,EMP-579,Operations,Yard,Good Practice,,No,Written Warning,Pending,
+OBS-0211,2023-09-26,EMP-199,,Warehouse,,High,,Verbal Warning,Yes,2.0
+OBS-0212,2022-10-20,EMP-566,Operations,Site A,Unsafe Condition,Low,No,Equipment Removed,Pending,7.0
+OBS-0213,2023-12-27,,Operations,,Good Practice,Medium,Yes,Written Warning,No,
+OBS-0214,2022-04-30,,Drilling,Yard,,,,,Yes,30.0
+OBS-0215,2023-12-08,EMP-759,,Warehouse,,Low,Yes,Stopped Work,,3.0
+OBS-0216,2023-01-14,EMP-827,Warehousing,Site A,,,Yes,Written Warning,No,
+OBS-0217,2023-12-26,EMP-884,Operations,Site A,Good Practice,Critical,,,Pending,5.0
+OBS-0218,2022-12-19,,Maintenance,Office,,Low,No,Pending,No,2.0
+OBS-0219,2023-07-07,EMP-581,Operations,Warehouse,Near Miss,Low,Yes,,,
+OBS-0220,2022-05-05,EMP-337,Maintenance,,,,No,,,7.0
+OBS-0221,2023-05-27,EMP-329,Logistics,Site B,Near Miss,Medium,No,Retraining,,
+OBS-0222,,EMP-247,Logistics,Yard,Unsafe Condition,High,No,Verbal Warning,,
+OBS-0223,2023-07-14,EMP-981,,Warehouse,Unsafe Condition,,Yes,Retraining,,5.0
+OBS-0224,2022-10-30,,Operations,Warehouse,Unsafe Act,Critical,Partial,Retraining,Pending,14.0
+OBS-0225,2023-11-08,EMP-364,Drilling,Office,Unsafe Act,High,Partial,,,0.0
+OBS-0226,2023-03-29,EMP-472,Construction,Site A,Good Practice,,Partial,Stopped Work,Yes,
+OBS-0227,2023-05-06,EMP-501,Drilling,Yard,Near Miss,Low,No,Pending,No,
+OBS-0228,2023-07-19,EMP-287,Operations,Site A,Near Miss,,Yes,Equipment Removed,No,
+OBS-0229,2023-02-16,EMP-816,Warehousing,Site A,,,No,,,0.0
+OBS-0230,2022-05-04,EMP-781,,Yard,,Low,No,Retraining,Yes,3.0
+OBS-0231,2023-10-19,EMP-438,Maintenance,Site A,,,No,Stopped Work,Yes,30.0
+OBS-0232,2022-08-16,EMP-907,Operations,Yard,Unsafe Act,Low,No,Written Warning,,3.0
+OBS-0233,2022-03-27,EMP-981,Construction,Warehouse,Good Practice,,No,,Pending,14.0
+OBS-0234,2022-03-31,,Construction,Warehouse,Good Practice,Critical,Yes,Retraining,,30.0
+OBS-0235,2022-11-22,EMP-564,Drilling,Site A,Unsafe Condition,,Partial,Retraining,,30.0
+OBS-0236,2023-01-05,EMP-599,Maintenance,Yard,Unsafe Condition,Low,No,Written Warning,No,1.0
+OBS-0237,2023-03-14,EMP-130,Maintenance,Office,Unsafe Act,High,No,Written Warning,No,0.0
+OBS-0238,2022-01-13,EMP-166,Drilling,,Good Practice,High,No,Pending,No,5.0
+OBS-0239,2022-11-12,EMP-586,Maintenance,Office,Good Practice,,No,Stopped Work,Yes,2.0
+OBS-0240,2022-03-31,EMP-215,,,Unsafe Condition,High,Yes,,No,7.0
+OBS-0241,2023-03-31,EMP-459,Maintenance,Warehouse,Good Practice,High,Yes,Written Warning,Pending,2.0
+OBS-0242,2022-10-23,EMP-590,,Warehouse,Near Miss,Medium,Yes,,,
+OBS-0243,2023-03-11,EMP-572,,Warehouse,,Low,No,,No,2.0
+OBS-0244,2023-08-25,EMP-966,Warehousing,Office,Unsafe Act,Low,Yes,,No,
+OBS-0245,2022-11-07,EMP-274,Construction,Site A,Unsafe Act,Critical,Partial,Written Warning,No,
+OBS-0246,2023-06-22,EMP-389,Drilling,,Unsafe Act,High,Yes,Pending,No,30.0
+OBS-0247,2023-08-28,EMP-886,Drilling,Yard,Good Practice,Medium,Yes,Equipment Removed,,2.0
+OBS-0248,2023-02-24,EMP-456,,Site A,,Critical,Yes,Pending,Pending,14.0
+OBS-0249,2023-07-24,EMP-718,Logistics,Site A,Unsafe Condition,Low,Yes,Retraining,Pending,
+OBS-0250,2022-05-21,,Operations,,Unsafe Condition,Medium,No,Verbal Warning,Yes,2.0
+OBS-0251,2023-01-26,EMP-230,Warehousing,Office,Unsafe Condition,Low,,,Yes,14.0
+OBS-0252,2022-02-13,EMP-620,Operations,Yard,,Medium,,,No,14.0
+OBS-0253,2022-11-08,EMP-205,Construction,Site A,Near Miss,,Yes,Stopped Work,Pending,7.0
+OBS-0254,,EMP-515,,,Good Practice,High,,Verbal Warning,Yes,3.0
+OBS-0255,2022-03-01,EMP-937,Drilling,Site A,Unsafe Act,Medium,Partial,,No,5.0
+OBS-0256,2023-10-18,EMP-831,Logistics,,,Low,Yes,Verbal Warning,Yes,7.0
+OBS-0257,2023-11-13,EMP-915,Construction,Warehouse,Unsafe Act,,,Written Warning,No,1.0
+OBS-0258,,EMP-209,Construction,Site A,Near Miss,,No,Stopped Work,,2.0
+OBS-0259,2022-10-11,EMP-433,Operations,Site A,Unsafe Condition,Medium,No,,Yes,30.0
+OBS-0260,2022-10-03,EMP-669,,Warehouse,,Medium,No,Verbal Warning,No,5.0
+OBS-0261,2023-08-03,EMP-765,Drilling,,Good Practice,Medium,,Written Warning,Pending,30.0
+OBS-0262,2023-10-06,EMP-172,Drilling,Warehouse,Near Miss,Critical,No,Verbal Warning,Yes,2.0
+OBS-0263,2022-03-05,EMP-911,Maintenance,Warehouse,Unsafe Act,High,Partial,Verbal Warning,Pending,2.0
+OBS-0264,2023-08-13,EMP-409,Warehousing,Office,Unsafe Act,Low,Partial,Verbal Warning,No,3.0
+OBS-0265,2022-06-16,EMP-645,Maintenance,,,Medium,,Pending,Pending,
+OBS-0266,2023-04-18,EMP-572,Warehousing,Yard,Unsafe Act,Critical,,Pending,Yes,7.0
+OBS-0267,2022-02-24,EMP-510,Construction,,Good Practice,,No,Written Warning,Pending,0.0
+OBS-0268,2023-10-14,EMP-704,Drilling,Office,Unsafe Condition,Medium,No,Written Warning,No,
+OBS-0269,2022-10-26,EMP-523,Drilling,Yard,,Low,No,Pending,,2.0
+OBS-0270,2023-06-10,EMP-344,Maintenance,Office,,Medium,No,Verbal Warning,Pending,
+OBS-0271,2023-06-09,EMP-735,Drilling,,Unsafe Act,,,Equipment Removed,Pending,14.0
+OBS-0272,2022-11-20,EMP-349,Warehousing,Warehouse,Good Practice,High,,,No,0.0
+OBS-0273,2023-12-16,EMP-661,Drilling,Warehouse,Near Miss,Low,No,,Yes,7.0
+OBS-0274,2023-08-17,EMP-262,Drilling,,Unsafe Condition,Medium,,Retraining,,
+OBS-0275,2022-01-14,EMP-593,Operations,,,,,Verbal Warning,Pending,7.0
+OBS-0276,2023-01-17,EMP-493,Logistics,Site A,,,Partial,,Yes,0.0
+OBS-0277,2022-06-16,EMP-167,Maintenance,Site B,,Critical,Yes,Written Warning,,2.0
+OBS-0278,2023-05-31,EMP-448,Operations,Site A,,Medium,No,Written Warning,No,1.0
+OBS-0279,2023-07-27,EMP-313,,Site A,,,Yes,Equipment Removed,,3.0
+OBS-0280,2022-03-20,EMP-933,,,,Medium,Yes,Verbal Warning,,14.0
+OBS-0281,2022-01-18,EMP-810,Logistics,Office,Good Practice,,Yes,Pending,,30.0
+OBS-0282,2023-09-12,EMP-705,,Warehouse,,,Yes,Written Warning,Yes,3.0
+OBS-0283,2023-03-29,EMP-541,Operations,,Unsafe Condition,,,Retraining,Pending,14.0
+OBS-0284,2022-11-08,EMP-903,Logistics,Office,Near Miss,,No,Retraining,Yes,
+OBS-0285,2022-02-05,,Drilling,Site A,Unsafe Condition,,No,Pending,No,
+OBS-0286,2023-12-12,EMP-680,Construction,Warehouse,Unsafe Condition,,No,,Pending,
+OBS-0287,2022-11-11,EMP-906,Operations,Yard,,Medium,,,Pending,0.0
+OBS-0288,2022-03-22,EMP-450,Construction,Site A,,Low,,Written Warning,Pending,30.0
+OBS-0289,,EMP-657,Construction,Site A,,,,Retraining,Pending,
+OBS-0290,2023-05-11,EMP-810,,Warehouse,,Medium,Partial,,No,0.0
+OBS-0291,2022-04-21,EMP-341,,Site A,Unsafe Act,Low,Yes,Verbal Warning,Pending,3.0
+OBS-0292,2023-06-10,EMP-277,Operations,Site A,,Medium,No,Retraining,Pending,7.0
+OBS-0293,2022-09-17,EMP-778,Construction,Site A,Near Miss,Medium,Yes,Equipment Removed,,1.0
+OBS-0294,2023-11-15,EMP-785,Construction,Office,Good Practice,,Yes,Equipment Removed,,
+OBS-0295,2022-07-05,EMP-179,Operations,Yard,,Medium,Yes,Verbal Warning,,
+OBS-0296,2022-07-24,EMP-857,Logistics,Yard,Unsafe Condition,,Yes,,No,3.0
+OBS-0297,2022-01-30,EMP-828,Maintenance,,Unsafe Act,Medium,No,,,
+OBS-0298,2022-12-10,EMP-687,Drilling,Warehouse,Near Miss,Medium,,Equipment Removed,No,3.0
+OBS-0299,2023-05-28,EMP-956,Maintenance,,Good Practice,,,Pending,No,3.0
+OBS-0300,2022-03-11,EMP-598,,Office,,Low,No,Pending,Yes,30.0
+OBS-0301,2022-01-15,EMP-217,Construction,,Unsafe Condition,,,,Yes,0.0
+OBS-0302,2022-10-16,EMP-706,Warehousing,Office,Near Miss,,No,Equipment Removed,Yes,7.0
+OBS-0303,2023-07-05,EMP-710,Construction,,Good Practice,,Partial,Verbal Warning,Yes,1.0
+OBS-0304,2022-12-04,EMP-574,,Yard,Unsafe Act,Medium,,,Yes,
+OBS-0305,2023-12-26,EMP-433,Construction,Warehouse,Unsafe Act,,No,Stopped Work,Yes,14.0
+OBS-0306,2023-08-27,EMP-668,Operations,Office,,,,Equipment Removed,Yes,5.0
+OBS-0307,2022-04-20,EMP-199,Operations,,Near Miss,Critical,No,Equipment Removed,Pending,
+OBS-0308,2023-01-24,EMP-941,Construction,Office,Near Miss,Low,No,Verbal Warning,,0.0
+OBS-0309,2022-08-22,EMP-555,Maintenance,Warehouse,Unsafe Act,High,,Retraining,No,30.0
+OBS-0310,2022-11-18,,Drilling,,Unsafe Act,,Yes,Pending,Pending,
+OBS-0311,2023-06-17,EMP-415,Maintenance,Office,Unsafe Act,,No,Pending,Yes,3.0
+OBS-0312,2023-05-01,EMP-515,Operations,,Near Miss,,Yes,Verbal Warning,,
+OBS-0313,2022-02-11,EMP-171,Drilling,Office,Unsafe Act,Low,No,Pending,Yes,14.0
+OBS-0314,2022-04-29,EMP-712,Drilling,Warehouse,Good Practice,High,Partial,,No,
+OBS-0315,2023-07-09,EMP-211,Construction,,Unsafe Condition,High,Yes,Verbal Warning,,
+OBS-0316,2023-03-31,EMP-801,Construction,Warehouse,Good Practice,High,Yes,Retraining,Yes,7.0
+OBS-0317,2022-10-25,EMP-933,Construction,Site A,Unsafe Act,Medium,,Equipment Removed,No,7.0
+OBS-0318,2022-03-13,EMP-710,Warehousing,Site A,Near Miss,Low,Yes,,,30.0
+OBS-0319,,EMP-889,Logistics,Site A,,,Yes,Retraining,Pending,
+OBS-0320,2023-11-22,,,Site A,Good Practice,,No,,Yes,5.0
+OBS-0321,2023-02-10,EMP-488,Construction,Site B,Near Miss,Critical,No,Retraining,Yes,7.0
+OBS-0322,2023-11-24,EMP-435,Maintenance,Site A,,Critical,,Equipment Removed,Yes,
+OBS-0323,2023-02-09,EMP-606,Warehousing,,Good Practice,High,Yes,Pending,,2.0
+OBS-0324,2022-04-15,EMP-760,Operations,Site A,Good Practice,,No,Pending,,7.0
+OBS-0325,2022-07-23,EMP-776,Operations,,Near Miss,Low,No,,No,30.0
+OBS-0326,2023-02-18,EMP-162,Logistics,Site B,Unsafe Condition,Medium,Yes,Verbal Warning,,14.0
+OBS-0327,2023-03-11,EMP-192,Drilling,,,Low,Partial,Retraining,No,2.0
+OBS-0328,2024-01-01,EMP-322,Drilling,Site A,Good Practice,Medium,No,Verbal Warning,No,
+OBS-0329,2023-10-22,,Logistics,Site B,,High,,,Yes,2.0
+OBS-0330,2023-11-14,EMP-242,Drilling,Yard,Near Miss,,Yes,,,2.0
+OBS-0331,2023-08-06,EMP-694,,Office,Good Practice,Critical,No,Written Warning,Yes,5.0
+OBS-0332,2023-04-11,,Maintenance,Site A,,High,Partial,Verbal Warning,,2.0
+OBS-0333,2023-05-17,EMP-751,Operations,Office,Good Practice,Low,Yes,Written Warning,Pending,3.0
+OBS-0334,2022-05-18,EMP-929,Maintenance,Site B,,High,Yes,Stopped Work,,0.0
+OBS-0335,2022-02-24,EMP-100,Operations,Warehouse,Near Miss,Medium,No,Stopped Work,No,1.0
+OBS-0336,2022-01-28,EMP-875,Construction,,Unsafe Act,High,,Pending,,2.0
+OBS-0337,2023-11-27,,Operations,Office,Unsafe Act,Low,,,Pending,7.0
+OBS-0338,2023-09-29,EMP-776,Maintenance,,Good Practice,,Yes,,,
+OBS-0339,2023-11-08,EMP-252,Operations,,Unsafe Act,Low,No,Retraining,,
+OBS-0340,2022-07-26,EMP-563,Maintenance,Yard,Good Practice,Medium,Yes,,No,1.0
+OBS-0341,2023-05-18,EMP-644,Operations,Site B,,High,Partial,Equipment Removed,Yes,30.0
+OBS-0342,2023-07-08,EMP-398,Warehousing,Site A,Good Practice,Low,,Equipment Removed,No,
+OBS-0343,2022-02-02,EMP-499,Construction,Warehouse,Unsafe Act,Medium,,Equipment Removed,Yes,
+OBS-0344,2022-05-02,,Drilling,,,Medium,No,,,3.0
+OBS-0345,2023-01-21,EMP-691,Drilling,Yard,Good Practice,Medium,,Retraining,,
+OBS-0346,2022-03-02,EMP-557,Logistics,Site A,Good Practice,High,No,Equipment Removed,No,
+OBS-0347,2022-07-11,EMP-300,Drilling,Yard,Unsafe Act,Medium,Yes,,Yes,
+OBS-0348,2022-05-18,EMP-310,Drilling,Warehouse,,Low,No,Retraining,No,
+OBS-0349,2023-05-15,EMP-797,Maintenance,Site A,Unsafe Condition,,Yes,,,
+OBS-0350,2023-05-18,EMP-998,,Site A,Good Practice,,,Pending,Yes,
+OBS-0351,2022-06-10,EMP-424,Construction,Site A,Good Practice,Low,,Verbal Warning,,2.0
+OBS-0352,2023-05-22,EMP-406,Logistics,Site A,Unsafe Act,Low,Yes,Equipment Removed,No,30.0
+OBS-0353,2022-12-28,EMP-683,,,,Critical,Yes,Stopped Work,No,1.0
+OBS-0354,2022-01-29,EMP-913,Maintenance,,Unsafe Act,High,No,Verbal Warning,Pending,0.0
+OBS-0355,2023-11-01,EMP-795,Warehousing,Yard,Good Practice,Low,Partial,Equipment Removed,No,5.0
+OBS-0356,2023-08-21,EMP-411,Operations,Yard,Near Miss,,,Pending,No,1.0
+OBS-0357,2023-03-10,,Operations,Yard,Unsafe Act,,Yes,Verbal Warning,,30.0
+OBS-0358,2023-03-15,EMP-835,Warehousing,Site A,,High,No,Written Warning,Yes,
+OBS-0359,2023-02-26,EMP-452,Operations,,Near Miss,Medium,Yes,Equipment Removed,No,14.0
+OBS-0360,2022-08-09,EMP-191,Operations,Yard,Unsafe Act,Medium,Yes,Retraining,Pending,5.0
+OBS-0361,2022-11-16,EMP-696,Operations,Office,Unsafe Act,Low,,,Pending,
+OBS-0362,2022-09-03,EMP-108,Drilling,Site B,Near Miss,Critical,No,Retraining,,
+OBS-0363,2022-06-23,EMP-726,Drilling,Site B,,Medium,,Pending,,
+OBS-0364,2022-02-08,EMP-622,Construction,Warehouse,Unsafe Condition,High,No,,,0.0
+OBS-0365,2023-03-09,EMP-513,Logistics,Office,Unsafe Act,Low,Partial,,Pending,1.0
+OBS-0366,2023-12-14,EMP-967,Warehousing,,Good Practice,High,No,,Yes,0.0
+OBS-0367,2022-11-21,EMP-230,Maintenance,,Unsafe Act,,,,,
+OBS-0368,2022-11-27,EMP-972,Construction,Warehouse,Unsafe Act,Medium,,Retraining,Yes,3.0
+OBS-0369,2022-04-13,EMP-401,Maintenance,Site A,Near Miss,Low,,,Yes,
+OBS-0370,2023-05-30,,Operations,Warehouse,Unsafe Condition,,Yes,Stopped Work,,
+OBS-0371,2022-03-11,EMP-478,Maintenance,Site A,Near Miss,,No,,Pending,5.0
+OBS-0372,2022-07-26,EMP-662,Drilling,Site A,Unsafe Condition,Critical,Yes,Equipment Removed,Yes,3.0
+OBS-0373,2022-03-19,EMP-154,,Office,Unsafe Condition,Low,,Equipment Removed,Yes,2.0
+OBS-0374,2022-02-18,EMP-100,Logistics,,Good Practice,,No,,,14.0
+OBS-0375,2023-02-16,EMP-820,Drilling,,Unsafe Act,Critical,Yes,Written Warning,Pending,3.0
+OBS-0376,2022-04-05,EMP-673,Warehousing,Warehouse,Unsafe Act,,,Written Warning,,
+OBS-0377,2022-10-07,EMP-940,Drilling,Warehouse,Unsafe Act,Low,Yes,,No,14.0
+OBS-0378,2023-06-28,EMP-467,Construction,,,Low,,Stopped Work,Pending,1.0
+OBS-0379,2022-12-22,EMP-212,Drilling,Yard,Near Miss,Low,No,Retraining,,30.0
+OBS-0380,2022-06-11,EMP-981,Logistics,,Unsafe Act,Low,Yes,,No,
+OBS-0381,2023-07-07,EMP-388,Logistics,Office,Unsafe Condition,High,,,No,30.0
+OBS-0382,2023-02-16,EMP-986,,Office,Unsafe Condition,High,,,Yes,3.0
+OBS-0383,2023-10-04,EMP-131,Maintenance,,Unsafe Condition,Low,,Stopped Work,Pending,14.0
+OBS-0384,2023-05-10,EMP-340,,Yard,Unsafe Act,Medium,Yes,,No,2.0
+OBS-0385,2022-08-07,EMP-542,Logistics,Warehouse,,Low,No,,Yes,14.0
+OBS-0386,2023-10-16,EMP-819,Drilling,Site A,Good Practice,Critical,,,,
+OBS-0387,2023-10-04,EMP-704,Drilling,Yard,Unsafe Act,Low,Yes,Verbal Warning,Yes,5.0
+OBS-0388,2023-01-09,EMP-503,Maintenance,Warehouse,Unsafe Act,Medium,No,Retraining,No,
+OBS-0389,2022-04-06,EMP-740,Operations,Yard,Good Practice,,Yes,Pending,,2.0
+OBS-0390,2023-02-25,EMP-425,Logistics,Yard,Near Miss,,Yes,,Pending,7.0
+OBS-0391,2022-07-03,EMP-828,Maintenance,Office,Unsafe Act,High,Partial,,No,7.0
+OBS-0392,2022-01-10,EMP-491,Drilling,,Unsafe Act,Low,Yes,Verbal Warning,,
+OBS-0393,2022-09-20,EMP-515,Construction,Office,Near Miss,Low,No,Retraining,Pending,7.0
+OBS-0394,2022-04-27,EMP-490,Drilling,Office,Good Practice,,No,Written Warning,,7.0
+OBS-0395,2022-09-09,EMP-545,Maintenance,,,Low,,Pending,No,5.0
+OBS-0396,2023-07-28,EMP-658,Drilling,,Unsafe Condition,,,Pending,Pending,1.0
+OBS-0397,2022-07-02,EMP-316,Drilling,Yard,,Low,Partial,,Pending,
+OBS-0398,2022-05-20,EMP-778,Logistics,Site B,Good Practice,Medium,No,Verbal Warning,Yes,0.0
+OBS-0399,2022-12-10,EMP-277,,,Near Miss,High,No,Stopped Work,,30.0
+OBS-0400,2022-02-13,EMP-586,,Site A,Near Miss,High,No,Verbal Warning,,5.0
