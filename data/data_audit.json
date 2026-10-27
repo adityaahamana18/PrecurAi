@@ -1,0 +1,822 @@
+{
+  "datasets": {
+    "safety_observations": {
+      "file": "safety_observations",
+      "filepath": "C:\\Users\\adity\\OneDrive\\Desktop\\PrecurAi\\data\\safety_observations.csv",
+      "rows": 400,
+      "columns_count": 11,
+      "duplicate_rows": 0,
+      "columns": {
+        "Observation_ID": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "num_unique": 400,
+          "value_counts_top20": {
+            "OBS-0384": 1,
+            "OBS-0383": 1,
+            "OBS-0382": 1,
+            "OBS-0381": 1,
+            "OBS-0380": 1,
+            "OBS-0379": 1,
+            "OBS-0378": 1,
+            "OBS-0377": 1,
+            "OBS-0376": 1,
+            "OBS-0375": 1,
+            "OBS-0374": 1,
+            "OBS-0373": 1,
+            "OBS-0372": 1,
+            "OBS-0371": 1,
+            "OBS-0370": 1,
+            "OBS-0369": 1,
+            "OBS-0032": 1,
+            "OBS-0031": 1,
+            "OBS-0030": 1,
+            "OBS-0029": 1
+          }
+        },
+        "Date": {
+          "dtype": "object",
+          "null_count": 13,
+          "null_pct": 3.25,
+          "num_unique": 360,
+          "value_counts_top20": {
+            "nan": 13,
+            "2023-01-14": 3,
+            "10/12/2022": 3,
+            "11 Oct 2022": 2,
+            "13 Jan 2022": 2,
+            "03/06/2022": 2,
+            "2023-07-07": 2,
+            "13 Feb 2022": 2,
+            "20/03/2022": 2,
+            "08 Feb 2022": 2,
+            "27/06/2023": 2,
+            "06/29/2023": 2,
+            "2023-08-29": 2,
+            "24 Apr 2022": 2,
+            "18 May 2023": 2,
+            "10 Oct 2023": 2,
+            "25 May 2022": 2,
+            "07 Nov 2022": 2,
+            "12/09/2023": 2,
+            "03/29/2023": 2
+          }
+        },
+        "Observer_ID": {
+          "dtype": "object",
+          "null_count": 30,
+          "null_pct": 7.5,
+          "num_unique": 305,
+          "value_counts_top20": {
+            "nan": 30,
+            "EMP-252": 3,
+            "EMP-515": 3,
+            "EMP-981": 3,
+            "EMP-691": 3,
+            "EMP-409": 3,
+            "EMP-419": 3,
+            "EMP-710": 3,
+            "EMP-933": 3,
+            "EMP-523": 3,
+            "EMP-776": 2,
+            "EMP-810": 2,
+            "EMP-277": 2,
+            "EMP-433": 2,
+            "EMP-704": 2,
+            "EMP-586": 2,
+            "EMP-230": 2,
+            "EMP-572": 2,
+            "EMP-199": 2,
+            "EMP-778": 2
+          }
+        },
+        "Department": {
+          "dtype": "object",
+          "null_count": 68,
+          "null_pct": 17.0,
+          "num_unique": 13,
+          "value_counts_top20": {
+            "nan": 68,
+            "MAINTENANCE": 31,
+            "Ops": 30,
+            "Operations": 28,
+            "construction": 28,
+            "Maintenance": 26,
+            "Construction": 26,
+            "DRILLING": 26,
+            "drilling": 26,
+            "Warehousing": 24,
+            "Logistics": 24,
+            "OPS": 24,
+            "Drilling": 22,
+            "logistics ": 17
+          }
+        },
+        "Location": {
+          "dtype": "object",
+          "null_count": 61,
+          "null_pct": 15.25,
+          "num_unique": 12,
+          "value_counts_top20": {
+            "nan": 61,
+            "Yard": 40,
+            "office": 35,
+            "WAREHOUSE": 32,
+            "site a": 32,
+            "SITE A": 30,
+            "Site A": 29,
+            "Warehouse": 29,
+            "Office": 29,
+            "Unknown": 24,
+            "warehouse": 20,
+            "Site B": 20,
+            "yard": 19
+          }
+        },
+        "Observation_Type": {
+          "dtype": "object",
+          "null_count": 99,
+          "null_pct": 24.75,
+          "num_unique": 9,
+          "value_counts_top20": {
+            "nan": 99,
+            "good practice": 40,
+            "Good Practice": 37,
+            "Near Miss": 37,
+            "unsafe act": 35,
+            "near miss": 34,
+            "UNSAFE ACT": 34,
+            "unsafe condition": 31,
+            "Unsafe Act": 28,
+            "Unsafe Condition": 25
+          }
+        },
+        "Risk_Level": {
+          "dtype": "object",
+          "null_count": 82,
+          "null_pct": 20.5,
+          "num_unique": 9,
+          "value_counts_top20": {
+            "nan": 82,
+            "Low": 46,
+            "low": 40,
+            "0": 38,
+            "HIGH": 35,
+            "Critical": 34,
+            "Med": 34,
+            "MEDIUM": 33,
+            "High": 30,
+            "Medium": 28
+          }
+        },
+        "PPE_Worn": {
+          "dtype": "object",
+          "null_count": 96,
+          "null_pct": 24.0,
+          "num_unique": 7,
+          "value_counts_top20": {
+            "nan": 96,
+            "no": 60,
+            "NO": 48,
+            "yes": 44,
+            "Partial": 39,
+            "YES": 39,
+            "No": 38,
+            "Yes": 36
+          }
+        },
+        "Action_Taken": {
+          "dtype": "object",
+          "null_count": 113,
+          "null_pct": 28.25,
+          "num_unique": 9,
+          "value_counts_top20": {
+            "nan": 113,
+            "Written Warning": 44,
+            "Equipment Removed": 39,
+            "Stopped Work": 36,
+            "verbal warning": 34,
+            "Verbal Warning": 32,
+            "retraining": 29,
+            "Retraining": 25,
+            "pending": 25,
+            "Pending": 23
+          }
+        },
+        "Closed_Out": {
+          "dtype": "object",
+          "null_count": 113,
+          "null_pct": 28.25,
+          "num_unique": 5,
+          "value_counts_top20": {
+            "nan": 113,
+            "Pending": 74,
+            "no": 56,
+            "Yes": 55,
+            "No": 51,
+            "yes": 51
+          }
+        },
+        "Days_to_Close": {
+          "dtype": "float64",
+          "null_count": 28,
+          "null_pct": 7.0,
+          "num_unique": 10,
+          "value_counts_top20": {
+            "999.0": 47,
+            "2.0": 45,
+            "-5.0": 43,
+            "3.0": 42,
+            "30.0": 40,
+            "7.0": 36,
+            "0.0": 33,
+            "5.0": 29,
+            "14.0": 29,
+            "nan": 28,
+            "1.0": 28
+          }
+        }
+      },
+      "date_fields": {
+        "Date": {
+          "valid_dates": 106,
+          "invalid_dates": 281,
+          "min_date": "2022-01-06 00:00:00",
+          "max_date": "2023-12-26 00:00:00"
+        }
+      },
+      "text_nlp_fields": {}
+    },
+    "incident_register": {
+      "file": "incident_register",
+      "filepath": "C:\\Users\\adity\\OneDrive\\Desktop\\PrecurAi\\data\\incident_register.csv",
+      "rows": 500,
+      "columns_count": 12,
+      "duplicate_rows": 0,
+      "columns": {
+        "Incident_ID": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "num_unique": 500,
+          "value_counts_top20": {
+            "INC-0500": 1,
+            "INC-0001": 1,
+            "INC-0002": 1,
+            "INC-0003": 1,
+            "INC-0484": 1,
+            "INC-0483": 1,
+            "INC-0482": 1,
+            "INC-0481": 1,
+            "INC-0480": 1,
+            "INC-0479": 1,
+            "INC-0478": 1,
+            "INC-0477": 1,
+            "INC-0476": 1,
+            "INC-0475": 1,
+            "INC-0474": 1,
+            "INC-0473": 1,
+            "INC-0472": 1,
+            "INC-0471": 1,
+            "INC-0470": 1,
+            "INC-0469": 1
+          }
+        },
+        "Date": {
+          "dtype": "object",
+          "null_count": 14,
+          "null_pct": 2.8,
+          "num_unique": 443,
+          "value_counts_top20": {
+            "nan": 14,
+            "99/99/9999": 12,
+            "March 06, 2023": 3,
+            "04/12/2023": 2,
+            "05-13-2023": 2,
+            "11-09-2022": 2,
+            "03/11/2023": 2,
+            "29-12-2022": 2,
+            "05-04-2022": 2,
+            "04/07/2023": 2,
+            "09-25-2022": 2,
+            "07-06-2022": 2,
+            "March 03, 2023": 2,
+            "05-05-2022": 2,
+            "12-12-2023": 2,
+            "May 30, 2023": 2,
+            "21-04-2022": 2,
+            "23/03/2023": 2,
+            "12-05-2023": 2,
+            "07-17-2023": 2
+          }
+        },
+        "Department": {
+          "dtype": "object",
+          "null_count": 57,
+          "null_pct": 11.4,
+          "num_unique": 13,
+          "value_counts_top20": {
+            "nan": 57,
+            "OPS": 41,
+            "drilling": 39,
+            "Logistics": 39,
+            "Operations": 39,
+            "DRILLING": 38,
+            "Maintenance": 36,
+            "Ops": 36,
+            "MAINTENANCE": 34,
+            "Warehousing": 31,
+            "Construction": 29,
+            "construction": 29,
+            "logistics ": 28,
+            "Drilling": 24
+          }
+        },
+        "Incident_Type": {
+          "dtype": "object",
+          "null_count": 63,
+          "null_pct": 12.6,
+          "num_unique": 13,
+          "value_counts_top20": {
+            "nan": 63,
+            "near miss": 45,
+            "Unsafe Act": 38,
+            "Near Miss": 37,
+            "First Aid": 35,
+            "unsafe act": 35,
+            "NEAR MISS": 34,
+            "lti": 32,
+            "Environmental": 32,
+            "LTI": 31,
+            "first aid": 31,
+            "Property Damage": 30,
+            "property damage": 30,
+            "Lost Time Injury": 27
+          }
+        },
+        "Shift": {
+          "dtype": "object",
+          "null_count": 97,
+          "null_pct": 19.4,
+          "num_unique": 8,
+          "value_counts_top20": {
+            "nan": 97,
+            "afternoon": 55,
+            "MORNING": 54,
+            "NIGHT": 53,
+            "Morning": 52,
+            "Night": 52,
+            "Afternoon": 48,
+            "night shift": 46,
+            "morning": 43
+          }
+        },
+        "Root_Cause": {
+          "dtype": "object",
+          "null_count": 79,
+          "null_pct": 15.8,
+          "num_unique": 12,
+          "value_counts_top20": {
+            "nan": 79,
+            "fatigue": 46,
+            "ppe non compliance": 42,
+            "human error": 41,
+            "Human Error": 37,
+            "lack of training": 36,
+            "HUMAN ERROR": 34,
+            "PPE Non-Compliance": 33,
+            "Fatigue": 33,
+            "Unknown": 31,
+            "Poor Housekeeping": 31,
+            "Equipment Failure": 29,
+            "Lack of Training": 28
+          }
+        },
+        "Severity": {
+          "dtype": "object",
+          "null_count": 92,
+          "null_pct": 18.4,
+          "num_unique": 11,
+          "value_counts_top20": {
+            "nan": 92,
+            "Critical": 51,
+            "N/a": 48,
+            "LOW": 37,
+            "CRITICAL": 37,
+            "Medium": 36,
+            "Med": 36,
+            "MEDIUM": 35,
+            "low": 35,
+            "Low": 34,
+            "High": 34,
+            "HIGH": 25
+          }
+        },
+        "Days_Lost": {
+          "dtype": "float64",
+          "null_count": 32,
+          "null_pct": 6.4,
+          "num_unique": 12,
+          "value_counts_top20": {
+            "0.0": 89,
+            "999.0": 45,
+            "30.0": 42,
+            "21.0": 38,
+            "7.0": 37,
+            "10.0": 37,
+            "1.0": 36,
+            "2.0": 33,
+            "nan": 32,
+            "5.0": 30,
+            "14.0": 29,
+            "-1.0": 26,
+            "3.0": 26
+          }
+        },
+        "Employee_Age": {
+          "dtype": "object",
+          "null_count": 46,
+          "null_pct": 9.2,
+          "num_unique": 11,
+          "value_counts_top20": {
+            "45": 53,
+            "nan": 46,
+            "30": 44,
+            "35": 42,
+            "unknown": 42,
+            "40": 41,
+            "999": 41,
+            "0": 41,
+            "50": 39,
+            "28": 38,
+            "25": 38,
+            "22": 35
+          }
+        },
+        "Reported_Formally": {
+          "dtype": "object",
+          "null_count": 121,
+          "null_pct": 24.2,
+          "num_unique": 8,
+          "value_counts_top20": {
+            "nan": 121,
+            "no": 53,
+            "yes": 53,
+            "Y": 51,
+            "N": 49,
+            "NO": 47,
+            "YES": 43,
+            "No": 43,
+            "Yes": 40
+          }
+        },
+        "Corrective_Action": {
+          "dtype": "object",
+          "null_count": 191,
+          "null_pct": 38.2,
+          "num_unique": 5,
+          "value_counts_top20": {
+            "nan": 191,
+            "Warning Issued": 64,
+            "Equipment Check": 63,
+            "TBD": 63,
+            "Toolbox Talk": 60,
+            "Training": 59
+          }
+        },
+        "Investigation_Done": {
+          "dtype": "object",
+          "null_count": 165,
+          "null_pct": 33.0,
+          "num_unique": 4,
+          "value_counts_top20": {
+            "nan": 165,
+            "no": 93,
+            "No": 85,
+            "yes": 82,
+            "Yes": 75
+          }
+        }
+      },
+      "date_fields": {
+        "Date": {
+          "valid_dates": 128,
+          "invalid_dates": 358,
+          "min_date": "2022-01-07 00:00:00",
+          "max_date": "2023-12-22 00:00:00"
+        }
+      },
+      "text_nlp_fields": {}
+    },
+    "training_records": {
+      "file": "training_records",
+      "filepath": "C:\\Users\\adity\\OneDrive\\Desktop\\PrecurAi\\data\\training_records.csv",
+      "rows": 300,
+      "columns_count": 11,
+      "duplicate_rows": 0,
+      "columns": {
+        "Training_ID": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "num_unique": 300,
+          "value_counts_top20": {
+            "TRN-0300": 1,
+            "TRN-0001": 1,
+            "TRN-0002": 1,
+            "TRN-0003": 1,
+            "TRN-0004": 1,
+            "TRN-0005": 1,
+            "TRN-0006": 1,
+            "TRN-0007": 1,
+            "TRN-0008": 1,
+            "TRN-0009": 1,
+            "TRN-0010": 1,
+            "TRN-0011": 1,
+            "TRN-0284": 1,
+            "TRN-0283": 1,
+            "TRN-0282": 1,
+            "TRN-0281": 1,
+            "TRN-0280": 1,
+            "TRN-0279": 1,
+            "TRN-0278": 1,
+            "TRN-0277": 1
+          }
+        },
+        "Employee_ID": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "num_unique": 217,
+          "value_counts_top20": {
+            "EMP-147": 4,
+            "EMP-449": 4,
+            "EMP-182": 4,
+            "EMP-155": 3,
+            "EMP-496": 3,
+            "EMP-258": 3,
+            "EMP-208": 3,
+            "EMP-479": 3,
+            "EMP-127": 3,
+            "EMP-248": 3,
+            "EMP-391": 3,
+            "EMP-493": 3,
+            "EMP-209": 3,
+            "EMP-405": 2,
+            "EMP-222": 2,
+            "EMP-356": 2,
+            "EMP-244": 2,
+            "EMP-105": 2,
+            "EMP-133": 2,
+            "EMP-199": 2
+          }
+        },
+        "Employee_Name": {
+          "dtype": "object",
+          "null_count": 51,
+          "null_pct": 17.0,
+          "num_unique": 8,
+          "value_counts_top20": {
+            "nan": 51,
+            "Tariq Hussain": 40,
+            "AHMED AL-RASHIDI": 35,
+            "Unknown": 32,
+            "Mohammed Farooq": 31,
+            "mohammed farooq": 29,
+            "salman khan": 28,
+            "Ahmed Al-Rashidi": 27,
+            "Salman Khan": 27
+          }
+        },
+        "Department": {
+          "dtype": "object",
+          "null_count": 41,
+          "null_pct": 13.67,
+          "num_unique": 13,
+          "value_counts_top20": {
+            "nan": 41,
+            "drilling": 29,
+            "Maintenance": 26,
+            "Construction": 24,
+            "Drilling": 21,
+            "OPS": 21,
+            "Logistics": 20,
+            "construction": 18,
+            "MAINTENANCE": 18,
+            "Warehousing": 18,
+            "Ops": 17,
+            "Operations": 17,
+            "logistics ": 15,
+            "DRILLING": 15
+          }
+        },
+        "Training_Name": {
+          "dtype": "object",
+          "null_count": 40,
+          "null_pct": 13.33,
+          "num_unique": 15,
+          "value_counts_top20": {
+            "nan": 40,
+            "Defensive Driving": 27,
+            "fire safety": 24,
+            "NEBOSH IGC": 20,
+            "FIRE SAFETY": 20,
+            "permit to work": 19,
+            "ppe awareness": 19,
+            "DEFENSIVE DRIVING": 18,
+            "Manual Handling": 17,
+            "nebosh igc": 16,
+            "PPE Awareness": 15,
+            "First Aid": 14,
+            "first aid": 14,
+            "Permit to Work": 13,
+            "Fire Safety": 12,
+            "defensive driving": 12
+          }
+        },
+        "Training_Date": {
+          "dtype": "object",
+          "null_count": 21,
+          "null_pct": 7.0,
+          "num_unique": 264,
+          "value_counts_top20": {
+            "nan": 21,
+            "26 August 2022": 3,
+            "2023-05-30": 2,
+            "13/03/2023": 2,
+            "2022-06-18": 2,
+            "20/03/2021": 2,
+            "04-06-2022": 2,
+            "2021-09-01": 2,
+            "29 November 2022": 2,
+            "2021-02-15": 2,
+            "07/02/2023": 2,
+            "08 October 2022": 2,
+            "12/03/2022": 2,
+            "07-01-2023": 2,
+            "2021-06-28": 2,
+            "24/09/2022": 1,
+            "14/10/2022": 1,
+            "15-06-2021": 1,
+            "29 March 2022": 1,
+            "25-02-2021": 1
+          }
+        },
+        "Expiry_Date": {
+          "dtype": "object",
+          "null_count": 16,
+          "null_pct": 5.33,
+          "num_unique": 274,
+          "value_counts_top20": {
+            "nan": 16,
+            "08 June 2023": 2,
+            "2023-06-18": 2,
+            "13-01-2022": 2,
+            "29-07-2022": 2,
+            "17-05-2022": 2,
+            "01-12-2021": 2,
+            "12-12-2021": 2,
+            "2022-12-07": 2,
+            "08-08-2022": 2,
+            "2021-03-27": 2,
+            "2021-06-13": 1,
+            "13/03/2021": 1,
+            "30 November 2022": 1,
+            "27 April 2022": 1,
+            "04-03-2022": 1,
+            "05/07/2022": 1,
+            "14/09/2022": 1,
+            "28/04/2023": 1,
+            "12/02/2022": 1
+          }
+        },
+        "Status": {
+          "dtype": "object",
+          "null_count": 72,
+          "null_pct": 24.0,
+          "num_unique": 9,
+          "value_counts_top20": {
+            "nan": 72,
+            "Expired": 33,
+            "Pending": 31,
+            "pending": 31,
+            "expired": 27,
+            "Failed": 27,
+            "completed": 23,
+            "COMPLETED": 22,
+            "failed": 17,
+            "Completed": 17
+          }
+        },
+        "Score_Percent": {
+          "dtype": "float64",
+          "null_count": 145,
+          "null_pct": 48.33,
+          "num_unique": 49,
+          "value_counts_top20": {
+            "nan": 145,
+            "999.0": 38,
+            "-1.0": 37,
+            "0.0": 33,
+            "69.5": 2,
+            "70.9": 1,
+            "61.2": 1,
+            "90.9": 1,
+            "88.7": 1,
+            "59.9": 1,
+            "99.0": 1,
+            "47.9": 1,
+            "87.0": 1,
+            "65.6": 1,
+            "59.2": 1,
+            "50.9": 1,
+            "75.1": 1,
+            "82.3": 1,
+            "56.1": 1,
+            "50.3": 1
+          }
+        },
+        "Trainer": {
+          "dtype": "object",
+          "null_count": 115,
+          "null_pct": 38.33,
+          "num_unique": 5,
+          "value_counts_top20": {
+            "nan": 115,
+            "internal": 45,
+            "external": 37,
+            "External": 37,
+            "Internal": 36,
+            "INTERNAL": 30
+          }
+        },
+        "Certificate_Issued": {
+          "dtype": "object",
+          "null_count": 51,
+          "null_pct": 17.0,
+          "num_unique": 5,
+          "value_counts_top20": {
+            "Pending": 58,
+            "yes": 51,
+            "nan": 51,
+            "no": 50,
+            "No": 47,
+            "Yes": 43
+          }
+        }
+      },
+      "date_fields": {
+        "Training_Date": {
+          "valid_dates": 72,
+          "invalid_dates": 207,
+          "min_date": "2021-01-25 00:00:00",
+          "max_date": "2023-06-14 00:00:00"
+        },
+        "Expiry_Date": {
+          "valid_dates": 65,
+          "invalid_dates": 219,
+          "min_date": "2021-02-03 00:00:00",
+          "max_date": "2023-05-30 00:00:00"
+        }
+      },
+      "text_nlp_fields": {}
+    }
+  },
+  "cross_dataset_relationships": {
+    "common_columns": {
+      "Date": [
+        "safety_observations",
+        "incident_register"
+      ],
+      "Department": [
+        "safety_observations",
+        "incident_register",
+        "training_records"
+      ]
+    },
+    "key_overlaps": {
+      "Department": {
+        "present_in": [
+          "safety_observations",
+          "incident_register",
+          "training_records"
+        ],
+        "overlap_count": 13,
+        "total_unique_across_datasets": 13,
+        "common_sample_values": [
+          "drilling",
+          "construction",
+          "Warehousing",
+          "Logistics",
+          "logistics ",
+          "OPS",
+          "Maintenance",
+          "Drilling",
+          "Construction",
+          "Operations"
+        ]
+      }
+    }
+  }
+}
