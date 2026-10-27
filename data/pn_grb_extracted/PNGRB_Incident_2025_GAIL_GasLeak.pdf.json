@@ -1,0 +1,131 @@
+{
+  "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+  "total_pages": 3,
+  "is_scanned": false,
+  "scan_warning": null,
+  "overview": {
+    "title": "Document Ref: PNGRB/INV/2025/0412",
+    "incident_date": "14/03/2025",
+    "location": "Hazira-VTP Pipeline Section, District Surat, Gujarat",
+    "operator_company": "/ Entity Name: GAIL (India) Limited",
+    "pipeline_type": "Cross-Country Natural Gas Pipeline",
+    "pipeline_section": null,
+    "summary": "On 14th March 2025 at approximately 10:15 AM, a high-pressure natural gas release occurred during hot work m\n2. Casualties and Human Impact",
+    "source": {
+      "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+      "page": 1
+    }
+  },
+  "casualties": {
+    "fatalities": 0,
+    "injuries": 0,
+    "details": "and Human Impact",
+    "source": {
+      "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+      "page": 1
+    }
+  },
+  "damages": {
+    "property_damage_cost": "Property Damage Cost: INR 45 Lakhs (equipment replacement and line repair)",
+    "environmental_impact": "Minimal ground impact; localized gas dispersion.",
+    "gas_loss_quantity": null,
+    "source": {
+      "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+      "page": 3
+    }
+  },
+  "findings": [
+    {
+      "content": "Hot work (welding and grinding) commenced within 3 meters of pressurized natural gas flange.",
+      "source": {
+        "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+        "page": 2
+      }
+    },
+    {
+      "content": "Combustible gas detector was uncalibrated and continuous atmospheric monitoring was not performed.",
+      "source": {
+        "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+        "page": 2
+      }
+    },
+    {
+      "content": "Energy isolation tagout (LOTO) valve V-102 was partially passing gas due to worn seal.",
+      "source": {
+        "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+        "page": 2
+      }
+    },
+    {
+      "content": "Emergency Shutdown (ESD) valve at upstream terminal took 14 minutes to activate manually.",
+      "source": {
+        "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+        "page": 2
+      }
+    }
+  ],
+  "root_causes": [
+    {
+      "content": "Primary Cause: Inadequate Permit-to-Work (PTW) verification and failure to enforce Energy Isolation.",
+      "source": {
+        "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+        "page": 2
+      }
+    },
+    {
+      "content": "Underlying Cause: Deficient pre-job safety risk assessment (JSA) for hot work near active pipeline.",
+      "source": {
+        "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+        "page": 2
+      }
+    },
+    {
+      "content": "Management Lapses: Ineffective contractor safety supervision during turnarounds.",
+      "source": {
+        "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+        "page": 2
+      }
+    }
+  ],
+  "immediate_causes": [],
+  "failed_controls": [],
+  "recommendations": [],
+  "normalized_hazards": [
+    "Hot Work",
+    "High Pressure Gas Release",
+    "Energy Isolation (LOTO)"
+  ],
+  "life_saving_rules": [
+    {
+      "rule": "Hot Work",
+      "reason": "Hot work sparks or flame ignition source present near potential hydrocarbon gas release or combustible storage.",
+      "source": {
+        "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+        "page": 1
+      }
+    },
+    {
+      "rule": "Hot Work",
+      "reason": "Hot work sparks or flame ignition source present near potential hydrocarbon gas release or combustible storage.",
+      "source": {
+        "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+        "page": 1
+      }
+    },
+    {
+      "rule": "Hot Work",
+      "reason": "Hot work sparks or flame ignition source present near potential hydrocarbon gas release or combustible storage.",
+      "source": {
+        "filename": "PNGRB_Incident_2025_GAIL_GasLeak.pdf",
+        "page": 1
+      }
+    }
+  ],
+  "sif_assessment": {
+    "status": "NOT_AUTOMATICALLY_LABELED",
+    "potential_precursor": "HIGH",
+    "precursor_justification": "Presence of high-energy hazard(s): Hot Work, High Pressure Gas Release, Energy Isolation (LOTO).",
+    "disclaimer": "AI-generated decision support. Final assessment remains with qualified HSE personnel."
+  },
+  "extracted_at": "2026-09-05T23:51:40.745031"
+}
