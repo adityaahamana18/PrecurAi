@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PrecurAi Precursor Annotation Record Schema",
+  "description": "Defensible JSON Schema for annotated unstructured Oil & Gas safety narratives.",
+  "type": "object",
+  "properties": {
+    "report_id": {
+      "type": "string",
+      "description": "Unique identifier for the safety observation or incident report."
+    },
+    "report_text": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Unstructured free-text narrative describing the safety observation, near miss, or incident."
+    },
+    "observation_type": {
+      "type": "string",
+      "enum": [
+        "Unsafe Act",
+        "Unsafe Condition",
+        "Near Miss",
+        "Good Practice"
+      ],
+      "description": "Primary safety observation category."
+    },
+    "activity": {
+      "type": "string",
+      "description": "Specific operational activity being undertaken (e.g., Crane Lifting, Confined Space Entry, Pipe Welding)."
+    },
+    "hazard": {
+      "type": "string",
+      "description": "Primary hazard mechanism identified (e.g., Suspended Load, Hydrocarbon Gas Release, High Voltage Electricity)."
+    },
+    "unsafe_act": {
+      "type": ["string", "null"],
+      "description": "Extracted human behavior or procedural non-compliance phrase (null if strictly an unsafe condition)."
+    },
+    "unsafe_condition": {
+      "type": ["string", "null"],
+      "description": "Extracted physical or environmental hazard state phrase (null if strictly an unsafe act)."
+    },
+    "potential_consequence": {
+      "type": "string",
+      "description": "Credible worst-case safety consequence based on energy release and barrier failure."
+    },
+    "life_saving_rule": {
+      "type": "string",
+      "description": "Applicable IOGP Life-Saving Rule or 'No direct Life-Saving Rule match'."
+    },
+    "sif_potential": {
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "NOT_ENOUGH_INFORMATION"
+      ],
+      "description": "Evaluated SIF precursor potential classification based on high-energy hazard exposure and barrier failure."
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Exact text verbatim snippets quoted from report_text supporting the evaluation."
+    },
+    "annotator_notes": {
+      "type": "string",
+      "description": "Rationalization and justification written by the HSE annotator."
+    }
+  },
+  "required": [
+    "report_id",
+    "report_text",
+    "observation_type",
+    "activity",
+    "hazard",
+    "potential_consequence",
+    "life_saving_rule",
+    "sif_potential",
+    "evidence",
+    "annotator_notes"
+  ],
+  "additionalProperties": false
+}
