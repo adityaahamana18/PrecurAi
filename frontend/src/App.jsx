@@ -231,6 +231,26 @@ export default function App() {
 
           {activeTab === 'pngrb' && <PNGRBReports />}
         </main>
+
+        {/* Global Page Footer */}
+        <footer className={`py-4 px-6 border-t text-xs flex flex-col sm:flex-row items-center justify-between gap-2 ${
+          darkMode ? 'bg-slate-900 border-slate-800 text-slate-400' : 'bg-white border-slate-200 text-slate-500'
+        }`}>
+          <div>
+            <span>PrecurAi &copy; 2026 — AI-powered SIF Precursor Detection & HSE Intelligence</span>
+          </div>
+          <div className="flex items-center gap-1.5 font-medium">
+            <span>Developer:</span>
+            <a
+              href="https://github.com/adityaahamana18"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-600 dark:text-sky-400 font-semibold hover:underline"
+            >
+              Aditya Ahamana
+            </a>
+          </div>
+        </footer>
       </div>
 
       {/* Report Detail Modal */}
