@@ -7,11 +7,20 @@ import ReportsHistory from './components/ReportsHistory';
 import LifeSavingRules from './components/LifeSavingRules';
 import PNGRBReports from './components/PNGRBReports';
 import ReportDetailModal from './components/ReportDetailModal';
-import { AlertCircle, User, ShieldCheck, Sun, Moon } from 'lucide-react';
+import SignIn1 from './components/ui/modern-stunning-sign-in';
+import { AlertCircle, User, ShieldCheck, Sun, Moon, LogIn, LogOut } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [darkMode, setDarkMode] = useState(false); // Clean light corporate theme default
+  const [currentUser, setCurrentUser] = useState(() => {
+    try {
+      const saved = localStorage.getItem('precurai_user');
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  });
 
   const [stats, setStats] = useState(null);
   const [hseAnalytics, setHseAnalytics] = useState(null);
@@ -124,6 +133,29 @@ export default function App() {
     pngrb: {
       title: 'Incident Reports',
       subtitle: 'Official petroleum & natural gas regulatory board incident documentation'
+    },
+    signin: {
+      title: 'Authentication Portal',
+      subtitle: 'Secure sign-in for authorized HSE personnel and safety supervisors'
+    }
+  };
+
+  const handleUserSignIn = (user) => {
+    setCurrentUser(user);
+    try {
+      localStorage.setItem('precurai_user', JSON.stringify(user));
+    } catch (e) {
+      console.warn("Storage save failed:", e);
+    }
+    setActiveTab('dashboard');
+  };
+
+  const handleUserSignOut = () => {
+    setCurrentUser(null);
+    try {
+      localStorage.removeItem('precurai_user');
+    } catch (e) {
+      console.warn("Storage removal failed:", e);
     }
   };
 
@@ -139,6 +171,8 @@ export default function App() {
         setDarkMode={setDarkMode}
         onSeedData={handleSeedData}
         hasActiveResult={!!latestAnalysisResult}
+        user={currentUser}
+        onSignOut={handleUserSignOut}
       />
 
       {/* Main Layout Area */}
@@ -183,10 +217,10 @@ export default function App() {
               </div>
               <div className="text-left text-xs">
                 <span className={`font-bold block leading-none ${darkMode ? 'text-slate-200' : 'text-slate-800'}`}>
-                  HSE Officer
+                  {currentUser?.name || 'HSE Officer'}
                 </span>
                 <span className={`text-[10px] ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
-                  Operations
+                  {currentUser?.email || 'Operations'}
                 </span>
               </div>
             </div>
@@ -230,6 +264,16 @@ export default function App() {
           {activeTab === 'lsr' && <LifeSavingRules />}
 
           {activeTab === 'pngrb' && <PNGRBReports />}
+
+          {activeTab === 'signin' && (
+            <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+              <SignIn1
+                brandName="PrecurAi"
+                tagline="AI-Powered SIF Precursor Detection & HSE Intelligence"
+                onSuccess={handleUserSignIn}
+              />
+            </div>
+          )}
         </main>
 
         {/* Global Page Footer */}
