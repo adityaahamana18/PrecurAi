@@ -124,11 +124,11 @@ export default function LifeSavingRules() {
           return (
             <div
               key={idx}
-              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl shadow-xs flex flex-col justify-between"
+              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl shadow-xs flex flex-col justify-between card-hover-effect group transition-all duration-300"
             >
               <div className="space-y-3">
                 <div className="flex items-center gap-2.5">
-                  <div className={`w-9 h-9 rounded-lg border flex items-center justify-center ${rule.color}`}>
+                  <div className={`w-9 h-9 rounded-lg border flex items-center justify-center ${rule.color} transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6`}>
                     <IconComp className="w-4 h-4" />
                   </div>
                   <div>
