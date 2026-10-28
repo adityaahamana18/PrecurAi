@@ -184,8 +184,8 @@ export default function App() {
           >
             <div className="relative w-9 h-9 flex items-center justify-center shrink-0">
               <div className="absolute inset-0 rounded-xl border border-[#00E5FF]/40 animate-ping" style={{ animationDuration: '3s' }} />
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0D1424] via-[#111A2E] to-[#070B14] flex items-center justify-center shadow-cyan-glow border border-[#00E5FF]/60 group-hover:scale-105 transition-transform">
-                <Shield className="w-4.5 h-4.5 text-[#00E5FF]" />
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0D1424] via-[#111A2E] to-[#070B14] flex items-center justify-center shadow-cyan-glow border border-[#00E5FF]/60 group-hover:scale-105 transition-transform overflow-hidden p-1">
+                <img src="/logo.png" alt="PrecurAi Logo" className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(0,229,255,0.8)]" />
               </div>
             </div>
             <div>
@@ -423,7 +423,7 @@ export default function App() {
          ══════════════════════════════════════ */}
       <footer className="py-4 px-6 border-t border-[#00E5FF]/20 bg-[#05080F] text-xs flex flex-col sm:flex-row items-center justify-between gap-2 text-[#94A3B8]">
         <div className="flex items-center gap-2">
-          <Shield className="w-3.5 h-3.5 text-[#00E5FF]" />
+          <img src="/logo.png" alt="PrecurAi Logo" className="w-4 h-4 object-contain inline-block drop-shadow-[0_0_6px_rgba(0,229,255,0.7)]" />
           <span>PrecurAi &copy; 2026 — AI-powered SIF Precursor Detection &amp; HSE Intelligence</span>
         </div>
         <div className="flex items-center gap-1.5 font-medium">

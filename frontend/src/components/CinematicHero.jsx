@@ -178,15 +178,19 @@ export default function CinematicHero({ onExplore, onLaunchDashboard, onQuickAna
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00E5FF]/15 to-transparent animate-radar-sweep" />
             </div>
 
-            {/* Inner Ring 4 (Hexagonal Pulsing AI Matrix) */}
-            <div className="absolute inset-24 rounded-full border border-[#00E5FF]/60 flex items-center justify-center bg-gradient-to-br from-[#0D1424] via-[#111A2E] to-[#070B14] shadow-[0_0_40px_rgba(0,229,255,0.3)] animate-pulse-glow">
+            {/* Inner Ring 4 (Hexagonal Pulsing AI Matrix with New Hexagon Logo) */}
+            <div className="absolute inset-20 sm:inset-22 rounded-3xl border border-[#00E5FF]/60 flex items-center justify-center bg-gradient-to-br from-[#0D1424] via-[#111A2E] to-[#070B14] shadow-[0_0_40px_rgba(0,229,255,0.4)] animate-pulse-glow p-4 overflow-hidden">
               <div className="relative flex flex-col items-center justify-center">
-                <Cpu className="w-12 h-12 text-[#00E5FF] drop-shadow-[0_0_16px_rgba(0,229,255,0.8)]" />
-                <span className="text-[10px] font-mono font-bold text-[#F4F7FB] mt-2 tracking-widest uppercase">
+                <img
+                  src="/logo.png"
+                  alt="PrecurAi Hexagonal Core Logo"
+                  className="w-18 h-18 sm:w-22 sm:h-22 object-contain drop-shadow-[0_0_24px_rgba(0,229,255,0.95)]"
+                />
+                <span className="text-[10px] font-mono font-bold text-[#F4F7FB] mt-1 tracking-widest uppercase">
                   SIF CORE
                 </span>
                 <span className="text-[8px] font-mono text-[#00E5FF] font-semibold">
-                  EVALUATING
+                  ACTIVE
                 </span>
               </div>
             </div>
@@ -257,3 +261,4 @@ export default function CinematicHero({ onExplore, onLaunchDashboard, onQuickAna
     </div>
   );
 }
+

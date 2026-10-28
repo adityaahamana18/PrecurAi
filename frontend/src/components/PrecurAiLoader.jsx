@@ -70,8 +70,8 @@ export default function PrecurAiLoader({ label = 'Initializing SIF Precursor Int
           />
 
           {/* Center AI Core */}
-          <div className="relative w-18 h-18 rounded-2xl bg-gradient-to-br from-[#0D1424] via-[#111A2E] to-[#070B14] border-2 border-[#00E5FF] flex items-center justify-center shadow-cyan-glow">
-            <Shield className="w-9 h-9 text-[#00E5FF] drop-shadow-[0_0_12px_rgba(0,229,255,0.9)]" />
+          <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-[#0D1424] via-[#111A2E] to-[#070B14] border-2 border-[#00E5FF] flex items-center justify-center shadow-cyan-glow p-2.5 overflow-hidden">
+            <img src="/logo.png" alt="PrecurAi Core Logo" className="w-14 h-14 object-contain drop-shadow-[0_0_16px_rgba(0,229,255,0.95)]" />
             <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse shadow-[0_0_10px_#00E5FF]" />
           </div>
 

@@ -56,13 +56,6 @@ export default {
           600: '#1EB879',
           950: '#062B1C',
         },
-        cobalt: {
-          deep: '#2C3480',
-          glow: '#4E5BC9',
-          light: '#5B73D1',
-          dark: '#161D33',
-          950: '#0A0D18',
-        },
         text: {
           primary: '#F4F7FB',
           secondary: '#94A3B8',
@@ -132,3 +125,4 @@ export default {
   },
   plugins: [],
 }
+

@@ -180,22 +180,6 @@
   box-shadow: 0 0 35px rgba(139, 92, 246, 0.65);
 }
 
-.btn-cobalt {
-  background: linear-gradient(135deg, #2C3480 0%, #4E5BC9 100%);
-  color: #FFFFFF;
-  font-weight: 700;
-  border: 1px solid rgba(78, 91, 201, 0.6);
-  border-radius: 0.75rem;
-  box-shadow: 0 0 20px rgba(44, 52, 128, 0.4);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-cobalt:hover {
-  filter: brightness(1.15);
-  transform: translateY(-1px) scale(1.02);
-  box-shadow: 0 0 30px rgba(78, 91, 201, 0.65);
-}
-
 .btn-ghost-dark {
   background: rgba(13, 20, 36, 0.7);
   color: #F4F7FB;
@@ -266,3 +250,4 @@
 .stagger-children > *:nth-child(7) { animation: staggerIn 0.4s 0.28s cubic-bezier(0.16,1,0.3,1) both; }
 .stagger-children > *:nth-child(8) { animation: staggerIn 0.4s 0.32s cubic-bezier(0.16,1,0.3,1) both; }
 .stagger-children > *:nth-child(9) { animation: staggerIn 0.4s 0.36s cubic-bezier(0.16,1,0.3,1) both; }
+

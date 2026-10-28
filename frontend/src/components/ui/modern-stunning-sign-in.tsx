@@ -124,8 +124,8 @@ const SignIn1: React.FC<SignIn1Props> = ({
       )}
 
       {/* Brand Icon */}
-      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-tr from-sky-700 to-sky-500 text-white mb-3 shadow-lg shadow-sky-900/40">
-        <Shield className="w-6 h-6 animate-pulse" />
+      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-tr from-[#0D1424] to-[#111A2E] border border-[#00E5FF]/40 text-white mb-3 shadow-lg shadow-cyan-900/40 p-1.5 overflow-hidden">
+        <img src="/logo.png" alt="PrecurAi Logo" className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(0,229,255,0.85)]" />
       </div>
 
       {/* Title */}
