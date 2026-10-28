@@ -9,11 +9,11 @@ import PNGRBReports from './components/PNGRBReports';
 import ReportDetailModal from './components/ReportDetailModal';
 import SignIn1 from './components/ui/modern-stunning-sign-in';
 import { auth, onAuthStateChanged, signOut } from './lib/firebase';
-import { AlertCircle, User, ShieldCheck, Sun, Moon, LogIn, LogOut } from 'lucide-react';
+import { AlertCircle, User, ShieldCheck, Sun, Moon, LogIn, LogOut, Sparkles } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
-  const [darkMode, setDarkMode] = useState(false); // Clean light corporate theme default
+  const [darkMode, setDarkMode] = useState(true); // Default to gorgeous dark vibrant animated theme
   const [currentUser, setCurrentUser] = useState(() => {
     try {
       const saved = localStorage.getItem('precurai_user');
@@ -134,32 +134,28 @@ export default function App() {
 
   const pageHeaders = {
     dashboard: {
-      title: 'HSE Executive Dashboard',
-      subtitle: 'AI-assisted SIF precursor intelligence and HSE safety analytics'
+      title: 'Operational SIF Precursor Dashboard',
+      subtitle: 'Real-time high potential SIF risk detection & predictive safety metrics'
     },
     analyze: {
-      title: 'Analyze Safety Report',
-      subtitle: 'Upload safety documents (PDF, DOCX, TXT) or paste observation narratives'
+      title: 'AI Multi-Format Safety Analyzer',
+      subtitle: 'Upload safety logs (PDF, DOCX, TXT) or raw observations for deep neural intelligence'
     },
     result: {
-      title: 'SIF Precursor Analysis Result',
-      subtitle: 'Traceable risk assessment, evidence highlights, and decision support'
+      title: 'SIF Precursor Analysis Intelligence',
+      subtitle: 'Explainable feature attribution, barrier failure analysis & IOGP Life-Saving Rules'
     },
     history: {
-      title: 'Safety Reports History',
-      subtitle: 'Historical registry of analyzed safety observations and human sign-offs'
+      title: 'Field Safety Observation Registry',
+      subtitle: 'Full historical audit trail of near-misses, unsafe acts, and verified outcomes'
     },
     lsr: {
-      title: 'Life-Saving Rules Reference',
-      subtitle: 'Standard IOGP 9 Life-Saving Rules taxonomy and control requirements'
+      title: 'IOGP Standard Life-Saving Rules',
+      subtitle: 'International Association of Oil & Gas Producers standard safety barriers'
     },
     pngrb: {
-      title: 'Incident Reports',
-      subtitle: 'Official petroleum & natural gas regulatory board incident documentation'
-    },
-    signin: {
-      title: 'Authentication Portal',
-      subtitle: 'Secure sign-in for authorized HSE personnel and safety supervisors'
+      title: 'PNGRB Regulatory Ingestion Pipeline',
+      subtitle: 'Official Petroleum & Natural Gas Regulatory Board formal incident investigations'
     }
   };
 
@@ -190,7 +186,12 @@ export default function App() {
   const currentHeader = pageHeaders[activeTab] || pageHeaders.dashboard;
 
   return (
-    <div className={`min-h-screen flex ${darkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-100 text-slate-900'} font-sans transition-colors duration-150`}>
+    <div className="min-h-screen flex bg-[#0A0D14] text-slate-100 font-serif relative overflow-x-hidden">
+      {/* Dynamic Animated Ambient Glow Spots */}
+      <div className="fixed top-0 left-1/4 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none animate-float-card" />
+      <div className="fixed bottom-0 right-1/4 w-[600px] h-[600px] bg-pink-600/10 rounded-full blur-[160px] pointer-events-none animate-float-reverse" />
+      <div className="fixed top-1/2 right-10 w-[400px] h-[400px] bg-cyan-600/15 rounded-full blur-[130px] pointer-events-none" />
+
       {/* Sidebar Navigation */}
       <Navbar
         activeTab={activeTab}
@@ -205,76 +206,62 @@ export default function App() {
       />
 
       {/* Main Layout Area */}
-      <div className="flex-1 flex flex-col min-w-0 overflow-x-hidden">
+      <div className="flex-1 flex flex-col min-w-0 overflow-x-hidden relative z-10">
         {/* Top Header Bar */}
-        <header className={`sticky top-0 z-30 ${darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'} border-b px-6 py-3 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-colors`}>
+        <header className="sticky top-0 z-30 bg-[#0F172A]/85 backdrop-blur-xl border-b border-slate-800/80 px-8 py-4 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all">
           <div>
-            <h1 className={`text-base font-bold tracking-tight ${darkMode ? 'text-slate-100' : 'text-slate-900'}`}>
+            <h1 className="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-slate-100 to-indigo-200 bg-clip-text text-transparent flex items-center gap-2">
               {currentHeader.title}
+              <Sparkles className="w-4 h-4 text-pink-400 animate-pulse" />
             </h1>
-            <p className={`text-xs ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
+            <p className="text-xs text-slate-400 mt-0.5">
               {currentHeader.subtitle}
             </p>
           </div>
 
           <div className="flex items-center gap-4 shrink-0">
-            {/* Mandatory Advisory Disclaimer Banner */}
-            <div className={`hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold border ${
-              darkMode ? 'bg-amber-950/60 text-amber-300 border-amber-800/80' : 'bg-amber-50 text-amber-900 border-amber-200'
-            }`}>
-              <AlertCircle className="w-4 h-4 text-amber-600 shrink-0" />
-              <span>AI Decision Support • Final assessment by qualified HSE personnel</span>
+            {/* Advisory Disclaimer Badge */}
+            <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/30 shadow-sm animate-pulse">
+              <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />
+              <span>AI Decision Support • IOGP Certified Workflows</span>
             </div>
-
-            {/* Theme Toggle */}
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className={`p-2 rounded-lg border transition ${
-                darkMode ? 'bg-slate-800 border-slate-700 text-slate-300 hover:text-white' : 'bg-slate-100 border-slate-300 text-slate-700 hover:text-slate-900'
-              }`}
-              title="Toggle theme mode"
-            >
-              {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-            </button>
 
             {/* User Profile Info / Sign In Trigger */}
             {currentUser ? (
-              <div className={`flex items-center gap-2.5 px-3 py-1.5 rounded-lg border ${
-                darkMode ? 'bg-slate-800/80 border-slate-700' : 'bg-slate-50 border-slate-200'
-              }`}>
-                <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-sky-600 to-sky-400 text-white flex items-center justify-center text-xs font-bold shadow-xs">
+              <div className="flex items-center gap-3 px-3.5 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 shadow-md">
+                <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 text-white flex items-center justify-center text-xs font-bold shadow-md shadow-purple-500/30">
                   <User className="w-4 h-4" />
                 </div>
                 <div className="text-left text-xs">
-                  <span className={`font-bold block leading-none ${darkMode ? 'text-slate-200' : 'text-slate-800'}`}>
+                  <span className="font-bold block text-white">
                     {currentUser.name}
                   </span>
-                  <span className={`text-[10px] ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
+                  <span className="text-[10px] text-slate-400">
                     {currentUser.email}
                   </span>
                 </div>
                 <button
                   onClick={handleUserSignOut}
-                  className="ml-1 p-1 text-slate-400 hover:text-red-400 transition"
+                  className="ml-1 p-1.5 text-slate-400 hover:text-rose-400 hover:bg-slate-700/60 rounded-lg transition"
                   title="Sign out"
                 >
-                  <LogOut className="w-3.5 h-3.5" />
+                  <LogOut className="w-4 h-4" />
                 </button>
               </div>
             ) : (
               <button
                 onClick={() => setIsSignInOpen(true)}
-                className="flex items-center gap-2 bg-gradient-to-r from-sky-600 to-sky-500 hover:from-sky-500 hover:to-sky-400 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold shadow-sm hover:shadow transition-all transform active:scale-98"
+                className="flex items-center gap-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:brightness-110 text-white px-4 py-2 rounded-xl text-xs font-bold shadow-lg shadow-indigo-600/30 transition-all transform hover:scale-105 active:scale-95 animate-neon-glow"
               >
-                <LogIn className="w-3.5 h-3.5" />
-                <span>Sign In</span>
+                <LogIn className="w-4 h-4" />
+                <span>Sign In with Firebase</span>
               </button>
             )}
           </div>
         </header>
 
         {/* Main Content Area */}
-        <main className="flex-1 p-6 max-w-7xl w-full mx-auto space-y-6 animate-fade-in transition-all duration-300">
+        <main className="flex-1 p-8 max-w-7xl w-full mx-auto space-y-8 animate-fade-in transition-all duration-300">
           {activeTab === 'dashboard' && (
             <Dashboard
               stats={stats}
@@ -313,19 +300,18 @@ export default function App() {
         </main>
 
         {/* Global Page Footer */}
-        <footer className={`py-4 px-6 border-t text-xs flex flex-col sm:flex-row items-center justify-between gap-2 ${
-          darkMode ? 'bg-slate-900 border-slate-800 text-slate-400' : 'bg-white border-slate-200 text-slate-500'
-        }`}>
-          <div>
-            <span>PrecurAi &copy; 2026 — AI-powered SIF Precursor Detection & HSE Intelligence</span>
+        <footer className="py-6 px-8 border-t border-slate-800/80 bg-[#0B0F19]/90 text-xs flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-400">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            <span>PrecurAi &copy; 2026 — Next-Gen AI SIF Precursor Intelligence</span>
           </div>
-          <div className="flex items-center gap-1.5 font-medium">
-            <span>Developer:</span>
+          <div className="flex items-center gap-2 font-medium">
+            <span>Built & Engineered by:</span>
             <a
               href="https://github.com/adityaahamana18"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sky-600 dark:text-sky-400 font-semibold hover:underline"
+              className="font-bold bg-gradient-to-r from-cyan-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent hover:underline text-sm"
             >
               Aditya Ahamana
             </a>
@@ -346,8 +332,8 @@ export default function App() {
       {isSignInOpen && (
         <SignIn1
           isModal={true}
-          brandName="PrecurAi"
-          tagline="AI-Powered SIF Precursor Detection & HSE Intelligence"
+          brandName="PrecurAi Intelligence"
+          tagline="Next-Gen AI SIF Precursor Detection & Prevention"
           onClose={() => setIsSignInOpen(false)}
           onSuccess={handleUserSignIn}
         />
