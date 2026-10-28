@@ -194,7 +194,7 @@ export default function App() {
         </header>
 
         {/* Main Content Area */}
-        <main className="flex-1 p-6 max-w-7xl w-full mx-auto space-y-6">
+        <main className="flex-1 p-6 max-w-7xl w-full mx-auto space-y-6 animate-fade-in transition-all duration-300">
           {activeTab === 'dashboard' && (
             <Dashboard
               stats={stats}
