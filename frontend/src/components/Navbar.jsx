@@ -76,6 +76,11 @@ export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode,
             Active
           </span>
         </div>
+
+        <div className="flex items-center justify-between px-3 py-1.5 text-[11px] text-slate-400 border-t border-slate-800/80 pt-2">
+          <span>Developer:</span>
+          <span className="text-sky-400 font-medium">Aditya Ahamana</span>
+        </div>
       </div>
     </aside>
   );
