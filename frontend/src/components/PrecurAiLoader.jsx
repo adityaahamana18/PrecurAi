@@ -1,93 +1,93 @@
 import React, { useEffect, useState } from 'react';
-import { Shield, Zap, Radio } from 'lucide-react';
+import { Shield, Zap, Radio, Terminal, Cpu } from 'lucide-react';
 
 const BOOT_LINES = [
-  'INITIALIZING COBALT NEURAL RUNTIME...',
-  'CONNECTING TO SIF HIGH-POTENTIAL ENGINE...',
-  'CALIBRATING 9 IOGP SAFETY CONTROLS...',
-  'STREAMING PNGRB OFFICIAL PIPELINE INCIDENTS...',
-  'COBALT CORE ACTIVE — INDUSTRIAL HSE INTELLIGENCE ONLINE.',
+  'INITIALIZING PRECURAI NEURAL RUNTIME v2.4...',
+  'CONNECTING TO SIF HIGH-POTENTIAL INFERENCE CORE...',
+  'CALIBRATING 9 IOGP LIFE-SAVING RULES TAXONOMY...',
+  'STREAMING PNGRB REGULATORY PIPELINE INCIDENTS...',
+  'COMMAND INTERFACE SYNCHRONIZED — PRECURAI ACTIVE.',
 ];
 
 export default function PrecurAiLoader({ label = 'Initializing SIF Precursor Intelligence Engine...' }) {
   const [lineIdx, setLineIdx] = useState(0);
   const [dots, setDots] = useState('');
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(12);
 
   useEffect(() => {
     const id = setInterval(() => {
       setLineIdx((i) => (i + 1) % BOOT_LINES.length);
-    }, 300);
+    }, 280);
     return () => clearInterval(id);
   }, []);
 
   useEffect(() => {
     const id = setInterval(() => {
       setDots((d) => (d.length >= 3 ? '' : d + '.'));
-    }, 350);
+    }, 300);
     return () => clearInterval(id);
   }, []);
 
   useEffect(() => {
     const id = setInterval(() => {
-      setProgress((p) => Math.min(p + Math.random() * 15, 98));
-    }, 140);
+      setProgress((p) => Math.min(p + Math.random() * 18, 98));
+    }, 120);
     return () => clearInterval(id);
   }, []);
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#000000] select-none overflow-hidden font-sans">
-      {/* High-Contrast Cobalt Radial Energy Glows */}
-      <div className="absolute w-[650px] h-[650px] bg-[#2C3480]/25 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute w-[340px] h-[340px] bg-[#4E5BC9]/20 rounded-full blur-[80px] pointer-events-none translate-y-12" />
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#070B14] select-none overflow-hidden font-sans text-[#F4F7FB]">
+      
+      {/* ── Cinematic Glows ── */}
+      <div className="absolute w-[650px] h-[650px] bg-[#00E5FF]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute w-[400px] h-[400px] bg-[#8B5CF6]/15 rounded-full blur-[100px] pointer-events-none translate-y-12" />
 
-      {/* Main Assembly */}
+      {/* ── Main Radar Assembly ── */}
       <div className="relative flex flex-col items-center z-10">
 
-        {/* Hardcore Cobalt Radar Assembly */}
-        <div className="relative w-40 h-40 flex items-center justify-center mb-8">
+        {/* 3D Rotating Core Radar */}
+        <div className="relative w-44 h-44 flex items-center justify-center mb-8">
           {/* Outermost Ping */}
-          <div className="absolute inset-0 rounded-full border border-[#2C3480]/40 animate-ping" style={{ animationDuration: '2.5s' }} />
+          <div className="absolute inset-0 rounded-full border border-[#00E5FF]/30 animate-ping" style={{ animationDuration: '2.5s' }} />
 
           {/* Secondary Pulse */}
-          <div className="absolute inset-2 rounded-full border border-[#4E5BC9]/30 animate-ping" style={{ animationDuration: '1.8s', animationDelay: '0.3s' }} />
+          <div className="absolute inset-2 rounded-full border border-[#8B5CF6]/30 animate-ping" style={{ animationDuration: '1.8s', animationDelay: '0.4s' }} />
 
-          {/* Hardcore Rotating Conic Radar Sweep */}
+          {/* Rotating Conic Sweep */}
           <div
-            className="absolute inset-4 rounded-full animate-radar"
+            className="absolute inset-4 rounded-full animate-core-spin"
             style={{
-              background: 'conic-gradient(from 0deg, transparent 0%, rgba(78,91,201,0.45) 15%, transparent 25%)',
+              background: 'conic-gradient(from 0deg, transparent 0%, rgba(0,229,255,0.4) 15%, transparent 30%)',
             }}
           />
 
           {/* Static Dashed Ring */}
-          <div className="absolute inset-4 rounded-full border border-dashed border-[#2C3480]/70" />
+          <div className="absolute inset-4 rounded-full border border-dashed border-[#00E5FF]/40" />
 
-          {/* Counter-Spin Electric Ring */}
+          {/* Reverse Spin Ring */}
           <div
-            className="absolute inset-6 rounded-full border-2 border-transparent border-t-[#FFFFFF] border-r-[#4E5BC9] animate-radar"
-            style={{ animationDirection: 'reverse', animationDuration: '3.5s' }}
+            className="absolute inset-6 rounded-full border-2 border-transparent border-t-[#00E5FF] border-r-[#8B5CF6] animate-core-reverse"
           />
 
-          {/* Center Cobalt Brand Shield */}
-          <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3D48A3] via-[#2C3480] to-[#0A0D22] border-2 border-[#4E5BC9] flex items-center justify-center shadow-cobalt-glow">
-            <Shield className="w-8 h-8 text-[#FFFFFF] drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-            <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-[#FFFFFF] animate-pulse shadow-[0_0_8px_#FFFFFF]" />
+          {/* Center AI Core */}
+          <div className="relative w-18 h-18 rounded-2xl bg-gradient-to-br from-[#0D1424] via-[#111A2E] to-[#070B14] border-2 border-[#00E5FF] flex items-center justify-center shadow-cyan-glow">
+            <Shield className="w-9 h-9 text-[#00E5FF] drop-shadow-[0_0_12px_rgba(0,229,255,0.9)]" />
+            <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse shadow-[0_0_10px_#00E5FF]" />
           </div>
 
           {/* Radar Blip Dots */}
-          {[{ deg: 40, dist: 46 }, { deg: 160, dist: 42 }, { deg: 280, dist: 48 }].map(({ deg, dist }, i) => {
+          {[{ deg: 45, dist: 52 }, { deg: 165, dist: 48 }, { deg: 285, dist: 54 }].map(({ deg, dist }, i) => {
             const r = (Math.PI * deg) / 180;
             return (
               <div
                 key={i}
-                className="absolute w-2 h-2 rounded-full bg-[#FFFFFF] animate-pulse"
+                className="absolute w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse"
                 style={{
                   left: `calc(50% + ${dist * Math.cos(r)}px)`,
                   top: `calc(50% + ${dist * Math.sin(r)}px)`,
                   transform: 'translate(-50%, -50%)',
                   animationDelay: `${i * 0.4}s`,
-                  boxShadow: '0 0 10px #FFFFFF, 0 0 20px #4E5BC9',
+                  boxShadow: '0 0 10px #00E5FF, 0 0 20px #8B5CF6',
                 }}
               />
             );
@@ -97,50 +97,35 @@ export default function PrecurAiLoader({ label = 'Initializing SIF Precursor Int
         {/* Brand Name Typography */}
         <div className="text-center mb-6">
           <div className="flex items-center justify-center gap-2.5 mb-1.5">
-            <h1 className="text-3xl font-black tracking-tight text-[#FFFFFF]">
-              Precur<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4E5BC9] to-[#8B9DE0]">Ai</span>
+            <h1 className="text-3xl font-black tracking-tight text-[#F4F7FB]">
+              Precur<span className="text-[#00E5FF]">Ai</span>
             </h1>
-            <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#FFFFFF] bg-[#2C3480] border border-[#4E5BC9] px-2 py-0.5 rounded-md shadow-cobalt-glow">
-              HSE
+            <span className="bg-[#00E5FF] text-[#070B14] text-[9px] font-black px-2 py-0.5 rounded-full border border-[#00E5FF] uppercase tracking-[0.2em] shadow-sm">
+              HSE AI
             </span>
           </div>
-          <p className="text-[11px] text-[#BAC4EB] font-mono tracking-widest uppercase">
-            Industrial SIF Intelligence &amp; Safety Analytics
+          <p className="text-xs text-[#94A3B8] font-mono tracking-widest uppercase">
+            Serious Injury &amp; Fatality Precursor Intelligence
           </p>
         </div>
 
-        {/* Progress Bar */}
-        <div className="w-72 mb-4">
-          <div className="flex justify-between text-[10px] text-[#BAC4EB] mb-1.5 font-mono">
-            <span className="font-bold">SYSTEM BOOT</span>
-            <span className="text-[#FFFFFF] font-bold">{Math.round(progress)}%</span>
-          </div>
-          <div className="w-full h-2 bg-[#05070E] rounded-full overflow-hidden border border-[#2C3480]/80 p-0.5">
-            <div
-              className="h-full bg-gradient-to-r from-[#2C3480] via-[#4E5BC9] to-[#FFFFFF] rounded-full transition-all duration-150"
-              style={{ width: `${progress}%`, boxShadow: '0 0 14px rgba(78,91,201,0.9)' }}
-            />
-          </div>
+        {/* Dynamic Progress Bar */}
+        <div className="w-72 bg-[#0D1424] h-2 rounded-full overflow-hidden border border-[#00E5FF]/30 mb-4 p-0.5 shadow-inner">
+          <div
+            className="h-full rounded-full bg-gradient-to-r from-[#00E5FF] via-[#8B5CF6] to-[#00E5FF] transition-all duration-150 ease-out shadow-[0_0_12px_#00E5FF]"
+            style={{ width: `${progress}%` }}
+          />
         </div>
 
-        {/* Terminal Boot Log */}
-        <div className="w-72 bg-[#05070E]/95 border border-[#2C3480] rounded-xl p-3 font-mono text-[10px] space-y-1 min-h-[56px] shadow-inner">
-          <div className="flex items-start gap-2 text-[#FFFFFF]">
-            <span className="text-[#4E5BC9] font-bold shrink-0">›</span>
-            <span>{BOOT_LINES[lineIdx]}</span>
-          </div>
-          <div className="flex items-center gap-2 text-[#4E5BC9]">
-            <span className="text-[#4E5BC9] font-bold shrink-0">›</span>
-            <span className="text-[#FFFFFF]">_</span>
-            <span className="animate-pulse text-[#BAC4EB]">active{dots}</span>
-          </div>
+        {/* Live Terminal Telemetry Output */}
+        <div className="flex items-center gap-2 text-xs font-mono text-[#00E5FF] max-w-sm text-center">
+          <Terminal className="w-3.5 h-3.5 text-[#00E5FF] shrink-0" />
+          <span className="truncate">{BOOT_LINES[lineIdx]}</span>
+          <span className="w-2 text-left">{dots}</span>
         </div>
 
-        {/* System Tag */}
-        <p className="mt-5 text-[10px] text-[#64748B] font-mono tracking-widest">
-          v2.0.0-COBALT · IOGP LSR · PNGRB
-        </p>
       </div>
+
     </div>
   );
 }

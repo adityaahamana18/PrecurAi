@@ -9,6 +9,13 @@ import {
   TrendingUp,
   FileText,
   Zap,
+  Filter,
+  Search,
+  Eye,
+  CheckCircle2,
+  Clock,
+  Sparkles,
+  ArrowRight,
 } from 'lucide-react';
 import {
   PieChart,
@@ -53,15 +60,15 @@ function AnimatedNumber({ value, duration = 1200 }) {
 
 const tooltipStyle = {
   contentStyle: {
-    backgroundColor: '#05070E',
-    borderColor: '#2C3480',
+    backgroundColor: '#070B14',
+    borderColor: 'rgba(0, 229, 255, 0.4)',
     borderRadius: '12px',
     fontSize: '11px',
-    color: '#FFFFFF',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.9), 0 0 16px rgba(44, 52, 128, 0.5)',
+    color: '#F4F7FB',
+    boxShadow: '0 12px 32px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 229, 255, 0.25)',
   },
-  itemStyle: { color: '#BAC4EB' },
-  labelStyle: { color: '#FFFFFF', fontWeight: 700 },
+  itemStyle: { color: '#94A3B8' },
+  labelStyle: { color: '#00E5FF', fontWeight: 800 },
 };
 
 function renderCustomLabel({ cx, cy, midAngle, innerRadius, outerRadius, percent }) {
@@ -71,47 +78,36 @@ function renderCustomLabel({ cx, cy, midAngle, innerRadius, outerRadius, percent
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
   return (
-    <text x={x} y={y} fill="white" textAnchor="middle" dominantBaseline="central" fontSize={11} fontWeight={700}>
+    <text x={x} y={y} fill="#F4F7FB" textAnchor="middle" dominantBaseline="central" fontSize={11} fontWeight={800}>
       {`${(percent * 100).toFixed(0)}%`}
     </text>
   );
 }
 
-function GradientBar(props) {
-  const { x, y, width, height, fill } = props;
-  if (!height || height <= 0) return null;
-  return (
-    <rect
-      x={x} y={y} width={width} height={height}
-      rx={6} ry={6}
-      fill={fill}
-      style={{ filter: 'drop-shadow(0 2px 10px rgba(78, 91, 201, 0.5))' }}
-    />
-  );
-}
-
 export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavigateToAnalyze }) {
   const [pieActive, setPieActive] = useState(null);
+  const [queueFilter, setQueueFilter] = useState('ALL');
+  const [queueSearch, setQueueSearch] = useState('');
 
   if (!stats) {
     return (
-      <div className="flex items-center justify-center h-48 text-[#BAC4EB] text-sm animate-pulse">
-        Loading operational intelligence dashboard...
+      <div className="flex items-center justify-center h-48 text-[#94A3B8] text-sm animate-pulse">
+        Loading operational intelligence command dashboard...
       </div>
     );
   }
 
   const hasReports = stats.total_reports > 0;
 
-  // Cobalt Palette
+  // Cinematic Master Palette Colors
   const sifDistributionData = [
-    { name: 'HIGH SIF',   value: stats.high_sif_count,   color: '#FF3B30' },
-    { name: 'MEDIUM SIF', value: stats.medium_sif_count, color: '#FF9500' },
-    { name: 'LOW SIF',    value: stats.low_sif_count,    color: '#34C759' },
+    { name: 'HIGH SIF',   value: stats.high_sif_count,   color: '#FF4757' },
+    { name: 'MEDIUM SIF', value: stats.medium_sif_count, color: '#FFB020' },
+    { name: 'LOW SIF',    value: stats.low_sif_count,    color: '#2EE59D' },
   ];
 
   const lsrChartData = (stats.lsr_violation_breakdown || []).slice(0, 6).map((item) => ({
-    name: item.lsr_name.length > 16 ? item.lsr_name.slice(0, 16) + '…' : item.lsr_name,
+    name: item.lsr_name.length > 15 ? item.lsr_name.slice(0, 15) + '…' : item.lsr_name,
     fullName: item.lsr_name,
     Incidents: item.count,
   }));
@@ -134,98 +130,105 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
 
   const kpiCards = [
     {
-      label: 'Reports Analyzed',
+      label: 'Reports Processed',
       value: stats.total_reports,
-      badge: 'Processed',
-      badgeClass: 'text-[#FFFFFF] bg-[#2C3480]/30 border-[#4E5BC9]',
-      border: 'border-l-[#2C3480]',
+      badge: 'Continuous',
+      badgeClass: 'text-[#00E5FF] bg-[#00E5FF]/10 border-[#00E5FF]/40',
+      border: 'border-l-[#00E5FF]',
       icon: <ShieldCheck className="w-4 h-4" />,
-      iconBg: 'bg-[#2C3480]/30 text-[#FFFFFF] border-[#4E5BC9]',
+      iconBg: 'bg-[#00E5FF]/10 text-[#00E5FF] border-[#00E5FF]/40',
     },
     {
-      label: 'High SIF Potential',
+      label: 'High SIF Precursors',
       value: stats.high_sif_count,
-      badge: 'Critical Alert',
-      badgeClass: 'text-[#FF3B30] bg-[#FF3B30]/15 border-[#FF3B30]/40',
-      border: 'border-l-[#FF3B30]',
+      badge: 'Critical Review',
+      badgeClass: 'text-[#FF4757] bg-[#FF4757]/15 border-[#FF4757]/40',
+      border: 'border-l-[#FF4757]',
       icon: <AlertOctagon className="w-4 h-4" />,
-      iconBg: 'bg-[#FF3B30]/15 text-[#FF3B30] border-[#FF3B30]/40',
+      iconBg: 'bg-[#FF4757]/15 text-[#FF4757] border-[#FF4757]/40',
     },
     {
-      label: 'Medium SIF Precursors',
+      label: 'Medium SIF Warning',
       value: stats.medium_sif_count,
-      badge: 'Warning',
-      badgeClass: 'text-[#FF9500] bg-[#FF9500]/15 border-[#FF9500]/40',
-      border: 'border-l-[#FF9500]',
+      badge: 'Cautionary',
+      badgeClass: 'text-[#FFB020] bg-[#FFB020]/15 border-[#FFB020]/40',
+      border: 'border-l-[#FFB020]',
       icon: <AlertTriangle className="w-4 h-4" />,
-      iconBg: 'bg-[#FF9500]/15 text-[#FF9500] border-[#FF9500]/40',
+      iconBg: 'bg-[#FFB020]/15 text-[#FFB020] border-[#FFB020]/40',
     },
     {
-      label: 'Low SIF Risk',
+      label: 'Low SIF / Routine',
       value: stats.low_sif_count,
-      badge: 'Routine',
-      badgeClass: 'text-[#34C759] bg-[#34C759]/15 border-[#34C759]/40',
-      border: 'border-l-[#34C759]',
-      icon: <ShieldCheck className="w-4 h-4" />,
-      iconBg: 'bg-[#34C759]/15 text-[#34C759] border-[#34C759]/40',
+      badge: 'Baseline',
+      badgeClass: 'text-[#2EE59D] bg-[#2EE59D]/15 border-[#2EE59D]/40',
+      border: 'border-l-[#2EE59D]',
+      icon: <CheckCircle2 className="w-4 h-4" />,
+      iconBg: 'bg-[#2EE59D]/15 text-[#2EE59D] border-[#2EE59D]/40',
     },
   ];
 
+  const priorityReports = (stats.recent_reports || []).filter((r) => {
+    if (queueFilter !== 'ALL' && (r.sif_potential || '').toUpperCase() !== queueFilter) return false;
+    if (queueSearch && !(r.title || r.text || '').toLowerCase().includes(queueSearch.toLowerCase())) return false;
+    return true;
+  });
+
   return (
-    <div className="space-y-7 animate-fade-in font-sans">
-      {/* Executive Black & Cobalt Banner */}
-      <div className="corp-card p-6 rounded-2xl border border-[#2C3480] shadow-cobalt-glow flex flex-col md:flex-row md:items-center justify-between gap-5 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#2C3480]/35 via-[#4E5BC9]/15 to-transparent blur-3xl pointer-events-none" />
+    <div className="space-y-7 animate-fade-in font-sans text-[#F4F7FB]">
+      
+      {/* ── Executive Command Banner ── */}
+      <div className="cinematic-card p-6 rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic flex flex-col md:flex-row md:items-center justify-between gap-5 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#00E5FF]/15 via-[#8B5CF6]/10 to-transparent blur-3xl pointer-events-none" />
 
         <div className="space-y-1 relative z-10">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#2C3480] to-[#5B73D1] flex items-center justify-center text-[#FFFFFF] shadow-sm">
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#00E5FF] to-[#8B5CF6] flex items-center justify-center text-[#070B14] shadow-cyan-glow font-bold">
               <Activity className="w-4 h-4" />
             </div>
-            <h2 className="text-lg font-bold text-[#FFFFFF] tracking-tight">
-              Operational SIF Precursor Dashboard
+            <h2 className="text-xl font-black text-[#F4F7FB] tracking-tight">
+              Operational SIF Precursor Command Center
             </h2>
           </div>
-          <p className="text-xs text-[#BAC4EB] leading-relaxed max-w-2xl">
-            PrecurAi translates safety observations and near-miss narratives into explainable SIF precursor intelligence and standard IOGP Life-Saving Rules.
+          <p className="text-xs text-[#94A3B8] leading-relaxed max-w-2xl">
+            PrecurAi translates field observations, near-miss narratives, and facility inspections into explainable SIF precursor intelligence and IOGP Life-Saving Rules.
           </p>
         </div>
 
         <button
           onClick={onNavigateToAnalyze}
-          className="btn-cobalt inline-flex items-center gap-2 px-5 py-2.5 text-xs shadow-cobalt-glow shrink-0 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+          className="btn-cinematic-cyan light-sweep-btn inline-flex items-center gap-2 px-6 py-3 text-xs shadow-cyan-glow shrink-0 hover:scale-105 active:scale-95 transition-all cursor-pointer"
         >
           <span>Analyze Safety Report</span>
           <ArrowUpRight className="w-4 h-4" />
         </button>
       </div>
 
-      {/* Section Header */}
-      <div className="flex items-center justify-between border-b border-[#2C3480]/50 pb-2">
-        <h3 className="text-xs font-bold text-[#FFFFFF] uppercase tracking-wider flex items-center gap-2">
-          <Layers className="w-4 h-4 text-[#5B73D1]" />
-          Precursor Analytics Overview
+      {/* ── Section Title ── */}
+      <div className="flex items-center justify-between border-b border-[#00E5FF]/20 pb-2">
+        <h3 className="text-xs font-bold text-[#F4F7FB] uppercase tracking-wider flex items-center gap-2">
+          <Layers className="w-4 h-4 text-[#00E5FF]" />
+          Precursor Analytics Telemetry
         </h3>
-        <span className="text-[10px] font-mono text-[#BAC4EB] bg-[#0A0D18] px-2.5 py-0.5 rounded border border-[#2C3480]/70">
-          Neural Telemetry Active
+        <span className="text-[10px] font-mono text-[#00E5FF] bg-[#070B14] px-2.5 py-0.5 rounded border border-[#00E5FF]/30">
+          Neural Telemetry Active · Real-Time
         </span>
       </div>
 
-      {/* Hardcore KPI Cards */}
+      {/* ── 4 KPI Metric Cards ── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {kpiCards.map((card, i) => (
           <div
             key={card.label}
-            className={`corp-card p-5 rounded-2xl border-l-4 ${card.border} hover:scale-[1.02] transition-all duration-200 cursor-default shadow-lg`}
+            className={`cinematic-card p-5 rounded-2xl border-l-4 ${card.border} hover:scale-[1.02] transition-all duration-200 cursor-default shadow-cinematic bg-[#0D1424]/90`}
           >
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold uppercase tracking-wider text-[#BAC4EB]">{card.label}</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#94A3B8]">{card.label}</span>
               <div className={`w-8 h-8 rounded-lg flex items-center justify-center border ${card.iconBg}`}>
                 {card.icon}
               </div>
             </div>
             <div className="mt-4 flex items-baseline justify-between">
-              <span className="text-2xl font-black text-[#FFFFFF] font-mono tracking-tight">
+              <span className="text-2xl font-black text-[#F4F7FB] font-mono tracking-tight">
                 <AnimatedNumber value={card.value} duration={900 + i * 120} />
               </span>
               <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-md border ${card.badgeClass}`}>
@@ -236,18 +239,19 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
         ))}
       </div>
 
-      {/* Charts Row 1 */}
+      {/* ── Charts Row 1: SIF Donut & LSR Bar Chart ── */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-        {/* SIF Donut */}
-        <div className="lg:col-span-4 corp-card p-5 rounded-2xl flex flex-col gap-3 border border-[#2C3480]">
+        
+        {/* SIF Donut Chart */}
+        <div className="lg:col-span-4 cinematic-card p-5 rounded-2xl flex flex-col gap-3 border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
           <div>
-            <h4 className="text-xs font-bold text-[#FFFFFF] uppercase tracking-wider">SIF Potential Distribution</h4>
-            <p className="text-[11px] text-[#BAC4EB] mt-0.5">Ratio of classified safety observations</p>
+            <h4 className="text-xs font-bold text-[#F4F7FB] uppercase tracking-wider">SIF Potential Distribution</h4>
+            <p className="text-[11px] text-[#94A3B8] mt-0.5">Ratio of classified safety observations</p>
           </div>
 
           <div className="h-48 flex items-center justify-center">
             {!hasReports ? (
-              <p className="text-xs text-[#BAC4EB]">No reports analyzed yet.</p>
+              <p className="text-xs text-[#94A3B8]">No reports analyzed yet.</p>
             ) : (
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
@@ -286,9 +290,9 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
             )}
           </div>
 
-          <div className="flex justify-around border-t border-[#2C3480]/60 pt-3 text-[11px]">
+          <div className="flex justify-around border-t border-[#00E5FF]/15 pt-3 text-[11px]">
             {sifDistributionData.map((d) => (
-              <span key={d.name} className="flex items-center gap-1.5 text-[#FFFFFF] font-semibold">
+              <span key={d.name} className="flex items-center gap-1.5 text-[#F4F7FB] font-semibold">
                 <span className="w-2.5 h-2.5 rounded-full" style={{ background: d.color }} />
                 {d.name.replace(' SIF', '')}
               </span>
@@ -297,54 +301,53 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
         </div>
 
         {/* Life-Saving Rules Bar Chart */}
-        <div className="lg:col-span-8 corp-card p-5 rounded-2xl flex flex-col gap-3 border border-[#2C3480]">
+        <div className="lg:col-span-8 cinematic-card p-5 rounded-2xl flex flex-col gap-3 border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
           <div>
-            <h4 className="text-xs font-bold text-[#FFFFFF] uppercase tracking-wider">Life-Saving Rules Violation Frequency</h4>
-            <p className="text-[11px] text-[#BAC4EB] mt-0.5">IOGP safety barrier violations per rule category</p>
+            <h4 className="text-xs font-bold text-[#F4F7FB] uppercase tracking-wider">Life-Saving Rules Violation Frequency</h4>
+            <p className="text-[11px] text-[#94A3B8] mt-0.5">IOGP safety barrier violations per rule category</p>
           </div>
 
           <div className="h-52">
             {lsrChartData.length === 0 ? (
-              <div className="h-full flex items-center justify-center text-xs text-[#BAC4EB]">
+              <div className="h-full flex items-center justify-center text-xs text-[#94A3B8]">
                 No Life-Saving Rules mapped yet.
               </div>
             ) : (
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={lsrChartData} margin={{ top: 8, right: 8, left: -22, bottom: 24 }}>
                   <defs>
-                    <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#4E5BC9" stopOpacity={1} />
-                      <stop offset="100%" stopColor="#2C3480" stopOpacity={0.8} />
+                    <linearGradient id="cyanBarGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#00E5FF" stopOpacity={1} />
+                      <stop offset="100%" stopColor="#8B5CF6" stopOpacity={0.8} />
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 4" stroke="rgba(44,52,128,0.3)" vertical={false} />
+                  <CartesianGrid strokeDasharray="3 4" stroke="rgba(0,229,255,0.15)" vertical={false} />
                   <XAxis
                     dataKey="name"
-                    stroke="#5B73D1"
+                    stroke="#00E5FF"
                     fontSize={9}
                     angle={-20}
                     textAnchor="end"
-                    tick={{ fill: '#BAC4EB' }}
+                    tick={{ fill: '#94A3B8' }}
                     axisLine={false}
                     tickLine={false}
                   />
                   <YAxis
-                    stroke="#5B73D1"
+                    stroke="#00E5FF"
                     fontSize={10}
-                    tick={{ fill: '#BAC4EB' }}
+                    tick={{ fill: '#94A3B8' }}
                     axisLine={false}
                     tickLine={false}
                   />
                   <Tooltip
                     {...tooltipStyle}
                     formatter={(val, name, props) => [val, props.payload.fullName || name]}
-                    cursor={{ fill: 'rgba(44,52,128,0.1)' }}
+                    cursor={{ fill: 'rgba(0,229,255,0.08)' }}
                   />
                   <Bar
                     dataKey="Incidents"
-                    fill="url(#barGrad)"
+                    fill="url(#cyanBarGrad)"
                     radius={[6, 6, 0, 0]}
-                    shape={<GradientBar fill="url(#barGrad)" />}
                     isAnimationActive={true}
                     animationBegin={200}
                     animationDuration={1000}
@@ -355,63 +358,64 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
               </ResponsiveContainer>
             )}
           </div>
-          <div className="text-[10px] text-[#BAC4EB] text-right border-t border-[#2C3480]/60 pt-2 font-mono">
+          <div className="text-[10px] text-[#94A3B8] text-right border-t border-[#00E5FF]/15 pt-2 font-mono">
             Deterministic IOGP standard taxonomy
           </div>
         </div>
       </div>
 
-      {/* Charts Row 2 */}
+      {/* ── Charts Row 2: Monthly Trend & Dept Breakdown ── */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        
         {/* Monthly SIF Trend */}
-        <div className="lg:col-span-7 corp-card p-5 rounded-2xl flex flex-col gap-3 border border-[#2C3480]">
+        <div className="lg:col-span-7 cinematic-card p-5 rounded-2xl flex flex-col gap-3 border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
           <div>
-            <h4 className="text-xs font-bold text-[#FFFFFF] uppercase tracking-wider">Monthly SIF Precursor Trend</h4>
-            <p className="text-[11px] text-[#BAC4EB] mt-0.5">Risk level frequency over timeline</p>
+            <h4 className="text-xs font-bold text-[#F4F7FB] uppercase tracking-wider">Monthly SIF Precursor Trend</h4>
+            <p className="text-[11px] text-[#94A3B8] mt-0.5">Risk level frequency over timeline</p>
           </div>
           <div className="h-52">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={monthlyTrend} margin={{ top: 8, right: 8, left: -22, bottom: 0 }}>
                 <defs>
                   <linearGradient id="areaHigh" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#FF3B30" stopOpacity={0.4} />
-                    <stop offset="95%" stopColor="#FF3B30" stopOpacity={0.02} />
+                    <stop offset="5%" stopColor="#FF4757" stopOpacity={0.4} />
+                    <stop offset="95%" stopColor="#FF4757" stopOpacity={0.02} />
                   </linearGradient>
                   <linearGradient id="areaMed" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#FF9500" stopOpacity={0.4} />
-                    <stop offset="95%" stopColor="#FF9500" stopOpacity={0.02} />
+                    <stop offset="5%" stopColor="#FFB020" stopOpacity={0.4} />
+                    <stop offset="95%" stopColor="#FFB020" stopOpacity={0.02} />
                   </linearGradient>
                   <linearGradient id="areaLow" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#34C759" stopOpacity={0.4} />
-                    <stop offset="95%" stopColor="#34C759" stopOpacity={0.02} />
+                    <stop offset="5%" stopColor="#2EE59D" stopOpacity={0.4} />
+                    <stop offset="95%" stopColor="#2EE59D" stopOpacity={0.02} />
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 4" stroke="rgba(44,52,128,0.3)" vertical={false} />
-                <XAxis dataKey="month" stroke="#5B73D1" fontSize={10} tick={{ fill: '#BAC4EB' }} axisLine={false} tickLine={false} />
-                <YAxis stroke="#5B73D1" fontSize={10} tick={{ fill: '#BAC4EB' }} axisLine={false} tickLine={false} />
-                <Tooltip {...tooltipStyle} cursor={{ stroke: '#2C3480', strokeDasharray: '3 3' }} />
+                <CartesianGrid strokeDasharray="3 4" stroke="rgba(0,229,255,0.15)" vertical={false} />
+                <XAxis dataKey="month" stroke="#00E5FF" fontSize={10} tick={{ fill: '#94A3B8' }} axisLine={false} tickLine={false} />
+                <YAxis stroke="#00E5FF" fontSize={10} tick={{ fill: '#94A3B8' }} axisLine={false} tickLine={false} />
+                <Tooltip {...tooltipStyle} cursor={{ stroke: '#00E5FF', strokeDasharray: '3 3' }} />
                 <Legend
                   iconType="circle"
                   iconSize={8}
-                  wrapperStyle={{ fontSize: '10px', paddingTop: '8px', color: '#BAC4EB' }}
+                  wrapperStyle={{ fontSize: '10px', paddingTop: '8px', color: '#94A3B8' }}
                 />
-                <Area type="monotone" dataKey="High"   stroke="#FF3B30" strokeWidth={2.5} fill="url(#areaHigh)" dot={false} activeDot={{ r: 5, fill: '#FF3B30' }} isAnimationActive animationDuration={1200} />
-                <Area type="monotone" dataKey="Medium" stroke="#FF9500" strokeWidth={2.5} fill="url(#areaMed)"  dot={false} activeDot={{ r: 5, fill: '#FF9500' }} isAnimationActive animationDuration={1400} />
-                <Area type="monotone" dataKey="Low"    stroke="#34C759" strokeWidth={2.5} fill="url(#areaLow)"  dot={false} activeDot={{ r: 5, fill: '#34C759' }} isAnimationActive animationDuration={1600} />
+                <Area type="monotone" dataKey="High"   stroke="#FF4757" strokeWidth={2.5} fill="url(#areaHigh)" dot={false} activeDot={{ r: 5, fill: '#FF4757' }} isAnimationActive animationDuration={1200} />
+                <Area type="monotone" dataKey="Medium" stroke="#FFB020" strokeWidth={2.5} fill="url(#areaMed)"  dot={false} activeDot={{ r: 5, fill: '#FFB020' }} isAnimationActive animationDuration={1400} />
+                <Area type="monotone" dataKey="Low"    stroke="#2EE59D" strokeWidth={2.5} fill="url(#areaLow)"  dot={false} activeDot={{ r: 5, fill: '#2EE59D' }} isAnimationActive animationDuration={1600} />
               </AreaChart>
             </ResponsiveContainer>
           </div>
         </div>
 
         {/* Department Breakdown */}
-        <div className="lg:col-span-5 corp-card p-5 rounded-2xl flex flex-col gap-3 border border-[#2C3480]">
+        <div className="lg:col-span-5 cinematic-card p-5 rounded-2xl flex flex-col gap-3 border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
           <div>
-            <h4 className="text-xs font-bold text-[#FFFFFF] uppercase tracking-wider">Observations by Department</h4>
-            <p className="text-[11px] text-[#BAC4EB] mt-0.5">Field observation distribution per unit</p>
+            <h4 className="text-xs font-bold text-[#F4F7FB] uppercase tracking-wider">Observations by Department</h4>
+            <p className="text-[11px] text-[#94A3B8] mt-0.5">Field observation distribution per plant unit</p>
           </div>
           <div className="h-52">
             {deptData.length === 0 ? (
-              <div className="h-full flex items-center justify-center text-xs text-[#BAC4EB]">
+              <div className="h-full flex items-center justify-center text-xs text-[#94A3B8]">
                 No department data available.
               </div>
             ) : (
@@ -419,18 +423,18 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
                 <BarChart data={deptData} layout="vertical" margin={{ top: 0, right: 12, left: 4, bottom: 0 }}>
                   <defs>
                     <linearGradient id="deptGrad" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0%" stopColor="#2C3480" stopOpacity={0.8} />
-                      <stop offset="100%" stopColor="#4E5BC9" stopOpacity={1} />
+                      <stop offset="0%" stopColor="#8B5CF6" stopOpacity={0.8} />
+                      <stop offset="100%" stopColor="#00E5FF" stopOpacity={1} />
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 4" stroke="rgba(44,52,128,0.3)" horizontal={false} />
-                  <XAxis type="number" stroke="#5B73D1" fontSize={10} tick={{ fill: '#BAC4EB' }} axisLine={false} tickLine={false} />
+                  <CartesianGrid strokeDasharray="3 4" stroke="rgba(0,229,255,0.15)" horizontal={false} />
+                  <XAxis type="number" stroke="#00E5FF" fontSize={10} tick={{ fill: '#94A3B8' }} axisLine={false} tickLine={false} />
                   <YAxis
-                    type="category" dataKey="name" stroke="#5B73D1"
-                    fontSize={9} tick={{ fill: '#BAC4EB' }} width={60}
+                    type="category" dataKey="name" stroke="#00E5FF"
+                    fontSize={9} tick={{ fill: '#94A3B8' }} width={60}
                     axisLine={false} tickLine={false}
                   />
-                  <Tooltip {...tooltipStyle} cursor={{ fill: 'rgba(44,52,128,0.1)' }} />
+                  <Tooltip {...tooltipStyle} cursor={{ fill: 'rgba(0,229,255,0.08)' }} />
                   <Bar
                     dataKey="Count"
                     fill="url(#deptGrad)"
@@ -444,6 +448,118 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
           </div>
         </div>
       </div>
+
+      {/* ── Priority Report Queue Table ── */}
+      <div className="cinematic-card p-6 rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#00E5FF]/15 pb-4">
+          <div>
+            <h3 className="text-base font-bold text-[#F4F7FB] flex items-center gap-2">
+              <Clock className="w-4 h-4 text-[#00E5FF]" />
+              Priority Safety Observation Queue
+            </h3>
+            <p className="text-xs text-[#94A3B8] mt-0.5">
+              Field observations triaged by high-energy precursor severity for supervisor review.
+            </p>
+          </div>
+
+          {/* Search & Severity Filters */}
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="relative">
+              <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-[#64748B]" />
+              <input
+                type="text"
+                placeholder="Search queue..."
+                value={queueSearch}
+                onChange={(e) => setQueueSearch(e.target.value)}
+                className="dark-input pl-8 pr-3 py-1.5 text-xs text-[#F4F7FB] w-40"
+              />
+            </div>
+            {['ALL', 'HIGH', 'MEDIUM', 'LOW'].map((lvl) => (
+              <button
+                key={lvl}
+                onClick={() => setQueueFilter(lvl)}
+                className={`px-3 py-1.5 text-xs font-mono font-bold rounded-lg transition-all ${
+                  queueFilter === lvl
+                    ? 'bg-[#00E5FF] text-[#070B14] shadow-[0_0_12px_rgba(0,229,255,0.4)]'
+                    : 'bg-[#070B14] text-[#94A3B8] border border-[#00E5FF]/20 hover:text-[#F4F7FB]'
+                }`}
+              >
+                {lvl}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Queue Table */}
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-xs">
+            <thead>
+              <tr className="border-b border-[#00E5FF]/15 text-[#64748B] font-mono uppercase text-[10px]">
+                <th className="py-2.5 px-3">Report ID</th>
+                <th className="py-2.5 px-3">Title / Summary</th>
+                <th className="py-2.5 px-3">Facility Location</th>
+                <th className="py-2.5 px-3">Life-Saving Rule</th>
+                <th className="py-2.5 px-3 text-center">SIF Severity</th>
+                <th className="py-2.5 px-3 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-[#00E5FF]/10 font-sans">
+              {priorityReports.length === 0 ? (
+                <tr>
+                  <td colSpan={6} className="py-8 text-center text-xs text-[#94A3B8]">
+                    No observations match filter criteria.
+                  </td>
+                </tr>
+              ) : (
+                priorityReports.slice(0, 5).map((rep) => {
+                  const sif = (rep.sif_potential || 'LOW').toUpperCase();
+                  const badgeColor =
+                    sif === 'HIGH' ? 'bg-[#FF4757]/20 text-[#FF4757] border-[#FF4757]/40' :
+                    sif === 'MEDIUM' ? 'bg-[#FFB020]/20 text-[#FFB020] border-[#FFB020]/40' :
+                    'bg-[#2EE59D]/20 text-[#2EE59D] border-[#2EE59D]/40';
+
+                  return (
+                    <tr key={rep.id} className="hover:bg-[#111A2E]/50 transition-colors group">
+                      <td className="py-3 px-3 font-mono font-bold text-[#00E5FF]">
+                        #{rep.id}
+                      </td>
+                      <td className="py-3 px-3">
+                        <div className="font-semibold text-[#F4F7FB] truncate max-w-[280px]">
+                          {rep.title || 'Safety Observation'}
+                        </div>
+                        <div className="text-[11px] text-[#94A3B8] truncate max-w-[280px]">
+                          {rep.text}
+                        </div>
+                      </td>
+                      <td className="py-3 px-3 text-[#94A3B8]">
+                        {rep.location || 'General Plant'}
+                      </td>
+                      <td className="py-3 px-3 text-[#8B5CF6] font-mono text-[11px]">
+                        {rep.life_saving_rule || 'General Control'}
+                      </td>
+                      <td className="py-3 px-3 text-center">
+                        <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold border ${badgeColor}`}>
+                          {sif}
+                        </span>
+                      </td>
+                      <td className="py-3 px-3 text-right">
+                        <button
+                          onClick={() => onSelectReport(rep)}
+                          className="btn-ghost-dark inline-flex items-center gap-1 px-3 py-1 text-xs hover:border-[#00E5FF] hover:text-[#00E5FF] transition"
+                        >
+                          <Eye className="w-3.5 h-3.5" />
+                          <span>Inspect</span>
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
   );
 }
