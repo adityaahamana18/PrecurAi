@@ -7,13 +7,15 @@ import ReportsHistory from './components/ReportsHistory';
 import LifeSavingRules from './components/LifeSavingRules';
 import PNGRBReports from './components/PNGRBReports';
 import ReportDetailModal from './components/ReportDetailModal';
+import PrecurAiLoader from './components/PrecurAiLoader';
 import SignIn1 from './components/ui/modern-stunning-sign-in';
 import { auth, onAuthStateChanged, signOut } from './lib/firebase';
-import { AlertCircle, User, ShieldCheck, Sun, Moon, LogIn, LogOut, Sparkles } from 'lucide-react';
+import { AlertCircle, User, ShieldCheck, LogIn, LogOut } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
-  const [darkMode, setDarkMode] = useState(true); // Default to gorgeous dark vibrant animated theme
+  const [initialLoading, setInitialLoading] = useState(true);
+
   const [currentUser, setCurrentUser] = useState(() => {
     try {
       const saved = localStorage.getItem('precurai_user');
@@ -28,6 +30,14 @@ export default function App() {
   const [reports, setReports] = useState([]);
   const [selectedReport, setSelectedReport] = useState(null);
   const [isSignInOpen, setIsSignInOpen] = useState(false);
+
+  // Initial loader animation display (1.5 seconds)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setInitialLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Sync Firebase authentication state listener
   useEffect(() => {
@@ -68,14 +78,6 @@ export default function App() {
       return null;
     }
   });
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
 
   const fetchData = async () => {
     try {
@@ -135,27 +137,27 @@ export default function App() {
   const pageHeaders = {
     dashboard: {
       title: 'Operational SIF Precursor Dashboard',
-      subtitle: 'Real-time high potential SIF risk detection & predictive safety metrics'
+      subtitle: 'Real-time high potential SIF risk detection and incident metrics'
     },
     analyze: {
-      title: 'AI Multi-Format Safety Analyzer',
-      subtitle: 'Upload safety logs (PDF, DOCX, TXT) or raw observations for deep neural intelligence'
+      title: 'Analyze Safety Report',
+      subtitle: 'Upload safety documents (PDF, DOCX, TXT) or raw observations for SIF intelligence'
     },
     result: {
-      title: 'SIF Precursor Analysis Intelligence',
-      subtitle: 'Explainable feature attribution, barrier failure analysis & IOGP Life-Saving Rules'
+      title: 'SIF Precursor Analysis Result',
+      subtitle: 'Explainable feature attribution, barrier failure analysis, and IOGP Life-Saving Rules'
     },
     history: {
-      title: 'Field Safety Observation Registry',
-      subtitle: 'Full historical audit trail of near-misses, unsafe acts, and verified outcomes'
+      title: 'Safety Reports Registry',
+      subtitle: 'Audit trail of field observations, near-misses, and human supervisor sign-offs'
     },
     lsr: {
-      title: 'IOGP Standard Life-Saving Rules',
-      subtitle: 'International Association of Oil & Gas Producers standard safety barriers'
+      title: 'Life-Saving Rules Reference',
+      subtitle: 'Standard IOGP 9 Life-Saving Rules taxonomy and control requirements'
     },
     pngrb: {
-      title: 'PNGRB Regulatory Ingestion Pipeline',
-      subtitle: 'Official Petroleum & Natural Gas Regulatory Board formal incident investigations'
+      title: 'PNGRB Incident Reports',
+      subtitle: 'Official Petroleum & Natural Gas Regulatory Board investigation reports'
     }
   };
 
@@ -185,19 +187,16 @@ export default function App() {
 
   const currentHeader = pageHeaders[activeTab] || pageHeaders.dashboard;
 
-  return (
-    <div className="min-h-screen flex bg-[#0A0D14] text-slate-100 font-serif relative overflow-x-hidden">
-      {/* Dynamic Animated Ambient Glow Spots */}
-      <div className="fixed top-0 left-1/4 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none animate-float-card" />
-      <div className="fixed bottom-0 right-1/4 w-[600px] h-[600px] bg-pink-600/10 rounded-full blur-[160px] pointer-events-none animate-float-reverse" />
-      <div className="fixed top-1/2 right-10 w-[400px] h-[400px] bg-cyan-600/15 rounded-full blur-[130px] pointer-events-none" />
+  if (initialLoading) {
+    return <PrecurAiLoader label="Initializing SIF Precursor Intelligence Engine..." />;
+  }
 
+  return (
+    <div className="min-h-screen flex bg-[#0B0F17] text-slate-100 font-serif relative overflow-x-hidden">
       {/* Sidebar Navigation */}
       <Navbar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
         onSeedData={handleSeedData}
         hasActiveResult={!!latestAnalysisResult}
         user={currentUser}
@@ -208,11 +207,10 @@ export default function App() {
       {/* Main Layout Area */}
       <div className="flex-1 flex flex-col min-w-0 overflow-x-hidden relative z-10">
         {/* Top Header Bar */}
-        <header className="sticky top-0 z-30 bg-[#0F172A]/85 backdrop-blur-xl border-b border-slate-800/80 px-8 py-4 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all">
+        <header className="sticky top-0 z-30 bg-[#0E1522]/90 backdrop-blur-md border-b border-slate-800/90 px-6 py-3 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-colors">
           <div>
-            <h1 className="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-slate-100 to-indigo-200 bg-clip-text text-transparent flex items-center gap-2">
+            <h1 className="text-base font-bold tracking-wide text-white">
               {currentHeader.title}
-              <Sparkles className="w-4 h-4 text-pink-400 animate-pulse" />
             </h1>
             <p className="text-xs text-slate-400 mt-0.5">
               {currentHeader.subtitle}
@@ -221,19 +219,19 @@ export default function App() {
 
           <div className="flex items-center gap-4 shrink-0">
             {/* Advisory Disclaimer Badge */}
-            <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/30 shadow-sm animate-pulse">
-              <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />
-              <span>AI Decision Support • IOGP Certified Workflows</span>
+            <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-950/40 text-amber-300 border border-amber-800/60 shadow-xs">
+              <AlertCircle className="w-4 h-4 text-amber-500 shrink-0" />
+              <span>AI Decision Support • Final assessment by qualified HSE personnel</span>
             </div>
 
             {/* User Profile Info / Sign In Trigger */}
             {currentUser ? (
-              <div className="flex items-center gap-3 px-3.5 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 shadow-md">
-                <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 text-white flex items-center justify-center text-xs font-bold shadow-md shadow-purple-500/30">
+              <div className="flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700">
+                <div className="w-7 h-7 rounded-full bg-sky-700 text-white flex items-center justify-center text-xs font-bold">
                   <User className="w-4 h-4" />
                 </div>
                 <div className="text-left text-xs">
-                  <span className="font-bold block text-white">
+                  <span className="font-bold block text-slate-200">
                     {currentUser.name}
                   </span>
                   <span className="text-[10px] text-slate-400">
@@ -242,26 +240,26 @@ export default function App() {
                 </div>
                 <button
                   onClick={handleUserSignOut}
-                  className="ml-1 p-1.5 text-slate-400 hover:text-rose-400 hover:bg-slate-700/60 rounded-lg transition"
+                  className="ml-1 p-1 text-slate-400 hover:text-red-400 transition"
                   title="Sign out"
                 >
-                  <LogOut className="w-4 h-4" />
+                  <LogOut className="w-3.5 h-3.5" />
                 </button>
               </div>
             ) : (
               <button
                 onClick={() => setIsSignInOpen(true)}
-                className="flex items-center gap-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:brightness-110 text-white px-4 py-2 rounded-xl text-xs font-bold shadow-lg shadow-indigo-600/30 transition-all transform hover:scale-105 active:scale-95 animate-neon-glow"
+                className="flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold shadow-xs transition active:scale-98"
               >
-                <LogIn className="w-4 h-4" />
-                <span>Sign In with Firebase</span>
+                <LogIn className="w-3.5 h-3.5" />
+                <span>Sign In</span>
               </button>
             )}
           </div>
         </header>
 
         {/* Main Content Area */}
-        <main className="flex-1 p-8 max-w-7xl w-full mx-auto space-y-8 animate-fade-in transition-all duration-300">
+        <main className="flex-1 p-6 max-w-7xl w-full mx-auto space-y-6 animate-fade-in transition-all duration-300">
           {activeTab === 'dashboard' && (
             <Dashboard
               stats={stats}
@@ -300,18 +298,17 @@ export default function App() {
         </main>
 
         {/* Global Page Footer */}
-        <footer className="py-6 px-8 border-t border-slate-800/80 bg-[#0B0F19]/90 text-xs flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-400">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-            <span>PrecurAi &copy; 2026 — Next-Gen AI SIF Precursor Intelligence</span>
+        <footer className="py-4 px-6 border-t border-slate-800/80 bg-[#0A0E17] text-xs flex flex-col sm:flex-row items-center justify-between gap-2 text-slate-400">
+          <div>
+            <span>PrecurAi &copy; 2026 — AI-powered SIF Precursor Detection & HSE Intelligence</span>
           </div>
-          <div className="flex items-center gap-2 font-medium">
-            <span>Built & Engineered by:</span>
+          <div className="flex items-center gap-1.5 font-medium">
+            <span>Developer:</span>
             <a
               href="https://github.com/adityaahamana18"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold bg-gradient-to-r from-cyan-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent hover:underline text-sm"
+              className="text-sky-400 font-semibold hover:underline"
             >
               Aditya Ahamana
             </a>
@@ -332,8 +329,8 @@ export default function App() {
       {isSignInOpen && (
         <SignIn1
           isModal={true}
-          brandName="PrecurAi Intelligence"
-          tagline="Next-Gen AI SIF Precursor Detection & Prevention"
+          brandName="PrecurAi"
+          tagline="SIF Precursor Intelligence Platform"
           onClose={() => setIsSignInOpen(false)}
           onSuccess={handleUserSignIn}
         />
