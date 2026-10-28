@@ -42,13 +42,13 @@ export default function ReportsHistory({ reports, onSelectReport, onRefresh }) {
     <div className="space-y-6 animate-fade-in font-sans text-[#F4F7FB]">
       
       {/* ── Top Header Banner ── */}
-      <div className="cinematic-card p-6 rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#00E5FF]/15 via-[#8B5CF6]/10 to-transparent blur-3xl pointer-events-none" />
+      <div className="cinematic-card p-6 rounded-2xl border border-white/[0.08] bg-[#0F1626]/70 backdrop-blur-xl shadow-xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#00E5FF]/10 via-[#8B5CF6]/5 to-transparent blur-3xl pointer-events-none" />
 
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 relative z-10">
           <div className="space-y-1">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#00E5FF] to-[#8B5CF6] flex items-center justify-center text-[#070B14] shadow-cyan-glow font-bold">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#00E5FF] to-[#8B5CF6] flex items-center justify-center text-[#070B14] shadow-md font-bold">
                 <Database className="w-4 h-4" />
               </div>
               <h2 className="text-xl font-black text-[#F4F7FB] tracking-tight">
@@ -62,7 +62,7 @@ export default function ReportsHistory({ reports, onSelectReport, onRefresh }) {
 
           <button
             onClick={handleRefreshClick}
-            className="btn-ghost-dark inline-flex items-center gap-2 text-xs font-bold px-4 py-2.5 active:scale-95 transition-all cursor-pointer"
+            className="btn-ghost-dark inline-flex items-center gap-2 text-xs font-bold px-4 py-2.5 active:scale-95 transition-all cursor-pointer border border-white/[0.08]"
           >
             <RefreshCw className={`w-3.5 h-3.5 text-[#00E5FF] ${isRefreshing ? 'animate-spin' : ''}`} />
             <span>Sync Database</span>
@@ -70,20 +70,20 @@ export default function ReportsHistory({ reports, onSelectReport, onRefresh }) {
         </div>
 
         {/* Quick KPI Count Strip */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5 pt-4 border-t border-[#00E5FF]/15">
-          <div className="bg-[#070B14] p-3.5 rounded-xl border border-[#00E5FF]/20">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5 pt-4 border-t border-white/[0.08]">
+          <div className="bg-[#080C14] p-3.5 rounded-xl border border-white/[0.08]">
             <span className="text-[10px] font-bold uppercase tracking-wider text-[#94A3B8] block">Total In Registry</span>
             <span className="text-xl font-black text-[#F4F7FB] font-mono mt-0.5 block">{reports?.length || 0}</span>
           </div>
-          <div className="bg-[#070B14] p-3.5 rounded-xl border border-[#FF4757]/40">
+          <div className="bg-[#080C14] p-3.5 rounded-xl border border-red-500/20">
             <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF4757] block">High SIF Precursors</span>
             <span className="text-xl font-black text-[#FF4757] font-mono mt-0.5 block">{highCount}</span>
           </div>
-          <div className="bg-[#070B14] p-3.5 rounded-xl border border-[#FFB020]/40">
+          <div className="bg-[#080C14] p-3.5 rounded-xl border border-amber-500/20">
             <span className="text-[10px] font-bold uppercase tracking-wider text-[#FFB020] block">Medium SIF</span>
             <span className="text-xl font-black text-[#FFB020] font-mono mt-0.5 block">{medCount}</span>
           </div>
-          <div className="bg-[#070B14] p-3.5 rounded-xl border border-[#2EE59D]/40">
+          <div className="bg-[#080C14] p-3.5 rounded-xl border border-emerald-500/20">
             <span className="text-[10px] font-bold uppercase tracking-wider text-[#2EE59D] block">Low Routine Risk</span>
             <span className="text-xl font-black text-[#2EE59D] font-mono mt-0.5 block">{lowCount}</span>
           </div>
@@ -91,7 +91,7 @@ export default function ReportsHistory({ reports, onSelectReport, onRefresh }) {
       </div>
 
       {/* ── Search & Filter Controls ── */}
-      <div className="cinematic-card p-4 rounded-2xl flex flex-col md:flex-row gap-3.5 justify-between items-stretch md:items-center border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
+      <div className="cinematic-card p-4 rounded-2xl flex flex-col md:flex-row gap-3.5 justify-between items-stretch md:items-center border border-white/[0.08] bg-[#0F1626]/70 backdrop-blur-xl shadow-xl">
         <div className="relative flex-1 min-w-[260px]">
           <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#00E5FF]" />
           <input
@@ -99,7 +99,7 @@ export default function ReportsHistory({ reports, onSelectReport, onRefresh }) {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search report #, title, hazard, site location..."
-            className="dark-input w-full pl-10 pr-4 py-2 text-xs text-[#F4F7FB]"
+            className="dark-input w-full pl-10 pr-4 py-2 text-xs text-[#F4F7FB] bg-[#080C14] border border-white/[0.08] rounded-xl focus:border-cyan-400/50"
           />
         </div>
 
@@ -111,8 +111,8 @@ export default function ReportsHistory({ reports, onSelectReport, onRefresh }) {
               onClick={() => setSifFilter(lvl)}
               className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
                 sifFilter === lvl
-                  ? 'bg-[#00E5FF] text-[#070B14] shadow-[0_0_12px_rgba(0,229,255,0.4)]'
-                  : 'bg-[#070B14] text-[#94A3B8] border border-[#00E5FF]/20 hover:text-[#F4F7FB]'
+                  ? 'bg-[#00E5FF] text-[#070B14] shadow-md'
+                  : 'bg-[#080C14] text-[#94A3B8] border border-white/[0.08] hover:text-[#F4F7FB]'
               }`}
             >
               {lvl}
@@ -122,11 +122,11 @@ export default function ReportsHistory({ reports, onSelectReport, onRefresh }) {
       </div>
 
       {/* ── Table of Incident Reports ── */}
-      <div className="cinematic-card rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic overflow-hidden">
+      <div className="cinematic-card rounded-2xl border border-white/[0.08] bg-[#0F1626]/70 backdrop-blur-xl shadow-xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead>
-              <tr className="border-b border-[#00E5FF]/15 bg-[#070B14] text-[#64748B] font-mono uppercase text-[10px]">
+              <tr className="border-b border-white/[0.08] bg-[#080C14]/90 text-[#64748B] font-mono uppercase text-[10px]">
                 <th className="py-3 px-4">Ref #</th>
                 <th className="py-3 px-4">Title &amp; Narrative</th>
                 <th className="py-3 px-4">Location</th>
@@ -136,7 +136,7 @@ export default function ReportsHistory({ reports, onSelectReport, onRefresh }) {
                 <th className="py-3 px-4 text-right">Inspect</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#00E5FF]/10 font-sans">
+            <tbody className="divide-y divide-white/[0.04] font-sans">
               {filteredReports.length === 0 ? (
                 <tr>
                   <td colSpan={7} className="py-12 text-center text-xs text-[#94A3B8]">

@@ -164,13 +164,13 @@ export default function LifeSavingRules() {
     <div className="space-y-6 animate-fade-in font-sans text-[#F4F7FB]">
       
       {/* ── Header Banner ── */}
-      <div className="cinematic-card p-6 rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#00E5FF]/15 via-[#8B5CF6]/10 to-transparent blur-3xl pointer-events-none" />
+      <div className="cinematic-card p-6 rounded-2xl border border-white/[0.08] bg-[#0F1626]/70 backdrop-blur-xl shadow-xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#00E5FF]/10 via-[#8B5CF6]/5 to-transparent blur-3xl pointer-events-none" />
 
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 relative z-10">
           <div className="space-y-1">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#00E5FF] to-[#8B5CF6] flex items-center justify-center text-[#070B14] shadow-cyan-glow font-bold">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#00E5FF] to-[#8B5CF6] flex items-center justify-center text-[#070B14] shadow-md font-bold">
                 <BookOpen className="w-4 h-4" />
               </div>
               <h2 className="text-xl font-black text-[#F4F7FB] tracking-tight">
@@ -182,14 +182,14 @@ export default function LifeSavingRules() {
             </p>
           </div>
 
-          <div className="flex items-center gap-2 bg-[#070B14] p-2.5 rounded-xl border border-[#00E5FF]/30 text-xs text-[#00E5FF] font-mono shadow-inner">
-            <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-ping" />
-            <span>9 Universal Safety Safeguards</span>
+          <div className="flex items-center gap-2 bg-[#080C14] p-2.5 rounded-xl border border-white/[0.08] text-xs text-[#00E5FF] font-mono shadow-inner">
+            <span className="w-2 h-2 rounded-full bg-[#00E5FF]" />
+            <span>9 Universal Safeguards</span>
           </div>
         </div>
 
         {/* Filters and Search Bar */}
-        <div className="mt-5 pt-4 border-t border-[#00E5FF]/15 flex flex-col sm:flex-row gap-3">
+        <div className="mt-5 pt-4 border-t border-white/[0.08] flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
             <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#00E5FF]" />
             <input
@@ -197,7 +197,7 @@ export default function LifeSavingRules() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by keywords (e.g. 'gas test', 'LOTO', 'harness', 'lifting', 'crane')..."
-              className="dark-input w-full pl-10 pr-4 py-2 text-xs text-[#F4F7FB]"
+              className="dark-input w-full pl-10 pr-4 py-2 text-xs text-[#F4F7FB] bg-[#080C14] border border-white/[0.08] rounded-xl focus:border-cyan-400/50"
             />
           </div>
 
@@ -208,8 +208,8 @@ export default function LifeSavingRules() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition ${
                   selectedCategory === cat
-                    ? "bg-[#00E5FF] text-[#070B14] shadow-[0_0_12px_rgba(0,229,255,0.4)]"
-                    : "bg-[#070B14] text-[#94A3B8] border border-[#00E5FF]/20 hover:text-[#F4F7FB]"
+                    ? "bg-[#00E5FF] text-[#070B14] shadow-md"
+                    : "bg-[#080C14] text-[#94A3B8] border border-white/[0.08] hover:text-[#F4F7FB]"
                 }`}
               >
                 {cat}
@@ -226,7 +226,7 @@ export default function LifeSavingRules() {
           return (
             <div
               key={rule.name}
-              className="cinematic-card p-5 rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic flex flex-col justify-between group hover:scale-[1.02] hover:border-[#00E5FF]/50 transition-all duration-300 relative overflow-hidden"
+              className="cinematic-card p-5 rounded-2xl border border-white/[0.08] bg-[#0F1626]/70 backdrop-blur-xl shadow-xl flex flex-col justify-between group hover:scale-[1.01] hover:border-cyan-400/30 transition-all duration-300 relative overflow-hidden"
             >
               {/* Gradient Top Strip */}
               <div
@@ -238,7 +238,7 @@ export default function LifeSavingRules() {
                 <div className="flex items-start justify-between gap-3 pt-1">
                   <div className="flex items-center gap-3">
                     <div
-                      className={`w-11 h-11 rounded-xl bg-gradient-to-tr ${rule.color} text-[#FFFFFF] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 shrink-0 border border-[#FFFFFF]/30`}
+                      className={`w-11 h-11 rounded-xl bg-gradient-to-tr ${rule.color} text-[#FFFFFF] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-105 shrink-0 border border-white/20`}
                       style={{ boxShadow: `0 4px 18px ${rule.glow}` }}
                     >
                       <IconComp className="w-5 h-5 text-[#FFFFFF]" />
@@ -252,20 +252,20 @@ export default function LifeSavingRules() {
                       </span>
                     </div>
                   </div>
-                  <span className="text-[10px] font-mono text-[#00E5FF] bg-[#070B14] px-2 py-0.5 rounded border border-[#00E5FF]/30">
+                  <span className="text-[10px] font-mono text-[#00E5FF] bg-[#080C14] px-2 py-0.5 rounded border border-white/[0.08]">
                     Rule #{rule.ruleNumber}
                   </span>
                 </div>
 
                 {/* Description Quote */}
-                <p className="text-xs text-[#F4F7FB] font-semibold leading-relaxed bg-[#070B14] p-3 rounded-xl border border-[#00E5FF]/15">
+                <p className="text-xs text-[#F4F7FB] font-semibold leading-relaxed bg-[#080C14] p-3 rounded-xl border border-white/[0.06]">
                   "{rule.description}"
                 </p>
 
                 {/* Guidelines Checklist */}
                 <div className="space-y-2 pt-1">
                   <span className="text-[10px] font-bold text-[#94A3B8] uppercase tracking-wider block font-mono">
-                    Mandatory Life-Saving Controls:
+                    Mandatory Safeguards:
                   </span>
                   <ul className="space-y-1.5">
                     {rule.guidelines.map((g, i) => (
@@ -279,7 +279,7 @@ export default function LifeSavingRules() {
               </div>
 
               {/* Bottom Card Footer */}
-              <div className="mt-4 pt-3 border-t border-[#00E5FF]/15 flex items-center justify-between text-[11px] text-[#94A3B8]">
+              <div className="mt-4 pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] text-[#94A3B8]">
                 <span className="font-mono text-[10px] text-[#00E5FF]">
                   {rule.linkedIncidents} Associated Observations
                 </span>

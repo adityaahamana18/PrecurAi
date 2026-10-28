@@ -8,13 +8,10 @@ import {
   Activity,
   TrendingUp,
   FileText,
-  Zap,
-  Filter,
   Search,
   Eye,
   CheckCircle2,
   Clock,
-  Sparkles,
   ArrowRight,
 } from 'lucide-react';
 import {
@@ -33,7 +30,7 @@ import {
   Legend,
 } from 'recharts';
 
-function AnimatedNumber({ value, duration = 1200 }) {
+function AnimatedNumber({ value, duration = 1000 }) {
   const [display, setDisplay] = useState(0);
   const rafRef = useRef(null);
 
@@ -60,15 +57,15 @@ function AnimatedNumber({ value, duration = 1200 }) {
 
 const tooltipStyle = {
   contentStyle: {
-    backgroundColor: '#070B14',
-    borderColor: 'rgba(0, 229, 255, 0.4)',
-    borderRadius: '12px',
+    backgroundColor: 'rgba(11, 15, 25, 0.95)',
+    borderColor: 'rgba(255, 255, 255, 0.12)',
+    borderRadius: '10px',
     fontSize: '11px',
     color: '#F4F7FB',
-    boxShadow: '0 12px 32px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 229, 255, 0.25)',
+    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.6)',
   },
   itemStyle: { color: '#94A3B8' },
-  labelStyle: { color: '#00E5FF', fontWeight: 800 },
+  labelStyle: { color: '#00E5FF', fontWeight: 700 },
 };
 
 function renderCustomLabel({ cx, cy, midAngle, innerRadius, outerRadius, percent }) {
@@ -78,7 +75,7 @@ function renderCustomLabel({ cx, cy, midAngle, innerRadius, outerRadius, percent
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
   return (
-    <text x={x} y={y} fill="#F4F7FB" textAnchor="middle" dominantBaseline="central" fontSize={11} fontWeight={800}>
+    <text x={x} y={y} fill="#F4F7FB" textAnchor="middle" dominantBaseline="central" fontSize={11} fontWeight={700}>
       {`${(percent * 100).toFixed(0)}%`}
     </text>
   );
@@ -92,14 +89,13 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
   if (!stats) {
     return (
       <div className="flex items-center justify-center h-48 text-[#94A3B8] text-sm animate-pulse">
-        Loading operational intelligence command dashboard...
+        Loading intelligence dashboard...
       </div>
     );
   }
 
   const hasReports = stats.total_reports > 0;
 
-  // Cinematic Master Palette Colors
   const sifDistributionData = [
     { name: 'HIGH SIF',   value: stats.high_sif_count,   color: '#FF4757' },
     { name: 'MEDIUM SIF', value: stats.medium_sif_count, color: '#FFB020' },
@@ -132,38 +128,30 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
     {
       label: 'Reports Processed',
       value: stats.total_reports,
-      badge: 'Continuous',
-      badgeClass: 'text-[#00E5FF] bg-[#00E5FF]/10 border-[#00E5FF]/40',
-      border: 'border-l-[#00E5FF]',
-      icon: <ShieldCheck className="w-4 h-4" />,
-      iconBg: 'bg-[#00E5FF]/10 text-[#00E5FF] border-[#00E5FF]/40',
+      badge: 'Active Registry',
+      badgeColor: 'text-[#00E5FF] bg-[#00E5FF]/10 border-[#00E5FF]/30',
+      icon: <ShieldCheck className="w-4 h-4 text-[#00E5FF]" />,
     },
     {
       label: 'High SIF Precursors',
       value: stats.high_sif_count,
-      badge: 'Critical Review',
-      badgeClass: 'text-[#FF4757] bg-[#FF4757]/15 border-[#FF4757]/40',
-      border: 'border-l-[#FF4757]',
-      icon: <AlertOctagon className="w-4 h-4" />,
-      iconBg: 'bg-[#FF4757]/15 text-[#FF4757] border-[#FF4757]/40',
+      badge: 'Immediate Action',
+      badgeColor: 'text-[#FF4757] bg-[#FF4757]/10 border-[#FF4757]/30',
+      icon: <AlertOctagon className="w-4 h-4 text-[#FF4757]" />,
     },
     {
-      label: 'Medium SIF Warning',
+      label: 'Medium Precursors',
       value: stats.medium_sif_count,
-      badge: 'Cautionary',
-      badgeClass: 'text-[#FFB020] bg-[#FFB020]/15 border-[#FFB020]/40',
-      border: 'border-l-[#FFB020]',
-      icon: <AlertTriangle className="w-4 h-4" />,
-      iconBg: 'bg-[#FFB020]/15 text-[#FFB020] border-[#FFB020]/40',
+      badge: 'Warning',
+      badgeColor: 'text-[#FFB020] bg-[#FFB020]/10 border-[#FFB020]/30',
+      icon: <AlertTriangle className="w-4 h-4 text-[#FFB020]" />,
     },
     {
-      label: 'Low SIF / Routine',
+      label: 'Routine Observations',
       value: stats.low_sif_count,
-      badge: 'Baseline',
-      badgeClass: 'text-[#2EE59D] bg-[#2EE59D]/15 border-[#2EE59D]/40',
-      border: 'border-l-[#2EE59D]',
-      icon: <CheckCircle2 className="w-4 h-4" />,
-      iconBg: 'bg-[#2EE59D]/15 text-[#2EE59D] border-[#2EE59D]/40',
+      badge: 'Controlled',
+      badgeColor: 'text-[#2EE59D] bg-[#2EE59D]/10 border-[#2EE59D]/30',
+      icon: <CheckCircle2 className="w-4 h-4 text-[#2EE59D]" />,
     },
   ];
 
@@ -174,64 +162,51 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
   });
 
   return (
-    <div className="space-y-7 animate-fade-in font-sans text-[#F4F7FB]">
+    <div className="space-y-6 animate-fade-in font-sans text-[#F4F7FB]">
       
-      {/* ── Executive Command Banner ── */}
-      <div className="cinematic-card p-6 rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic flex flex-col md:flex-row md:items-center justify-between gap-5 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#00E5FF]/15 via-[#8B5CF6]/10 to-transparent blur-3xl pointer-events-none" />
-
-        <div className="space-y-1 relative z-10">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#00E5FF] to-[#8B5CF6] flex items-center justify-center text-[#070B14] shadow-cyan-glow font-bold">
-              <Activity className="w-4 h-4" />
-            </div>
-            <h2 className="text-xl font-black text-[#F4F7FB] tracking-tight">
-              Operational SIF Precursor Command Center
+      {/* ── Top Header Banner ── */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-2xl bg-[#0F1626]/80 border border-white/[0.08] shadow-lg">
+        <div className="space-y-1">
+          <div className="flex items-center gap-2">
+            <h2 className="text-xl font-bold tracking-tight text-[#F4F7FB]">
+              Safety Intelligence Dashboard
             </h2>
+            <span className="px-2 py-0.5 rounded-full bg-[#00E5FF]/10 text-[#00E5FF] text-[10px] font-mono font-semibold border border-[#00E5FF]/30">
+              Live Feed
+            </span>
           </div>
-          <p className="text-xs text-[#94A3B8] leading-relaxed max-w-2xl">
-            PrecurAi translates field observations, near-miss narratives, and facility inspections into explainable SIF precursor intelligence and IOGP Life-Saving Rules.
+          <p className="text-xs text-[#94A3B8] max-w-xl">
+            Real-time SIF precursor detection, missing barrier analytics, and standard IOGP Life-Saving Rules attribution.
           </p>
         </div>
 
         <button
           onClick={onNavigateToAnalyze}
-          className="btn-cinematic-cyan light-sweep-btn inline-flex items-center gap-2 px-6 py-3 text-xs shadow-cyan-glow shrink-0 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+          className="btn-cinematic-cyan inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold shrink-0 active:scale-95 transition-all cursor-pointer"
         >
           <span>Analyze Safety Report</span>
-          <ArrowUpRight className="w-4 h-4" />
+          <ArrowUpRight className="w-4 h-4 text-[#080C14]" />
         </button>
       </div>
 
-      {/* ── Section Title ── */}
-      <div className="flex items-center justify-between border-b border-[#00E5FF]/20 pb-2">
-        <h3 className="text-xs font-bold text-[#F4F7FB] uppercase tracking-wider flex items-center gap-2">
-          <Layers className="w-4 h-4 text-[#00E5FF]" />
-          Precursor Analytics Telemetry
-        </h3>
-        <span className="text-[10px] font-mono text-[#00E5FF] bg-[#070B14] px-2.5 py-0.5 rounded border border-[#00E5FF]/30">
-          Neural Telemetry Active · Real-Time
-        </span>
-      </div>
-
-      {/* ── 4 KPI Metric Cards ── */}
+      {/* ── 4 KPI Metric Cards (Refined Linear-style) ── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {kpiCards.map((card, i) => (
           <div
             key={card.label}
-            className={`cinematic-card p-5 rounded-2xl border-l-4 ${card.border} hover:scale-[1.02] transition-all duration-200 cursor-default shadow-cinematic bg-[#0D1424]/90`}
+            className="p-5 rounded-2xl bg-[#0F1626]/70 border border-white/[0.08] hover:border-white/[0.2] transition-all duration-200 shadow-sm"
           >
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold uppercase tracking-wider text-[#94A3B8]">{card.label}</span>
-              <div className={`w-8 h-8 rounded-lg flex items-center justify-center border ${card.iconBg}`}>
+              <span className="text-xs font-medium text-[#94A3B8]">{card.label}</span>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-white/[0.03] border border-white/[0.06]">
                 {card.icon}
               </div>
             </div>
             <div className="mt-4 flex items-baseline justify-between">
               <span className="text-2xl font-black text-[#F4F7FB] font-mono tracking-tight">
-                <AnimatedNumber value={card.value} duration={900 + i * 120} />
+                <AnimatedNumber value={card.value} duration={800 + i * 100} />
               </span>
-              <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-md border ${card.badgeClass}`}>
+              <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-md border ${card.badgeColor}`}>
                 {card.badge}
               </span>
             </div>
@@ -243,13 +218,13 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
         
         {/* SIF Donut Chart */}
-        <div className="lg:col-span-4 cinematic-card p-5 rounded-2xl flex flex-col gap-3 border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
+        <div className="lg:col-span-4 p-5 rounded-2xl bg-[#0F1626]/70 border border-white/[0.08] flex flex-col justify-between">
           <div>
-            <h4 className="text-xs font-bold text-[#F4F7FB] uppercase tracking-wider">SIF Potential Distribution</h4>
-            <p className="text-[11px] text-[#94A3B8] mt-0.5">Ratio of classified safety observations</p>
+            <h4 className="text-xs font-bold text-[#F4F7FB] uppercase tracking-wider">SIF Potential Ratio</h4>
+            <p className="text-[11px] text-[#94A3B8] mt-0.5">Distribution across recorded safety observations</p>
           </div>
 
-          <div className="h-48 flex items-center justify-center">
+          <div className="h-44 flex items-center justify-center my-2">
             {!hasReports ? (
               <p className="text-xs text-[#94A3B8]">No reports analyzed yet.</p>
             ) : (
@@ -258,16 +233,14 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
                   <Pie
                     data={sifDistributionData}
                     cx="50%" cy="50%"
-                    innerRadius={46} outerRadius={74}
+                    innerRadius={46} outerRadius={72}
                     paddingAngle={4}
                     dataKey="value"
                     labelLine={false}
                     label={renderCustomLabel}
                     strokeWidth={0}
                     isAnimationActive={true}
-                    animationBegin={0}
-                    animationDuration={1200}
-                    animationEasing="ease-out"
+                    animationDuration={900}
                     activeIndex={pieActive}
                     onMouseEnter={(_, i) => setPieActive(i)}
                     onMouseLeave={() => setPieActive(null)}
@@ -283,17 +256,17 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
                   </Pie>
                   <Tooltip
                     {...tooltipStyle}
-                    formatter={(val) => [val, 'Count']}
+                    formatter={(val) => [val, 'Reports']}
                   />
                 </PieChart>
               </ResponsiveContainer>
             )}
           </div>
 
-          <div className="flex justify-around border-t border-[#00E5FF]/15 pt-3 text-[11px]">
+          <div className="flex justify-around border-t border-white/[0.08] pt-3 text-[11px]">
             {sifDistributionData.map((d) => (
-              <span key={d.name} className="flex items-center gap-1.5 text-[#F4F7FB] font-semibold">
-                <span className="w-2.5 h-2.5 rounded-full" style={{ background: d.color }} />
+              <span key={d.name} className="flex items-center gap-1.5 text-[#F4F7FB] font-medium">
+                <span className="w-2 h-2 rounded-full" style={{ background: d.color }} />
                 {d.name.replace(' SIF', '')}
               </span>
             ))}
@@ -301,39 +274,39 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
         </div>
 
         {/* Life-Saving Rules Bar Chart */}
-        <div className="lg:col-span-8 cinematic-card p-5 rounded-2xl flex flex-col gap-3 border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
+        <div className="lg:col-span-8 p-5 rounded-2xl bg-[#0F1626]/70 border border-white/[0.08] flex flex-col justify-between">
           <div>
             <h4 className="text-xs font-bold text-[#F4F7FB] uppercase tracking-wider">Life-Saving Rules Violation Frequency</h4>
-            <p className="text-[11px] text-[#94A3B8] mt-0.5">IOGP safety barrier violations per rule category</p>
+            <p className="text-[11px] text-[#94A3B8] mt-0.5">Standard IOGP safeguards associated with reported near-misses</p>
           </div>
 
-          <div className="h-52">
+          <div className="h-48 my-2">
             {lsrChartData.length === 0 ? (
               <div className="h-full flex items-center justify-center text-xs text-[#94A3B8]">
                 No Life-Saving Rules mapped yet.
               </div>
             ) : (
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={lsrChartData} margin={{ top: 8, right: 8, left: -22, bottom: 24 }}>
+                <BarChart data={lsrChartData} margin={{ top: 8, right: 8, left: -22, bottom: 20 }}>
                   <defs>
                     <linearGradient id="cyanBarGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#00E5FF" stopOpacity={1} />
-                      <stop offset="100%" stopColor="#8B5CF6" stopOpacity={0.8} />
+                      <stop offset="0%" stopColor="#00E5FF" stopOpacity={0.9} />
+                      <stop offset="100%" stopColor="#00E5FF" stopOpacity={0.3} />
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 4" stroke="rgba(0,229,255,0.15)" vertical={false} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" vertical={false} />
                   <XAxis
                     dataKey="name"
-                    stroke="#00E5FF"
-                    fontSize={9}
-                    angle={-20}
+                    stroke="#64748B"
+                    fontSize={10}
+                    angle={-15}
                     textAnchor="end"
                     tick={{ fill: '#94A3B8' }}
                     axisLine={false}
                     tickLine={false}
                   />
                   <YAxis
-                    stroke="#00E5FF"
+                    stroke="#64748B"
                     fontSize={10}
                     tick={{ fill: '#94A3B8' }}
                     axisLine={false}
@@ -342,118 +315,31 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
                   <Tooltip
                     {...tooltipStyle}
                     formatter={(val, name, props) => [val, props.payload.fullName || name]}
-                    cursor={{ fill: 'rgba(0,229,255,0.08)' }}
                   />
                   <Bar
                     dataKey="Incidents"
                     fill="url(#cyanBarGrad)"
                     radius={[6, 6, 0, 0]}
                     isAnimationActive={true}
-                    animationBegin={200}
-                    animationDuration={1000}
-                    animationEasing="ease-out"
-                    maxBarSize={48}
+                    animationDuration={800}
+                    maxBarSize={44}
                   />
                 </BarChart>
               </ResponsiveContainer>
             )}
           </div>
-          <div className="text-[10px] text-[#94A3B8] text-right border-t border-[#00E5FF]/15 pt-2 font-mono">
-            Deterministic IOGP standard taxonomy
-          </div>
-        </div>
-      </div>
 
-      {/* ── Charts Row 2: Monthly Trend & Dept Breakdown ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-        
-        {/* Monthly SIF Trend */}
-        <div className="lg:col-span-7 cinematic-card p-5 rounded-2xl flex flex-col gap-3 border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
-          <div>
-            <h4 className="text-xs font-bold text-[#F4F7FB] uppercase tracking-wider">Monthly SIF Precursor Trend</h4>
-            <p className="text-[11px] text-[#94A3B8] mt-0.5">Risk level frequency over timeline</p>
-          </div>
-          <div className="h-52">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={monthlyTrend} margin={{ top: 8, right: 8, left: -22, bottom: 0 }}>
-                <defs>
-                  <linearGradient id="areaHigh" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#FF4757" stopOpacity={0.4} />
-                    <stop offset="95%" stopColor="#FF4757" stopOpacity={0.02} />
-                  </linearGradient>
-                  <linearGradient id="areaMed" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#FFB020" stopOpacity={0.4} />
-                    <stop offset="95%" stopColor="#FFB020" stopOpacity={0.02} />
-                  </linearGradient>
-                  <linearGradient id="areaLow" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#2EE59D" stopOpacity={0.4} />
-                    <stop offset="95%" stopColor="#2EE59D" stopOpacity={0.02} />
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 4" stroke="rgba(0,229,255,0.15)" vertical={false} />
-                <XAxis dataKey="month" stroke="#00E5FF" fontSize={10} tick={{ fill: '#94A3B8' }} axisLine={false} tickLine={false} />
-                <YAxis stroke="#00E5FF" fontSize={10} tick={{ fill: '#94A3B8' }} axisLine={false} tickLine={false} />
-                <Tooltip {...tooltipStyle} cursor={{ stroke: '#00E5FF', strokeDasharray: '3 3' }} />
-                <Legend
-                  iconType="circle"
-                  iconSize={8}
-                  wrapperStyle={{ fontSize: '10px', paddingTop: '8px', color: '#94A3B8' }}
-                />
-                <Area type="monotone" dataKey="High"   stroke="#FF4757" strokeWidth={2.5} fill="url(#areaHigh)" dot={false} activeDot={{ r: 5, fill: '#FF4757' }} isAnimationActive animationDuration={1200} />
-                <Area type="monotone" dataKey="Medium" stroke="#FFB020" strokeWidth={2.5} fill="url(#areaMed)"  dot={false} activeDot={{ r: 5, fill: '#FFB020' }} isAnimationActive animationDuration={1400} />
-                <Area type="monotone" dataKey="Low"    stroke="#2EE59D" strokeWidth={2.5} fill="url(#areaLow)"  dot={false} activeDot={{ r: 5, fill: '#2EE59D' }} isAnimationActive animationDuration={1600} />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-
-        {/* Department Breakdown */}
-        <div className="lg:col-span-5 cinematic-card p-5 rounded-2xl flex flex-col gap-3 border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
-          <div>
-            <h4 className="text-xs font-bold text-[#F4F7FB] uppercase tracking-wider">Observations by Department</h4>
-            <p className="text-[11px] text-[#94A3B8] mt-0.5">Field observation distribution per plant unit</p>
-          </div>
-          <div className="h-52">
-            {deptData.length === 0 ? (
-              <div className="h-full flex items-center justify-center text-xs text-[#94A3B8]">
-                No department data available.
-              </div>
-            ) : (
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={deptData} layout="vertical" margin={{ top: 0, right: 12, left: 4, bottom: 0 }}>
-                  <defs>
-                    <linearGradient id="deptGrad" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0%" stopColor="#8B5CF6" stopOpacity={0.8} />
-                      <stop offset="100%" stopColor="#00E5FF" stopOpacity={1} />
-                    </linearGradient>
-                  </defs>
-                  <CartesianGrid strokeDasharray="3 4" stroke="rgba(0,229,255,0.15)" horizontal={false} />
-                  <XAxis type="number" stroke="#00E5FF" fontSize={10} tick={{ fill: '#94A3B8' }} axisLine={false} tickLine={false} />
-                  <YAxis
-                    type="category" dataKey="name" stroke="#00E5FF"
-                    fontSize={9} tick={{ fill: '#94A3B8' }} width={60}
-                    axisLine={false} tickLine={false}
-                  />
-                  <Tooltip {...tooltipStyle} cursor={{ fill: 'rgba(0,229,255,0.08)' }} />
-                  <Bar
-                    dataKey="Count"
-                    fill="url(#deptGrad)"
-                    radius={[0, 6, 6, 0]}
-                    isAnimationActive animationDuration={1100}
-                    maxBarSize={20}
-                  />
-                </BarChart>
-              </ResponsiveContainer>
-            )}
+          <div className="text-[10px] text-[#94A3B8] text-right border-t border-white/[0.08] pt-2 font-mono">
+            IOGP 459 Standard Safeguard Mapping
           </div>
         </div>
       </div>
 
       {/* ── Priority Report Queue Table ── */}
-      <div className="cinematic-card p-6 rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#00E5FF]/15 pb-4">
+      <div className="p-6 rounded-2xl bg-[#0F1626]/70 border border-white/[0.08] shadow-sm space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/[0.08] pb-4">
           <div>
-            <h3 className="text-base font-bold text-[#F4F7FB] flex items-center gap-2">
+            <h3 className="text-sm font-bold text-[#F4F7FB] flex items-center gap-2">
               <Clock className="w-4 h-4 text-[#00E5FF]" />
               Priority Safety Observation Queue
             </h3>
@@ -478,10 +364,10 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
               <button
                 key={lvl}
                 onClick={() => setQueueFilter(lvl)}
-                className={`px-3 py-1.5 text-xs font-mono font-bold rounded-lg transition-all ${
+                className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all ${
                   queueFilter === lvl
-                    ? 'bg-[#00E5FF] text-[#070B14] shadow-[0_0_12px_rgba(0,229,255,0.4)]'
-                    : 'bg-[#070B14] text-[#94A3B8] border border-[#00E5FF]/20 hover:text-[#F4F7FB]'
+                    ? 'bg-[#00E5FF] text-[#080C14] font-bold shadow-sm'
+                    : 'bg-white/[0.03] text-[#94A3B8] border border-white/[0.06] hover:text-[#F4F7FB]'
                 }`}
               >
                 {lvl}
@@ -494,16 +380,16 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead>
-              <tr className="border-b border-[#00E5FF]/15 text-[#64748B] font-mono uppercase text-[10px]">
-                <th className="py-2.5 px-3">Report ID</th>
-                <th className="py-2.5 px-3">Title / Summary</th>
-                <th className="py-2.5 px-3">Facility Location</th>
+              <tr className="border-b border-white/[0.06] text-[#64748B] uppercase text-[10px] tracking-wider">
+                <th className="py-2.5 px-3">Ref ID</th>
+                <th className="py-2.5 px-3">Observation Summary</th>
+                <th className="py-2.5 px-3">Location</th>
                 <th className="py-2.5 px-3">Life-Saving Rule</th>
                 <th className="py-2.5 px-3 text-center">SIF Severity</th>
-                <th className="py-2.5 px-3 text-right">Action</th>
+                <th className="py-2.5 px-3 text-right">Inspect</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#00E5FF]/10 font-sans">
+            <tbody className="divide-y divide-white/[0.04]">
               {priorityReports.length === 0 ? (
                 <tr>
                   <td colSpan={6} className="py-8 text-center text-xs text-[#94A3B8]">
@@ -514,17 +400,17 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
                 priorityReports.slice(0, 5).map((rep) => {
                   const sif = (rep.sif_potential || 'LOW').toUpperCase();
                   const badgeColor =
-                    sif === 'HIGH' ? 'bg-[#FF4757]/20 text-[#FF4757] border-[#FF4757]/40' :
-                    sif === 'MEDIUM' ? 'bg-[#FFB020]/20 text-[#FFB020] border-[#FFB020]/40' :
-                    'bg-[#2EE59D]/20 text-[#2EE59D] border-[#2EE59D]/40';
+                    sif === 'HIGH' ? 'bg-[#FF4757]/15 text-[#FF4757] border-[#FF4757]/30' :
+                    sif === 'MEDIUM' ? 'bg-[#FFB020]/15 text-[#FFB020] border-[#FFB020]/30' :
+                    'bg-[#2EE59D]/15 text-[#2EE59D] border-[#2EE59D]/30';
 
                   return (
-                    <tr key={rep.id} className="hover:bg-[#111A2E]/50 transition-colors group">
-                      <td className="py-3 px-3 font-mono font-bold text-[#00E5FF]">
+                    <tr key={rep.id} className="hover:bg-white/[0.02] transition-colors group">
+                      <td className="py-3 px-3 font-mono font-semibold text-[#00E5FF]">
                         #{rep.id}
                       </td>
                       <td className="py-3 px-3">
-                        <div className="font-semibold text-[#F4F7FB] truncate max-w-[280px]">
+                        <div className="font-medium text-[#F4F7FB] truncate max-w-[280px]">
                           {rep.title || 'Safety Observation'}
                         </div>
                         <div className="text-[11px] text-[#94A3B8] truncate max-w-[280px]">
@@ -534,11 +420,11 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
                       <td className="py-3 px-3 text-[#94A3B8]">
                         {rep.location || 'General Plant'}
                       </td>
-                      <td className="py-3 px-3 text-[#8B5CF6] font-mono text-[11px]">
+                      <td className="py-3 px-3 text-[#8B5CF6] text-[11px]">
                         {rep.life_saving_rule || 'General Control'}
                       </td>
                       <td className="py-3 px-3 text-center">
-                        <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold border ${badgeColor}`}>
+                        <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${badgeColor}`}>
                           {sif}
                         </span>
                       </td>
@@ -548,7 +434,7 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
                           className="btn-ghost-dark inline-flex items-center gap-1 px-3 py-1 text-xs hover:border-[#00E5FF] hover:text-[#00E5FF] transition"
                         >
                           <Eye className="w-3.5 h-3.5" />
-                          <span>Inspect</span>
+                          <span>View</span>
                         </button>
                       </td>
                     </tr>

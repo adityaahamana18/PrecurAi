@@ -256,97 +256,96 @@ export default function AnalyzeReport({ onAnalyzeComplete }) {
     <div className="max-w-5xl mx-auto space-y-6 animate-fade-in font-sans">
       
       {/* ── Top Command Banner ── */}
-      <div className="cinematic-card p-6 rounded-2xl border border-[#00E5FF]/20 shadow-cinematic relative overflow-hidden bg-[#0D1424]/90">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-[#00E5FF]/15 to-transparent blur-3xl pointer-events-none" />
-
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 relative z-10">
-          <div className="space-y-1">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-[#00E5FF]/15 border border-[#00E5FF]/40 flex items-center justify-center shadow-lg shadow-[#00E5FF]/20">
-                <Sparkles className="w-4 h-4 text-[#00E5FF] animate-pulse" />
-              </div>
-              <h2 className="text-xl font-black text-[#F4F7FB] tracking-tight">
-                Live AI Safety Precursor Analysis
-              </h2>
-            </div>
-            <p className="text-xs text-[#94A3B8] leading-relaxed max-w-xl">
-              Extract high-energy precursors, failed safety barriers, and IOGP Life-Saving Rules using PrecurAi neural intelligence.
-            </p>
+      <div className="p-6 rounded-2xl border border-white/[0.08] bg-[#0F1626]/80 flex flex-col sm:flex-row sm:items-center justify-between gap-5 relative overflow-hidden shadow-lg">
+        <div className="space-y-1 relative z-10">
+          <div className="flex items-center gap-2">
+            <h2 className="text-xl font-bold text-[#F4F7FB] tracking-tight">
+              Analyze Safety Observation
+            </h2>
+            <span className="px-2 py-0.5 rounded-full bg-[#00E5FF]/10 text-[#00E5FF] text-[10px] font-mono font-semibold border border-[#00E5FF]/30">
+              Interactive
+            </span>
           </div>
+          <p className="text-xs text-[#94A3B8] leading-relaxed max-w-xl">
+            Evaluate near-miss narratives or upload safety observation documents for automated SIF precursor extraction.
+          </p>
+        </div>
 
-          {/* Workflow Toggle Tabs */}
-          <div className="flex items-center bg-[#070B14] p-1 rounded-xl border border-[#00E5FF]/30 shrink-0 shadow-inner">
-            <button
-              type="button"
-              onClick={() => { setActiveTab("text"); setError(null); }}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all ${
-                activeTab === "text"
-                  ? "bg-[#00E5FF] text-[#070B14] shadow-[0_0_12px_rgba(0,229,255,0.4)]"
-                  : "text-[#94A3B8] hover:text-[#F4F7FB]"
-              }`}
-            >
-              <FileText className="w-3.5 h-3.5" />
-              <span>Observation Text</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => { setActiveTab("upload"); setError(null); }}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all ${
-                activeTab === "upload"
-                  ? "bg-[#00E5FF] text-[#070B14] shadow-[0_0_12px_rgba(0,229,255,0.4)]"
-                  : "text-[#94A3B8] hover:text-[#F4F7FB]"
-              }`}
-            >
-              <UploadCloud className="w-3.5 h-3.5" />
-              <span>Document Upload</span>
-            </button>
-          </div>
+        {/* Workflow Toggle Tabs */}
+        <div className="flex items-center bg-[#080C14] p-1 rounded-xl border border-white/[0.08] shrink-0">
+          <button
+            type="button"
+            onClick={() => { setActiveTab("text"); setError(null); }}
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
+              activeTab === "text"
+                ? "bg-[#00E5FF] text-[#080C14] font-bold shadow-sm"
+                : "text-[#94A3B8] hover:text-[#F4F7FB]"
+            }`}
+          >
+            <FileText className="w-3.5 h-3.5" />
+            <span>Observation Text</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => { setActiveTab("upload"); setError(null); }}
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
+              activeTab === "upload"
+                ? "bg-[#00E5FF] text-[#080C14] font-bold shadow-sm"
+                : "text-[#94A3B8] hover:text-[#F4F7FB]"
+            }`}
+          >
+            <UploadCloud className="w-3.5 h-3.5" />
+            <span>Document Upload</span>
+          </button>
         </div>
       </div>
 
-      {/* ── 6-Stage Horizontal Processing Timeline ── */}
-      <div className="cinematic-card p-5 rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/80 shadow-cinematic">
-        <div className="flex items-center justify-between mb-4 pb-2 border-b border-[#00E5FF]/15">
-          <div className="flex items-center gap-2 text-xs font-mono font-semibold text-[#00E5FF] uppercase tracking-wider">
+      {/* ── 6-Stage Processing Timeline (Clean Linear Style) ── */}
+      <div className="p-5 rounded-2xl border border-white/[0.08] bg-[#0F1626]/70 shadow-sm">
+        <div className="flex items-center justify-between mb-4 pb-2 border-b border-white/[0.08]">
+          <div className="flex items-center gap-2 text-xs font-semibold text-[#F4F7FB]">
             <Cpu className="w-4 h-4 text-[#00E5FF]" />
-            <span>Neural Processing Pipeline Architecture</span>
+            <span>SIF Evaluation Pipeline</span>
           </div>
-          <span className="text-[11px] font-mono text-[#94A3B8]">
-            {analyzing ? `Processing Stage ${activeStage} of 6...` : 'Ready for Ingestion'}
+          <span className="text-xs text-[#94A3B8]">
+            {analyzing ? `Stage ${activeStage} of 6 in progress...` : 'Ready for input'}
           </span>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-6 gap-2 relative">
           {TIMELINE_STAGES.map((st) => {
-            const isCompleted = activeStage > st.id || (!analyzing && activeStage === 0);
+            const isCompleted = activeStage > st.id;
             const isCurrent = analyzing && activeStage === st.id;
             return (
               <div
                 key={st.id}
                 className={`p-3 rounded-xl border transition-all duration-300 relative ${
                   isCurrent
-                    ? 'bg-[#00E5FF]/15 border-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.4)] scale-105'
-                    : isCompleted && analyzing
-                    ? 'bg-[#2EE59D]/10 border-[#2EE59D]/40 text-[#2EE59D]'
-                    : 'bg-[#070B14]/80 border-[#00E5FF]/15 text-[#94A3B8]'
+                    ? 'bg-[#00E5FF]/10 border-[#00E5FF] shadow-sm'
+                    : isCompleted
+                    ? 'bg-[#2EE59D]/10 border-[#2EE59D]/30 text-[#2EE59D]'
+                    : 'bg-[#080C14] border-white/[0.06] text-[#94A3B8]'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <span className={`text-[10px] font-mono font-bold px-1.5 py-0.2 rounded ${
+                  <span className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded ${
                     isCurrent
-                      ? 'bg-[#00E5FF] text-[#070B14]'
-                      : 'bg-[#111A2E] text-[#94A3B8]'
+                      ? 'bg-[#00E5FF] text-[#080C14]'
+                      : 'bg-white/[0.05] text-[#94A3B8]'
                   }`}>
                     0{st.id}
                   </span>
                   {isCurrent && (
-                    <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-ping" />
+                    <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse" />
+                  )}
+                  {isCompleted && (
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#2EE59D]" />
                   )}
                 </div>
-                <div className="text-xs font-bold text-[#F4F7FB] mt-2 truncate">
+                <div className="text-xs font-semibold text-[#F4F7FB] mt-2 truncate">
                   {st.label}
                 </div>
-                <div className="text-[10px] text-[#64748B] mt-0.5 truncate">
+                <div className="text-[10px] text-[#94A3B8] mt-0.5 truncate">
                   {st.desc}
                 </div>
               </div>
@@ -374,15 +373,10 @@ export default function AnalyzeReport({ onAnalyzeComplete }) {
           
           {/* Preset Scenario Pills */}
           <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#94A3B8] flex items-center gap-1.5">
-                <Tag className="w-3.5 h-3.5 text-[#00E5FF]" />
-                Realistic Benchmark Scenarios
-              </span>
-              <span className="text-[10px] text-[#64748B] font-mono">
-                Click any scenario to load narrative
-              </span>
-            </div>
+            <span className="text-xs font-semibold text-[#94A3B8] flex items-center gap-1.5">
+              <Tag className="w-3.5 h-3.5 text-[#00E5FF]" />
+              Benchmark Safety Narratives
+            </span>
             <div className="flex flex-wrap gap-2">
               {SAMPLE_SCENARIOS.map((sc, i) => (
                 <button
@@ -391,13 +385,13 @@ export default function AnalyzeReport({ onAnalyzeComplete }) {
                   onClick={() => handleLoadScenario(sc)}
                   className={`text-left px-3 py-2 rounded-xl text-xs font-medium transition-all duration-200 border cursor-pointer ${
                     reportText === sc.text
-                      ? "bg-[#00E5FF]/20 text-[#00E5FF] border-[#00E5FF] shadow-[0_0_12px_rgba(0,229,255,0.25)]"
-                      : "bg-[#0D1424] text-[#94A3B8] border-[#00E5FF]/15 hover:border-[#00E5FF]/40 hover:text-[#F4F7FB]"
+                      ? "bg-[#00E5FF]/15 text-[#00E5FF] border-[#00E5FF]/50 shadow-sm"
+                      : "bg-[#0F1626]/60 text-[#94A3B8] border-white/[0.08] hover:border-white/[0.2] hover:text-[#F4F7FB]"
                   }`}
                 >
-                  <div className="font-bold flex items-center gap-1.5">
+                  <div className="font-semibold flex items-center gap-1.5">
                     <span>{sc.label}</span>
-                    <span className="text-[9px] font-mono px-1 py-0.2 rounded bg-[#070B14] text-[#8B5CF6]">
+                    <span className="text-[10px] px-1.5 py-0.2 rounded bg-white/[0.05] text-[#8B5CF6]">
                       {sc.badge}
                     </span>
                   </div>
@@ -407,10 +401,10 @@ export default function AnalyzeReport({ onAnalyzeComplete }) {
           </div>
 
           {/* Observation Form */}
-          <form onSubmit={handleTextAnalyze} className="cinematic-card p-6 rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/90 space-y-5">
+          <form onSubmit={handleTextAnalyze} className="p-6 rounded-2xl border border-white/[0.08] bg-[#0F1626]/70 shadow-sm space-y-5">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <label className="block text-[11px] font-mono font-bold uppercase text-[#94A3B8] mb-1.5">
+                <label className="block text-xs font-semibold text-[#94A3B8] mb-1.5">
                   Observation Type
                 </label>
                 <select
@@ -427,8 +421,8 @@ export default function AnalyzeReport({ onAnalyzeComplete }) {
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono font-bold uppercase text-[#94A3B8] mb-1.5 flex items-center gap-1">
-                  <MapPin className="w-3 h-3 text-[#00E5FF]" />
+                <label className="block text-xs font-semibold text-[#94A3B8] mb-1.5 flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5 text-[#00E5FF]" />
                   Facility / Unit Location
                 </label>
                 <input
@@ -441,8 +435,8 @@ export default function AnalyzeReport({ onAnalyzeComplete }) {
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono font-bold uppercase text-[#94A3B8] mb-1.5 flex items-center gap-1">
-                  <Activity className="w-3 h-3 text-[#8B5CF6]" />
+                <label className="block text-xs font-semibold text-[#94A3B8] mb-1.5 flex items-center gap-1">
+                  <Activity className="w-3.5 h-3.5 text-[#8B5CF6]" />
                   Activity Context
                 </label>
                 <input
@@ -457,10 +451,10 @@ export default function AnalyzeReport({ onAnalyzeComplete }) {
 
             <div>
               <div className="flex items-center justify-between mb-1.5">
-                <label className="text-[11px] font-mono font-bold uppercase text-[#94A3B8]">
-                  Observation Narrative / Incident Text
+                <label className="text-xs font-semibold text-[#94A3B8]">
+                  Observation Narrative / Field Report
                 </label>
-                <span className="text-[10px] font-mono text-[#64748B]">
+                <span className="text-[10px] text-[#64748B]">
                   {reportText.length} characters
                 </span>
               </div>
@@ -474,8 +468,8 @@ export default function AnalyzeReport({ onAnalyzeComplete }) {
             </div>
 
             {/* Submit Action */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-[#00E5FF]/15">
-              <div className="flex items-center gap-2 text-xs text-[#94A3B8] font-mono">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-white/[0.08]">
+              <div className="flex items-center gap-2 text-xs text-[#94A3B8]">
                 <Shield className="w-4 h-4 text-[#00E5FF]" />
                 <span>Deterministic IOGP Life-Saving Rules Evaluation</span>
               </div>
@@ -483,18 +477,18 @@ export default function AnalyzeReport({ onAnalyzeComplete }) {
               <button
                 type="submit"
                 disabled={analyzing}
-                className="w-full sm:w-auto btn-cinematic-cyan light-sweep-btn flex items-center justify-center gap-2.5 px-8 py-3.5 text-sm cursor-pointer active:scale-95 disabled:opacity-50"
+                className="w-full sm:w-auto btn-cinematic-cyan flex items-center justify-center gap-2 px-7 py-3 text-xs font-bold cursor-pointer active:scale-95 disabled:opacity-50"
               >
                 {analyzing ? (
                   <>
-                    <RefreshCw className="w-4 h-4 animate-spin text-[#070B14]" />
-                    <span>Analyzing Safety Precursors...</span>
+                    <RefreshCw className="w-4 h-4 animate-spin text-[#080C14]" />
+                    <span>Evaluating Precursors...</span>
                   </>
                 ) : (
                   <>
-                    <Zap className="w-4 h-4 text-[#070B14]" />
+                    <Zap className="w-4 h-4 text-[#080C14]" />
                     <span>Analyze Safety Report</span>
-                    <ArrowRight className="w-4 h-4 text-[#070B14]" />
+                    <ArrowRight className="w-4 h-4 text-[#080C14]" />
                   </>
                 )}
               </button>

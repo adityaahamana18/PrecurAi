@@ -144,13 +144,13 @@ export default function PNGRBReports() {
     <div className="space-y-6 animate-fade-in font-sans text-[#F4F7FB]">
       
       {/* ── Header Banner ── */}
-      <div className="cinematic-card p-6 rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#00E5FF]/15 via-[#8B5CF6]/10 to-transparent blur-3xl pointer-events-none" />
+      <div className="cinematic-card p-6 rounded-2xl border border-white/[0.08] bg-[#0F1626]/70 backdrop-blur-xl shadow-xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#00E5FF]/10 via-[#8B5CF6]/5 to-transparent blur-3xl pointer-events-none" />
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-5 relative z-10">
           <div className="space-y-1">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#00E5FF] to-[#8B5CF6] flex items-center justify-center text-[#070B14] shadow-cyan-glow font-bold">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#00E5FF] to-[#8B5CF6] flex items-center justify-center text-[#070B14] shadow-md font-bold">
                 <BookOpen className="w-4 h-4" />
               </div>
               <h2 className="text-xl font-black text-[#F4F7FB] tracking-tight">
@@ -163,7 +163,7 @@ export default function PNGRBReports() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5 shrink-0">
-            <label className="cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 btn-cinematic-cyan text-xs active:scale-95 transition-all shadow-cyan-glow">
+            <label className="cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 btn-cinematic-cyan text-xs active:scale-95 transition-all shadow-md">
               <Upload className="w-3.5 h-3.5 text-[#070B14]" />
               <span>{uploading ? 'Ingesting PDF...' : 'Upload PDF Report'}</span>
               <input type="file" accept=".pdf" onChange={handleFileUpload} disabled={uploading} className="hidden" />
@@ -172,7 +172,7 @@ export default function PNGRBReports() {
             <button
               onClick={handleRunDirectoryIngestion}
               disabled={loading}
-              className="inline-flex items-center gap-2 px-3.5 py-2.5 btn-ghost-dark rounded-xl text-xs active:scale-95 transition-all"
+              className="inline-flex items-center gap-2 px-3.5 py-2.5 btn-ghost-dark rounded-xl text-xs active:scale-95 transition-all border border-white/[0.08]"
             >
               <RefreshCw className={`w-3.5 h-3.5 text-[#00E5FF] ${loading ? 'animate-spin' : ''}`} />
               <span>Sync Archive</span>
@@ -198,7 +198,7 @@ export default function PNGRBReports() {
 
       {/* ── Analytics Metric Cards ── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="cinematic-card p-4.5 rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
+        <div className="cinematic-card p-4.5 rounded-2xl border border-white/[0.08] bg-[#0F1626]/70 backdrop-blur-xl shadow-xl">
           <div className="flex justify-between items-center text-[#94A3B8] mb-1.5">
             <span className="text-[10px] font-bold uppercase tracking-wider font-mono">Ingested Dossiers</span>
             <FileText className="w-4 h-4 text-[#00E5FF]" />
@@ -207,16 +207,16 @@ export default function PNGRBReports() {
           <div className="text-[11px] text-[#94A3B8] mt-1">Official regulatory investigation files</div>
         </div>
 
-        <div className="cinematic-card p-4.5 rounded-2xl border border-[#FF4757]/40 bg-[#0D1424]/90 shadow-cinematic">
+        <div className="cinematic-card p-4.5 rounded-2xl border border-red-500/20 bg-[#0F1626]/70 backdrop-blur-xl shadow-xl">
           <div className="flex justify-between items-center text-[#FF4757] mb-1.5">
             <span className="text-[10px] font-bold uppercase tracking-wider font-mono">High SIF Precursors</span>
-            <AlertTriangle className="w-4 h-4 text-[#FF4757] animate-pulse" />
+            <AlertTriangle className="w-4 h-4 text-[#FF4757]" />
           </div>
           <div className="text-2xl font-black text-[#FF4757] font-mono">{stats.highPrecursor}</div>
           <div className="text-[11px] text-[#FF4757]/80 mt-1">Major loss of containment indicators</div>
         </div>
 
-        <div className="cinematic-card p-4.5 rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
+        <div className="cinematic-card p-4.5 rounded-2xl border border-white/[0.08] bg-[#0F1626]/70 backdrop-blur-xl shadow-xl">
           <div className="flex justify-between items-center text-[#94A3B8] mb-1.5">
             <span className="text-[10px] font-bold uppercase tracking-wider font-mono">Pages Processed</span>
             <Layers className="w-4 h-4 text-[#00E5FF]" />
@@ -225,7 +225,7 @@ export default function PNGRBReports() {
           <div className="text-[11px] text-[#94A3B8] mt-1">Traceable page-level evidence</div>
         </div>
 
-        <div className="cinematic-card p-4.5 rounded-2xl border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
+        <div className="cinematic-card p-4.5 rounded-2xl border border-white/[0.08] bg-[#0F1626]/70 backdrop-blur-xl shadow-xl">
           <div className="flex justify-between items-center text-[#94A3B8] mb-1.5">
             <span className="text-[10px] font-bold uppercase tracking-wider font-mono">Scanned / OCR</span>
             <Info className="w-4 h-4 text-[#8B5CF6]" />
@@ -236,7 +236,7 @@ export default function PNGRBReports() {
       </div>
 
       {/* ── Search & Filter Controls ── */}
-      <div className="cinematic-card p-4 rounded-2xl flex flex-col md:flex-row gap-3 items-center justify-between border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
+      <div className="cinematic-card p-4 rounded-2xl flex flex-col md:flex-row gap-3 items-center justify-between border border-white/[0.08] bg-[#0F1626]/70 backdrop-blur-xl shadow-xl">
         <div className="relative w-full md:w-80">
           <Search className="w-4 h-4 absolute left-3.5 top-2.5 text-[#00E5FF]" />
           <input
@@ -244,7 +244,7 @@ export default function PNGRBReports() {
             placeholder="Search report, operator, location..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="dark-input w-full pl-10 pr-3 py-2 text-xs text-[#F4F7FB]"
+            className="dark-input w-full pl-10 pr-3 py-2 text-xs text-[#F4F7FB] bg-[#080C14] border border-white/[0.08] rounded-xl focus:border-cyan-400/50"
           />
         </div>
 
@@ -255,7 +255,7 @@ export default function PNGRBReports() {
             <select
               value={pipelineFilter}
               onChange={(e) => setPipelineFilter(e.target.value)}
-              className="dark-input px-3 py-1.5 text-xs text-[#F4F7FB]"
+              className="dark-input px-3 py-1.5 text-xs text-[#F4F7FB] bg-[#080C14] border border-white/[0.08] rounded-xl focus:border-cyan-400/50"
             >
               <option value="ALL">All Pipelines</option>
               <option value="Natural Gas">Natural Gas Trunkline</option>
@@ -269,7 +269,7 @@ export default function PNGRBReports() {
             <select
               value={precursorFilter}
               onChange={(e) => setPrecursorFilter(e.target.value)}
-              className="dark-input px-3 py-1.5 text-xs text-[#F4F7FB]"
+              className="dark-input px-3 py-1.5 text-xs text-[#F4F7FB] bg-[#080C14] border border-white/[0.08] rounded-xl focus:border-cyan-400/50"
             >
               <option value="ALL">All Potential Ratings</option>
               <option value="HIGH">HIGH SIF</option>
@@ -281,10 +281,10 @@ export default function PNGRBReports() {
       </div>
 
       {/* ── Document Registry Table ── */}
-      <div className="cinematic-card rounded-2xl overflow-hidden border border-[#00E5FF]/20 bg-[#0D1424]/90 shadow-cinematic">
+      <div className="cinematic-card rounded-2xl overflow-hidden border border-white/[0.08] bg-[#0F1626]/70 backdrop-blur-xl shadow-xl">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs text-[#F4F7FB]">
-            <thead className="bg-[#070B14] text-[#64748B] font-mono uppercase tracking-wider text-[10px] border-b border-[#00E5FF]/15">
+            <thead className="bg-[#080C14] text-[#64748B] font-mono uppercase tracking-wider text-[10px] border-b border-white/[0.08]">
               <tr>
                 <th className="px-4 py-3.5">Document / Operator</th>
                 <th className="px-4 py-3.5">Pipeline Network</th>
@@ -294,7 +294,7 @@ export default function PNGRBReports() {
                 <th className="px-4 py-3.5 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#00E5FF]/10">
+            <tbody className="divide-y divide-white/[0.04]">
               {loading ? (
                 <tr>
                   <td colSpan="6" className="text-center py-12 text-[#94A3B8]">

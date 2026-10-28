@@ -8,11 +8,10 @@ const RULE_KEYWORDS = ['working at height', 'confined space', 'energy isolation'
 export default function EvidenceHighlighter({ text, highlights = [] }) {
   if (!text) return null;
 
-  // Split text into tokens and highlight matches
   const words = text.split(/(\s+)/);
 
   return (
-    <div className="leading-relaxed font-sans text-sm text-[#F4F7FB] p-4 rounded-xl bg-[#070B14] border border-[#00E5FF]/20">
+    <div className="leading-relaxed font-sans text-xs text-[#F4F7FB] p-4 rounded-xl bg-[#080C14] border border-white/[0.08]">
       {words.map((chunk, idx) => {
         const lower = chunk.toLowerCase().replace(/[^a-z0-9]/g, '');
         if (!lower) return <span key={idx}>{chunk}</span>;
@@ -26,8 +25,8 @@ export default function EvidenceHighlighter({ text, highlights = [] }) {
           return (
             <span
               key={idx}
-              className="px-1.5 py-0.5 rounded font-bold text-xs bg-[#FF4757]/20 text-[#FF4757] border border-[#FF4757]/50 shadow-[0_0_8px_rgba(255,71,87,0.3)] mx-0.5"
-              title="High-Energy Hazard Indicator"
+              className="px-1.5 py-0.5 rounded font-semibold text-xs bg-red-500/15 text-red-300 border border-red-500/30 mx-0.5"
+              title="High-Energy Hazard"
             >
               {chunk}
             </span>
@@ -38,8 +37,8 @@ export default function EvidenceHighlighter({ text, highlights = [] }) {
           return (
             <span
               key={idx}
-              className="px-1.5 py-0.5 rounded font-bold text-xs bg-[#FFB020]/20 text-[#FFB020] border border-[#FFB020]/50 shadow-[0_0_8px_rgba(255,176,32,0.3)] mx-0.5"
-              title="Failed / Missing Safety Barrier"
+              className="px-1.5 py-0.5 rounded font-semibold text-xs bg-amber-500/15 text-amber-300 border border-amber-500/30 mx-0.5"
+              title="Failed Barrier"
             >
               {chunk}
             </span>
@@ -50,8 +49,8 @@ export default function EvidenceHighlighter({ text, highlights = [] }) {
           return (
             <span
               key={idx}
-              className="px-1.5 py-0.5 rounded font-bold text-xs bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]/50 shadow-[0_0_8px_rgba(139,92,246,0.3)] mx-0.5"
-              title="Life-Saving Rule Entity"
+              className="px-1.5 py-0.5 rounded font-semibold text-xs bg-violet-500/15 text-violet-300 border border-violet-500/30 mx-0.5"
+              title="Life-Saving Rule"
             >
               {chunk}
             </span>
@@ -62,8 +61,8 @@ export default function EvidenceHighlighter({ text, highlights = [] }) {
           return (
             <span
               key={idx}
-              className="px-1.5 py-0.5 rounded font-bold text-xs bg-[#00E5FF]/20 text-[#00E5FF] border border-[#00E5FF]/50 shadow-[0_0_8px_rgba(0,229,255,0.25)] mx-0.5"
-              title="Activity / Equipment Target"
+              className="px-1.5 py-0.5 rounded font-semibold text-xs bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 mx-0.5"
+              title="Target Entity"
             >
               {chunk}
             </span>

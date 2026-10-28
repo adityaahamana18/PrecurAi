@@ -134,7 +134,7 @@ export default function PatternIntelligence() {
     <div className="space-y-8 animate-fade-in text-[#F4F7FB]">
       
       {/* ── Section Header ── */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-2xl bg-[#0D1424]/80 border border-[#00E5FF]/20 shadow-cinematic">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-2xl bg-[#0F1626]/70 border border-white/[0.08] backdrop-blur-xl shadow-xl">
         <div className="space-y-1">
           <div className="flex items-center gap-2 text-xs font-mono text-[#00E5FF] uppercase tracking-wider">
             <Share2 className="w-4 h-4 text-[#00E5FF]" />
@@ -156,8 +156,8 @@ export default function PatternIntelligence() {
               onClick={() => setFilterType(t)}
               className={`px-3 py-1.5 text-xs font-mono font-semibold rounded-lg transition-all ${
                 filterType === t
-                  ? 'bg-[#00E5FF] text-[#070B14] shadow-[0_0_15px_rgba(0,229,255,0.4)]'
-                  : 'bg-[#111A2E] text-[#94A3B8] hover:text-[#F4F7FB] border border-[#00E5FF]/20'
+                  ? 'bg-[#00E5FF] text-[#070B14] shadow-md'
+                  : 'bg-[#111A2E]/80 text-[#94A3B8] hover:text-[#F4F7FB] border border-white/[0.08]'
               }`}
             >
               {t}
@@ -170,7 +170,7 @@ export default function PatternIntelligence() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         
         {/* SVG Canvas Area (8 cols) */}
-        <div className="lg:col-span-8 p-4 rounded-2xl bg-[#0D1424]/90 border border-[#00E5FF]/20 shadow-cinematic relative overflow-hidden">
+        <div className="lg:col-span-8 p-4 rounded-2xl bg-[#0F1626]/70 border border-white/[0.08] backdrop-blur-xl shadow-xl relative overflow-hidden">
           <div className="flex items-center justify-between mb-4 px-2">
             <div className="flex items-center gap-4 text-xs font-mono text-[#94A3B8]">
               <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#FF4757]" /> Hazard</span>
@@ -304,8 +304,8 @@ export default function PatternIntelligence() {
         {/* Node Detail & Telemetry Sidebar (4 cols) */}
         <div className="lg:col-span-4 space-y-4">
           {selectedNode ? (
-            <div className="p-6 rounded-2xl bg-[#0D1424]/90 border border-[#00E5FF]/30 shadow-cinematic space-y-5 animate-fade-in">
-              <div className="flex items-center justify-between border-b border-[#00E5FF]/20 pb-4">
+            <div className="p-6 rounded-2xl bg-[#0F1626]/80 border border-white/[0.08] backdrop-blur-xl shadow-xl space-y-5 animate-fade-in">
+              <div className="flex items-center justify-between border-b border-white/[0.08] pb-4">
                 <span
                   className="px-2.5 py-1 text-[10px] font-mono font-bold uppercase rounded-md"
                   style={{
@@ -332,13 +332,13 @@ export default function PatternIntelligence() {
 
               {/* Metrics */}
               <div className="grid grid-cols-2 gap-3 pt-2">
-                <div className="p-3 rounded-xl bg-[#070B14] border border-[#00E5FF]/20">
+                <div className="p-3 rounded-xl bg-[#080C14] border border-white/[0.08]">
                   <div className="text-[10px] text-[#64748B] font-mono uppercase">Incident Frequency</div>
                   <div className="text-xl font-bold font-mono text-[#F4F7FB] mt-0.5">
                     {selectedNode.frequency}
                   </div>
                 </div>
-                <div className="p-3 rounded-xl bg-[#070B14] border border-[#00E5FF]/20">
+                <div className="p-3 rounded-xl bg-[#080C14] border border-white/[0.08]">
                   <div className="text-[10px] text-[#64748B] font-mono uppercase">Credible SIF</div>
                   <div className="text-xl font-bold font-mono text-[#FF4757] mt-0.5">
                     {selectedNode.sif}
@@ -360,7 +360,7 @@ export default function PatternIntelligence() {
                       <div
                         key={idx}
                         onClick={() => setSelectedNode(other)}
-                        className="flex items-center justify-between p-2.5 rounded-lg bg-[#070B14] hover:bg-[#111A2E] border border-[#00E5FF]/15 cursor-pointer transition-colors text-xs"
+                        className="flex items-center justify-between p-2.5 rounded-lg bg-[#080C14] hover:bg-[#111A2E] border border-white/[0.06] hover:border-cyan-400/30 cursor-pointer transition-all text-xs"
                       >
                         <div className="flex items-center gap-2">
                           <span
@@ -380,13 +380,13 @@ export default function PatternIntelligence() {
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-xs text-[#00E5FF] flex items-center gap-2">
+              <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-xs text-[#00E5FF] flex items-center gap-2">
                 <Info className="w-4 h-4 shrink-0" />
                 <span>Precursor pathway maps directly into supervisory checklist verification.</span>
               </div>
             </div>
           ) : (
-            <div className="p-8 rounded-2xl bg-[#0D1424]/90 border border-[#00E5FF]/20 text-center text-[#94A3B8]">
+            <div className="p-8 rounded-2xl bg-[#0F1626]/80 border border-white/[0.08] text-center text-[#94A3B8]">
               Select a node in the graph to inspect relationship attributes.
             </div>
           )}
@@ -394,8 +394,8 @@ export default function PatternIntelligence() {
       </div>
 
       {/* ── Recurring Precursor Pattern Matrix ── */}
-      <div className="p-6 rounded-2xl bg-[#0D1424]/90 border border-[#00E5FF]/20 shadow-cinematic space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#00E5FF]/20 pb-4">
+      <div className="p-6 rounded-2xl bg-[#0F1626]/70 border border-white/[0.08] backdrop-blur-xl shadow-xl space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-4">
           <div>
             <h3 className="text-lg font-bold text-[#F4F7FB] flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-[#00E5FF]" />
@@ -405,7 +405,7 @@ export default function PatternIntelligence() {
               Aggregated multi-incident patterns showing critical barrier failure co-occurrences.
             </p>
           </div>
-          <span className="text-xs font-mono text-[#00E5FF] bg-[#070B14] px-3 py-1.5 rounded-lg border border-[#00E5FF]/20">
+          <span className="text-xs font-mono text-[#00E5FF] bg-[#080C14] px-3 py-1.5 rounded-lg border border-white/[0.08]">
             4 Critical Chains Active
           </span>
         </div>
@@ -413,7 +413,7 @@ export default function PatternIntelligence() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead>
-              <tr className="border-b border-[#00E5FF]/15 text-[#64748B] font-mono uppercase text-[11px]">
+              <tr className="border-b border-white/[0.08] text-[#64748B] font-mono uppercase text-[11px]">
                 <th className="py-3 px-4">Pattern ID</th>
                 <th className="py-3 px-4">Precursor Pathway</th>
                 <th className="py-3 px-4">High-Energy Hazard</th>
@@ -424,7 +424,7 @@ export default function PatternIntelligence() {
                 <th className="py-3 px-4">Quarterly Trend</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#00E5FF]/10 font-sans">
+            <tbody className="divide-y divide-white/[0.04] font-sans">
               {RECURRING_PATTERNS.map((p) => (
                 <tr
                   key={p.patternId}
