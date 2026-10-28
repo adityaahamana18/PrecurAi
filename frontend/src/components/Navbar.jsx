@@ -1,7 +1,7 @@
 import React from 'react';
 import { Shield, LayoutDashboard, Search, BookOpen, AlertTriangle, Moon, Sun, Database, FileText, History, FileCheck, ChevronRight, User, LogIn, LogOut } from 'lucide-react';
 
-export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode, onSeedData, hasActiveResult, user, onSignOut }) {
+export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode, onSeedData, hasActiveResult, user, onSignOut, onOpenSignIn }) {
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'analyze', label: 'Analyze Safety Report', icon: Search },
@@ -9,7 +9,6 @@ export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode,
     { id: 'history', label: 'Reports History', icon: History },
     { id: 'lsr', label: 'Life-Saving Rules', icon: BookOpen },
     { id: 'pngrb', label: 'Incident Reports', icon: FileCheck },
-    { id: 'signin', label: 'Sign In Page', icon: LogIn },
   ];
 
   return (
@@ -72,9 +71,9 @@ export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode,
           </button>
         ) : (
           <button
-            onClick={() => setActiveTab('signin')}
+            onClick={onOpenSignIn}
             className="w-full flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold text-sky-300 hover:text-white bg-sky-950/40 hover:bg-sky-900/60 rounded-lg border border-sky-800/60 transition"
-            title="Go to sign in"
+            title="Open sign in popup"
           >
             <LogIn className="w-3.5 h-3.5 text-sky-400" />
             <span>Sign In</span>
