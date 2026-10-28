@@ -76,45 +76,45 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
         {/* 4 Compact Top KPI Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Reports Analyzed */}
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl shadow-xs">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl shadow-xs card-hover-effect group transition-all duration-300">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Reports Analyzed</span>
-              <div className="w-8 h-8 rounded-lg bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-400 flex items-center justify-center border border-sky-100 dark:border-sky-800">
+              <div className="w-8 h-8 rounded-lg bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-400 flex items-center justify-center border border-sky-100 dark:border-sky-800 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                 <ShieldCheck className="w-4 h-4" />
               </div>
             </div>
             <div className="mt-3 flex items-baseline justify-between">
-              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100">{stats.total_reports}</span>
+              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-600 transition-colors">{stats.total_reports}</span>
               <span className="text-[11px] text-slate-500 font-medium">Processed</span>
             </div>
           </div>
 
           {/* High SIF Potential Card */}
-          <div className="bg-white dark:bg-slate-900 border border-red-200 dark:border-red-900/60 p-4 rounded-xl shadow-xs">
+          <div className="bg-white dark:bg-slate-900 border border-red-200 dark:border-red-900/60 p-4 rounded-xl shadow-xs card-hover-effect group transition-all duration-300 hover:border-red-400 dark:hover:border-red-700">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold uppercase tracking-wider text-red-700 dark:text-red-400">High SIF Potential</span>
-              <div className="w-8 h-8 rounded-lg bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-400 flex items-center justify-center border border-red-100 dark:border-red-900/50">
-                <AlertOctagon className="w-4 h-4" />
+              <div className="w-8 h-8 rounded-lg bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-400 flex items-center justify-center border border-red-100 dark:border-red-900/50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                <AlertOctagon className="w-4 h-4 animate-bounce-subtle" />
               </div>
             </div>
             <div className="mt-3 flex items-baseline justify-between">
-              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100">{stats.high_sif_count}</span>
-              <span className="text-[10px] font-bold text-red-700 dark:text-red-400 bg-red-50 dark:bg-red-950 px-2 py-0.5 rounded border border-red-200 dark:border-red-900/50">
+              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-red-600 transition-colors">{stats.high_sif_count}</span>
+              <span className="text-[10px] font-bold text-red-700 dark:text-red-400 bg-red-50 dark:bg-red-950 px-2 py-0.5 rounded border border-red-200 dark:border-red-900/50 animate-pulse">
                 Critical Alert
               </span>
             </div>
           </div>
 
           {/* Medium SIF Potential Card */}
-          <div className="bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-900/60 p-4 rounded-xl shadow-xs">
+          <div className="bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-900/60 p-4 rounded-xl shadow-xs card-hover-effect group transition-all duration-300 hover:border-amber-400 dark:hover:border-amber-700">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400">Medium SIF Potential</span>
-              <div className="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-400 flex items-center justify-center border border-amber-100 dark:border-amber-900/50">
+              <div className="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-400 flex items-center justify-center border border-amber-100 dark:border-amber-900/50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                 <AlertTriangle className="w-4 h-4" />
               </div>
             </div>
             <div className="mt-3 flex items-baseline justify-between">
-              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100">{stats.medium_sif_count}</span>
+              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-amber-600 transition-colors">{stats.medium_sif_count}</span>
               <span className="text-[10px] font-bold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950 px-2 py-0.5 rounded border border-amber-200 dark:border-amber-900/50">
                 Warning
               </span>
@@ -122,15 +122,15 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
           </div>
 
           {/* Low SIF Potential Card */}
-          <div className="bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/60 p-4 rounded-xl shadow-xs">
+          <div className="bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/60 p-4 rounded-xl shadow-xs card-hover-effect group transition-all duration-300 hover:border-emerald-400 dark:hover:border-emerald-700">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Low SIF Potential</span>
-              <div className="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 flex items-center justify-center border border-emerald-100 dark:border-emerald-900/50">
+              <div className="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 flex items-center justify-center border border-emerald-100 dark:border-emerald-900/50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                 <ShieldCheck className="w-4 h-4" />
               </div>
             </div>
             <div className="mt-3 flex items-baseline justify-between">
-              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100">{stats.low_sif_count}</span>
+              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-600 transition-colors">{stats.low_sif_count}</span>
               <span className="text-[10px] font-medium text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-900/50">
                 Routine
               </span>
