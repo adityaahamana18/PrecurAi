@@ -1,11 +1,16 @@
-import React from 'react';
-import { ShieldAlert, Box, Truck, ZapOff, Flame, EyeOff, Anchor, FileCheck, TrendingUp, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { 
+  ShieldAlert, Box, Truck, ZapOff, Flame, EyeOff, Anchor, 
+  FileCheck, TrendingUp, CheckCircle, Search, Sparkles, BookOpen, ChevronRight
+} from 'lucide-react';
 
 const LSR_ITEMS = [
   {
     name: "Bypassing Safety Controls",
     icon: ShieldAlert,
-    color: "text-red-700 dark:text-red-400 bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-900",
+    category: "Controls & Interlocks",
+    color: "from-[#FF3B30] to-[#2C3480]",
+    glow: "rgba(255, 59, 48, 0.4)",
     description: "Obtain authorization before bypassing or disabling safety controls.",
     guidelines: [
       "Understand safety controls and safety critical equipment related to your work.",
@@ -16,7 +21,9 @@ const LSR_ITEMS = [
   {
     name: "Confined Space Entry",
     icon: Box,
-    color: "text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950 border-amber-200 dark:border-amber-900",
+    category: "Enclosed Atmosphere",
+    color: "from-[#FF9500] to-[#2C3480]",
+    glow: "rgba(255, 149, 0, 0.4)",
     description: "Obtain authorization before entering a confined space.",
     guidelines: [
       "Confirm atmospheric gas testing for H2S, flammable gas (LEL), and oxygen levels.",
@@ -27,7 +34,9 @@ const LSR_ITEMS = [
   {
     name: "Energy Isolation (LOTO)",
     icon: ZapOff,
-    color: "text-sky-700 dark:text-sky-400 bg-sky-50 dark:bg-sky-950 border-sky-200 dark:border-sky-900",
+    category: "Hazardous Energy",
+    color: "from-[#2C3480] to-[#4E5BC9]",
+    glow: "rgba(78, 91, 201, 0.4)",
     description: "Verify isolation and zero energy state before work begins.",
     guidelines: [
       "Confirm mechanical, electrical, and pressure isolations are locked and tagged out.",
@@ -38,7 +47,9 @@ const LSR_ITEMS = [
   {
     name: "Hot Work Controls",
     icon: Flame,
-    color: "text-orange-700 dark:text-orange-400 bg-orange-50 dark:bg-orange-950 border-orange-200 dark:border-orange-900",
+    category: "Ignition Prevention",
+    color: "from-[#FF9500] to-[#FF3B30]",
+    glow: "rgba(255, 149, 0, 0.4)",
     description: "Control flammables and ignition sources during hot work.",
     guidelines: [
       "Obtain a valid Hot Work Permit before welding, cutting, or grinding near hydrocarbon assets.",
@@ -49,7 +60,9 @@ const LSR_ITEMS = [
   {
     name: "Line of Sight",
     icon: EyeOff,
-    color: "text-purple-700 dark:text-purple-400 bg-purple-50 dark:bg-purple-950 border-purple-200 dark:border-purple-900",
+    category: "Proximity & Movement",
+    color: "from-[#2C3480] to-[#5B73D1]",
+    glow: "rgba(44, 52, 128, 0.5)",
     description: "Position yourself outside the line of sight of moving equipment and suspended loads.",
     guidelines: [
       "Never walk or stand directly under a suspended load or crane boom.",
@@ -60,7 +73,9 @@ const LSR_ITEMS = [
   {
     name: "Safe Mechanical Lifting",
     icon: Anchor,
-    color: "text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-900",
+    category: "Heavy Rigging",
+    color: "from-[#4E5BC9] to-[#2C3480]",
+    glow: "rgba(78, 91, 201, 0.4)",
     description: "Plan lifting operations and control the area.",
     guidelines: [
       "Confirm crane capacity, ground stability, and lift plan before hoisting.",
@@ -71,7 +86,9 @@ const LSR_ITEMS = [
   {
     name: "Work Authorization (PTW)",
     icon: FileCheck,
-    color: "text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950 border-emerald-200 dark:border-emerald-900",
+    category: "Permit Systems",
+    color: "from-[#34C759] to-[#2C3480]",
+    glow: "rgba(52, 199, 89, 0.4)",
     description: "Work with a valid Permit to Work (PTW) when required.",
     guidelines: [
       "Confirm permit scope, Job Safety Analysis (JSA), and site safety control measures.",
@@ -82,7 +99,9 @@ const LSR_ITEMS = [
   {
     name: "Working at Height",
     icon: TrendingUp,
-    color: "text-rose-700 dark:text-rose-400 bg-rose-50 dark:bg-rose-950 border-rose-200 dark:border-rose-900",
+    category: "Fall Protection",
+    color: "from-[#FF3B30] to-[#5B73D1]",
+    glow: "rgba(255, 59, 48, 0.4)",
     description: "Protect yourself against falls from height.",
     guidelines: [
       "Inspect full-body harness and double lanyards before climbing above 1.8 meters.",
@@ -93,7 +112,9 @@ const LSR_ITEMS = [
   {
     name: "Safe Driving",
     icon: Truck,
-    color: "text-teal-700 dark:text-teal-400 bg-teal-50 dark:bg-teal-950 border-teal-200 dark:border-teal-900",
+    category: "Transport Safety",
+    color: "from-[#2C3480] to-[#34C759]",
+    glow: "rgba(44, 52, 128, 0.5)",
     description: "Follow safe driving rules (speed, seatbelts, distraction, fatigue).",
     guidelines: [
       "Fasten seatbelt at all times in light vehicles, haul trucks, and buses.",
@@ -104,54 +125,132 @@ const LSR_ITEMS = [
 ];
 
 export default function LifeSavingRules() {
+  const [search, setSearch] = useState("");
+
+  const filteredRules = LSR_ITEMS.filter(rule => {
+    const term = search.toLowerCase();
+    return !search || (
+      rule.name.toLowerCase().includes(term) ||
+      rule.description.toLowerCase().includes(term) ||
+      rule.category.toLowerCase().includes(term) ||
+      rule.guidelines.some(g => g.toLowerCase().includes(term))
+    );
+  });
+
   return (
-    <div className="space-y-5">
-      {/* Header */}
-      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-xl shadow-xs">
-        <h2 className="text-base font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-          <ShieldAlert className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-          IOGP Standard Life-Saving Rules Taxonomy
-        </h2>
-        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
-          International Association of Oil & Gas Producers (IOGP) standard rules used by PrecurAi to map precursor risks and safeguards.
-        </p>
+    <div className="space-y-6 animate-fade-in font-sans">
+      {/* Header Banner */}
+      <div className="corp-card p-6 rounded-2xl border border-[#2C3480] shadow-cobalt-glow relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#2C3480]/30 to-transparent blur-3xl pointer-events-none" />
+
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 relative z-10">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-[#2C3480] border border-[#4E5BC9] flex items-center justify-center shadow-lg shadow-[#2C3480]/50">
+                <BookOpen className="w-4 h-4 text-[#FFFFFF]" />
+              </div>
+              <h2 className="text-lg font-bold text-[#FFFFFF] tracking-tight">
+                IOGP 9 Life-Saving Rules Taxonomy
+              </h2>
+            </div>
+            <p className="text-xs text-[#BAC4EB] leading-relaxed max-w-xl">
+              International Association of Oil &amp; Gas Producers (IOGP) standard barriers embedded in PrecurAi's neural feature attribution model.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2 bg-[#000000] p-2.5 rounded-xl border border-[#2C3480] text-xs text-[#FFFFFF] font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#5B73D1] animate-pulse" />
+            <span>9 Universal Safety Safeguards</span>
+          </div>
+        </div>
+
+        {/* Search Bar */}
+        <div className="mt-5 pt-4 border-t border-[#2C3480]/50 flex flex-col sm:flex-row gap-3">
+          <div className="relative flex-1">
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#5B73D1]" />
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Filter rules by keyword (e.g. 'gas test', 'LOTO', 'harness', 'lifting')..."
+              className="dark-input w-full pl-10 pr-4 py-2 text-xs text-[#FFFFFF]"
+            />
+          </div>
+          {search && (
+            <button
+              onClick={() => setSearch("")}
+              className="text-xs text-[#BAC4EB] hover:text-[#FFFFFF] px-3.5 py-2 rounded-xl bg-[#0A0D18] border border-[#2C3480] transition"
+            >
+              Clear Filter
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Grid of 9 Life-Saving Rules */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {LSR_ITEMS.map((rule, idx) => {
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 stagger-children">
+        {filteredRules.map((rule, idx) => {
           const IconComp = rule.icon;
           return (
             <div
-              key={idx}
-              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl shadow-xs flex flex-col justify-between card-hover-effect group transition-all duration-300"
+              key={rule.name}
+              className="corp-card p-5 rounded-2xl border border-[#2C3480] shadow-lg flex flex-col justify-between group hover:scale-[1.02] transition-all duration-300 relative overflow-hidden"
             >
-              <div className="space-y-3">
-                <div className="flex items-center gap-2.5">
-                  <div className={`w-9 h-9 rounded-lg border flex items-center justify-center ${rule.color} transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6`}>
-                    <IconComp className="w-4 h-4" />
+              {/* Top ambient color strip */}
+              <div
+                className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${rule.color}`}
+              />
+
+              <div className="space-y-3.5">
+                {/* Header */}
+                <div className="flex items-start justify-between gap-3 pt-1">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-11 h-11 rounded-xl bg-gradient-to-tr ${rule.color} text-[#FFFFFF] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 shrink-0 border border-[#FFFFFF]/30`}
+                      style={{ boxShadow: `0 4px 18px ${rule.glow}` }}
+                    >
+                      <IconComp className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-bold text-[#FFFFFF] group-hover:text-[#5B73D1] transition-colors">
+                        {rule.name}
+                      </h3>
+                      <span className="text-[10px] uppercase font-bold text-[#BAC4EB] font-mono tracking-wider">
+                        {rule.category}
+                      </span>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xs font-bold text-slate-900 dark:text-slate-100">{rule.name}</h3>
-                    <span className="text-[10px] uppercase font-bold text-slate-500">Rule #{idx + 1}</span>
-                  </div>
+                  <span className="text-[10px] font-mono text-[#BAC4EB] bg-[#000000] px-2 py-0.5 rounded border border-[#2C3480]">
+                    Rule #{idx + 1}
+                  </span>
                 </div>
 
-                <p className="text-xs text-slate-700 dark:text-slate-300 font-semibold leading-relaxed bg-slate-50 dark:bg-slate-950 p-2.5 rounded-lg border border-slate-200 dark:border-slate-800">
+                {/* Description Quote */}
+                <p className="text-xs text-[#FFFFFF] font-semibold leading-relaxed bg-[#000000]/80 p-3 rounded-xl border border-[#2C3480]">
                   "{rule.description}"
                 </p>
 
-                <div className="space-y-1.5 pt-1">
-                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Key Safeguards:</span>
-                  <ul className="space-y-1">
+                {/* Guidelines Checklist */}
+                <div className="space-y-2 pt-1">
+                  <span className="text-[10px] font-bold text-[#BAC4EB] uppercase tracking-wider block">
+                    Mandatory Controls:
+                  </span>
+                  <ul className="space-y-1.5">
                     {rule.guidelines.map((g, i) => (
-                      <li key={i} className="text-xs text-slate-600 dark:text-slate-300 flex items-start gap-1.5 leading-tight">
-                        <CheckCircle className="w-3.5 h-3.5 text-sky-700 dark:text-sky-400 shrink-0 mt-0.5" />
+                      <li key={i} className="text-xs text-[#FFFFFF] flex items-start gap-2 leading-relaxed">
+                        <CheckCircle className="w-3.5 h-3.5 text-[#5B73D1] shrink-0 mt-0.5" />
                         <span>{g}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
+              </div>
+
+              {/* Bottom Card Footer */}
+              <div className="mt-4 pt-3 border-t border-[#2C3480]/50 flex items-center justify-between text-[11px] text-[#BAC4EB]">
+                <span className="font-mono text-[10px]">IOGP 459 Standard</span>
+                <span className="text-[#5B73D1] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold text-[10px]">
+                  Safety Rule Active ›
+                </span>
               </div>
             </div>
           );

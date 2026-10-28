@@ -25,6 +25,7 @@ import {
   Activity,
   Menu,
   X,
+  Zap,
 } from 'lucide-react';
 
 export default function App() {
@@ -65,7 +66,7 @@ export default function App() {
 
   // Loader
   useEffect(() => {
-    const timer = setTimeout(() => setInitialLoading(false), 1500);
+    const timer = setTimeout(() => setInitialLoading(false), 1400);
     return () => clearTimeout(timer);
   }, []);
 
@@ -144,8 +145,8 @@ export default function App() {
   ];
 
   const pageHeaders = {
-    dashboard: { title: 'Operational SIF Precursor Dashboard', subtitle: 'Real-time high potential SIF risk detection and incident metrics' },
-    analyze: { title: 'Analyze Safety Report', subtitle: 'Upload safety documents (PDF, DOCX, TXT) or raw observations for SIF intelligence' },
+    dashboard: { title: 'Operational SIF Precursor Dashboard', subtitle: 'Real-time high potential SIF risk detection & safety barrier analytics' },
+    analyze: { title: 'Analyze Safety Observation', subtitle: 'Upload safety documents (PDF, DOCX, TXT) or raw observations for SIF intelligence' },
     result: { title: 'SIF Precursor Analysis Result', subtitle: 'Explainable feature attribution, barrier failure analysis, and IOGP Life-Saving Rules' },
     history: { title: 'Safety Reports Registry', subtitle: 'Audit trail of field observations, near-misses, and human supervisor sign-offs' },
     lsr: { title: 'Life-Saving Rules Reference', subtitle: 'Standard IOGP 9 Life-Saving Rules taxonomy and control requirements' },
@@ -159,44 +160,43 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#080C14] text-slate-100 font-sans overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-[#000000] text-[#FFFFFF] font-sans overflow-x-hidden selection:bg-[#2C3480] selection:text-[#FFFFFF]">
 
       {/* ══════════════════════════════════════
-          TOP HEADER — Brand + Nav + Auth
+          TOP HEADER — Black & Cobalt Blue Deep (#2C3480)
          ══════════════════════════════════════ */}
-      <header className="sticky top-0 z-40 bg-[#060A12]/96 backdrop-blur-xl border-b border-slate-800/80 shadow-xl shadow-black/40">
+      <header className="sticky top-0 z-40 bg-[#000000]/95 backdrop-blur-xl border-b border-[#2C3480]/60 shadow-2xl">
 
         {/* ── Row 1: Brand bar ── */}
-        <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-slate-800/50">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-[#2C3480]/30">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            {/* Shield icon with radar ring */}
             <div className="relative w-9 h-9 flex items-center justify-center shrink-0">
-              <div className="absolute inset-0 rounded-xl border border-sky-500/20 animate-ping" style={{ animationDuration: '3s' }} />
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 via-blue-600 to-slate-900 flex items-center justify-center shadow-lg shadow-sky-950/60 border border-sky-400/25">
-                <Shield className="w-4.5 h-4.5 text-sky-100" />
+              <div className="absolute inset-0 rounded-xl border border-[#4E5BC9]/40 animate-ping" style={{ animationDuration: '2.5s' }} />
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#3D48A3] via-[#2C3480] to-[#0A0E22] flex items-center justify-center shadow-cobalt-glow border border-[#4E5BC9]">
+                <Shield className="w-4.5 h-4.5 text-[#FFFFFF]" />
               </div>
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-black text-[17px] tracking-tight text-white leading-none">
-                  Precur<span className="text-sky-400">Ai</span>
+                <span className="font-black text-[18px] tracking-tight text-[#FFFFFF] leading-none">
+                  Precur<span className="text-[#5B73D1]">Ai</span>
                 </span>
-                <span className="bg-sky-950/80 text-sky-400 text-[8px] font-black px-1.5 py-0.5 rounded border border-sky-700/60 uppercase tracking-[0.15em]">
+                <span className="bg-[#2C3480] text-[#FFFFFF] text-[8px] font-black px-1.5 py-0.5 rounded border border-[#4E5BC9] uppercase tracking-[0.15em] shadow-sm">
                   HSE
                 </span>
               </div>
-              <p className="text-[10px] text-slate-500 font-medium hidden sm:block mt-0.5 tracking-wide">
+              <p className="text-[10px] text-[#BAC4EB] font-mono hidden sm:block mt-0.5 tracking-wide">
                 SIF Precursor Intelligence Platform
               </p>
             </div>
           </div>
 
           {/* Right controls */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-3">
             {/* AI disclaimer badge */}
-            <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg text-[11px] font-semibold bg-amber-950/30 text-amber-300 border border-amber-800/50">
-              <AlertCircle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+            <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-xl text-[11px] font-semibold bg-[#0A0D18] text-[#FFFFFF] border border-[#2C3480]/80 shadow-sm">
+              <AlertCircle className="w-3.5 h-3.5 text-[#5B73D1] shrink-0" />
               <span>AI Decision Support · Final assessment by qualified HSE personnel</span>
             </div>
 
@@ -204,34 +204,34 @@ export default function App() {
             <button
               onClick={handleSeedData}
               title="Reset sample dataset"
-              className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 text-[11px] font-medium text-slate-400 hover:text-white bg-slate-800/60 hover:bg-slate-700/80 rounded-lg border border-slate-700/60 transition-all duration-200 hover:border-slate-600"
+              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-medium text-[#BAC4EB] hover:text-[#FFFFFF] bg-[#0A0D18] hover:bg-[#161D33] rounded-xl border border-[#2C3480]/60 hover:border-[#4E5BC9] transition-all duration-200 active:scale-95"
             >
-              <Database className="w-3.5 h-3.5 text-sky-400" />
+              <Database className="w-3.5 h-3.5 text-[#5B73D1]" />
               <span>Reset Data</span>
             </button>
 
             {/* System status */}
-            <div className="hidden sm:flex items-center gap-1.5 text-[11px] px-2.5 py-1.5 rounded-lg bg-emerald-950/30 border border-emerald-800/40">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
+            <div className="hidden sm:flex items-center gap-2 text-[11px] px-3 py-1.5 rounded-xl bg-[#0A0D18] border border-[#2C3480]/60">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#5B73D1] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FFFFFF]" />
               </span>
-              <span className="text-emerald-400 font-semibold">Operational</span>
+              <span className="text-[#FFFFFF] font-semibold font-mono text-[10px]">Operational</span>
             </div>
 
             {/* Auth */}
             {currentUser ? (
-              <div className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/60">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-sky-500 to-blue-700 text-white flex items-center justify-center shadow-sm">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#0A0D18] border border-[#2C3480]">
+                <div className="w-6 h-6 rounded-full bg-[#2C3480] text-[#FFFFFF] flex items-center justify-center font-bold text-xs shadow-sm">
                   <User className="w-3.5 h-3.5" />
                 </div>
                 <div className="hidden sm:block text-left">
-                  <span className="font-bold block text-slate-200 leading-none text-[11px]">{currentUser.name}</span>
-                  <span className="text-[9px] text-slate-500">{currentUser.email}</span>
+                  <span className="font-bold block text-[#FFFFFF] leading-none text-[11px]">{currentUser.name}</span>
+                  <span className="text-[9px] text-[#BAC4EB]">{currentUser.email}</span>
                 </div>
                 <button
                   onClick={handleUserSignOut}
-                  className="p-1 text-slate-500 hover:text-red-400 transition-colors"
+                  className="p-1 text-[#BAC4EB] hover:text-[#FF3B30] transition-colors"
                   title="Sign out"
                 >
                   <LogOut className="w-3.5 h-3.5" />
@@ -240,7 +240,7 @@ export default function App() {
             ) : (
               <button
                 onClick={() => setIsSignInOpen(true)}
-                className="flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow transition active:scale-95"
+                className="btn-cobalt flex items-center gap-2 px-4 py-1.5 text-xs font-bold transition active:scale-95 cursor-pointer"
               >
                 <LogIn className="w-3.5 h-3.5" />
                 <span>Sign In</span>
@@ -250,15 +250,15 @@ export default function App() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/60 transition"
+              className="md:hidden p-1.5 rounded-xl text-[#BAC4EB] hover:text-[#FFFFFF] hover:bg-[#161D33] transition"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
 
-        {/* ── Row 2: Horizontal navigation tabs (desktop) ── */}
-        <nav className="hidden md:flex items-center gap-0.5 px-4 sm:px-6 overflow-x-auto scrollbar-none">
+        {/* ── Row 2: Horizontal navigation tabs ── */}
+        <nav className="hidden md:flex items-center gap-1 px-4 sm:px-6 overflow-x-auto scrollbar-none">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.id;
@@ -269,17 +269,17 @@ export default function App() {
                 className={`
                   relative flex items-center gap-2 px-4 py-3 text-[11px] font-semibold whitespace-nowrap transition-all duration-200 group
                   ${isActive
-                    ? 'text-white'
-                    : 'text-slate-500 hover:text-slate-200'
+                    ? 'text-[#FFFFFF]'
+                    : 'text-[#BAC4EB]/70 hover:text-[#FFFFFF]'
                   }
                 `}
               >
-                <Icon className={`w-3.5 h-3.5 transition-all duration-200 ${isActive ? 'text-sky-400 scale-110' : 'text-slate-600 group-hover:text-slate-400'}`} />
+                <Icon className={`w-3.5 h-3.5 transition-all duration-200 ${isActive ? 'text-[#5B73D1] scale-110' : 'text-[#64748B] group-hover:text-[#FFFFFF]'}`} />
                 {item.label}
-                {/* Active underline glow */}
-                <span className={`absolute bottom-0 left-2 right-2 h-[2px] rounded-full transition-all duration-300 ${
+                {/* Active underline glow with electric Cobalt Blue */}
+                <span className={`absolute bottom-0 left-2 right-2 h-[2.5px] rounded-full transition-all duration-300 ${
                   isActive
-                    ? 'bg-sky-400 opacity-100 shadow-[0_0_8px_rgba(56,189,248,0.7)]'
+                    ? 'bg-gradient-to-r from-[#2C3480] via-[#5B73D1] to-[#FFFFFF] opacity-100 shadow-[0_0_12px_rgba(91,115,209,0.9)]'
                     : 'bg-transparent opacity-0'
                 }`} />
               </button>
@@ -289,7 +289,7 @@ export default function App() {
 
         {/* ── Mobile dropdown nav ── */}
         {mobileMenuOpen && (
-          <nav className="md:hidden border-t border-slate-800/80 bg-[#0D131F] px-3 py-2 flex flex-col gap-1 animate-fade-in">
+          <nav className="md:hidden border-t border-[#2C3480]/60 bg-[#000000] px-3 py-2 flex flex-col gap-1 animate-fade-in">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeTab === item.id;
@@ -297,23 +297,23 @@ export default function App() {
                 <button
                   key={item.id}
                   onClick={() => { setActiveTab(item.id); setMobileMenuOpen(false); }}
-                  className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-semibold text-left transition-all ${
+                  className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-semibold text-left transition-all ${
                     isActive
-                      ? 'bg-sky-600 text-white shadow-md'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/70'
+                      ? 'btn-cobalt'
+                      : 'text-[#BAC4EB] hover:text-[#FFFFFF] hover:bg-[#0A0D18]'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-slate-400'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#FFFFFF]' : 'text-[#BAC4EB]'}`} />
                   {item.label}
                 </button>
               );
             })}
-            <div className="border-t border-slate-800/80 mt-1 pt-1 flex flex-col gap-1">
+            <div className="border-t border-[#2C3480]/40 mt-1 pt-2 flex flex-col gap-1">
               <button
                 onClick={handleSeedData}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white bg-slate-800/50 hover:bg-slate-700/80 transition"
+                className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium text-[#BAC4EB] hover:text-[#FFFFFF] bg-[#0A0D18] transition"
               >
-                <Database className="w-3.5 h-3.5 text-sky-400" />
+                <Database className="w-3.5 h-3.5 text-[#5B73D1]" />
                 Reset Sample Data
               </button>
             </div>
@@ -324,9 +324,9 @@ export default function App() {
       {/* ══════════════════════════════════════
           PAGE TITLE BAR
          ══════════════════════════════════════ */}
-      <div className="bg-[#080C14] border-b border-slate-800/40 px-6 py-4 animate-fade-in">
-        <h1 className="text-[15px] font-bold tracking-tight text-white">{currentHeader.title}</h1>
-        <p className="text-[11px] text-slate-500 mt-0.5 font-medium">{currentHeader.subtitle}</p>
+      <div className="bg-[#05070E] border-b border-[#2C3480]/40 px-6 py-4 animate-fade-in">
+        <h1 className="text-[15px] font-bold tracking-tight text-[#FFFFFF]">{currentHeader.title}</h1>
+        <p className="text-[11px] text-[#BAC4EB]/80 mt-0.5 font-medium">{currentHeader.subtitle}</p>
       </div>
 
       {/* ══════════════════════════════════════
@@ -370,7 +370,7 @@ export default function App() {
       {/* ══════════════════════════════════════
           FOOTER
          ══════════════════════════════════════ */}
-      <footer className="py-4 px-6 border-t border-slate-800/80 bg-[#0A0E17] text-xs flex flex-col sm:flex-row items-center justify-between gap-2 text-slate-400">
+      <footer className="py-4 px-6 border-t border-[#2C3480]/60 bg-[#000000] text-xs flex flex-col sm:flex-row items-center justify-between gap-2 text-[#BAC4EB]">
         <span>PrecurAi &copy; 2026 — AI-powered SIF Precursor Detection &amp; HSE Intelligence</span>
         <div className="flex items-center gap-1.5 font-medium">
           <span>Developer:</span>
@@ -378,7 +378,7 @@ export default function App() {
             href="https://github.com/adityaahamana18"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sky-400 font-semibold hover:underline"
+            className="text-[#5B73D1] hover:text-[#FFFFFF] font-semibold hover:underline transition-colors"
           >
             Aditya Ahamana
           </a>
