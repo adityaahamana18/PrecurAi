@@ -47,7 +47,7 @@ export default function AnalysisResult({ resultData, requestMetadata, onBackToAn
   const reportTextToHighlight = requestMetadata?.reportText || resultData?.full_text || "";
 
   return (
-    <div className="max-w-4xl mx-auto space-y-5">
+    <div className="max-w-4xl mx-auto space-y-5 animate-fade-in">
       {/* Top Action Bar */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
