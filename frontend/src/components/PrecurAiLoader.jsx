@@ -54,3 +54,4 @@ export default function PrecurAiLoader({ label = "Initializing SIF Precursor Neu
     </div>
   );
 }
+
