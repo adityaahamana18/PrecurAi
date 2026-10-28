@@ -4,7 +4,13 @@
 
 @layer base {
   body {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: "Times New Roman", Times, Georgia, serif;
+    letter-spacing: 0.01em;
+  }
+
+  /* Universal Times New Roman font for all text elements */
+  *, *::before, *::after, input, button, textarea, select, span, p, h1, h2, h3, h4, h5, h6, label {
+    font-family: "Times New Roman", Times, Georgia, serif !important;
   }
 }
 
