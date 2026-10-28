@@ -270,12 +270,12 @@ export default function AnalyzeReport({ onAnalyzeComplete }) {
             onDragOver={handleDrag}
             onDrop={handleDrop}
             onClick={() => fileInputRef.current?.click()}
-            className={`border-2 border-dashed rounded-xl p-8 text-center transition cursor-pointer flex flex-col items-center justify-center min-h-[190px] ${
+            className={`border-2 border-dashed rounded-xl p-8 text-center transition-all duration-300 cursor-pointer flex flex-col items-center justify-center min-h-[190px] transform hover:scale-[1.01] ${
               dragActive
-                ? "border-sky-600 bg-sky-50 dark:bg-sky-950/40"
+                ? "border-sky-600 bg-sky-50 dark:bg-sky-950/40 animate-pulse"
                 : selectedFile
-                ? "border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20"
-                : "border-slate-300 dark:border-slate-700 hover:border-slate-400 bg-slate-50/50 dark:bg-slate-950/50"
+                ? "border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20 shadow-md"
+                : "border-slate-300 dark:border-slate-700 hover:border-sky-500 bg-slate-50/50 dark:bg-slate-950/50"
             }`}
           >
             <input
@@ -499,18 +499,18 @@ export default function AnalyzeReport({ onAnalyzeComplete }) {
             <button
               type="submit"
               disabled={analyzing || !reportText.trim()}
-              className="w-full bg-slate-900 hover:bg-slate-800 disabled:opacity-50 text-white font-bold py-2.5 px-5 rounded-lg text-xs shadow-xs flex items-center justify-center gap-2 transition"
+              className="w-full bg-gradient-to-r from-slate-900 via-sky-950 to-slate-900 hover:from-slate-800 hover:to-slate-800 disabled:opacity-50 text-white font-bold py-2.5 px-5 rounded-lg text-xs shadow-md hover:shadow-lg flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-98"
             >
               {analyzing ? (
                 <>
                   <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                  <span>Executing SIF Precursor Intelligence Engine...</span>
+                  <span className="animate-pulse">Executing SIF Precursor Intelligence Engine...</span>
                 </>
               ) : (
                 <>
-                  <Search className="w-4 h-4" />
+                  <Search className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12" />
                   <span>Analyze SIF Precursor Intelligence</span>
-                  <ArrowRight className="w-4 h-4 ml-1" />
+                  <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                 </>
               )}
             </button>
