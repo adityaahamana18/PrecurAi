@@ -159,70 +159,79 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0B0F17] text-slate-100 font-serif overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-[#080C14] text-slate-100 font-sans overflow-x-hidden">
 
       {/* ══════════════════════════════════════
           TOP HEADER — Brand + Nav + Auth
          ══════════════════════════════════════ */}
-      <header className="sticky top-0 z-40 bg-[#0D131F]/95 backdrop-blur-md border-b border-slate-800/90 shadow-lg">
+      <header className="sticky top-0 z-40 bg-[#060A12]/96 backdrop-blur-xl border-b border-slate-800/80 shadow-xl shadow-black/40">
 
         {/* ── Row 1: Brand bar ── */}
-        <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-slate-800/60">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-slate-800/50">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-b from-sky-600 to-slate-800 flex items-center justify-center shadow-md shadow-sky-950/80 border border-sky-500/30 shrink-0">
-              <Shield className="w-5 h-5 text-sky-200" />
+            {/* Shield icon with radar ring */}
+            <div className="relative w-9 h-9 flex items-center justify-center shrink-0">
+              <div className="absolute inset-0 rounded-xl border border-sky-500/20 animate-ping" style={{ animationDuration: '3s' }} />
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 via-blue-600 to-slate-900 flex items-center justify-center shadow-lg shadow-sky-950/60 border border-sky-400/25">
+                <Shield className="w-4.5 h-4.5 text-sky-100" />
+              </div>
             </div>
             <div>
-              <div className="flex items-center gap-1.5">
-                <span className="font-bold text-base tracking-wider text-white">
+              <div className="flex items-center gap-2">
+                <span className="font-black text-[17px] tracking-tight text-white leading-none">
                   Precur<span className="text-sky-400">Ai</span>
                 </span>
-                <span className="bg-sky-950 text-sky-400 text-[9px] font-bold px-1.5 py-0.5 rounded border border-sky-800/80 uppercase tracking-wider">
+                <span className="bg-sky-950/80 text-sky-400 text-[8px] font-black px-1.5 py-0.5 rounded border border-sky-700/60 uppercase tracking-[0.15em]">
                   HSE
                 </span>
               </div>
-              <p className="text-[10px] text-slate-400 font-medium hidden sm:block">SIF Intelligence Platform</p>
+              <p className="text-[10px] text-slate-500 font-medium hidden sm:block mt-0.5 tracking-wide">
+                SIF Precursor Intelligence Platform
+              </p>
             </div>
           </div>
 
           {/* Right controls */}
-          <div className="flex items-center gap-3">
-            {/* AI disclaimer badge — desktop only */}
-            <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-950/40 text-amber-300 border border-amber-800/60">
-              <AlertCircle className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+          <div className="flex items-center gap-2.5">
+            {/* AI disclaimer badge */}
+            <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg text-[11px] font-semibold bg-amber-950/30 text-amber-300 border border-amber-800/50">
+              <AlertCircle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <span>AI Decision Support · Final assessment by qualified HSE personnel</span>
             </div>
 
-            {/* Reset data button — desktop only */}
+            {/* Reset data button */}
             <button
               onClick={handleSeedData}
               title="Reset sample dataset"
-              className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 rounded-lg border border-slate-700/80 transition"
+              className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 text-[11px] font-medium text-slate-400 hover:text-white bg-slate-800/60 hover:bg-slate-700/80 rounded-lg border border-slate-700/60 transition-all duration-200 hover:border-slate-600"
             >
               <Database className="w-3.5 h-3.5 text-sky-400" />
               <span>Reset Data</span>
             </button>
 
-            {/* System status dot */}
-            <div className="hidden sm:flex items-center gap-1.5 text-xs text-slate-400 px-2 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700/60">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            {/* System status */}
+            <div className="hidden sm:flex items-center gap-1.5 text-[11px] px-2.5 py-1.5 rounded-lg bg-emerald-950/30 border border-emerald-800/40">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
+              </span>
               <span className="text-emerald-400 font-semibold">Operational</span>
             </div>
 
             {/* Auth */}
             {currentUser ? (
-              <div className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700">
-                <div className="w-6 h-6 rounded-full bg-sky-700 text-white flex items-center justify-center">
+              <div className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/60">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-sky-500 to-blue-700 text-white flex items-center justify-center shadow-sm">
                   <User className="w-3.5 h-3.5" />
                 </div>
-                <div className="hidden sm:block text-xs text-left">
-                  <span className="font-bold block text-slate-200 leading-none">{currentUser.name}</span>
-                  <span className="text-[10px] text-slate-400">{currentUser.email}</span>
+                <div className="hidden sm:block text-left">
+                  <span className="font-bold block text-slate-200 leading-none text-[11px]">{currentUser.name}</span>
+                  <span className="text-[9px] text-slate-500">{currentUser.email}</span>
                 </div>
                 <button
                   onClick={handleUserSignOut}
-                  className="p-1 text-slate-400 hover:text-red-400 transition"
+                  className="p-1 text-slate-500 hover:text-red-400 transition-colors"
                   title="Sign out"
                 >
                   <LogOut className="w-3.5 h-3.5" />
@@ -249,7 +258,7 @@ export default function App() {
         </div>
 
         {/* ── Row 2: Horizontal navigation tabs (desktop) ── */}
-        <nav className="hidden md:flex items-center gap-1 px-4 sm:px-6 overflow-x-auto scrollbar-none">
+        <nav className="hidden md:flex items-center gap-0.5 px-4 sm:px-6 overflow-x-auto scrollbar-none">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.id;
@@ -258,18 +267,21 @@ export default function App() {
                 key={item.id}
                 onClick={() => { setActiveTab(item.id); setMobileMenuOpen(false); }}
                 className={`
-                  relative flex items-center gap-2 px-4 py-3 text-xs font-semibold whitespace-nowrap transition-all duration-200 border-b-2 group
+                  relative flex items-center gap-2 px-4 py-3 text-[11px] font-semibold whitespace-nowrap transition-all duration-200 group
                   ${isActive
-                    ? 'border-sky-500 text-white'
-                    : 'border-transparent text-slate-400 hover:text-slate-200 hover:border-slate-600'
+                    ? 'text-white'
+                    : 'text-slate-500 hover:text-slate-200'
                   }
                 `}
               >
-                <Icon className={`w-3.5 h-3.5 transition-transform duration-200 ${isActive ? 'text-sky-400 scale-110' : 'text-slate-500 group-hover:text-slate-300'}`} />
+                <Icon className={`w-3.5 h-3.5 transition-all duration-200 ${isActive ? 'text-sky-400 scale-110' : 'text-slate-600 group-hover:text-slate-400'}`} />
                 {item.label}
-                {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-sky-500 rounded-full" />
-                )}
+                {/* Active underline glow */}
+                <span className={`absolute bottom-0 left-2 right-2 h-[2px] rounded-full transition-all duration-300 ${
+                  isActive
+                    ? 'bg-sky-400 opacity-100 shadow-[0_0_8px_rgba(56,189,248,0.7)]'
+                    : 'bg-transparent opacity-0'
+                }`} />
               </button>
             );
           })}
@@ -312,9 +324,9 @@ export default function App() {
       {/* ══════════════════════════════════════
           PAGE TITLE BAR
          ══════════════════════════════════════ */}
-      <div className="bg-[#0B0F17] border-b border-slate-800/50 px-6 py-4">
-        <h1 className="text-base font-bold tracking-wide text-white">{currentHeader.title}</h1>
-        <p className="text-xs text-slate-400 mt-0.5">{currentHeader.subtitle}</p>
+      <div className="bg-[#080C14] border-b border-slate-800/40 px-6 py-4 animate-fade-in">
+        <h1 className="text-[15px] font-bold tracking-tight text-white">{currentHeader.title}</h1>
+        <p className="text-[11px] text-slate-500 mt-0.5 font-medium">{currentHeader.subtitle}</p>
       </div>
 
       {/* ══════════════════════════════════════

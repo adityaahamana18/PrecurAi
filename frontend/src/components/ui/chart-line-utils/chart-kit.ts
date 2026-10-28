@@ -450,3 +450,4 @@ export function ChartCard({
     </div>
   );
 }
+

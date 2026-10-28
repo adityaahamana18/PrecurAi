@@ -608,3 +608,4 @@ function TrendGlyph() {
 }
 
 export default ChartLine;
+
