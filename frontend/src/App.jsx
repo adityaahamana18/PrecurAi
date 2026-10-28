@@ -8,6 +8,7 @@ import LifeSavingRules from './components/LifeSavingRules';
 import PNGRBReports from './components/PNGRBReports';
 import ReportDetailModal from './components/ReportDetailModal';
 import SignIn1 from './components/ui/modern-stunning-sign-in';
+import { auth, onAuthStateChanged, signOut } from './lib/firebase';
 import { AlertCircle, User, ShieldCheck, Sun, Moon, LogIn, LogOut } from 'lucide-react';
 
 export default function App() {
@@ -27,6 +28,27 @@ export default function App() {
   const [reports, setReports] = useState([]);
   const [selectedReport, setSelectedReport] = useState(null);
   const [isSignInOpen, setIsSignInOpen] = useState(false);
+
+  // Sync Firebase authentication state listener
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser) {
+        const userData = {
+          email: firebaseUser.email || "officer@precurai.com",
+          name: (firebaseUser.displayName || firebaseUser.email?.split("@")[0] || "HSE OFFICER").toUpperCase(),
+          uid: firebaseUser.uid
+        };
+        setCurrentUser(userData);
+        try {
+          localStorage.setItem('precurai_user', JSON.stringify(userData));
+        } catch (e) {
+          console.warn("Storage save error:", e);
+        }
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   // Real-time analysis result state with localStorage persistence
   const [latestAnalysisResult, setLatestAnalysisResult] = useState(() => {
@@ -151,7 +173,12 @@ export default function App() {
     setIsSignInOpen(false);
   };
 
-  const handleUserSignOut = () => {
+  const handleUserSignOut = async () => {
+    try {
+      await signOut(auth);
+    } catch (e) {
+      console.warn("Firebase sign out note:", e);
+    }
     setCurrentUser(null);
     try {
       localStorage.removeItem('precurai_user');
