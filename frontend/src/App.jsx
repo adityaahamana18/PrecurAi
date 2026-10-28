@@ -25,7 +25,6 @@ import {
   Activity,
   Menu,
   X,
-  Sparkles,
 } from 'lucide-react';
 
 export default function App() {
@@ -66,7 +65,7 @@ export default function App() {
 
   // Loader
   useEffect(() => {
-    const timer = setTimeout(() => setInitialLoading(false), 1400);
+    const timer = setTimeout(() => setInitialLoading(false), 1500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -145,8 +144,8 @@ export default function App() {
   ];
 
   const pageHeaders = {
-    dashboard: { title: 'Operational SIF Precursor Dashboard', subtitle: 'Real-time high potential SIF risk detection and barrier metrics' },
-    analyze: { title: 'Analyze Safety Observation', subtitle: 'Upload safety documents (PDF, DOCX, TXT) or raw observations for SIF intelligence' },
+    dashboard: { title: 'Operational SIF Precursor Dashboard', subtitle: 'Real-time high potential SIF risk detection and incident metrics' },
+    analyze: { title: 'Analyze Safety Report', subtitle: 'Upload safety documents (PDF, DOCX, TXT) or raw observations for SIF intelligence' },
     result: { title: 'SIF Precursor Analysis Result', subtitle: 'Explainable feature attribution, barrier failure analysis, and IOGP Life-Saving Rules' },
     history: { title: 'Safety Reports Registry', subtitle: 'Audit trail of field observations, near-misses, and human supervisor sign-offs' },
     lsr: { title: 'Life-Saving Rules Reference', subtitle: 'Standard IOGP 9 Life-Saving Rules taxonomy and control requirements' },
@@ -160,33 +159,34 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#120817] text-plum-100 font-sans overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-[#080C14] text-slate-100 font-sans overflow-x-hidden">
 
       {/* ══════════════════════════════════════
-          TOP HEADER — Velvet Sunset Theme
+          TOP HEADER — Brand + Nav + Auth
          ══════════════════════════════════════ */}
-      <header className="sticky top-0 z-40 bg-[#1C0D24]/95 backdrop-blur-xl border-b border-plum-800/70 shadow-xl shadow-black/50">
+      <header className="sticky top-0 z-40 bg-[#060A12]/96 backdrop-blur-xl border-b border-slate-800/80 shadow-xl shadow-black/40">
 
         {/* ── Row 1: Brand bar ── */}
-        <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-plum-900/60">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-slate-800/50">
           {/* Brand */}
           <div className="flex items-center gap-3">
+            {/* Shield icon with radar ring */}
             <div className="relative w-9 h-9 flex items-center justify-center shrink-0">
-              <div className="absolute inset-0 rounded-xl border border-coral-500/25 animate-ping" style={{ animationDuration: '3s' }} />
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-coral-500 via-plum-600 to-velvet-800 flex items-center justify-center shadow-lg shadow-coral-500/25 border border-coral-400/30">
-                <Shield className="w-4.5 h-4.5 text-white" />
+              <div className="absolute inset-0 rounded-xl border border-sky-500/20 animate-ping" style={{ animationDuration: '3s' }} />
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 via-blue-600 to-slate-900 flex items-center justify-center shadow-lg shadow-sky-950/60 border border-sky-400/25">
+                <Shield className="w-4.5 h-4.5 text-sky-100" />
               </div>
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-black text-[17px] tracking-tight text-white leading-none">
-                  Precur<span className="text-transparent bg-clip-text bg-gradient-to-r from-coral-400 to-apricot-300">Ai</span>
+                  Precur<span className="text-sky-400">Ai</span>
                 </span>
-                <span className="bg-gradient-to-r from-coral-500/20 to-plum-600/30 text-apricot-300 text-[8px] font-black px-1.5 py-0.5 rounded border border-coral-400/40 uppercase tracking-[0.15em]">
+                <span className="bg-sky-950/80 text-sky-400 text-[8px] font-black px-1.5 py-0.5 rounded border border-sky-700/60 uppercase tracking-[0.15em]">
                   HSE
                 </span>
               </div>
-              <p className="text-[10px] text-plum-400 font-medium hidden sm:block mt-0.5 tracking-wide">
+              <p className="text-[10px] text-slate-500 font-medium hidden sm:block mt-0.5 tracking-wide">
                 SIF Precursor Intelligence Platform
               </p>
             </div>
@@ -195,8 +195,8 @@ export default function App() {
           {/* Right controls */}
           <div className="flex items-center gap-2.5">
             {/* AI disclaimer badge */}
-            <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-xl text-[11px] font-semibold bg-velvet-950/80 text-apricot-300 border border-apricot-500/30 shadow-xs">
-              <AlertCircle className="w-3.5 h-3.5 text-coral-400 shrink-0" />
+            <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg text-[11px] font-semibold bg-amber-950/30 text-amber-300 border border-amber-800/50">
+              <AlertCircle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <span>AI Decision Support · Final assessment by qualified HSE personnel</span>
             </div>
 
@@ -204,34 +204,34 @@ export default function App() {
             <button
               onClick={handleSeedData}
               title="Reset sample dataset"
-              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-medium text-plum-200 hover:text-white bg-velvet-950/80 hover:bg-plum-900/60 rounded-xl border border-plum-800/70 hover:border-coral-400 transition-all duration-200 active:scale-95"
+              className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 text-[11px] font-medium text-slate-400 hover:text-white bg-slate-800/60 hover:bg-slate-700/80 rounded-lg border border-slate-700/60 transition-all duration-200 hover:border-slate-600"
             >
-              <Database className="w-3.5 h-3.5 text-coral-400" />
+              <Database className="w-3.5 h-3.5 text-sky-400" />
               <span>Reset Data</span>
             </button>
 
             {/* System status */}
-            <div className="hidden sm:flex items-center gap-2 text-[11px] px-3 py-1.5 rounded-xl bg-velvet-950/80 border border-plum-800/60">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-apricot-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-apricot-400" />
+            <div className="hidden sm:flex items-center gap-1.5 text-[11px] px-2.5 py-1.5 rounded-lg bg-emerald-950/30 border border-emerald-800/40">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
               </span>
-              <span className="text-apricot-300 font-semibold font-mono text-[10px]">Operational</span>
+              <span className="text-emerald-400 font-semibold">Operational</span>
             </div>
 
             {/* Auth */}
             {currentUser ? (
-              <div className="flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-velvet-950/80 border border-plum-800/70">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-coral-500 to-plum-600 text-white flex items-center justify-center shadow-sm">
+              <div className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/60">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-sky-500 to-blue-700 text-white flex items-center justify-center shadow-sm">
                   <User className="w-3.5 h-3.5" />
                 </div>
                 <div className="hidden sm:block text-left">
-                  <span className="font-bold block text-white leading-none text-[11px]">{currentUser.name}</span>
-                  <span className="text-[9px] text-plum-400">{currentUser.email}</span>
+                  <span className="font-bold block text-slate-200 leading-none text-[11px]">{currentUser.name}</span>
+                  <span className="text-[9px] text-slate-500">{currentUser.email}</span>
                 </div>
                 <button
                   onClick={handleUserSignOut}
-                  className="p-1 text-plum-400 hover:text-coral-400 transition-colors"
+                  className="p-1 text-slate-500 hover:text-red-400 transition-colors"
                   title="Sign out"
                 >
                   <LogOut className="w-3.5 h-3.5" />
@@ -240,7 +240,7 @@ export default function App() {
             ) : (
               <button
                 onClick={() => setIsSignInOpen(true)}
-                className="btn-sunset-primary flex items-center gap-2 px-4 py-1.5 text-xs font-bold shadow-coral-glow transition active:scale-95 cursor-pointer"
+                className="flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow transition active:scale-95"
               >
                 <LogIn className="w-3.5 h-3.5" />
                 <span>Sign In</span>
@@ -250,15 +250,15 @@ export default function App() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-1.5 rounded-xl text-plum-300 hover:text-white hover:bg-plum-900/60 transition"
+              className="md:hidden p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/60 transition"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
 
-        {/* ── Row 2: Horizontal navigation tabs ── */}
-        <nav className="hidden md:flex items-center gap-1 px-4 sm:px-6 overflow-x-auto scrollbar-none">
+        {/* ── Row 2: Horizontal navigation tabs (desktop) ── */}
+        <nav className="hidden md:flex items-center gap-0.5 px-4 sm:px-6 overflow-x-auto scrollbar-none">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.id;
@@ -270,16 +270,16 @@ export default function App() {
                   relative flex items-center gap-2 px-4 py-3 text-[11px] font-semibold whitespace-nowrap transition-all duration-200 group
                   ${isActive
                     ? 'text-white'
-                    : 'text-plum-400 hover:text-plum-100'
+                    : 'text-slate-500 hover:text-slate-200'
                   }
                 `}
               >
-                <Icon className={`w-3.5 h-3.5 transition-all duration-200 ${isActive ? 'text-coral-400 scale-110' : 'text-plum-500 group-hover:text-coral-300'}`} />
+                <Icon className={`w-3.5 h-3.5 transition-all duration-200 ${isActive ? 'text-sky-400 scale-110' : 'text-slate-600 group-hover:text-slate-400'}`} />
                 {item.label}
-                {/* Active underline glow with Sunset Coral gradient */}
-                <span className={`absolute bottom-0 left-2 right-2 h-[2.5px] rounded-full transition-all duration-300 ${
+                {/* Active underline glow */}
+                <span className={`absolute bottom-0 left-2 right-2 h-[2px] rounded-full transition-all duration-300 ${
                   isActive
-                    ? 'bg-gradient-to-r from-coral-500 to-apricot-400 opacity-100 shadow-[0_0_10px_rgba(237,148,119,0.8)]'
+                    ? 'bg-sky-400 opacity-100 shadow-[0_0_8px_rgba(56,189,248,0.7)]'
                     : 'bg-transparent opacity-0'
                 }`} />
               </button>
@@ -289,7 +289,7 @@ export default function App() {
 
         {/* ── Mobile dropdown nav ── */}
         {mobileMenuOpen && (
-          <nav className="md:hidden border-t border-plum-800/80 bg-[#1C0D24] px-3 py-2 flex flex-col gap-1 animate-fade-in">
+          <nav className="md:hidden border-t border-slate-800/80 bg-[#0D131F] px-3 py-2 flex flex-col gap-1 animate-fade-in">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeTab === item.id;
@@ -297,23 +297,23 @@ export default function App() {
                 <button
                   key={item.id}
                   onClick={() => { setActiveTab(item.id); setMobileMenuOpen(false); }}
-                  className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-semibold text-left transition-all ${
+                  className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-semibold text-left transition-all ${
                     isActive
-                      ? 'btn-sunset-primary'
-                      : 'text-plum-300 hover:text-white hover:bg-plum-900/50'
+                      ? 'bg-sky-600 text-white shadow-md'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/70'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-plum-400'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-slate-400'}`} />
                   {item.label}
                 </button>
               );
             })}
-            <div className="border-t border-plum-800/60 mt-1 pt-2 flex flex-col gap-1">
+            <div className="border-t border-slate-800/80 mt-1 pt-1 flex flex-col gap-1">
               <button
                 onClick={handleSeedData}
-                className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium text-plum-300 hover:text-white bg-velvet-950/80 transition"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white bg-slate-800/50 hover:bg-slate-700/80 transition"
               >
-                <Database className="w-3.5 h-3.5 text-coral-400" />
+                <Database className="w-3.5 h-3.5 text-sky-400" />
                 Reset Sample Data
               </button>
             </div>
@@ -324,9 +324,9 @@ export default function App() {
       {/* ══════════════════════════════════════
           PAGE TITLE BAR
          ══════════════════════════════════════ */}
-      <div className="bg-[#170A1E]/80 border-b border-plum-900/60 px-6 py-4 animate-fade-in">
+      <div className="bg-[#080C14] border-b border-slate-800/40 px-6 py-4 animate-fade-in">
         <h1 className="text-[15px] font-bold tracking-tight text-white">{currentHeader.title}</h1>
-        <p className="text-[11px] text-plum-400 mt-0.5 font-medium">{currentHeader.subtitle}</p>
+        <p className="text-[11px] text-slate-500 mt-0.5 font-medium">{currentHeader.subtitle}</p>
       </div>
 
       {/* ══════════════════════════════════════
@@ -370,7 +370,7 @@ export default function App() {
       {/* ══════════════════════════════════════
           FOOTER
          ══════════════════════════════════════ */}
-      <footer className="py-4 px-6 border-t border-plum-900/70 bg-[#14081A] text-xs flex flex-col sm:flex-row items-center justify-between gap-2 text-plum-400">
+      <footer className="py-4 px-6 border-t border-slate-800/80 bg-[#0A0E17] text-xs flex flex-col sm:flex-row items-center justify-between gap-2 text-slate-400">
         <span>PrecurAi &copy; 2026 — AI-powered SIF Precursor Detection &amp; HSE Intelligence</span>
         <div className="flex items-center gap-1.5 font-medium">
           <span>Developer:</span>
@@ -378,7 +378,7 @@ export default function App() {
             href="https://github.com/adityaahamana18"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-coral-400 hover:text-apricot-300 font-semibold hover:underline transition-colors"
+            className="text-sky-400 font-semibold hover:underline"
           >
             Aditya Ahamana
           </a>

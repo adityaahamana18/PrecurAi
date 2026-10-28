@@ -1,20 +1,10 @@
 import React, { useState } from 'react';
-import { 
-  Search, Filter, AlertOctagon, AlertTriangle, ShieldCheck, 
-  Eye, RefreshCw, BookOpen, Shield, Clock, CheckCircle2, ChevronRight 
-} from 'lucide-react';
+import { Search, Filter, AlertOctagon, AlertTriangle, ShieldCheck, Eye, RefreshCw, BookOpen, Shield } from 'lucide-react';
 
 export default function ReportsHistory({ reports, onSelectReport, onRefresh }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [sifFilter, setSifFilter] = useState('ALL');
   const [statusFilter, setStatusFilter] = useState('ALL');
-  const [isRefreshing, setIsRefreshing] = useState(false);
-
-  const handleRefreshClick = async () => {
-    setIsRefreshing(true);
-    await onRefresh?.();
-    setTimeout(() => setIsRefreshing(false), 600);
-  };
 
   const filteredReports = (reports || []).filter(report => {
     const effectiveSif = report.final_sif_level || report.sif_potential;
@@ -23,118 +13,86 @@ export default function ReportsHistory({ reports, onSelectReport, onRefresh }) {
 
     const term = searchTerm.toLowerCase();
     const matchesSearch = !searchTerm || (
-      report.title?.toLowerCase().includes(term) ||
-      report.report_number?.toLowerCase().includes(term) ||
-      report.report_text?.toLowerCase().includes(term) ||
-      report.location?.toLowerCase().includes(term) ||
+      report.title.toLowerCase().includes(term) ||
+      report.report_number.toLowerCase().includes(term) ||
+      report.report_text.toLowerCase().includes(term) ||
+      report.location.toLowerCase().includes(term) ||
       (report.life_saving_rule && report.life_saving_rule.toLowerCase().includes(term))
     );
 
     return matchesSif && matchesStatus && matchesSearch;
   });
 
-  const highCount = (reports || []).filter(r => (r.final_sif_level || r.sif_potential) === 'HIGH').length;
-  const medCount = (reports || []).filter(r => (r.final_sif_level || r.sif_potential) === 'MEDIUM').length;
-  const lowCount = (reports || []).filter(r => (r.final_sif_level || r.sif_potential) === 'LOW').length;
-
   return (
-    <div className="space-y-6 animate-fade-in">
-      {/* Top Banner with Stats Bar */}
-      <div className="corp-card p-6 rounded-2xl shadow-card-sunset border border-plum-700/40 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-coral-500/15 via-plum-600/10 to-transparent blur-3xl pointer-events-none" />
-
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 relative z-10">
-          <div className="space-y-1">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-plum-700 to-coral-500 flex items-center justify-center shadow-lg shadow-coral-500/20">
-                <Shield className="w-4 h-4 text-white" />
-              </div>
-              <h2 className="text-lg font-bold text-white tracking-tight">
-                Safety Reports Audit Registry
-              </h2>
-            </div>
-            <p className="text-xs text-plum-300/80 leading-relaxed max-w-xl">
-              Immutable audit ledger of field safety observations, neural classification results, and qualified HSE supervisory reviews.
-            </p>
-          </div>
-
-          <button
-            onClick={handleRefreshClick}
-            className="inline-flex items-center gap-2 bg-velvet-900/90 hover:bg-plum-800/80 text-plum-100 hover:text-white text-xs font-bold px-4 py-2.5 rounded-xl border border-plum-700/60 hover:border-coral-400/60 transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shrink-0"
-          >
-            <RefreshCw className={`w-3.5 h-3.5 text-coral-400 ${isRefreshing ? 'animate-spin' : ''}`} />
-            <span>Sync Registry</span>
-          </button>
+    <div className="space-y-5">
+      {/* Top Banner */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-xl shadow-xs">
+        <div>
+          <h2 className="text-base font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-sky-700 dark:text-sky-400" />
+            Safety Reports Audit Registry
+          </h2>
+          <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
+            Enterprise database registry of analyzed safety observations, AI precursor predictions, and HSE sign-offs.
+          </p>
         </div>
-
-        {/* Quick KPI Count Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5 pt-4 border-t border-plum-800/60">
-          <div className="bg-velvet-950/60 p-3 rounded-xl border border-plum-800/50">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-plum-300/80 block">Total In Registry</span>
-            <span className="text-xl font-black text-white font-mono mt-0.5 block">{reports?.length || 0}</span>
-          </div>
-          <div className="bg-velvet-950/60 p-3 rounded-xl border border-red-900/40">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-red-400 block">High SIF Precursors</span>
-            <span className="text-xl font-black text-red-300 font-mono mt-0.5 block">{highCount}</span>
-          </div>
-          <div className="bg-velvet-950/60 p-3 rounded-xl border border-apricot-500/30">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-apricot-400 block">Medium SIF</span>
-            <span className="text-xl font-black text-apricot-300 font-mono mt-0.5 block">{medCount}</span>
-          </div>
-          <div className="bg-velvet-950/60 p-3 rounded-xl border border-emerald-900/40">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 block">Low Routine Risk</span>
-            <span className="text-xl font-black text-emerald-300 font-mono mt-0.5 block">{lowCount}</span>
-          </div>
-        </div>
+        <button
+          onClick={onRefresh}
+          className="inline-flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 transition"
+        >
+          <RefreshCw className="w-3.5 h-3.5" />
+          <span>Refresh Registry</span>
+        </button>
       </div>
 
       {/* Search & Filter Bar */}
-      <div className="corp-card p-4 rounded-2xl flex flex-col md:flex-row gap-3.5 justify-between items-stretch md:items-center border border-plum-700/40 shadow-card-sunset">
+      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 rounded-xl flex flex-col md:flex-row gap-3 justify-between items-stretch md:items-center shadow-xs">
         {/* Search Input */}
-        <div className="relative flex-1 min-w-[260px]">
-          <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-coral-400" />
+        <div className="relative flex-1 min-w-[240px]">
+          <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search report #, title, hazard, site location..."
-            className="dark-input w-full pl-10 pr-4 py-2 text-xs text-white"
+            placeholder="Search report #, title, hazard, location..."
+            className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-lg pl-9 pr-3 py-1.5 text-xs text-slate-900 dark:text-slate-100 focus:outline-none"
           />
         </div>
 
         {/* SIF Filter Pills */}
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
-          <span className="text-[11px] text-plum-300 font-bold mr-1 flex items-center gap-1 shrink-0">
-            <Filter className="w-3.5 h-3.5 text-apricot-400" />
-            Filter:
+        <div className="flex items-center gap-1.5 overflow-x-auto">
+          <span className="text-xs text-slate-500 font-bold mr-1 flex items-center gap-1">
+            <Filter className="w-3.5 h-3.5" />
+            SIF:
           </span>
-          {[
-            { id: 'ALL', label: 'All SIF' },
-            { id: 'HIGH', label: 'High', color: 'from-red-600 to-rose-700' },
-            { id: 'MEDIUM', label: 'Medium', color: 'from-amber-600 to-apricot-600' },
-            { id: 'LOW', label: 'Low', color: 'from-emerald-600 to-teal-700' }
-          ].map(f => (
+          {['ALL', 'HIGH', 'MEDIUM', 'LOW'].map(level => (
             <button
-              key={f.id}
-              onClick={() => setSifFilter(f.id)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 shrink-0 ${
-                sifFilter === f.id
-                  ? 'bg-gradient-to-r from-coral-500 to-plum-600 text-white shadow-md shadow-coral-500/30 scale-105'
-                  : 'bg-velvet-900/80 text-plum-300 hover:text-white hover:bg-plum-800/60 border border-plum-800/60'
+              key={level}
+              onClick={() => setSifFilter(level)}
+              className={`px-2.5 py-1 rounded text-xs font-bold transition ${
+                sifFilter === level
+                  ? level === 'HIGH'
+                    ? 'bg-red-600 text-white'
+                    : level === 'MEDIUM'
+                    ? 'bg-amber-600 text-white'
+                    : level === 'LOW'
+                    ? 'bg-emerald-600 text-white'
+                    : 'bg-slate-900 text-white'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200'
               }`}
             >
-              {f.label}
+              {level}
             </button>
           ))}
         </div>
 
-        {/* Status Dropdown */}
-        <div className="flex items-center gap-2 shrink-0">
-          <span className="text-[11px] text-plum-300 font-bold">Status:</span>
+        {/* Status Dropdown Filter */}
+        <div className="flex items-center gap-2">
+          <span className="text-xs text-slate-500 font-bold">Status:</span>
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="dark-input px-3 py-1.5 text-xs text-white"
+            className="bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-900 dark:text-slate-100 focus:outline-none"
           >
             <option value="ALL">All Statuses</option>
             <option value="PENDING">Pending Review</option>
@@ -145,117 +103,111 @@ export default function ReportsHistory({ reports, onSelectReport, onRefresh }) {
       </div>
 
       {/* Enterprise Data Table */}
-      <div className="corp-card rounded-2xl overflow-hidden border border-plum-700/40 shadow-card-sunset">
+      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs text-plum-200">
-            <thead className="bg-velvet-950/90 text-plum-300 font-bold uppercase tracking-wider text-[10px] border-b border-plum-800/60">
+          <table className="w-full text-left text-xs text-slate-700 dark:text-slate-300">
+            <thead className="bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-400 font-bold uppercase border-b border-slate-200 dark:border-slate-800">
               <tr>
-                <th className="py-3.5 px-4">Report ID</th>
-                <th className="py-3.5 px-4">Title &amp; Location</th>
-                <th className="py-3.5 px-4">SIF Potential</th>
-                <th className="py-3.5 px-4">Life-Saving Rule</th>
-                <th className="py-3.5 px-4">Confidence</th>
-                <th className="py-3.5 px-4">HSE Status</th>
-                <th className="py-3.5 px-4 text-right">Action</th>
+                <th className="py-3 px-4">Report #</th>
+                <th className="py-3 px-4">Title & Location</th>
+                <th className="py-3 px-4">SIF Potential</th>
+                <th className="py-3 px-4">Life-Saving Rule</th>
+                <th className="py-3 px-4">Confidence</th>
+                <th className="py-3 px-4">HSE Status</th>
+                <th className="py-3 px-4 text-right">Action</th>
               </tr>
             </thead>
 
-            <tbody className="divide-y divide-plum-900/40">
+            <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
               {filteredReports.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="py-12 text-center text-plum-400">
-                    <ShieldCheck className="w-8 h-8 mx-auto mb-2 text-plum-500 opacity-60" />
-                    <p className="text-sm font-semibold text-plum-300">No safety reports matched your filter.</p>
-                    <p className="text-xs text-plum-400 mt-0.5">Try clearing the search term or switching the SIF filter to ALL.</p>
+                  <td colSpan={7} className="py-8 text-center text-slate-400">
+                    No safety reports matched your search criteria.
                   </td>
                 </tr>
               ) : (
-                filteredReports.map((report, idx) => {
+                filteredReports.map(report => {
                   const effectiveSif = report.final_sif_level || report.sif_potential;
                   const isOverridden = !!report.final_sif_level;
 
                   return (
                     <tr
-                      key={report.id || idx}
+                      key={report.id}
+                      className="hover:bg-slate-50 dark:hover:bg-slate-800/60 transition group cursor-pointer"
                       onClick={() => onSelectReport(report)}
-                      className="hover:bg-plum-900/35 transition-all duration-200 group cursor-pointer border-b border-plum-900/30"
                     >
-                      <td className="py-3.5 px-4 font-mono font-bold text-coral-400 group-hover:text-apricot-300 transition-colors">
+                      <td className="py-3 px-4 font-mono font-bold text-slate-900 dark:text-sky-400">
                         {report.report_number}
                       </td>
 
-                      <td className="py-3.5 px-4 max-w-xs">
-                        <div className="font-bold text-white group-hover:text-coral-300 transition-colors truncate">
+                      <td className="py-3 px-4 max-w-xs">
+                        <div className="font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-700 dark:group-hover:text-sky-400 transition truncate">
                           {report.title}
                         </div>
-                        <div className="text-[11px] text-plum-400 truncate mt-0.5">
+                        <div className="text-[11px] text-slate-500 truncate">
                           {report.location} • {report.unit_department}
                         </div>
                       </td>
 
-                      <td className="py-3.5 px-4">
+                      <td className="py-3 px-4">
                         <div className="flex items-center gap-1.5">
                           <span
-                            className={`font-bold text-[10px] uppercase px-2.5 py-1 rounded-lg border inline-flex items-center gap-1.5 ${
+                            className={`font-bold text-[10px] uppercase px-2 py-0.5 rounded border inline-flex items-center gap-1 ${
                               effectiveSif === 'HIGH'
-                                ? 'bg-red-950/60 text-red-300 border-red-800/60 shadow-sm'
+                                ? 'bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300 border-red-200 dark:border-red-900'
                                 : effectiveSif === 'MEDIUM'
-                                ? 'bg-amber-950/60 text-apricot-300 border-amber-800/60 shadow-sm'
-                                : 'bg-emerald-950/60 text-emerald-300 border-emerald-800/60 shadow-sm'
+                                ? 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-900'
+                                : 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-900'
                             }`}
                           >
-                            <span className={`w-1.5 h-1.5 rounded-full ${
-                              effectiveSif === 'HIGH' ? 'bg-red-400 animate-pulse' : effectiveSif === 'MEDIUM' ? 'bg-apricot-400' : 'bg-emerald-400'
-                            }`} />
-                            {effectiveSif} SIF
+                            {effectiveSif === 'HIGH' && <AlertOctagon className="w-3 h-3 text-red-600" />}
+                            {effectiveSif === 'MEDIUM' && <AlertTriangle className="w-3 h-3 text-amber-600" />}
+                            {effectiveSif === 'LOW' && <ShieldCheck className="w-3 h-3 text-emerald-600" />}
+                            {effectiveSif}
                           </span>
                           {isOverridden && (
-                            <span className="text-[9px] bg-plum-800/60 text-apricot-300 px-1.5 py-0.5 rounded border border-plum-700/60">
+                            <span className="text-[9px] bg-slate-100 dark:bg-slate-800 text-amber-800 dark:text-amber-300 px-1 py-0.5 rounded border border-amber-200 dark:border-amber-800">
                               Overridden
                             </span>
                           )}
                         </div>
                       </td>
 
-                      <td className="py-3.5 px-4 max-w-[190px]">
-                        <span className="inline-flex items-center gap-1.5 text-xs text-plum-200 truncate">
-                          <BookOpen className="w-3.5 h-3.5 text-apricot-400 shrink-0" />
+                      <td className="py-3 px-4 max-w-[180px]">
+                        <span className="inline-flex items-center gap-1 text-xs text-slate-700 dark:text-slate-300 truncate">
+                          <BookOpen className="w-3 h-3 text-amber-600 dark:text-amber-400 shrink-0" />
                           <span className="truncate">{report.life_saving_rule}</span>
                         </span>
                       </td>
 
-                      <td className="py-3.5 px-4 font-mono font-bold text-white">
-                        <span className="text-coral-400">{Math.round(report.confidence_score * 100)}</span>
-                        <span className="text-plum-400 text-[10px]">/100</span>
+                      <td className="py-3 px-4 font-mono font-bold text-slate-900 dark:text-slate-200">
+                        {Math.round(report.confidence_score * 100)} / 100
                       </td>
 
-                      <td className="py-3.5 px-4">
+                      <td className="py-3 px-4">
                         <span
-                          className={`text-[10px] font-bold px-2.5 py-1 rounded-lg border inline-flex items-center gap-1 ${
+                          className={`text-[10px] font-bold px-2 py-0.5 rounded border ${
                             report.review_status === 'PENDING'
-                              ? 'bg-velvet-950/70 text-plum-300 border-plum-700/60'
+                              ? 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-700'
                               : report.review_status === 'OVERRIDDEN'
-                              ? 'bg-amber-950/50 text-apricot-300 border-amber-800/60'
-                              : 'bg-emerald-950/50 text-emerald-300 border-emerald-800/60'
+                              ? 'bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-900'
+                              : 'bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-900'
                           }`}
                         >
-                          <CheckCircle2 className="w-3 h-3 text-current" />
                           {report.review_status}
                         </span>
                       </td>
 
-                      <td className="py-3.5 px-4 text-right">
+                      <td className="py-3 px-4 text-right">
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
                             onSelectReport(report);
                           }}
-                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-velvet-900/80 hover:bg-coral-500 text-plum-200 hover:text-white border border-plum-700/60 hover:border-coral-400 transition-all duration-200 group-hover:scale-105"
-                          title="Open detailed precursor audit view"
+                          className="p-1 text-slate-500 hover:text-slate-900 dark:hover:text-white rounded transition"
+                          title="View Result & Audit Log"
                         >
-                          <Eye className="w-3.5 h-3.5" />
-                          <span className="text-[11px] font-semibold">Inspect</span>
-                          <ChevronRight className="w-3 h-3 opacity-60" />
+                          <Eye className="w-4 h-4" />
                         </button>
                       </td>
                     </tr>
