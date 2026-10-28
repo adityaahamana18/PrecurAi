@@ -40,99 +40,106 @@ export default function Dashboard({ stats, hseAnalytics, onSelectReport, onNavig
   }));
 
   return (
-    <div className="space-y-6">
-      {/* Header Banner */}
-      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-xl shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h2 className="text-base font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-            <Activity className="w-4 h-4 text-sky-700 dark:text-sky-400" />
-            Operational SIF Precursor Dashboard
-          </h2>
-          <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
-            PrecurAi converts unstructured safety reports into explainable SIF precursor intelligence and maps relevant IOGP Life-Saving Rules.
-          </p>
+    <div className="space-y-8 animate-fade-in">
+      {/* Header Banner with Vibrant Animated Gradient Border */}
+      <div className="relative overflow-hidden rounded-2xl p-[1.5px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl">
+        <div className="bg-[#0F172A]/90 backdrop-blur-xl p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-1.5">
+            <h2 className="text-xl font-bold text-white flex items-center gap-2.5">
+              <span className="p-2 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-600 shadow-md shadow-indigo-500/30">
+                <Activity className="w-5 h-5 text-white animate-pulse" />
+              </span>
+              <span className="gradient-text-vibrant text-2xl font-extrabold tracking-wide">
+                Operational SIF Intelligence Center
+              </span>
+            </h2>
+            <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
+              Real-time deep precursor classification converting field narratives into actionable SIF barriers, IOGP Life-Saving Rules, and high-energy hazard exposure alerts.
+            </p>
+          </div>
+          <button
+            onClick={onNavigateToAnalyze}
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:brightness-110 text-white font-bold px-5 py-3 rounded-xl text-xs transition-all shadow-lg shadow-purple-600/30 shrink-0 transform hover:scale-105 active:scale-95 animate-neon-glow"
+          >
+            <span>Launch Safety Analyzer</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </button>
         </div>
-        <button
-          onClick={onNavigateToAnalyze}
-          className="inline-flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold px-4 py-2 rounded-lg text-xs transition shadow-xs shrink-0"
-        >
-          <span>Analyze Safety Report</span>
-          <ArrowUpRight className="w-4 h-4" />
-        </button>
       </div>
 
       {/* SECTION 1: PRECURAI AI ANALYSIS */}
-      <div className="space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
-          <h3 className="text-xs font-bold text-slate-900 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
-            <Layers className="w-4 h-4 text-sky-700 dark:text-sky-400" />
-            PrecurAi AI Analysis
+      <div className="space-y-5">
+        <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
+          <h3 className="text-sm font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 uppercase tracking-widest flex items-center gap-2">
+            <Layers className="w-4 h-4 text-purple-400" />
+            Active Precursor Metrics
           </h3>
-          <span className="text-[10px] font-mono text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-700">
-            Demo Analysis Records
+          <span className="text-[11px] font-bold text-cyan-300 bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-800/60 shadow-sm flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+            Real-time HSE Telemetry
           </span>
         </div>
 
-        {/* 4 Compact Top KPI Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* 4 Compact Top KPI Cards with Vibrant Neon Glass Styles */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {/* Reports Analyzed */}
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl shadow-xs card-hover-effect group transition-all duration-300">
+          <div className="glass-card-colorful p-5 rounded-2xl group border-l-4 border-l-indigo-500">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Reports Analyzed</span>
-              <div className="w-8 h-8 rounded-lg bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-400 flex items-center justify-center border border-sky-100 dark:border-sky-800 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-                <ShieldCheck className="w-4 h-4" />
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Total Observations</span>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600/30 to-blue-500/30 text-indigo-400 flex items-center justify-center border border-indigo-500/30 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                <ShieldCheck className="w-5 h-5" />
               </div>
             </div>
-            <div className="mt-3 flex items-baseline justify-between">
-              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-600 transition-colors">{stats.total_reports}</span>
-              <span className="text-[11px] text-slate-500 font-medium">Processed</span>
+            <div className="mt-4 flex items-baseline justify-between">
+              <span className="text-3xl font-extrabold text-white group-hover:text-indigo-400 transition-colors">{stats.total_reports}</span>
+              <span className="text-[11px] font-bold text-indigo-400 bg-indigo-950/60 px-2.5 py-0.5 rounded-full border border-indigo-800/60">Processed</span>
             </div>
           </div>
 
           {/* High SIF Potential Card */}
-          <div className="bg-white dark:bg-slate-900 border border-red-200 dark:border-red-900/60 p-4 rounded-xl shadow-xs card-hover-effect group transition-all duration-300 hover:border-red-400 dark:hover:border-red-700">
+          <div className="glass-card-colorful p-5 rounded-2xl group border-l-4 border-l-rose-500 hover:border-rose-400">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold uppercase tracking-wider text-red-700 dark:text-red-400">High SIF Potential</span>
-              <div className="w-8 h-8 rounded-lg bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-400 flex items-center justify-center border border-red-100 dark:border-red-900/50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-                <AlertOctagon className="w-4 h-4 animate-bounce-subtle" />
+              <span className="text-xs font-bold uppercase tracking-wider text-rose-400">High SIF Exposure</span>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-600/30 to-red-500/30 text-rose-400 flex items-center justify-center border border-rose-500/30 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                <AlertOctagon className="w-5 h-5 animate-bounce-subtle" />
               </div>
             </div>
-            <div className="mt-3 flex items-baseline justify-between">
-              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-red-600 transition-colors">{stats.high_sif_count}</span>
-              <span className="text-[10px] font-bold text-red-700 dark:text-red-400 bg-red-50 dark:bg-red-950 px-2 py-0.5 rounded border border-red-200 dark:border-red-900/50 animate-pulse">
+            <div className="mt-4 flex items-baseline justify-between">
+              <span className="text-3xl font-extrabold text-white group-hover:text-rose-400 transition-colors">{stats.high_sif_count}</span>
+              <span className="text-[10px] font-bold text-rose-300 bg-rose-950/80 px-2.5 py-0.5 rounded-full border border-rose-700/80 animate-pulse shadow-sm shadow-rose-950">
                 Critical Alert
               </span>
             </div>
           </div>
 
           {/* Medium SIF Potential Card */}
-          <div className="bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-900/60 p-4 rounded-xl shadow-xs card-hover-effect group transition-all duration-300 hover:border-amber-400 dark:hover:border-amber-700">
+          <div className="glass-card-colorful p-5 rounded-2xl group border-l-4 border-l-amber-500 hover:border-amber-400">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400">Medium SIF Potential</span>
-              <div className="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-400 flex items-center justify-center border border-amber-100 dark:border-amber-900/50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-                <AlertTriangle className="w-4 h-4" />
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-400">Medium SIF Precursors</span>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600/30 to-orange-500/30 text-amber-400 flex items-center justify-center border border-amber-500/30 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                <AlertTriangle className="w-5 h-5" />
               </div>
             </div>
-            <div className="mt-3 flex items-baseline justify-between">
-              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-amber-600 transition-colors">{stats.medium_sif_count}</span>
-              <span className="text-[10px] font-bold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950 px-2 py-0.5 rounded border border-amber-200 dark:border-amber-900/50">
-                Warning
+            <div className="mt-4 flex items-baseline justify-between">
+              <span className="text-3xl font-extrabold text-white group-hover:text-amber-400 transition-colors">{stats.medium_sif_count}</span>
+              <span className="text-[10px] font-bold text-amber-300 bg-amber-950/80 px-2.5 py-0.5 rounded-full border border-amber-700/80">
+                Warning Threshold
               </span>
             </div>
           </div>
 
           {/* Low SIF Potential Card */}
-          <div className="bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/60 p-4 rounded-xl shadow-xs card-hover-effect group transition-all duration-300 hover:border-emerald-400 dark:hover:border-emerald-700">
+          <div className="glass-card-colorful p-5 rounded-2xl group border-l-4 border-l-emerald-500 hover:border-emerald-400">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Low SIF Potential</span>
-              <div className="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 flex items-center justify-center border border-emerald-100 dark:border-emerald-900/50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-                <ShieldCheck className="w-4 h-4" />
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">Low Risk Observations</span>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600/30 to-teal-500/30 text-emerald-400 flex items-center justify-center border border-emerald-500/30 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                <ShieldCheck className="w-5 h-5" />
               </div>
             </div>
-            <div className="mt-3 flex items-baseline justify-between">
-              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-600 transition-colors">{stats.low_sif_count}</span>
-              <span className="text-[10px] font-medium text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-900/50">
-                Routine
+            <div className="mt-4 flex items-baseline justify-between">
+              <span className="text-3xl font-extrabold text-white group-hover:text-emerald-400 transition-colors">{stats.low_sif_count}</span>
+              <span className="text-[10px] font-bold text-emerald-300 bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-700/80">
+                Safe Operations
               </span>
             </div>
           </div>
