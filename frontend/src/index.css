@@ -3,78 +3,39 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    font-family: "Times New Roman", Times, Georgia, serif;
-    letter-spacing: 0.01em;
+  * {
+    font-family: "Times New Roman", Times, Georgia, serif !important;
   }
 
-  /* Universal Times New Roman font for all text elements */
-  *, *::before, *::after, input, button, textarea, select, span, p, h1, h2, h3, h4, h5, h6, label {
+  body {
     font-family: "Times New Roman", Times, Georgia, serif !important;
+    background-color: #0B0F19;
+    color: #F8FAFC;
+    overflow-x: hidden;
   }
 }
 
-/* Custom scrollbar styling for professional dashboard */
+/* Custom Colorful Neon Glow & Glassmorphism Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(11, 15, 25, 0.8);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.4);
-  border-radius: 4px;
+  background: linear-gradient(180deg, #6366F1, #EC4899, #06B6D4);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.6);
+  background: linear-gradient(180deg, #818CF8, #F43F5E, #22D3EE);
 }
 
-/* Smooth Interactive Keyframe Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes floatGentle {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 15px -3px rgba(2, 132, 199, 0.35);
-  }
-  50% {
-    box-shadow: 0 0 25px 2px rgba(2, 132, 199, 0.65);
-  }
-}
-
-@keyframes gradientShift {
+/* High-Energy Vibrant Keyframe Animations */
+@keyframes meshGradient {
   0% {
     background-position: 0% 50%;
   }
@@ -86,62 +47,118 @@
   }
 }
 
-@keyframes shimmer {
+@keyframes floatSmooth {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.8deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(-0.8deg);
+  }
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.4), 0 0 30px rgba(236, 72, 153, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.7), 0 0 50px rgba(6, 182, 212, 0.4);
+  }
+}
+
+@keyframes rainbowBorder {
   0% {
-    transform: translateX(-100%);
+    filter: hue-rotate(0deg);
   }
   100% {
-    transform: translateX(200%);
+    filter: hue-rotate(360deg);
   }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+@keyframes shimmerWave {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
 }
 
-.animate-slide-in {
-  animation: slideInLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+/* Utility Animation Classes */
+.animate-mesh {
+  background: linear-gradient(-45deg, #0F172A, #1E1B4B, #2E1065, #082F49, #022C22);
+  background-size: 400% 400%;
+  animation: meshGradient 16s ease infinite;
 }
 
-.animate-float {
-  animation: floatGentle 3s ease-in-out infinite;
+.animate-float-card {
+  animation: floatSmooth 4s ease-in-out infinite;
 }
 
-.animate-pulse-glow {
-  animation: pulseGlow 2.5s ease-in-out infinite;
+.animate-float-reverse {
+  animation: floatReverse 4.5s ease-in-out infinite;
 }
 
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradientShift 6s ease infinite;
+.animate-neon-glow {
+  animation: neonPulse 3s ease-in-out infinite;
 }
 
-.shimmer-effect {
+.animate-rainbow {
+  animation: rainbowBorder 8s linear infinite;
+}
+
+.glass-card-colorful {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-colorful:hover {
+  transform: translateY(-5px) scale(1.01);
+  border-color: rgba(147, 197, 253, 0.4);
+  box-shadow: 0 20px 35px -10px rgba(99, 102, 241, 0.3), 0 0 20px rgba(236, 72, 153, 0.2);
+}
+
+.gradient-text-vibrant {
+  background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #F472B6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #FDE047 0%, #F59E0B 50%, #EF4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-emerald {
+  background: linear-gradient(135deg, #34D399 0%, #10B981 50%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shimmer-colorful {
   position: relative;
   overflow: hidden;
 }
 
-.shimmer-effect::after {
+.shimmer-colorful::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 60%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
-  animation: shimmer 2.5s infinite;
-}
-
-/* Staggered transition utilities */
-.card-hover-effect {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.card-hover-effect:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12);
-}
-
-.dark .card-hover-effect:hover {
-  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  animation: shimmerWave 3s infinite;
 }
