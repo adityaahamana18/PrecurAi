@@ -26,6 +26,7 @@ export default function App() {
   const [hseAnalytics, setHseAnalytics] = useState(null);
   const [reports, setReports] = useState([]);
   const [selectedReport, setSelectedReport] = useState(null);
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
 
   // Real-time analysis result state with localStorage persistence
   const [latestAnalysisResult, setLatestAnalysisResult] = useState(() => {
@@ -147,7 +148,7 @@ export default function App() {
     } catch (e) {
       console.warn("Storage save failed:", e);
     }
-    setActiveTab('dashboard');
+    setIsSignInOpen(false);
   };
 
   const handleUserSignOut = () => {
@@ -173,6 +174,7 @@ export default function App() {
         hasActiveResult={!!latestAnalysisResult}
         user={currentUser}
         onSignOut={handleUserSignOut}
+        onOpenSignIn={() => setIsSignInOpen(true)}
       />
 
       {/* Main Layout Area */}
@@ -208,22 +210,39 @@ export default function App() {
               {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
 
-            {/* User Profile Info */}
-            <div className={`flex items-center gap-2.5 px-3 py-1.5 rounded-lg border ${
-              darkMode ? 'bg-slate-800/80 border-slate-700' : 'bg-slate-50 border-slate-200'
-            }`}>
-              <div className="w-7 h-7 rounded-full bg-sky-700 text-white flex items-center justify-center text-xs font-bold">
-                <User className="w-4 h-4" />
+            {/* User Profile Info / Sign In Trigger */}
+            {currentUser ? (
+              <div className={`flex items-center gap-2.5 px-3 py-1.5 rounded-lg border ${
+                darkMode ? 'bg-slate-800/80 border-slate-700' : 'bg-slate-50 border-slate-200'
+              }`}>
+                <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-sky-600 to-sky-400 text-white flex items-center justify-center text-xs font-bold shadow-xs">
+                  <User className="w-4 h-4" />
+                </div>
+                <div className="text-left text-xs">
+                  <span className={`font-bold block leading-none ${darkMode ? 'text-slate-200' : 'text-slate-800'}`}>
+                    {currentUser.name}
+                  </span>
+                  <span className={`text-[10px] ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
+                    {currentUser.email}
+                  </span>
+                </div>
+                <button
+                  onClick={handleUserSignOut}
+                  className="ml-1 p-1 text-slate-400 hover:text-red-400 transition"
+                  title="Sign out"
+                >
+                  <LogOut className="w-3.5 h-3.5" />
+                </button>
               </div>
-              <div className="text-left text-xs">
-                <span className={`font-bold block leading-none ${darkMode ? 'text-slate-200' : 'text-slate-800'}`}>
-                  {currentUser?.name || 'HSE Officer'}
-                </span>
-                <span className={`text-[10px] ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
-                  {currentUser?.email || 'Operations'}
-                </span>
-              </div>
-            </div>
+            ) : (
+              <button
+                onClick={() => setIsSignInOpen(true)}
+                className="flex items-center gap-2 bg-gradient-to-r from-sky-600 to-sky-500 hover:from-sky-500 hover:to-sky-400 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold shadow-sm hover:shadow transition-all transform active:scale-98"
+              >
+                <LogIn className="w-3.5 h-3.5" />
+                <span>Sign In</span>
+              </button>
+            )}
           </div>
         </header>
 
@@ -264,16 +283,6 @@ export default function App() {
           {activeTab === 'lsr' && <LifeSavingRules />}
 
           {activeTab === 'pngrb' && <PNGRBReports />}
-
-          {activeTab === 'signin' && (
-            <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
-              <SignIn1
-                brandName="PrecurAi"
-                tagline="AI-Powered SIF Precursor Detection & HSE Intelligence"
-                onSuccess={handleUserSignIn}
-              />
-            </div>
-          )}
         </main>
 
         {/* Global Page Footer */}
@@ -303,6 +312,17 @@ export default function App() {
           report={selectedReport}
           onClose={() => setSelectedReport(null)}
           onReviewSubmitted={() => fetchData()}
+        />
+      )}
+
+      {/* Sign In Popup Modal */}
+      {isSignInOpen && (
+        <SignIn1
+          isModal={true}
+          brandName="PrecurAi"
+          tagline="AI-Powered SIF Precursor Detection & HSE Intelligence"
+          onClose={() => setIsSignInOpen(false)}
+          onSuccess={handleUserSignIn}
         />
       )}
     </div>
